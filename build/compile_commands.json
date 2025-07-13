@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o"
+}
+]

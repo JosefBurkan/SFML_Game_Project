@@ -1,0 +1,3 @@
+/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles/fireEmblem.dir
+/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles/edit_cache.dir
+/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles/rebuild_cache.dir
