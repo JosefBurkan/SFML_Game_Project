@@ -1,4 +1,4 @@
-#include "../GridSystem/GridGenerator.cpp"
+#include "../GridSystem/GridGenerator/GridGenerator.cpp"
 #include "../config.h"
 #include "../Entities/MapObjects/MapObject.cpp"
 using namespace MapObjects;
@@ -26,6 +26,7 @@ namespace Maps
                 gridGenerator.CreateGrid(numberOfRows, numberOfColumns);
             }
 
+            // returner gridGenerator med verdiene til den eksisterende gridden
             GridGenerator& FetchGrid()
             {
                 return gridGenerator;   
@@ -53,7 +54,7 @@ namespace Maps
                 window.draw(sprite);
             }
 
-            void DrawMapObjects(sf:: RenderWindow& window)
+            void DrawMapObjects(sf::RenderWindow& window)
             {
                 const auto& gridTiles = gridGenerator.RetrieveAllTiles();
                 object.setPosition({gridTiles[10][7].RetrieveTilePos().first, gridTiles[10][7].RetrieveTilePos().second});

@@ -1,6 +1,5 @@
 #include <iostream>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#include "../../config.h"
 #pragma once
 
 namespace Tiles 
@@ -17,13 +16,13 @@ namespace Tiles
             {
                 rectangle.setSize({50.f, 50.f});
                 rectangle.setFillColor(sf::Color(255, 255, 255, 0));
-                rectangle.setOutlineColor(sf::Color(0, 0, 0, 125));
+                rectangle.setOutlineColor(sf::Color(0, 0, 0, 250));
                 rectangle.setOutlineThickness(0.f);
                 rectangle.setPosition({x, y});
             }
 
             // Lys opp ruten om en enhet har blitt valgt
-            void ChangeColor(bool onSelect) 
+            void ChangeColor(bool onSelect)
             {
                 if (onSelect == true)
                 {
@@ -43,7 +42,7 @@ namespace Tiles
                 rectangle.setFillColor(sf::Color(180, 200, 250, 130));
             }
 
-            void UnSelect()
+            void UnSelect() 
             {
                 rectangle.setFillColor(sf::Color(255, 255, 255, 0));
             }

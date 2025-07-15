@@ -1,0 +1,69 @@
+#include "../Tile/Tile.cpp"
+#include <vector>
+#pragma once
+using namespace Tiles;
+
+namespace GridGenerators
+{
+    class GridGenerator
+    {
+
+        public:
+        std::vector<std::vector<Tile>> tiles;
+        Tile tile{0, 0};
+        int selectedTileX = 0;    // Kordinat til valgt rute 
+        int selectedTileY = 0;
+        int rows = 0;
+        int columns = 0;
+
+        void CreateGrid(int r, int c) 
+        {
+            rows = r;
+            columns = c;
+
+            // Lag plass for hver rad
+            tiles.resize(rows);
+
+            for (int row = 0; row < rows; row++) 
+            {
+                // Lag plass for hver kolonne
+                tiles[row].resize(columns);
+
+                for (int column = 0; column < columns; column++)
+                {
+
+                    // Avstanden mellom hver tile. 50.f = areal til rute
+                    float rowX = column * 50.f;
+                    float rowY = row * 50.f;
+
+                    tiles[row][column] = Tile(rowX, rowY); // Bygg en rute med tilsvarende kordinater
+                }
+            }
+            tiles[0][0].ChangeColor(true);
+        }
+
+        // Hent alle ruter
+        std::vector<std::vector<Tile>>& RetrieveAllTiles()
+        {
+            return tiles;
+        }
+
+        void Draw(sf::RenderWindow& window) 
+        {
+            for (int row = 0; row < rows; row++)
+            {
+
+                for (int column = 0; column < columns; column++)
+                {
+                    if (row == selectedTileY && column == selectedTileX)
+                        continue; // Ignorer den valgte ruten
+
+                    tiles[row][column].Draw(window);
+                }
+            }
+            tiles[selectedTileY][selectedTileX].Draw(window);
+        }
+
+    };
+
+}

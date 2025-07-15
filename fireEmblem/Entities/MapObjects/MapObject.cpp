@@ -9,6 +9,8 @@ namespace MapObjects
         public:
         sf::Texture texture;
 
+        
+
         sf::Sprite GenerateSprite()
         {
             texture.loadFromFile("pixel-bat.png");
