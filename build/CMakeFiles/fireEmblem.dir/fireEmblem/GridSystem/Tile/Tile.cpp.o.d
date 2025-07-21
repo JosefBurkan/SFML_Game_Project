@@ -1,6 +1,7 @@
-CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.h \
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o: \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.cpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/../../config.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -971,27 +972,4 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Glsl.inl \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Text.hpp \
-  /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../config.h \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../Tile/../../config.h \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../config.h \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Allies/Ally.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Allies/../Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/StartMap.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../config.h \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/MapObject.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/../../config.h \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp
+  /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp

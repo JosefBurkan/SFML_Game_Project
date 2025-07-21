@@ -1,29 +1,19 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#ifndef UNIT_HPP
-#define UNIT_HPP
-using namespace std;
+#include "Unit.hpp"
 
-namespace Units {
-    class Unit 
+namespace Units 
+{
+    // spritePath er for å kunne sette sprites til enheter når de opprettes
+    Unit::Unit(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference) 
+            : name(name), healthPoints(healthPoints), spritePath(spritePath), gridGenerator(gridReference)
     {
-        protected:  
-            string name;
-            int healthPoints;
-            string spritePath;
-            
-            
-        public: 
-            // spritePath er for å kunne sette sprites til enheter når de opprettes
-            Unit(string name, int healthPoints, string spritePath) : name(name), healthPoints(healthPoints), spritePath(spritePath)
-            {
-            }
+    }
+    void Unit::spawn()
+    {
+        std::cout << "spawnet! \n";
+    }
+    
+    std::pair<int, int> Unit::RetriveCoordinations() 
+    {
 
-            void spawn()
-            {
-                cout << "spawnet! \n";
-            }
-    };
+    }
 }
-
-#endif

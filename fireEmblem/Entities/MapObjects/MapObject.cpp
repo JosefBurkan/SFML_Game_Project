@@ -1,6 +1,4 @@
 #include "../../config.h"
-using namespace GridGenerators;
-
 
 namespace MapObjects
 {

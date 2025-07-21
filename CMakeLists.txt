@@ -12,7 +12,16 @@ cmake_policy(SET CMP0074 NEW)
 find_package(SFML 3 COMPONENTS Graphics Window System REQUIRED)
 
 
-add_executable(fireEmblem fireEmblem/main.cpp)
+add_executable(fireEmblem
+    fireEmblem/main.cpp
+    fireEmblem/GridSystem/GridMovement/GridMovement.cpp
+    fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp
+    fireEmblem/GridSystem/Tile/Tile.cpp
+    fireEmblem/Entities/Units/Player/Player.cpp
+    fireEmblem/Entities/Units/Unit.cpp
+    fireEmblem/Maps/Map.cpp
+    fireEmblem/Camera/Camera.cpp
+)
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)
 target_link_libraries(fireEmblem

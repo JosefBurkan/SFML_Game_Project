@@ -129,6 +129,174 @@ fireEmblem/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/build
 .PHONY : fireEmblem/fast
 
+fireEmblem/Camera/Camera.o: fireEmblem/Camera/Camera.cpp.o
+.PHONY : fireEmblem/Camera/Camera.o
+
+# target to build an object file
+fireEmblem/Camera/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o
+.PHONY : fireEmblem/Camera/Camera.cpp.o
+
+fireEmblem/Camera/Camera.i: fireEmblem/Camera/Camera.cpp.i
+.PHONY : fireEmblem/Camera/Camera.i
+
+# target to preprocess a source file
+fireEmblem/Camera/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.i
+.PHONY : fireEmblem/Camera/Camera.cpp.i
+
+fireEmblem/Camera/Camera.s: fireEmblem/Camera/Camera.cpp.s
+.PHONY : fireEmblem/Camera/Camera.s
+
+# target to generate assembly for a file
+fireEmblem/Camera/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.s
+.PHONY : fireEmblem/Camera/Camera.cpp.s
+
+fireEmblem/Entities/Units/Player/Player.o: fireEmblem/Entities/Units/Player/Player.cpp.o
+.PHONY : fireEmblem/Entities/Units/Player/Player.o
+
+# target to build an object file
+fireEmblem/Entities/Units/Player/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o
+.PHONY : fireEmblem/Entities/Units/Player/Player.cpp.o
+
+fireEmblem/Entities/Units/Player/Player.i: fireEmblem/Entities/Units/Player/Player.cpp.i
+.PHONY : fireEmblem/Entities/Units/Player/Player.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Units/Player/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.i
+.PHONY : fireEmblem/Entities/Units/Player/Player.cpp.i
+
+fireEmblem/Entities/Units/Player/Player.s: fireEmblem/Entities/Units/Player/Player.cpp.s
+.PHONY : fireEmblem/Entities/Units/Player/Player.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Units/Player/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.s
+.PHONY : fireEmblem/Entities/Units/Player/Player.cpp.s
+
+fireEmblem/Entities/Units/Unit.o: fireEmblem/Entities/Units/Unit.cpp.o
+.PHONY : fireEmblem/Entities/Units/Unit.o
+
+# target to build an object file
+fireEmblem/Entities/Units/Unit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o
+.PHONY : fireEmblem/Entities/Units/Unit.cpp.o
+
+fireEmblem/Entities/Units/Unit.i: fireEmblem/Entities/Units/Unit.cpp.i
+.PHONY : fireEmblem/Entities/Units/Unit.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Units/Unit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.i
+.PHONY : fireEmblem/Entities/Units/Unit.cpp.i
+
+fireEmblem/Entities/Units/Unit.s: fireEmblem/Entities/Units/Unit.cpp.s
+.PHONY : fireEmblem/Entities/Units/Unit.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Units/Unit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.s
+.PHONY : fireEmblem/Entities/Units/Unit.cpp.s
+
+fireEmblem/GridSystem/GridGenerator/GridGenerator.o: fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
+.PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.o
+
+# target to build an object file
+fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
+.PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
+
+fireEmblem/GridSystem/GridGenerator/GridGenerator.i: fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.i
+.PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.i
+.PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.i
+
+fireEmblem/GridSystem/GridGenerator/GridGenerator.s: fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s
+.PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s
+.PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s
+
+fireEmblem/GridSystem/GridMovement/GridMovement.o: fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
+.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.o
+
+# target to build an object file
+fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
+.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
+
+fireEmblem/GridSystem/GridMovement/GridMovement.i: fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
+.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
+.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
+
+fireEmblem/GridSystem/GridMovement/GridMovement.s: fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
+.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
+.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
+
+fireEmblem/GridSystem/Tile/Tile.o: fireEmblem/GridSystem/Tile/Tile.cpp.o
+.PHONY : fireEmblem/GridSystem/Tile/Tile.o
+
+# target to build an object file
+fireEmblem/GridSystem/Tile/Tile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o
+.PHONY : fireEmblem/GridSystem/Tile/Tile.cpp.o
+
+fireEmblem/GridSystem/Tile/Tile.i: fireEmblem/GridSystem/Tile/Tile.cpp.i
+.PHONY : fireEmblem/GridSystem/Tile/Tile.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/Tile/Tile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.i
+.PHONY : fireEmblem/GridSystem/Tile/Tile.cpp.i
+
+fireEmblem/GridSystem/Tile/Tile.s: fireEmblem/GridSystem/Tile/Tile.cpp.s
+.PHONY : fireEmblem/GridSystem/Tile/Tile.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/Tile/Tile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.s
+.PHONY : fireEmblem/GridSystem/Tile/Tile.cpp.s
+
+fireEmblem/Maps/Map.o: fireEmblem/Maps/Map.cpp.o
+.PHONY : fireEmblem/Maps/Map.o
+
+# target to build an object file
+fireEmblem/Maps/Map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.o
+.PHONY : fireEmblem/Maps/Map.cpp.o
+
+fireEmblem/Maps/Map.i: fireEmblem/Maps/Map.cpp.i
+.PHONY : fireEmblem/Maps/Map.i
+
+# target to preprocess a source file
+fireEmblem/Maps/Map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.i
+.PHONY : fireEmblem/Maps/Map.cpp.i
+
+fireEmblem/Maps/Map.s: fireEmblem/Maps/Map.cpp.s
+.PHONY : fireEmblem/Maps/Map.s
+
+# target to generate assembly for a file
+fireEmblem/Maps/Map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.s
+.PHONY : fireEmblem/Maps/Map.cpp.s
+
 fireEmblem/main.o: fireEmblem/main.cpp.o
 .PHONY : fireEmblem/main.o
 
@@ -162,6 +330,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... fireEmblem"
+	@echo "... fireEmblem/Camera/Camera.o"
+	@echo "... fireEmblem/Camera/Camera.i"
+	@echo "... fireEmblem/Camera/Camera.s"
+	@echo "... fireEmblem/Entities/Units/Player/Player.o"
+	@echo "... fireEmblem/Entities/Units/Player/Player.i"
+	@echo "... fireEmblem/Entities/Units/Player/Player.s"
+	@echo "... fireEmblem/Entities/Units/Unit.o"
+	@echo "... fireEmblem/Entities/Units/Unit.i"
+	@echo "... fireEmblem/Entities/Units/Unit.s"
+	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.o"
+	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.i"
+	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.s"
+	@echo "... fireEmblem/GridSystem/GridMovement/GridMovement.o"
+	@echo "... fireEmblem/GridSystem/GridMovement/GridMovement.i"
+	@echo "... fireEmblem/GridSystem/GridMovement/GridMovement.s"
+	@echo "... fireEmblem/GridSystem/Tile/Tile.o"
+	@echo "... fireEmblem/GridSystem/Tile/Tile.i"
+	@echo "... fireEmblem/GridSystem/Tile/Tile.s"
+	@echo "... fireEmblem/Maps/Map.o"
+	@echo "... fireEmblem/Maps/Map.i"
+	@echo "... fireEmblem/Maps/Map.s"
 	@echo "... fireEmblem/main.o"
 	@echo "... fireEmblem/main.i"
 	@echo "... fireEmblem/main.s"

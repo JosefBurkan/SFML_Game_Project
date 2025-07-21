@@ -3,8 +3,3 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
-#include "GridSystem/GridGenerator/GridGenerator.cpp"
-#include "Entities/Units/Player/Player.cpp"
-#include "Entities/Units/Allies/Ally.cpp"
-#include "Maps/StartMap.cpp"
-#include "GridSystem/GridMovement/GridMovement.cpp"

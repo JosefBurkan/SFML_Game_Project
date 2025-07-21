@@ -1,23 +1,21 @@
 #include "../config.h"
-using namespace GridMovements;
+#include "../GridSystem/GridMovement/GridMovement.hpp"
 
-
-namespace Cameras {
+namespace Camera {
     class Camera 
     {
         private:
             sf::View view;
             float selectedTileX = 0;    // Kordinat til valgt rute 
             float selectedTileY = 0;
-            int viewWidth = 600;
+            int viewWidth = 600;        // Bredde på skjermen
             int viewHeight = 600;
             sf::Vector2f viewSize;
-            GridMovement& movement;
-            sf::Rect<float> currentView;
+            GridMovements::GridMovement& movement;
 
         public:
 
-            Camera(GridMovement& gridMovement)
+            Camera(GridMovements::GridMovement& gridMovement)
                 : movement(gridMovement)
             {
 
@@ -46,6 +44,7 @@ namespace Cameras {
 
                 viewSize = view.getCenter();
 
+                // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 
                 if (selectedTileX > viewSize.x + 250)
                 {
                     view.move(moveHorisontally);

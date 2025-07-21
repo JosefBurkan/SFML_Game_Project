@@ -1,28 +1,28 @@
 #include "config.h"
 #include "Camera/Camera.cpp"
-using namespace std;
-using namespace Players;
-using namespace GridGenerators;
-using namespace Maps;
-using namespace Cameras;
-using namespace GridMovements;
+#include "GridSystem/GridGenerator/GridGenerator.hpp"
+#include "Entities/Units/Player/Player.cpp"
+#include "Entities/Units/Allies/Ally.cpp"
+#include "Entities/Units/Unit.hpp"
+#include "Maps/StartMap.cpp"
+#include "GridSystem/GridMovement/GridMovement.hpp"
 
 int main()
 {
     StartMap map{};                                 // Opprett et baneobjekt
     map.GenerateGrid();
-    GridGenerator& map1 = map.FetchGrid();  
-    GridMovement movement(map1);
+    GridGenerators::GridGenerator& map1 = map.FetchGrid();  
+    GridMovements::GridMovement movement(map1);
     map.LoadWindow();    
 
-    Camera camera{movement};
+    Camera::Camera camera{movement};
     sf::RenderWindow& window = map.window;          // sett 'vindu' til banen sitt 'vindu'
     sf::View view = camera.LoadView();
     sf::View moveView;
 
 
     // Navn, Liv, sprite, tilknytningsbane
-    Player you{"Player", 20, "prinsesse.png", map1, movement};
+    Players::Player you{"Player", 20, "prinsesse.png", map1, movement};
     window.setFramerateLimit(60);
     window.setView(view);
 

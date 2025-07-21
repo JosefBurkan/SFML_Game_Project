@@ -1,11 +1,11 @@
-#include "../GridSystem/GridGenerator/GridGenerator.cpp"
+#include "../GridSystem/GridGenerator/GridGenerator.hpp"
 #include "../config.h"
 #include "../Entities/MapObjects/MapObject.cpp"
 using namespace MapObjects;
-using namespace GridGenerators;
 
 namespace Maps 
 {
+
     class Map 
     {
         public:
@@ -14,7 +14,7 @@ namespace Maps
 
             unsigned int numberOfColumns = 15;
             unsigned int numberOfRows = 16;
-            GridGenerator gridGenerator;
+            GridGenerators::GridGenerator gridGenerator;
 
             // For å opprette objeker, feks skog, vegger
             MapObject mapObject;
@@ -27,7 +27,7 @@ namespace Maps
             }
 
             // returner gridGenerator med verdiene til den eksisterende gridden
-            GridGenerator& FetchGrid()
+            GridGenerators::GridGenerator& FetchGrid()
             {
                 return gridGenerator;   
             }

@@ -1,26 +1,26 @@
-#include <iostream>
+#pragma once
 #include "../../../config.h"
-#include "../Unit.cpp"
-#include "../../../GridSystem/GridMovement/GridMovement.cpp"
-#include <vector>
-using namespace Units;
-using namespace GridMovements;
-using namespace GridGenerators;
-using namespace Tiles;
+#include "../Unit.hpp"
+#include "../../../GridSystem/GridMovement/GridMovement.hpp"
+
+namespace GridGenerators 
+{
+    class GridGenerator;
+}
 
 namespace Players 
 {
-    class Player : public Unit 
+
+
+    class Player : public Units::Unit 
     {
 
         private:
-            sf::Texture texture;
-            std::optional<sf::Sprite> sprite;  
-            GridGenerator& gridGenerator;
-            GridMovement& gridMovement;            
+
+
+            GridMovements::GridMovement& gridMovement;            
             int playerCurrentTileX = 0;
             int playerCurrentTileY = 0;
-            int movementCooldown = 0;
             bool isSelected = false;
             bool preventSelect = false;
             sf::Vector2f realTimePos = sprite->getPosition();
@@ -29,8 +29,8 @@ namespace Players
 
             
 
-            Player(string name, int healthPoints, string spritePath, GridGenerator& gridReference, GridMovement& gridMovement)
-                : Unit(name, healthPoints, spritePath), gridGenerator(gridReference), gridMovement(gridMovement) // Fortell hvilken grid som brukes
+            Player(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference, GridMovements::GridMovement& gridMovement)
+                : Unit(name, healthPoints, spritePath, gridGenerator), gridMovement(gridMovement) // Fortell hvilken grid som brukes
             {
                 
                 if (!texture.loadFromFile(spritePath)) {
@@ -54,7 +54,6 @@ namespace Players
             
             float gridCurrentTileX = retrievedTile.first;
             float gridCurrentTileY = retrievedTile.second;
-            movementCooldown++;
 
             // Logikk for å velge spilleren, og å flytte den
             if (isSelected == false && preventSelect == true)

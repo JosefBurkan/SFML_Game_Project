@@ -1,23 +1,23 @@
 #include <iostream>
-#include "../Unit.cpp"
-using namespace std;
-using namespace Units;
+#include "../Unit.hpp"
 
+/*
 namespace Allies 
 {
     class Ally : public Unit 
     {
 
         public:
-            Ally(string name, int healthPoints, string spritePath) : Unit(name, healthPoints, spritePath)
+            Ally(std::string name, int healthPoints, std::string spritePath) : Unit::Unit(name, healthPoints, spritePath)
             {
 
             }
 
             void spawn() 
             {
-                cout << name << " has spawned! with health: " << healthPoints;
+                std::cout << name << " has spawned! with health: " << healthPoints;
             }
     };
 }
 
+*/
