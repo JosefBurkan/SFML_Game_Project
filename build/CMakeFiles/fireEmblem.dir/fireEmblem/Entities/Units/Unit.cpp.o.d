@@ -1,7 +1,7 @@
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -975,7 +975,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridMovement/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridMovement/../Tile/../../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridMovement/../Tile/../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridMovement/../GridGenerator/../Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridGenerator/GridGenerator.hpp

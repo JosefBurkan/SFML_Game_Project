@@ -2,7 +2,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map.cpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../GridSystem/GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../GridSystem/GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../GridSystem/GridGenerator/../Tile/../../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../GridSystem/GridGenerator/../Tile/../../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -974,6 +974,8 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Text.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../config.h \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/MapObject.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/../../config.h
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/MapObject.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/../../GridSystem/Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/../Entities/MapObjects/Bat.hpp

@@ -1,5 +1,5 @@
 #pragma once
-#include "../../config.h"
+#include "../../config.hpp"
 
 namespace Tiles 
 {

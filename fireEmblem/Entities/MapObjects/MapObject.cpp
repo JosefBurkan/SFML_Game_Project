@@ -1,23 +1,25 @@
-#include "../../config.h"
+#include "MapObject.hpp"
 
 namespace MapObjects
 {
-    class MapObject
+
+    MapObject::MapObject()
     {
-        public:
-        sf::Texture texture;
+        texture.loadFromFile("pixel-bat.png");
+        sprite.emplace(texture);
+        sprite->setScale({0.1f, 0.1f});
+    }
 
-        
+    sf::Sprite& MapObject::RetrieveSprite() 
+    {
+        return *sprite;
+    }
 
-        sf::Sprite GenerateSprite()
-        {
-            texture.loadFromFile("pixel-bat.png");
-            sf::Sprite sprite(texture);
-            sprite.setScale({0.1f, 0.1f});
-
-            return sprite;
-        }
+    std::pair<float, float> MapObject::printPos()
+    {
+        return {sprite->getPosition().x, sprite->getPosition().y};
+    }
 
 
-    };
+
 }

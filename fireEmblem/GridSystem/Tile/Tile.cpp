@@ -46,7 +46,7 @@ namespace Tiles
     // Sjekk hva som er inni ruten
     void Tiles::Tile::CheckContents()
     {
-
+        
     }
 
     void Tiles::Tile::Draw(sf::RenderWindow& window) {

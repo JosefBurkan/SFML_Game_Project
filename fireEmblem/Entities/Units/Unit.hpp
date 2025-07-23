@@ -1,5 +1,5 @@
 #pragma once
-#include "../../config.h"
+#include "../../config.hpp"
 #include "../../GridSystem/GridMovement/GridMovement.hpp"
 #include "../../GridSystem/GridGenerator/GridGenerator.hpp"
 
@@ -15,13 +15,10 @@ namespace Units
             int healthPoints;
             std::string spritePath;
             
-            
         public: 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference);
-
             void spawn();
-
             std::pair<int, int> RetriveCoordinations();
     };
 }

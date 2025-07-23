@@ -1,6 +1,7 @@
 CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -974,6 +975,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../Tile/../../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../Tile/../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridMovement/../GridGenerator/../Tile/Tile.hpp

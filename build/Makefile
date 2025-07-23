@@ -153,6 +153,54 @@ fireEmblem/Camera/Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.s
 .PHONY : fireEmblem/Camera/Camera.cpp.s
 
+fireEmblem/Entities/MapObjects/Bat.o: fireEmblem/Entities/MapObjects/Bat.cpp.o
+.PHONY : fireEmblem/Entities/MapObjects/Bat.o
+
+# target to build an object file
+fireEmblem/Entities/MapObjects/Bat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o
+.PHONY : fireEmblem/Entities/MapObjects/Bat.cpp.o
+
+fireEmblem/Entities/MapObjects/Bat.i: fireEmblem/Entities/MapObjects/Bat.cpp.i
+.PHONY : fireEmblem/Entities/MapObjects/Bat.i
+
+# target to preprocess a source file
+fireEmblem/Entities/MapObjects/Bat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.i
+.PHONY : fireEmblem/Entities/MapObjects/Bat.cpp.i
+
+fireEmblem/Entities/MapObjects/Bat.s: fireEmblem/Entities/MapObjects/Bat.cpp.s
+.PHONY : fireEmblem/Entities/MapObjects/Bat.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/MapObjects/Bat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.s
+.PHONY : fireEmblem/Entities/MapObjects/Bat.cpp.s
+
+fireEmblem/Entities/MapObjects/MapObject.o: fireEmblem/Entities/MapObjects/MapObject.cpp.o
+.PHONY : fireEmblem/Entities/MapObjects/MapObject.o
+
+# target to build an object file
+fireEmblem/Entities/MapObjects/MapObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o
+.PHONY : fireEmblem/Entities/MapObjects/MapObject.cpp.o
+
+fireEmblem/Entities/MapObjects/MapObject.i: fireEmblem/Entities/MapObjects/MapObject.cpp.i
+.PHONY : fireEmblem/Entities/MapObjects/MapObject.i
+
+# target to preprocess a source file
+fireEmblem/Entities/MapObjects/MapObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.i
+.PHONY : fireEmblem/Entities/MapObjects/MapObject.cpp.i
+
+fireEmblem/Entities/MapObjects/MapObject.s: fireEmblem/Entities/MapObjects/MapObject.cpp.s
+.PHONY : fireEmblem/Entities/MapObjects/MapObject.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/MapObjects/MapObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.s
+.PHONY : fireEmblem/Entities/MapObjects/MapObject.cpp.s
+
 fireEmblem/Entities/Units/Player/Player.o: fireEmblem/Entities/Units/Player/Player.cpp.o
 .PHONY : fireEmblem/Entities/Units/Player/Player.o
 
@@ -333,6 +381,12 @@ help:
 	@echo "... fireEmblem/Camera/Camera.o"
 	@echo "... fireEmblem/Camera/Camera.i"
 	@echo "... fireEmblem/Camera/Camera.s"
+	@echo "... fireEmblem/Entities/MapObjects/Bat.o"
+	@echo "... fireEmblem/Entities/MapObjects/Bat.i"
+	@echo "... fireEmblem/Entities/MapObjects/Bat.s"
+	@echo "... fireEmblem/Entities/MapObjects/MapObject.o"
+	@echo "... fireEmblem/Entities/MapObjects/MapObject.i"
+	@echo "... fireEmblem/Entities/MapObjects/MapObject.s"
 	@echo "... fireEmblem/Entities/Units/Player/Player.o"
 	@echo "... fireEmblem/Entities/Units/Player/Player.i"
 	@echo "... fireEmblem/Entities/Units/Player/Player.s"

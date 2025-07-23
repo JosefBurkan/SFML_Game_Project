@@ -1,7 +1,7 @@
 CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.cpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/../../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/../../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \

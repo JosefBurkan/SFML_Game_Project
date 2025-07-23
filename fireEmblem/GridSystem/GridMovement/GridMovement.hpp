@@ -2,6 +2,11 @@
 #include "../Tile/Tile.hpp"
 #include "../GridGenerator/GridGenerator.hpp"
 
+namespace MapObjects 
+{
+    class MapObject;
+}
+
 namespace GridMovements
 {
     class GridMovement

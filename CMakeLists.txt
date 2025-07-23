@@ -20,6 +20,8 @@ add_executable(fireEmblem
     fireEmblem/Entities/Units/Player/Player.cpp
     fireEmblem/Entities/Units/Unit.cpp
     fireEmblem/Maps/Map.cpp
+    fireEmblem/Entities/MapObjects/MapObject.cpp
+    fireEmblem/Entities/MapObjects/Bat.cpp
     fireEmblem/Camera/Camera.cpp
 )
 

@@ -17,7 +17,6 @@ namespace GridGenerators
 
             for (int column = 0; column < columns; column++)
             {
-
                 // Avstanden mellom hver tile. 50.f = areal til rute
                 float rowX = column * 50.f;
                 float rowY = row * 50.f;
@@ -49,6 +48,4 @@ namespace GridGenerators
         }
         tiles[selectedTileY][selectedTileX].Draw(window);
     }
-
-
 }

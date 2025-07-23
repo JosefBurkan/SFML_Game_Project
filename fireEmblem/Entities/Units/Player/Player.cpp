@@ -1,99 +1,86 @@
-#pragma once
-#include "../../../config.h"
-#include "../Unit.hpp"
-#include "../../../GridSystem/GridMovement/GridMovement.hpp"
-
-namespace GridGenerators 
-{
-    class GridGenerator;
-}
+#include "Player.hpp"
 
 namespace Players 
 {
-
-
-    class Player : public Units::Unit 
+    // Initialiser spilleren, gridden den hører til og bevegelsen.
+    Player::Player(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference, GridMovements::GridMovement& gridMovement, Maps::Map& map)
+        : Unit(name, healthPoints, spritePath, gridReference), gridMovement(gridMovement), map(map) // Fortell hvilken grid som brukes
     {
+        
+        if (!texture.loadFromFile(spritePath)) {
+            throw std::runtime_error("Failed to load texture!");
+        }
 
-        private:
+        sprite.emplace(texture);
+        sprite->setScale({3.f, 3.f});
+        sprite->setPosition({5.f, 0.f});
+    }
 
+    // Tegn spilleren sin sprite
+    void Player::Draw(sf::RenderWindow& window) 
+    {
+        window.draw(*sprite);
+    }
 
-            GridMovements::GridMovement& gridMovement;            
-            int playerCurrentTileX = 0;
-            int playerCurrentTileY = 0;
-            bool isSelected = false;
-            bool preventSelect = false;
-            sf::Vector2f realTimePos = sprite->getPosition();
-
-        public:
-
-            
-
-            Player(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference, GridMovements::GridMovement& gridMovement)
-                : Unit(name, healthPoints, spritePath, gridGenerator), gridMovement(gridMovement) // Fortell hvilken grid som brukes
-            {
-                
-                if (!texture.loadFromFile(spritePath)) {
-                    throw std::runtime_error("Failed to load texture!");
-                }
-                sprite.emplace(texture);
-                sprite->setScale({3.f, 3.f});
-                sprite->setPosition({5.f, 0.f});
-            }
-
-            void Draw(sf::RenderWindow& window) 
-            {
-                {
-                    if (sprite) window.draw(*sprite);
-                }
-            }
-
-        void Movement() 
+    // Sjekk hva spilleren står på
+    void Player::CheckForMapObjects()
+    {
+        for (int i = 0; i < map.mapObjects.size(); i++)
         {
-            std::pair<float, float> retrievedTile = gridMovement.SelectedTilePos(); // Hent hvilken grid spilleren står på
-            
-            float gridCurrentTileX = retrievedTile.first;
-            float gridCurrentTileY = retrievedTile.second;
-
-            // Logikk for å velge spilleren, og å flytte den
-            if (isSelected == false && preventSelect == true)
+            if (sprite->getPosition().x == map.mapObjects[i].printPos().first + 10&& sprite->getPosition().y == map.mapObjects[i].printPos().second)
             {
-                // Flytter musen til samme rute som spilleren
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-                {
-                    if (playerCurrentTileX == gridCurrentTileX && playerCurrentTileY == gridCurrentTileY)
-                    {
-                        isSelected = true;
-                        preventSelect = false;
-                    }
-                }
+                std::cout << "Nå står du på: " << map.mapObjects[i].name << i << "\n";
             }
-            else if (isSelected == true && preventSelect == true) 
+        }
+    }
+
+    // Håndtere bevegelsen av spilleren
+    void Player::Movement() 
+    {
+        std::pair<float, float> retrievedTile = gridMovement.SelectedTilePos(); // Hent hvilken grid spilleren står på
+        
+        float gridCurrentTileX = retrievedTile.first;
+        float gridCurrentTileY = retrievedTile.second;
+
+        // Logikk for å velge spilleren, og å flytte den
+        if (isSelected == false && preventSelect == true)
+        {
+            // Flytter musen til samme rute som spilleren
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
+                if (playerCurrentTileX == gridCurrentTileX && playerCurrentTileY == gridCurrentTileY)
                 {
-                    isSelected = false;
+                    isSelected = true;
                     preventSelect = false;
-                    sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
-                    playerCurrentTileX = gridCurrentTileX;
-                    playerCurrentTileY = gridCurrentTileY;
-                    gridMovement.UnSelectTile();
                 }
             }
-
-            // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
-            if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+        }
+        else if (isSelected == true && preventSelect == true) 
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
             {
-                preventSelect = true;
-            }
-
-            if (isSelected == true)
-            {
-                gridMovement.SelectTile();
+                isSelected = false;
+                preventSelect = false;
+                sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
+                playerCurrentTileX = gridCurrentTileX;
+                playerCurrentTileY = gridCurrentTileY;
+                gridMovement.UnSelectTile();
+                CheckForMapObjects();
             }
         }
 
-    };
+        // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+        {
+            preventSelect = true;
+        }
+
+        if (isSelected == true)
+        {
+            gridMovement.SelectTile();
+        }
+    }
+
 }
 
 

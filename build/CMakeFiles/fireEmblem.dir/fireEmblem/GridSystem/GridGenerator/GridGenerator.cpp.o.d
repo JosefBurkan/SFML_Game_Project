@@ -2,7 +2,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/../Tile/../../config.h \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/../Tile/../../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
