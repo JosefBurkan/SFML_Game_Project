@@ -1,8 +1,4 @@
-# Force C++ classification
-*.cpp linguist-language=C++
-*.hpp linguist-language=C++
-*.h   linguist-language=C++
 
 # Ignore Makefiles
 Makefile linguist-detectable=false
-*.mk linguist-detectable=false
+*.make linguist-detectable=false
