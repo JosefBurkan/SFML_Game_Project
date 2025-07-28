@@ -22,14 +22,14 @@ namespace Players
         window.draw(*sprite);
     }
 
-    // Sjekk hva spilleren står på
+    // Sjekk hvilket baneobjekt spilleren står på, feks. skog
     void Player::CheckForMapObjects()
     {
-        for (int i = 0; i < map.mapObjects.size(); i++)
+        for (auto& object : map.mapObjects)
         {
-            if (sprite->getPosition().x == map.mapObjects[i].printPos().first + 10&& sprite->getPosition().y == map.mapObjects[i].printPos().second)
+            if (sprite->getPosition().x == object.printPos().first + 10 && sprite->getPosition().y == object.printPos().second)
             {
-                std::cout << "Nå står du på: " << map.mapObjects[i].name << i << "\n";
+                std::cout << "Nå står du på: " << object.name << "\n";
             }
         }
     }
@@ -38,11 +38,13 @@ namespace Players
     void Player::Movement() 
     {
         std::pair<float, float> retrievedTile = gridMovement.SelectedTilePos(); // Hent hvilken grid spilleren står på
+        std::pair<float, float> selectedTile = gridMovement.RetrieveTile();
         
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
 
-        // Logikk for å velge spilleren, og å flytte den
+
+        // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true)
         {
             // Flytter musen til samme rute som spilleren
@@ -55,17 +57,27 @@ namespace Players
                 }
             }
         }
+        // Sjekk om spilleren har blitt valgt
         else if (isSelected == true && preventSelect == true) 
         {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
+            auto& tiles = gridMovement.RetrieveAllTiles();
+
+            // Sjekk om ruten er okkupert
+            if (gridMovement.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false)
             {
-                isSelected = false;
-                preventSelect = false;
-                sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
-                playerCurrentTileX = gridCurrentTileX;
-                playerCurrentTileY = gridCurrentTileY;
-                gridMovement.UnSelectTile();
-                CheckForMapObjects();
+
+                // Om 'A' trykkes, flytt spilleren
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
+                {
+                    isSelected = false;
+                    preventSelect = false;
+                    sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
+                    playerCurrentTileX = gridCurrentTileX;
+                    playerCurrentTileY = gridCurrentTileY;
+                    gridMovement.UnSelectTile();
+                    CheckForMapObjects();
+                    // std::cout << tiles[selectedTile.first][selectedTile.second].isOccupiedByEnemy;
+                }
             }
         }
 
@@ -74,7 +86,6 @@ namespace Players
         {
             preventSelect = true;
         }
-
         if (isSelected == true)
         {
             gridMovement.SelectTile();

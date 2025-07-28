@@ -2,7 +2,7 @@
 #include "../../../config.hpp"
 #include "../Unit.hpp"
 #include "../../../GridSystem/GridMovement/GridMovement.hpp"
-#include "../../../Maps/Map.cpp"
+#include "../../../Maps//Map/Map.hpp"
 
 namespace GridGenerators 
 {

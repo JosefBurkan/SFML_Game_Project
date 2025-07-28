@@ -37,9 +37,9 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map.cpp",
-  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map.cpp",
-  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map.cpp.o"
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map/Map.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/Map.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/Map.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map/Map.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
@@ -52,6 +52,12 @@
   "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",

@@ -25,7 +25,6 @@ namespace GridMovements
 
             GridMovement(GridGenerators::GridGenerator& gridGenerator);
 
-            
             void Movement();
 
             // Hent rute som spiller har valgt
@@ -41,7 +40,14 @@ namespace GridMovements
 
             void UnSelectTile();
 
+            // Sjekk om en rute er okkupert
+            bool IsOccupied(Tiles::Tile tile);
+            void RetrieveTileByPositions(float positionX, float positionY);
+
             // TEST: Print en tile sine koordinater
             void PrintGrid();
+
+
+
     };
 }

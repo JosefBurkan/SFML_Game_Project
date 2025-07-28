@@ -19,9 +19,10 @@ add_executable(fireEmblem
     fireEmblem/GridSystem/Tile/Tile.cpp
     fireEmblem/Entities/Units/Player/Player.cpp
     fireEmblem/Entities/Units/Unit.cpp
-    fireEmblem/Maps/Map.cpp
+    fireEmblem/Maps/Map/Map.cpp
     fireEmblem/Entities/MapObjects/MapObject.cpp
     fireEmblem/Entities/MapObjects/Bat.cpp
+    fireEmblem/Entities/MapObjects/Wall.cpp
     fireEmblem/Camera/Camera.cpp
 )
 

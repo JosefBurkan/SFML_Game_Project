@@ -38,6 +38,8 @@ namespace GridMovements
             tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
+
+
     }
 
     // Hent rute som spiller har valgt
@@ -61,6 +63,12 @@ namespace GridMovements
         return tiles;
     }
 
+    void GridMovement::RetrieveTileByPositions(float positionX, float positionY)
+    {
+        auto& tiles = grid.RetrieveAllTiles();
+
+    }
+
     void GridMovement::SelectTile()
     {
         auto& tiles = grid.RetrieveAllTiles();
@@ -79,9 +87,24 @@ namespace GridMovements
         tiles[coloredTileY][coloredTileX].UnSelect();
     }
 
+    // Sjekk om en tile har blitt okkupert, og hva den er okkupert av
+    bool GridMovement::IsOccupied(Tiles::Tile tile)
+    {
+
+        if (tile.isOccupiedByEnemy == true)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
     void GridMovement::PrintGrid()
     {
         auto& tiles = grid.RetrieveAllTiles();
         std::cout << tiles[3][3].RetrieveTilePos().first;
     }
+
 }

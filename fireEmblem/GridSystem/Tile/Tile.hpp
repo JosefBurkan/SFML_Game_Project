@@ -7,7 +7,9 @@ namespace Tiles
     {
         public:
         sf::RectangleShape rectangle;
-        int yes;
+        bool isOccupiedByPlayer = false;
+        bool isOccupiedByEnemy = false;
+        bool isOccupiedByMapObject = false;
 
             Tile() : Tile(0.f, 0.f) {}
             

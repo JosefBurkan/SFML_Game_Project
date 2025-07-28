@@ -4,12 +4,12 @@
 #include "../../GridSystem/GridMovement/GridMovement.hpp"
 
 
-namespace Bats
+namespace Walls
 {
-    class Bat : public MapObjects::MapObject
+    class Wall : public MapObjects::MapObject
     {
         public:
-            Bat();
+            Wall(const sf::Texture& texture);
 
     };
 }

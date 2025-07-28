@@ -43,12 +43,6 @@ namespace Tiles
         return {rectangle.getPosition().x, rectangle.getPosition().y};
     }
 
-    // Sjekk hva som er inni ruten
-    void Tiles::Tile::CheckContents()
-    {
-        
-    }
-
     void Tiles::Tile::Draw(sf::RenderWindow& window) {
         window.draw(rectangle);
     }

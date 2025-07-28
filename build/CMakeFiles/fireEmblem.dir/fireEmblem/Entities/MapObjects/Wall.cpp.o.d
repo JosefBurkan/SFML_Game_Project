@@ -1,6 +1,6 @@
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o: \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.hpp \
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o: \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/../../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
