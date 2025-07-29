@@ -1,10 +1,10 @@
 #pragma once
-#include "../../GridSystem/GridGenerator/GridGenerator.hpp"
-#include "../../config.hpp"
-#include "../../Entities/MapObjects/MapObject.hpp"
-#include "../../Entities/MapObjects/Bat.hpp"
-#include "../../Entities/MapObjects/Wall.hpp"
-#include "../../GridSystem/GridMovement/GridMovement.hpp"
+#include "../../../GridSystem/GridGenerator/GridGenerator.hpp"
+#include "../../../config.hpp"
+#include "../../../Entities/MapObjects/MapObject.hpp"
+#include "../../../Entities/MapObjects/Bat.hpp"
+#include "../../../Entities/MapObjects/Wall.hpp"
+#include "../../../GridSystem/GridMovement/GridMovement.hpp"
 
 namespace Maps 
 {
@@ -12,7 +12,6 @@ namespace Maps
     class Map 
     {
         public:
-            sf::Texture backGroundTexture;
             sf::Texture wallTexture;
             sf::RenderWindow window;
             std::vector<MapObjects::MapObject> mapObjects;
@@ -33,7 +32,6 @@ namespace Maps
             void SetGridMovement(GridMovements::GridMovement& movement);    // Hent inn gridMovement, for å lese og påvirke rutefeltet
             void LoadWindow();
             sf::View LoadView();                                            // Last inn kameraet
-            void DrawBackground(sf::RenderWindow& window);                  // Tegn bakgrunnen
             void SpawnObjects();                                          // Sett objektet sin posisjon
             void DrawMapObjects(sf::RenderWindow& window);                  // Tegn baneobjekter, feks. trær
 

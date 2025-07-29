@@ -7,7 +7,7 @@ namespace Maps
     {
         wallTexture.loadFromFile("Bricks.png");
 
-        // Lag en ny vegg lik størrelsen til i
+        // Lag antall vegger lik størrelsen til i
         for (int i = 0; i < 5; i++)
         {
             walls.emplace_back(wallTexture);
@@ -55,16 +55,6 @@ namespace Maps
         return view;
     }
 
-    // Tegn bakgrunnen
-    void Map::DrawBackground(sf::RenderWindow& window) 
-    {
-        backGroundTexture.setSmooth(false);
-        backGroundTexture.loadFromFile("Grass_Background.png");
-        sf:: Sprite sprite(backGroundTexture);
-        sprite.setScale({1.9f, 2.3f});
-        window.draw(sprite);
-    }
-
     // Sett objektet sin posisjon
     void Map::SpawnObjects()
     {
@@ -98,6 +88,5 @@ namespace Maps
         walls[3].Draw(window);
         walls[4].Draw(window);
         mapObject2.Draw(window);
-
     }
 }

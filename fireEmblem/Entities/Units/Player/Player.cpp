@@ -3,36 +3,22 @@
 namespace Players 
 {
     // Initialiser spilleren, gridden den hører til og bevegelsen.
-    Player::Player(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference, GridMovements::GridMovement& gridMovement, Maps::Map& map)
-        : Unit(name, healthPoints, spritePath, gridReference), gridMovement(gridMovement), map(map) // Fortell hvilken grid som brukes
+    Player::Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridMovements::GridMovement& gridMovement)
+        : Unit(gridReference, map), gridMovement(gridMovement)
     {
         
-        if (!texture.loadFromFile(spritePath)) {
+        if (!texture.loadFromFile("prinsesse.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
+
+        name = "Player";
+        healthPoints = 10;
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
         sprite->setPosition({5.f, 0.f});
     }
 
-    // Tegn spilleren sin sprite
-    void Player::Draw(sf::RenderWindow& window) 
-    {
-        window.draw(*sprite);
-    }
-
-    // Sjekk hvilket baneobjekt spilleren står på, feks. skog
-    void Player::CheckForMapObjects()
-    {
-        for (auto& object : map.mapObjects)
-        {
-            if (sprite->getPosition().x == object.printPos().first + 10 && sprite->getPosition().y == object.printPos().second)
-            {
-                std::cout << "Nå står du på: " << object.name << "\n";
-            }
-        }
-    }
 
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 

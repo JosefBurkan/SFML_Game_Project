@@ -3,9 +3,11 @@
 #include "GridSystem/GridGenerator/GridGenerator.hpp"
 #include "Entities/Units/Player/Player.hpp"
 #include "Entities/Units/Allies/Ally.cpp"
+#include "Entities/Units/Enemies/Enemy.cpp"
 #include "Entities/Units/Unit.hpp"
-#include "Maps/StartMap/StartMap.cpp"
+#include "Maps/MapLayouts/StartMap/StartMap.cpp"
 #include "GridSystem/GridMovement/GridMovement.hpp"
+#include "Maps/Background/Background1/Background1.hpp"
 
 int main()
 {
@@ -26,10 +28,14 @@ int main()
     shape.setSize({750.f, 800.f});
     shape.setFillColor(sf::Color(0, 0, 255, 65));
 
+    Backgrounds1::Background1 background1{movement};
+    background1.LoadTileMapFromFile();
+
 
 
     // Navn, Liv, sprite, rutefelt, rutefeltet til bevegelsen, banen
-    Players::Player you{"Player", 20, "prinsesse.png", grid, movement, map};
+    Players::Player you{grid, map, movement};
+    Enemies::Enemy enemy{grid, map};
     window.setFramerateLimit(60);
     window.setView(view);
 
@@ -45,14 +51,17 @@ int main()
         moveView = camera.MoveView();       // Kamera
         window.setView(moveView);
 
-        map.DrawBackground(window);         // Bane
+        background1.Draw(window);
+
         map.DrawMapObjects(window);
 
         you.Draw(window);                   // Spiller
         you.Movement();
         movement.Movement();
 
-        window.draw(shape);
+        enemy.Draw(window);
+
+        // window.draw(shape);
 
         grid.Draw(window);                  // Rutenett
 

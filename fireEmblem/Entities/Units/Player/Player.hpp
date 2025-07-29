@@ -2,7 +2,7 @@
 #include "../../../config.hpp"
 #include "../Unit.hpp"
 #include "../../../GridSystem/GridMovement/GridMovement.hpp"
-#include "../../../Maps//Map/Map.hpp"
+#include "../../../Maps/MapLayouts/Map/Map.hpp"
 
 namespace GridGenerators 
 {
@@ -15,8 +15,7 @@ namespace Players
     {
 
         private:
-
-            Maps::Map& map;
+            
             GridMovements::GridMovement& gridMovement;          // Funksjonalitet for bevegelse
             int playerCurrentTileX = 0;
             int playerCurrentTileY = 0;
@@ -25,10 +24,8 @@ namespace Players
             sf::Vector2f realTimePos = sprite->getPosition();   // Hent spilleren sin posisjon
 
         public:
-            Player(std::string name, int healthPoints, std::string spritePath, GridGenerators::GridGenerator& gridReference, GridMovements::GridMovement& gridMovement, Maps::Map& map);
-            void Draw(sf::RenderWindow& window);
+            Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridMovements::GridMovement& gridMovement);
             void Movement();
-            void CheckForMapObjects();
     };
 }
 

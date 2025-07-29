@@ -38,8 +38,6 @@ namespace GridMovements
             tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
-
-
     }
 
     // Hent rute som spiller har valgt
@@ -61,12 +59,6 @@ namespace GridMovements
     {
         auto& tiles = grid.RetrieveAllTiles();
         return tiles;
-    }
-
-    void GridMovement::RetrieveTileByPositions(float positionX, float positionY)
-    {
-        auto& tiles = grid.RetrieveAllTiles();
-
     }
 
     void GridMovement::SelectTile()
