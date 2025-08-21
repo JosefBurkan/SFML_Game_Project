@@ -15,6 +15,7 @@ namespace Units
             std::optional<sf::Sprite> sprite;  
             std::string name = "default";
             int healthPoints = 5;
+            int movement = 5;
             std::string spritePath;
             
         public: 

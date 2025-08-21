@@ -3,7 +3,7 @@
 namespace Tiles 
 {
     
-    Tiles::Tile::Tile(float x, float y)
+    Tile::Tile(float x, float y)
     {
         rectangle.setSize({50.f, 50.f});
         rectangle.setFillColor(sf::Color(255, 255, 255, 0));
@@ -13,7 +13,7 @@ namespace Tiles
     }
 
     // Lys opp ruten om en enhet har blitt valgt
-    void Tiles::Tile::ChangeColor(bool onSelect)
+    void Tile::ChangeColor(bool onSelect)
     {
         if (onSelect == true)
         {
@@ -28,22 +28,31 @@ namespace Tiles
         }
     }
 
-    void Tiles::Tile::Select()
+    void Tile::Highlight(std::pair<float, float> playerPosition, int gridSizeX, int gridSizeY)
+    {
+        if (playerPosition.first > 0 && playerPosition.first < gridSizeX)
+        {
+            rectangle.setOutlineColor(sf::Color(255, 0, 255, 255));
+            rectangle.setOutlineThickness(3.f);
+        }
+    }
+
+    void Tile::Select()
     {
         rectangle.setFillColor(sf::Color(180, 200, 250, 130));
     }
 
-    void Tiles::Tile::UnSelect() 
+    void Tile::UnSelect() 
     {
         rectangle.setFillColor(sf::Color(255, 255, 255, 0));
     }
 
-    const std::pair<float, float> Tiles::Tile::RetrieveTilePos() const
+    const std::pair<float, float> Tile::RetrieveTilePos() const
     {
         return {rectangle.getPosition().x, rectangle.getPosition().y};
     }
 
-    void Tiles::Tile::Draw(sf::RenderWindow& window) {
+    void Tile::Draw(sf::RenderWindow& window) {
         window.draw(rectangle);
     }
 }

@@ -26,6 +26,8 @@ namespace Players
         public:
             Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridMovements::GridMovement& gridMovement);
             void Movement();
+            std::pair<int, int> TransformPositionToIndex(float spriteX, float spriteY);      // Oversett kordinater til rutenettet. feks. 50x = [5]
+
     };
 }
 

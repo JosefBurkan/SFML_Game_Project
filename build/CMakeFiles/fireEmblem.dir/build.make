@@ -212,33 +212,33 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.s: cmake_
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.s
 
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp
 
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.i
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i
 
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.s
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s
 
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp
 
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.i
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.i
 
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.s
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
 CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp
@@ -266,8 +266,8 @@ fireEmblem_OBJECTS = \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o" \
-"CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o" \
-"CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o" \
+"CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o" \
+"CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o"
 
 # External object files for target fireEmblem
@@ -283,8 +283,8 @@ fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o
-fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o
-fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o
+fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o
+fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/build.make
 fireEmblem: /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/lib/libsfml-graphics.dylib

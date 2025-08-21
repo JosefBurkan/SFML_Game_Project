@@ -24,26 +24,19 @@ namespace GridMovements
         public:
 
             GridMovement(GridGenerators::GridGenerator& gridGenerator);
-
             void Movement();
-
+            void HighlightMovement();
             // Hent rute som spiller har valgt
             std::pair<int, int> RetrieveTile() const;
-
             // Hent rute sin kordinater som spiller har valgt
             std::pair<float, float> SelectedTilePos();
-
             // Hent alle ruter
             std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();
-
             void SelectTile();
-
             void UnSelectTile();
-
             // Sjekk om en rute er okkupert
             bool IsOccupied(Tiles::Tile tile);
             void RetrieveTileByPositions(float positionX, float positionY);
-
             // TEST: Print en tile sine koordinater
             void PrintGrid();
 

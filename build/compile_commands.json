@@ -61,15 +61,15 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp",
-  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp",
-  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o"
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp",
-  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp",
-  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o"
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",

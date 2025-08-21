@@ -211,13 +211,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "fireEmblem/Entities/MapObjects/Bat.cpp",
+			"path" : "fireEmblem/Entities/MapObjects/Bat/Bat.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "fireEmblem/Entities/MapObjects/Wall.cpp",
+			"path" : "fireEmblem/Entities/MapObjects/Wall/Wall.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

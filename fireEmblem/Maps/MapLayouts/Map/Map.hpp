@@ -2,8 +2,8 @@
 #include "../../../GridSystem/GridGenerator/GridGenerator.hpp"
 #include "../../../config.hpp"
 #include "../../../Entities/MapObjects/MapObject.hpp"
-#include "../../../Entities/MapObjects/Bat.hpp"
-#include "../../../Entities/MapObjects/Wall.hpp"
+#include "../../../Entities/MapObjects/Bat/Bat.hpp"
+#include "../../../Entities/MapObjects/Wall/Wall.hpp"
 #include "../../../GridSystem/GridMovement/GridMovement.hpp"
 
 namespace Maps 

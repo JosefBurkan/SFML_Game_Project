@@ -16,9 +16,13 @@ namespace Players
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
-        sprite->setPosition({5.f, 0.f});
+        sprite->setPosition({0.f, 0.f});
     }
 
+    std::pair<int, int> Player::TransformPositionToIndex(float spriteX, float spriteY)
+    {
+        return {spriteX/50, spriteY/50};
+    }
 
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
@@ -48,6 +52,20 @@ namespace Players
         {
             auto& tiles = gridMovement.RetrieveAllTiles();
 
+            std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
+
+            // Lys opp ruter som spilleren kan bevege seg til
+            /*
+            for (int i = 0; i < movement; i++)
+            {
+                if (tiles[coordinates.second][coordinates.first - i].RetrieveTilePos().first > i)
+                {
+                    tiles[coordinates.second][coordinates.first + i].Highlight(coordinates, tiles.size(), tiles[0].size());
+                    tiles[coordinates.second][coordinates.first - i - 1].Highlight(coordinates, tiles.size(), tiles[0].size());
+                }
+            }
+            */
+
             // Sjekk om ruten er okkupert
             if (gridMovement.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false)
             {
@@ -62,7 +80,6 @@ namespace Players
                     playerCurrentTileY = gridCurrentTileY;
                     gridMovement.UnSelectTile();
                     CheckForMapObjects();
-                    // std::cout << tiles[selectedTile.first][selectedTile.second].isOccupiedByEnemy;
                 }
             }
         }

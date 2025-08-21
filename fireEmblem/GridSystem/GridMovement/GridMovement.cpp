@@ -27,7 +27,7 @@ namespace GridMovements
                 selectedTileY--;
             }
 
-        movementCooldown = 0;
+            movementCooldown = 0;
 
         } else 
         {
@@ -38,6 +38,13 @@ namespace GridMovements
             tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
+
+    }
+
+    // Lyser opp rutene som spilleren kan bevege seg til
+    void GridMovement::HighlightMovement()
+    {
+        
     }
 
     // Hent rute som spiller har valgt
@@ -53,6 +60,7 @@ namespace GridMovements
         return {tiles[selectedTileY][selectedTileX].RetrieveTilePos().first, 
                 tiles[selectedTileY][selectedTileX].RetrieveTilePos().second};
     }
+
 
     // Hent alle ruter
     std::vector<std::vector<Tiles::Tile>>& GridMovement::RetrieveAllTiles()
@@ -78,6 +86,8 @@ namespace GridMovements
 
         tiles[coloredTileY][coloredTileX].UnSelect();
     }
+
+    
 
     // Sjekk om en tile har blitt okkupert, og hva den er okkupert av
     bool GridMovement::IsOccupied(Tiles::Tile tile)

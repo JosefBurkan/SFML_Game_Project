@@ -23,8 +23,8 @@ add_executable(fireEmblem
     fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp
     fireEmblem/Maps/Background/Background1/Background1.cpp
     fireEmblem/Entities/MapObjects/MapObject.cpp
-    fireEmblem/Entities/MapObjects/Bat.cpp
-    fireEmblem/Entities/MapObjects/Wall.cpp
+    fireEmblem/Entities/MapObjects/Bat/Bat.cpp
+    fireEmblem/Entities/MapObjects/Wall/Wall.cpp
     fireEmblem/Camera/Camera.cpp
 )
 

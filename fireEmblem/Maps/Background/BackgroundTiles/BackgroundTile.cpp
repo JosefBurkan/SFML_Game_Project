@@ -4,10 +4,10 @@ namespace BackgroundTiles
 {
     BackgroundTile::BackgroundTile()
     {
-        texture.loadFromFile("Tileset.png");
+        texture.loadFromFile("Tileset1.png");
         sprite.emplace(texture);
         sprite->setTextureRect(sf::IntRect({0, 0}, {17, 17}));
-        sprite->setScale({3.f, 3.f});
+        sprite->setScale({3.15f, 3.15f});
     }
 
     void BackgroundTile::Draw(sf::RenderWindow& window)
@@ -27,6 +27,6 @@ namespace BackgroundTiles
             tileLocationX -= 48;
         }
 
-        sprite->setTextureRect(sf::IntRect({tileLocationX, tileLocationY}, {17, 17}));
+        sprite->setTextureRect(sf::IntRect({tileLocationX, tileLocationY}, {16, 16}));
     }
 }

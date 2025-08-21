@@ -9,9 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o.d"
-  "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat.cpp.o.d"
+  "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o.d"
-  "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall.cpp.o.d"
+  "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o.d"
