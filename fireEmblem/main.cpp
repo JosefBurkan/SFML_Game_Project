@@ -25,9 +25,9 @@ int main()
     map.SetGridMovement(movement);                                        
     map.SpawnObjects();
 
-    sf::RectangleShape shape;
-    shape.setSize({750.f, 800.f});
-    shape.setFillColor(sf::Color(0, 0, 255, 65));
+    sf::RectangleShape shader;                              // Gjennomsiktig form som farger banen. Feks får det til å se ut som kveld
+    shader.setSize({750.f, 800.f});
+    shader.setFillColor(sf::Color(0, 0, 255, 65));
 
     Backgrounds1::Background1 background1{movement};
     background1.LoadTileMapFromFile();
@@ -59,18 +59,16 @@ int main()
         you.Draw(window);                   // Spiller
         you.Movement();
 
-        if (you.inMenu == false && you.isAttacking == false) 
+        if (you.inMenu == false && you.state == "Neutral") 
         {
             movement.Movement();
         }
-        else if(you.isAttacking == true)
+        else if(you.state == "Attack")
         {
             movement.Attack();
         }
 
-        enemy.Draw(window);
-
-        // window.draw(shape);
+        // window.draw(shader);
 
         grid.Draw(window);                  // Rutenett
 

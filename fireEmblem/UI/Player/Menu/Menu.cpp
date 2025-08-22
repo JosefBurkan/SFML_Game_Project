@@ -58,7 +58,7 @@ namespace Menus
             sf::Text text(font);
 
             text.setString(menuContents[itemIndex]);
-            text.setCharacterSize(16);
+            text.setCharacterSize(20);
             text.setFillColor(sf::Color::Red);
 
             if (returnedIndex == itemIndex)

@@ -45,6 +45,11 @@ namespace Players
     {
         window.draw(*sprite);
         menu.Draw(window);
+        
+        for (auto& hitbox : attack)
+        {
+            hitbox.Draw(window);
+        }
     }
 
     void Player::Attack()
@@ -61,35 +66,10 @@ namespace Players
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
 
-
         menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
 
-        if (menu.show == true || isAttacking == true)
-        {
-            menuCooldown++;
-
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0 && menuCooldown >= 30)
-            {
-                std::cout << "Du angriper!";
-                isAttacking = true;
-                menu.show = false;
-                inMenu = false;
-
-
-
-            }
-            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
-            {
-                menu.show = false;
-                inMenu = false;
-                isAttacking = false;
-                gridMovement.rangeX = 0;
-                gridMovement.rangeY = 0;
-            }
-        }
-
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
-        if (isSelected == false && preventSelect == true && inMenu == false && isAttacking == false)
+        if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
         {
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
@@ -124,7 +104,6 @@ namespace Players
             // Sjekk om ruten er okkupert
             if (gridMovement.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false)
             {
-
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
                 {
@@ -138,6 +117,51 @@ namespace Players
                     gridMovement.UnSelectTile();
                     CheckForMapObjects();
                     menuCooldown = 0;
+                    attackCooldown = 0;
+                }
+            }
+        }
+
+        // Trykk 'X' for å lukke menyen
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
+        {
+            state = "Neutral";
+            menu.show = false;
+            inMenu = false;
+            gridMovement.rangeX = 0;
+            gridMovement.rangeY = 0;
+        }
+
+        // Funksjonalitet for de ulike knappene å trykke på inne i menyen
+        if (menu.show == true)
+        {
+            menuCooldown++;
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0 && menuCooldown >= 30)
+            {
+                state = "Attack";
+                std::cout << "Du angriper!";
+                menu.show = false;
+                inMenu = false;
+
+            }
+        }
+
+        if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+        {
+            attackCooldown++;
+            attack.emplace_back(newAttack);
+
+            for (auto& hitbox : attack)
+            {
+                hitbox.CreateHitbox(gridCurrentTileX, gridCurrentTileY);
+
+                if (attackCooldown >= 5)
+                {
+                    std::cout << "hei";
+                    attackCooldown = 0;
+                    attack.clear();
+                    state = "Neutral";
                 }
             }
         }

@@ -63,9 +63,10 @@ namespace GridMovements
         {
             movementCooldown++;
         }
+
         if (prevX != selectedTileX || prevY != selectedTileY) 
         {
-            // tiles[prevY][prevX].ChangeColor(false);
+            tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
 

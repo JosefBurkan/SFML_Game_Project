@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o.d"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.o"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o"

@@ -345,6 +345,30 @@ fireEmblem/GridSystem/Tile/Tile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.s
 .PHONY : fireEmblem/GridSystem/Tile/Tile.cpp.s
 
+fireEmblem/Hitboxes/Attacks/Attack.o: fireEmblem/Hitboxes/Attacks/Attack.cpp.o
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack.o
+
+# target to build an object file
+fireEmblem/Hitboxes/Attacks/Attack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.o
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack.cpp.o
+
+fireEmblem/Hitboxes/Attacks/Attack.i: fireEmblem/Hitboxes/Attacks/Attack.cpp.i
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack.i
+
+# target to preprocess a source file
+fireEmblem/Hitboxes/Attacks/Attack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.i
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack.cpp.i
+
+fireEmblem/Hitboxes/Attacks/Attack.s: fireEmblem/Hitboxes/Attacks/Attack.cpp.s
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack.s
+
+# target to generate assembly for a file
+fireEmblem/Hitboxes/Attacks/Attack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.s
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack.cpp.s
+
 fireEmblem/Maps/Background/Background1/Background1.o: fireEmblem/Maps/Background/Background1/Background1.cpp.o
 .PHONY : fireEmblem/Maps/Background/Background1/Background1.o
 
@@ -501,6 +525,9 @@ help:
 	@echo "... fireEmblem/GridSystem/Tile/Tile.o"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.i"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.s"
+	@echo "... fireEmblem/Hitboxes/Attacks/Attack.o"
+	@echo "... fireEmblem/Hitboxes/Attacks/Attack.i"
+	@echo "... fireEmblem/Hitboxes/Attacks/Attack.s"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.o"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.i"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.s"

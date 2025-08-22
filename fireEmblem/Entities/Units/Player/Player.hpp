@@ -4,6 +4,8 @@
 #include "../../../GridSystem/GridMovement/GridMovement.hpp"
 #include "../../../Maps/MapLayouts/Map/Map.hpp"
 #include "../../../UI/Player/Menu/Menu.hpp"
+#include "../../../Hitboxes/Attacks/Attack.hpp"
+
 
 namespace GridGenerators 
 {
@@ -19,6 +21,8 @@ namespace Players
             
             GridMovements::GridMovement& gridMovement;          // Funksjonalitet for bevegelse
             Menus::Menu menu;
+            Attacks::Attack newAttack;                          // Angrep som skal legges til i 'attack'
+            std::vector<Attacks::Attack> attack;                // Vector som eksisterer for å ødelegge 'attack' etter en stund
 
             int playerCurrentTileX = 0;
             int playerCurrentTileY = 0;
@@ -26,9 +30,10 @@ namespace Players
             bool isSelected = false;                            // Sjekk om spilleren har blitt valgt
             bool preventSelect = false;                         // Forebygg at spilleren kan velges
             sf::Vector2f realTimePos = sprite->getPosition();   // Hent spilleren sin posisjon
+            int attackCooldown;
 
         public:
-            bool isAttacking = false;                           // Er spilleren i angrepsmodus?
+            std::string state = "Neutral";
             bool inMenu = false;                                // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser
             Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridMovements::GridMovement& gridMovement);
             bool IsPlayerStateReady();                          // Er spillertilstanden ledig?
