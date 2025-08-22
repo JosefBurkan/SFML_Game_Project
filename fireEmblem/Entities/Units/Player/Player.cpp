@@ -70,7 +70,7 @@ namespace Players
         }
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
-        if (isSelected == false && preventSelect == true && menu.show == false && isAttacking = false)
+        if (isSelected == false && preventSelect == true && menu.show == false && isAttacking == false)
         {
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
