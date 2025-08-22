@@ -19,26 +19,24 @@ namespace GridMovements
             int coloredTileY = 0; 
             int rows = 0;
             int columns = 0;
+
             GridGenerators::GridGenerator& grid;
 
         public:
-
+            int rangeX = 0;
+            int rangeY = 0;
             GridMovement(GridGenerators::GridGenerator& gridGenerator);
             void Movement();
+            void Attack();                                                  // Om spilleren angriper, erstatt "Movement" med "Attack"
             void HighlightMovement();
-            // Hent rute som spiller har valgt
-            std::pair<int, int> RetrieveTile() const;
-            // Hent rute sin kordinater som spiller har valgt
-            std::pair<float, float> SelectedTilePos();
-            // Hent alle ruter
-            std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();
+            std::pair<int, int> RetrieveTile() const;                       // Hent rute som spiller har valgt
+            std::pair<float, float> SelectedTilePos();                      // Hent rute sin kordinater som spiller har valgt
+            std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();      // Hent alle ruter
             void SelectTile();
             void UnSelectTile();
-            // Sjekk om en rute er okkupert
             bool IsOccupied(Tiles::Tile tile);
-            void RetrieveTileByPositions(float positionX, float positionY);
-            // TEST: Print en tile sine koordinater
-            void PrintGrid();
+            void RetrieveTileByPositions(float positionX, float positionY); // Sjekk om en rute er okkupert
+
 
 
 

@@ -8,6 +8,7 @@
 #include "Maps/MapLayouts/StartMap/StartMap.cpp"
 #include "GridSystem/GridMovement/GridMovement.hpp"
 #include "Maps/Background/Background1/Background1.hpp"
+#include "UI/Player/Menu/Menu.hpp"
 
 int main()
 {
@@ -31,7 +32,7 @@ int main()
     Backgrounds1::Background1 background1{movement};
     background1.LoadTileMapFromFile();
 
-
+    Menus::Menu menu;
 
     // rutefelt, rutefeltet til bevegelsen, banen
     Players::Player you{grid, map, movement};
@@ -58,9 +59,13 @@ int main()
         you.Draw(window);                   // Spiller
         you.Movement();
 
-        if (you.inMenu == false)
+        if (you.inMenu == false && you.isAttacking == false) 
         {
             movement.Movement();
+        }
+        else if(you.isAttacking == true)
+        {
+            movement.Attack();
         }
 
         enemy.Draw(window);

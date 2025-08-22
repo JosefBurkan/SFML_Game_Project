@@ -24,53 +24,72 @@ namespace Players
         return {spriteX/50, spriteY/50};
     }
 
+    // Sjekke om spilleren ikke er i et angrep, blir skadet etter noe tilsvarende
+    bool Player::IsPlayerStateReady()
+    {
+        if (menu.show == false)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }              
+
     void Player::DrawUI(sf::RenderWindow& window)
     {
         menu.Draw(window);
     }
-
     void Player::Draw(sf::RenderWindow& window) 
     {
         window.draw(*sprite);
         menu.Draw(window);
     }
 
+    void Player::Attack()
+    {
+
+    }
 
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
     {
-
-
         std::pair<float, float> retrievedTile = gridMovement.SelectedTilePos(); // Hent hvilken grid spilleren står på
         std::pair<float, float> selectedTile = gridMovement.RetrieveTile();
         
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
 
+
         menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
 
-
-        if (menu.show == true)
+        if (menu.show == true || isAttacking == true)
         {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0)
+            menuCooldown++;
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0 && menuCooldown >= 30)
             {
                 std::cout << "Du angriper!";
-                isAttacking == true;
+                isAttacking = true;
                 menu.show = false;
                 inMenu = false;
 
 
-            }
 
+            }
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
             {
                 menu.show = false;
                 inMenu = false;
+                isAttacking = false;
+                gridMovement.rangeX = 0;
+                gridMovement.rangeY = 0;
             }
         }
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
-        if (isSelected == false && preventSelect == true && menu.show == false && isAttacking == false)
+        if (isSelected == false && preventSelect == true && inMenu == false && isAttacking == false)
         {
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
@@ -111,14 +130,14 @@ namespace Players
                 {
                     isSelected = false;
                     preventSelect = false;
-                    inMenu = true;
                     menu.show = true;
+                    inMenu = true;
                     sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
                     gridMovement.UnSelectTile();
                     CheckForMapObjects();
-
+                    menuCooldown = 0;
                 }
             }
         }

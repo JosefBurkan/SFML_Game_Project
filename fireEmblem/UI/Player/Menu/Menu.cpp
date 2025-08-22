@@ -54,7 +54,6 @@ namespace Menus
 
         for (int itemIndex = 0; itemIndex < menuContents.size(); itemIndex++)
         {
-            sf::RectangleShape itemBox;
             returnedIndex = NavigateMenu();
             sf::Text text(font);
 
@@ -69,7 +68,6 @@ namespace Menus
             }
 
             text.setPosition({optionsMenu.getPosition().x + 3, optionsMenu.getPosition().y + itemIndex * 30 + 3});
-            window.draw(itemBox);
             window.draw(text);
         }
     }
