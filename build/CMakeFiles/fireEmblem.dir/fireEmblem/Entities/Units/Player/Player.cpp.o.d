@@ -994,4 +994,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../GridSystem/GridMovement/GridMovement.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../GridSystem/GridMovement/GridMovement.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/Menu.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/../../../config.hpp

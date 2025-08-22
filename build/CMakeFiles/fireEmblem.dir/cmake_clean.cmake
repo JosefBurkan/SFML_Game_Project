@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o.d"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o.d"
   "fireEmblem"

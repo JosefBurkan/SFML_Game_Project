@@ -24,18 +24,53 @@ namespace Players
         return {spriteX/50, spriteY/50};
     }
 
+    void Player::DrawUI(sf::RenderWindow& window)
+    {
+        menu.Draw(window);
+    }
+
+    void Player::Draw(sf::RenderWindow& window) 
+    {
+        window.draw(*sprite);
+        menu.Draw(window);
+    }
+
+
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
     {
+
+
         std::pair<float, float> retrievedTile = gridMovement.SelectedTilePos(); // Hent hvilken grid spilleren står på
         std::pair<float, float> selectedTile = gridMovement.RetrieveTile();
         
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
 
+        menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
+
+
+        if (menu.show == true)
+        {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0)
+            {
+                std::cout << "Du angriper!";
+                isAttacking == true;
+                menu.show = false;
+                inMenu = false;
+
+
+            }
+
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
+            {
+                menu.show = false;
+                inMenu = false;
+            }
+        }
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
-        if (isSelected == false && preventSelect == true)
+        if (isSelected == false && preventSelect == true && menu.show == false && isAttacking = false)
         {
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
@@ -52,6 +87,7 @@ namespace Players
         {
             auto& tiles = gridMovement.RetrieveAllTiles();
 
+            // Koordinatene til spilleren, i form av index
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
 
             // Lys opp ruter som spilleren kan bevege seg til
@@ -75,11 +111,14 @@ namespace Players
                 {
                     isSelected = false;
                     preventSelect = false;
+                    inMenu = true;
+                    menu.show = true;
                     sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
                     gridMovement.UnSelectTile();
                     CheckForMapObjects();
+
                 }
             }
         }

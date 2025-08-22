@@ -26,6 +26,7 @@ add_executable(fireEmblem
     fireEmblem/Entities/MapObjects/Bat/Bat.cpp
     fireEmblem/Entities/MapObjects/Wall/Wall.cpp
     fireEmblem/Camera/Camera.cpp
+    fireEmblem/UI/Player/Menu/Menu.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

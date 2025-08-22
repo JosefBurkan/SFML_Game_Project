@@ -417,6 +417,30 @@ fireEmblem/Maps/MapLayouts/Map/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.s
 .PHONY : fireEmblem/Maps/MapLayouts/Map/Map.cpp.s
 
+fireEmblem/UI/Player/Menu/Menu.o: fireEmblem/UI/Player/Menu/Menu.cpp.o
+.PHONY : fireEmblem/UI/Player/Menu/Menu.o
+
+# target to build an object file
+fireEmblem/UI/Player/Menu/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o
+.PHONY : fireEmblem/UI/Player/Menu/Menu.cpp.o
+
+fireEmblem/UI/Player/Menu/Menu.i: fireEmblem/UI/Player/Menu/Menu.cpp.i
+.PHONY : fireEmblem/UI/Player/Menu/Menu.i
+
+# target to preprocess a source file
+fireEmblem/UI/Player/Menu/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.i
+.PHONY : fireEmblem/UI/Player/Menu/Menu.cpp.i
+
+fireEmblem/UI/Player/Menu/Menu.s: fireEmblem/UI/Player/Menu/Menu.cpp.s
+.PHONY : fireEmblem/UI/Player/Menu/Menu.s
+
+# target to generate assembly for a file
+fireEmblem/UI/Player/Menu/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.s
+.PHONY : fireEmblem/UI/Player/Menu/Menu.cpp.s
+
 fireEmblem/main.o: fireEmblem/main.cpp.o
 .PHONY : fireEmblem/main.o
 
@@ -486,6 +510,9 @@ help:
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.o"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.i"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.s"
+	@echo "... fireEmblem/UI/Player/Menu/Menu.o"
+	@echo "... fireEmblem/UI/Player/Menu/Menu.i"
+	@echo "... fireEmblem/UI/Player/Menu/Menu.s"
 	@echo "... fireEmblem/main.o"
 	@echo "... fireEmblem/main.i"
 	@echo "... fireEmblem/main.s"

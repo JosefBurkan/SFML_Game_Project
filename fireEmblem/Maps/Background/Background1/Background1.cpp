@@ -26,7 +26,8 @@ namespace Backgrounds1
     }
 
     // Les 
-    void Background1::LoadTileMapFromFile() {
+    void Background1::LoadTileMapFromFile() 
+    {
 
         auto& tiles = movement.RetrieveAllTiles();
         std::ifstream file("Background_One.txt");
@@ -40,7 +41,6 @@ namespace Backgrounds1
 
             while (ss >> tileNumber) {
                 tiles[row][col].tileNumber = tileNumber;
-                std::cout << tiles[row][col].tileNumber;
                 ++col;
             }
             ++row;

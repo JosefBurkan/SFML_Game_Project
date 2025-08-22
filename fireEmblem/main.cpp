@@ -33,7 +33,7 @@ int main()
 
 
 
-    // Navn, Liv, sprite, rutefelt, rutefeltet til bevegelsen, banen
+    // rutefelt, rutefeltet til bevegelsen, banen
     Players::Player you{grid, map, movement};
     Enemies::Enemy enemy{grid, map};
     window.setFramerateLimit(60);
@@ -57,7 +57,11 @@ int main()
 
         you.Draw(window);                   // Spiller
         you.Movement();
-        movement.Movement();
+
+        if (you.inMenu == false)
+        {
+            movement.Movement();
+        }
 
         enemy.Draw(window);
 
