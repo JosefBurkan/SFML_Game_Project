@@ -1,7 +1,7 @@
 #pragma once
 #include "../../../config.hpp"
 #include "../Unit.hpp"
-#include "../../../GridSystem/GridMovement/GridMovement.hpp"
+#include "../../../GridSystem/GridHandler/GridHandler.hpp"
 #include "../../../Maps/MapLayouts/Map/Map.hpp"
 #include "../../../UI/Player/Menu/Menu.hpp"
 #include "../../../Hitboxes/Attacks/Attack.hpp"
@@ -19,7 +19,7 @@ namespace Players
 
         private:
             
-            GridMovements::GridMovement& gridMovement;          // Funksjonalitet for bevegelse
+            GridHandlers::GridHandler& GridHandler;          // Funksjonalitet for bevegelse
             Menus::Menu menu;
             Attacks::Attack newAttack;                          // Angrep som skal legges til i 'attack'
             std::vector<Attacks::Attack> attack;                // Vector som eksisterer for å ødelegge 'attack' etter en stund
@@ -35,7 +35,7 @@ namespace Players
         public:
             std::string state = "Neutral";
             bool inMenu = false;                                // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser
-            Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridMovements::GridMovement& gridMovement);
+            Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridHandlers::GridHandler& GridHandler);
             bool IsPlayerStateReady();                          // Er spillertilstanden ledig?
             void Attack();                                      // Velg en rute innenfor rekkevidde, og angrip den
             void Movement();

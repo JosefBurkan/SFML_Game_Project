@@ -7,6 +7,7 @@ namespace Menus
     {
         public: 
             sf::RectangleShape optionsMenu;
+            sf::RectangleShape arrow;
             std::vector<std::string> menuContents;
             
             int menuContentsIndex = 0;                   // Hvilket element i menyen man har valgt

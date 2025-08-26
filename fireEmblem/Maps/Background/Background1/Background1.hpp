@@ -1,7 +1,7 @@
 #pragma once
 #include "../../../config.hpp"
 #include "../BackgroundTiles/BackgroundTile.hpp"
-#include "../../../GridSystem/GridMovement/GridMovement.hpp"
+#include "../../../GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Backgrounds1
 {
@@ -9,9 +9,9 @@ namespace Backgrounds1
     {
         public:
         BackgroundTiles::BackgroundTile backgroundTile;
-        GridMovements::GridMovement& movement;
+        GridHandlers::GridHandler& movement;
 
-        Background1(GridMovements::GridMovement& gridMovement);
+        Background1(GridHandlers::GridHandler& GridHandler);
         void LoadTileMapFromFile();
         void Draw(sf::RenderWindow& window);
 

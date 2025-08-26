@@ -974,27 +974,27 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Text.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridMovement/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridMovement/../Tile/../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridMovement/../GridGenerator/../Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridGenerator/GridGenerator.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridGenerator/../Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridGenerator/../Tile/../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/Map.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../GridSystem/GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridMovement/GridMovement.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/../Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/Bat.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../GridSystem/GridMovement/GridMovement.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/Wall.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../GridSystem/GridMovement/GridMovement.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/Menu.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/Attack.hpp \

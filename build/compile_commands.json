@@ -7,9 +7,9 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.cpp",
-  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.cpp",
-  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o"
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",

@@ -5,8 +5,8 @@
 namespace Backgrounds1
 {
 
-    Background1::Background1(GridMovements::GridMovement& gridMovement)
-        :movement(gridMovement)
+    Background1::Background1(GridHandlers::GridHandler& GridHandler)
+        :movement(GridHandler)
     {
     }
 

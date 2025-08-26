@@ -27,16 +27,16 @@ namespace Maps
     }
 
 
-    void Map::SetGridMovement(GridMovements::GridMovement& movement)
+    void Map::SetGridHandler(GridHandlers::GridHandler& movement)
     {
-        gridMovementPtr = &movement;
+        GridHandlerPtr = &movement;
 
         // Tildel objektene rutenettet de hører til
-        mapObject2.SetGrid(*gridMovementPtr);
-        walls[0].SetGrid(*gridMovementPtr);
-        walls[1].SetGrid(*gridMovementPtr);
-        walls[2].SetGrid(*gridMovementPtr);
-        walls[3].SetGrid(*gridMovementPtr);
+        mapObject2.SetGrid(*GridHandlerPtr);
+        walls[0].SetGrid(*GridHandlerPtr);
+        walls[1].SetGrid(*GridHandlerPtr);
+        walls[2].SetGrid(*GridHandlerPtr);
+        walls[3].SetGrid(*GridHandlerPtr);
     }
 
     void Map::LoadWindow() 

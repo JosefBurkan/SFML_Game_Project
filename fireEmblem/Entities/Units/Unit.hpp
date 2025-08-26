@@ -1,6 +1,5 @@
 #pragma once
 #include "../../config.hpp"
-#include "../../GridSystem/GridMovement/GridMovement.hpp"
 #include "../../GridSystem/GridGenerator/GridGenerator.hpp"
 #include "../../Maps/MapLayouts/Map/Map.hpp"
 

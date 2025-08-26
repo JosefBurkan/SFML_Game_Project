@@ -5,10 +5,13 @@ namespace Menus
 
     Menu::Menu()
     {
-        optionsMenu.setSize(sf::Vector2f(100, 200));
+        optionsMenu.setSize({100, 200});
         optionsMenu.setFillColor({100, 200, 150, 180});
         optionsMenu.setOutlineColor({0, 0, 0, 255});
         optionsMenu.setOutlineThickness(3.f);
+
+        arrow.setFillColor({255, 255, 255});
+        arrow.setSize({20, 20});
 
         menuContents.push_back("Attack");
         menuContents.push_back("Skills");
@@ -18,6 +21,9 @@ namespace Menus
     void Menu::SetPosition(float positionX, float positionY)
     {
         optionsMenu.setPosition({positionX, positionY});
+        arrow.setPosition({positionX - 30, positionY + 6});
+
+
     }
 
     int Menu::NavigateMenu()
@@ -64,7 +70,6 @@ namespace Menus
             if (returnedIndex == itemIndex)
             {
                 text.setFillColor({255, 255, 100});
-
             }
 
             text.setPosition({optionsMenu.getPosition().x + 3, optionsMenu.getPosition().y + itemIndex * 30 + 3});
@@ -77,6 +82,7 @@ namespace Menus
         if (show == true)
         {
             window.draw(optionsMenu);
+            window.draw(arrow);
             AddItems(window);
         }
     }

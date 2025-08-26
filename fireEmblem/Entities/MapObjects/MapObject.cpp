@@ -10,14 +10,14 @@ namespace MapObjects
         sprite->setScale({3.f, 3.f});
     }
 
-    void MapObject::SetGrid(GridMovements::GridMovement& grid)
+    void MapObject::SetGrid(GridHandlers::GridHandler& grid)
     {
-        this->gridMovement = &grid;
+        this->GridHandler = &grid;
     }
 
-    GridMovements::GridMovement& MapObject::FetchGrid() 
+    GridHandlers::GridHandler& MapObject::FetchGrid() 
     {
-        return *gridMovement;
+        return *GridHandler;
     }
 
     sf::Sprite& MapObject::RetrieveSprite() 
@@ -40,13 +40,13 @@ namespace MapObjects
     void MapObject::SetTileToOccupied()
     {
         // Stopper funksjonen fra å kjøre før gridmovment har fått verdi
-        if (!gridMovement)
+        if (!GridHandler)
         {
-            std::cout << "gridMovement is nullptr!" << std::endl;
+            std::cout << "GridHandler is nullptr!" << std::endl;
             return;
         }
 
-        auto& tiles = gridMovement->RetrieveAllTiles();
+        auto& tiles = GridHandler->RetrieveAllTiles();
         std::pair<int, int> index = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
         tiles[index.first][index.second].isOccupiedByEnemy = true;
     }

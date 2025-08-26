@@ -3,8 +3,8 @@
 namespace Players 
 {
     // Initialiser spilleren, gridden den hører til og bevegelsen.
-    Player::Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridMovements::GridMovement& gridMovement)
-        : Unit(gridReference, map), gridMovement(gridMovement)
+    Player::Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridHandlers::GridHandler& GridHandler)
+        : Unit(gridReference, map), GridHandler(GridHandler)
     {
         
         if (!texture.loadFromFile("prinsesse.png")) {
@@ -60,8 +60,8 @@ namespace Players
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
     {
-        std::pair<float, float> retrievedTile = gridMovement.SelectedTilePos(); // Hent hvilken grid spilleren står på
-        std::pair<float, float> selectedTile = gridMovement.RetrieveTile();
+        std::pair<float, float> retrievedTile = GridHandler.SelectedTilePos(); // Hent hvilken grid spilleren står på
+        std::pair<float, float> selectedTile = GridHandler.RetrieveTile();
         
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
@@ -84,7 +84,7 @@ namespace Players
         // Sjekk om spilleren har blitt valgt
         else if (isSelected == true && preventSelect == true) 
         {
-            auto& tiles = gridMovement.RetrieveAllTiles();
+            auto& tiles = GridHandler.RetrieveAllTiles();
 
             // Koordinatene til spilleren, i form av index
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
@@ -102,7 +102,7 @@ namespace Players
             */
 
             // Sjekk om ruten er okkupert
-            if (gridMovement.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false)
+            if (GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false)
             {
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
@@ -114,7 +114,7 @@ namespace Players
                     sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
-                    gridMovement.UnSelectTile();
+                    GridHandler.UnSelectTile();
                     CheckForMapObjects();
                     menuCooldown = 0;
                     attackCooldown = 0;
@@ -128,8 +128,8 @@ namespace Players
             state = "Neutral";
             menu.show = false;
             inMenu = false;
-            gridMovement.rangeX = 0;
-            gridMovement.rangeY = 0;
+            GridHandler.rangeX = 0;
+            GridHandler.rangeY = 0;
         }
 
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
@@ -173,7 +173,7 @@ namespace Players
         }
         if (isSelected == true)
         {
-            gridMovement.SelectTile();
+            GridHandler.SelectTile();
         }
     }
 

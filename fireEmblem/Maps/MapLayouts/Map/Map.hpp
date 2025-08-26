@@ -4,7 +4,7 @@
 #include "../../../Entities/MapObjects/MapObject.hpp"
 #include "../../../Entities/MapObjects/Bat/Bat.hpp"
 #include "../../../Entities/MapObjects/Wall/Wall.hpp"
-#include "../../../GridSystem/GridMovement/GridMovement.hpp"
+#include "../../../GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Maps 
 {
@@ -20,7 +20,7 @@ namespace Maps
             unsigned int numberOfColumns = 15;
             unsigned int numberOfRows = 16;
             GridGenerators::GridGenerator gridGenerator;
-            GridMovements::GridMovement* gridMovementPtr = nullptr;
+            GridHandlers::GridHandler* GridHandlerPtr = nullptr;
 
             // Baneobjekter
             Bats::Bat mapObject2;
@@ -29,7 +29,7 @@ namespace Maps
             
             void GenerateGrid();
             GridGenerators::GridGenerator& FetchGrid();                     // returner gridGenerator med verdiene til den eksisterende gridden
-            void SetGridMovement(GridMovements::GridMovement& movement);    // Hent inn gridMovement, for å lese og påvirke rutefeltet
+            void SetGridHandler(GridHandlers::GridHandler& movement);    // Hent inn GridHandler, for å lese og påvirke rutefeltet
             void LoadWindow();
             sf::View LoadView();                                            // Last inn kameraet
             void SpawnObjects();                                          // Sett objektet sin posisjon

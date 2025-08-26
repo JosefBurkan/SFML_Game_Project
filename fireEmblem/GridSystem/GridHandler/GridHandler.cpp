@@ -1,19 +1,22 @@
-#include "GridMovement.hpp"
+#include "GridHandler.hpp"
 
-namespace GridMovements
+namespace GridHandlers
 {
-    GridMovement::GridMovement(GridGenerators::GridGenerator& gridGenerator)
+    GridHandler::GridHandler(GridGenerators::GridGenerator& gridGenerator)
         : grid(gridGenerator)
     {
         auto& tiles = grid.RetrieveAllTiles();
         rows = tiles.size();
         columns = tiles[0].size();
     }
-    void GridMovement::Movement() 
+    void GridHandler::Movement() 
     {
         auto& tiles = grid.RetrieveAllTiles();
         int prevX = selectedTileX;
         int prevY = selectedTileY;
+
+        rangeX = 0;
+        rangeY = 0;
 
         if (movementCooldown > 2) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && selectedTileX < columns - 1) {
@@ -36,7 +39,7 @@ namespace GridMovements
         }
     }
 
-    void GridMovement::Attack()
+    void GridHandler::Attack()
     {
         auto& tiles = grid.RetrieveAllTiles();
 
@@ -74,18 +77,18 @@ namespace GridMovements
 
 
     // Lyser opp rutene som spilleren kan bevege seg til
-    void GridMovement::HighlightMovement()
+    void GridHandler::HighlightMovement()
     {
         
     }
 
     // Hent rute som spiller har valgt
-    std::pair<int, int> GridMovement::RetrieveTile() const {
+    std::pair<int, int> GridHandler::RetrieveTile() const {
         return {selectedTileX, selectedTileY};
     }
 
     // Hent rute sin kordinater som spiller har valgt
-    std::pair<float, float> GridMovement::SelectedTilePos() 
+    std::pair<float, float> GridHandler::SelectedTilePos() 
     {
         auto& tiles = grid.RetrieveAllTiles();
 
@@ -95,13 +98,13 @@ namespace GridMovements
 
 
     // Hent alle ruter
-    std::vector<std::vector<Tiles::Tile>>& GridMovement::RetrieveAllTiles()
+    std::vector<std::vector<Tiles::Tile>>& GridHandler::RetrieveAllTiles()
     {
         auto& tiles = grid.RetrieveAllTiles();
         return tiles;
     }
 
-    void GridMovement::SelectTile()
+    void GridHandler::SelectTile()
     {
         auto& tiles = grid.RetrieveAllTiles();
         coloredTileX = selectedTileX;
@@ -110,7 +113,7 @@ namespace GridMovements
         tiles[coloredTileY][coloredTileX].Select();
     }
 
-    void GridMovement::UnSelectTile()
+    void GridHandler::UnSelectTile()
     {
         auto& tiles = grid.RetrieveAllTiles();
         coloredTileX = selectedTileX;
@@ -120,7 +123,7 @@ namespace GridMovements
     }
 
     // Sjekk om en tile har blitt okkupert, og hva den er okkupert av
-    bool GridMovement::IsOccupied(Tiles::Tile tile)
+    bool GridHandler::IsOccupied(Tiles::Tile tile)
     {
 
         if (tile.isOccupiedByEnemy == true)

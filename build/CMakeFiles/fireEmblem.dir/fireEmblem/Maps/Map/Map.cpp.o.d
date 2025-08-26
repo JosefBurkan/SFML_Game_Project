@@ -978,9 +978,9 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Map/Map.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../GridSystem/GridMovement/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../GridSystem/GridHandler/../Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/Bat.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../Entities/MapObjects/Wall.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../GridSystem/GridMovement/GridMovement.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Map/../../GridSystem/GridHandler/GridHandler.hpp

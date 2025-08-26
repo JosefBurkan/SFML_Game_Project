@@ -1,6 +1,6 @@
 #pragma once
 #include "../../config.hpp"
-#include "../../GridSystem/GridMovement/GridMovement.hpp"
+#include "../../GridSystem/GridHandler/GridHandler.hpp"
 
 namespace MapObjects
 {
@@ -10,7 +10,7 @@ namespace MapObjects
         sf::Texture texture;
         std::optional<sf::Sprite> sprite;
         std::string name = "Testobjekt ";
-        GridMovements::GridMovement* gridMovement = nullptr;
+        GridHandlers::GridHandler* GridHandler = nullptr;
         
         MapObject();
         sf::Sprite GenerateSprite();
@@ -18,8 +18,8 @@ namespace MapObjects
         std::pair<float, float> printPos();
         void SetTileToOccupied();
         void Position(float positionX, float positionY);
-        void SetGrid(GridMovements::GridMovement& grid);
-        GridMovements::GridMovement& FetchGrid();
+        void SetGrid(GridHandlers::GridHandler& grid);
+        GridHandlers::GridHandler& FetchGrid();
         void Draw(sf::RenderWindow& window);
         // Transformer koordinater, til index
         std::pair<int, int> TransformPositionToIndex(float positionX, float positionY);

@@ -6,7 +6,7 @@
 #include "Entities/Units/Enemies/Enemy.cpp"
 #include "Entities/Units/Unit.hpp"
 #include "Maps/MapLayouts/StartMap/StartMap.cpp"
-#include "GridSystem/GridMovement/GridMovement.hpp"
+#include "GridSystem/GridHandler/GridHandler.hpp"
 #include "Maps/Background/Background1/Background1.hpp"
 #include "UI/Player/Menu/Menu.hpp"
 
@@ -15,19 +15,19 @@ int main()
     StartMap map{};                                         // Opprett et baneobjekt
     map.GenerateGrid();
     GridGenerators::GridGenerator& grid = map.FetchGrid();  // Hent det genererte rutenettet
-    GridMovements::GridMovement movement(grid);             // Sett bevegelseslogikken til å fungere på det hentet rutenettet
+    GridHandlers::GridHandler movement(grid);             // Sett bevegelseslogikken til å fungere på det hentet rutenettet
     map.LoadWindow();    
 
     Cameras::Camera camera{movement};
     sf::RenderWindow& window = map.window;                  // sett 'vindu' til banen sitt 'vindu'
     sf::View view = camera.LoadView();                      // Last inn startkamera
     sf::View moveView;                                      // Funkjsonalitet for bevegelse av kamera  
-    map.SetGridMovement(movement);                                        
+    map.SetGridHandler(movement);                                        
     map.SpawnObjects();
 
     sf::RectangleShape shader;                              // Gjennomsiktig form som farger banen. Feks får det til å se ut som kveld
     shader.setSize({750.f, 800.f});
-    shader.setFillColor(sf::Color(0, 0, 255, 65));
+    shader.setFillColor(sf::Color(0, 0, 255, 20));
 
     Backgrounds1::Background1 background1{movement};
     background1.LoadTileMapFromFile();
@@ -49,15 +49,13 @@ int main()
             if (event->is<sf::Event::Closed>())
                 window.close();
         }
+
         moveView = camera.MoveView();       // Kamera
         window.setView(moveView);
-
         background1.Draw(window);
-
         map.DrawMapObjects(window);
-
-        you.Draw(window);                   // Spiller
         you.Movement();
+        you.Draw(window);                   // Spiller
 
         if (you.inMenu == false && you.state == "Neutral") 
         {
@@ -68,11 +66,8 @@ int main()
             movement.Attack();
         }
 
-        // window.draw(shader);
-
+        window.draw(shader);
         grid.Draw(window);                  // Rutenett
-
-
         window.display();
     }
 }

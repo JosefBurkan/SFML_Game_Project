@@ -297,29 +297,29 @@ fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s
 .PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.s
 
-fireEmblem/GridSystem/GridMovement/GridMovement.o: fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
-.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.o
+fireEmblem/GridSystem/GridHandler/GridHandler.o: fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o
+.PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.o
 
 # target to build an object file
-fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
-.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
+fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o
+.PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o
 
-fireEmblem/GridSystem/GridMovement/GridMovement.i: fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
-.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.i
+fireEmblem/GridSystem/GridHandler/GridHandler.i: fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i
+.PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.i
 
 # target to preprocess a source file
-fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
-.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
+fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i
+.PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i
 
-fireEmblem/GridSystem/GridMovement/GridMovement.s: fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
-.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.s
+fireEmblem/GridSystem/GridHandler/GridHandler.s: fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
+.PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.s
 
 # target to generate assembly for a file
-fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
-.PHONY : fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
+fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
+.PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
 
 fireEmblem/GridSystem/Tile/Tile.o: fireEmblem/GridSystem/Tile/Tile.cpp.o
 .PHONY : fireEmblem/GridSystem/Tile/Tile.o
@@ -519,9 +519,9 @@ help:
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.o"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.i"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.s"
-	@echo "... fireEmblem/GridSystem/GridMovement/GridMovement.o"
-	@echo "... fireEmblem/GridSystem/GridMovement/GridMovement.i"
-	@echo "... fireEmblem/GridSystem/GridMovement/GridMovement.s"
+	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.o"
+	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.i"
+	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.s"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.o"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.i"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.s"

@@ -86,19 +86,19 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.s
 
-CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
-CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.cpp
-CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp
 
-CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.i
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.i
 
-CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.s
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
 
 CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
 CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp
@@ -285,7 +285,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.s: cmake_force
 # Object files for target fireEmblem
 fireEmblem_OBJECTS = \
 "CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o" \
-"CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o" \
+"CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o" \
@@ -304,7 +304,7 @@ fireEmblem_OBJECTS = \
 fireEmblem_EXTERNAL_OBJECTS =
 
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o
-fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridMovement/GridMovement.cpp.o
+fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o

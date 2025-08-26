@@ -2,8 +2,8 @@
 
 namespace Cameras {
 
-    Camera::Camera(GridMovements::GridMovement& gridMovement)
-        : movement(gridMovement)
+    Camera::Camera(GridHandlers::GridHandler& GridHandler)
+        : movement(GridHandler)
     {
 
     }

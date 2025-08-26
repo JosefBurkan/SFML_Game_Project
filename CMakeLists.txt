@@ -14,7 +14,7 @@ find_package(SFML 3 COMPONENTS Graphics Window System REQUIRED)
 
 add_executable(fireEmblem
     fireEmblem/main.cpp
-    fireEmblem/GridSystem/GridMovement/GridMovement.cpp
+    fireEmblem/GridSystem/GridHandler/GridHandler.cpp
     fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp
     fireEmblem/GridSystem/Tile/Tile.cpp
     fireEmblem/Entities/Units/Player/Player.cpp

@@ -7,9 +7,9 @@ namespace MapObjects
     class MapObject;
 }
 
-namespace GridMovements
+namespace GridHandlers
 {
-    class GridMovement
+    class GridHandler
     {
         private:
             int movementCooldown = 0; // Sette en grense på hvor fort man kan bytte rute
@@ -25,7 +25,7 @@ namespace GridMovements
         public:
             int rangeX = 0;
             int rangeY = 0;
-            GridMovement(GridGenerators::GridGenerator& gridGenerator);
+            GridHandler(GridGenerators::GridGenerator& gridGenerator);
             void Movement();
             void Attack();                                                  // Om spilleren angriper, erstatt "Movement" med "Attack"
             void HighlightMovement();
@@ -36,9 +36,6 @@ namespace GridMovements
             void UnSelectTile();
             bool IsOccupied(Tiles::Tile tile);
             void RetrieveTileByPositions(float positionX, float positionY); // Sjekk om en rute er okkupert
-
-
-
-
+            void CreateGrid(int r, int c);                                  // Generer gridden her
     };
 }
