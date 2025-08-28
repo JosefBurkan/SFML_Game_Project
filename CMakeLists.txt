@@ -18,6 +18,7 @@ add_executable(fireEmblem
     fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp
     fireEmblem/GridSystem/Tile/Tile.cpp
     fireEmblem/Entities/Units/Player/Player.cpp
+    fireEmblem/Entities/Units/Enemies/Enemy.cpp
     fireEmblem/Entities/Units/Unit.cpp
     fireEmblem/Maps/MapLayouts/Map/Map.cpp
     fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp
@@ -27,7 +28,8 @@ add_executable(fireEmblem
     fireEmblem/Entities/MapObjects/Wall/Wall.cpp
     fireEmblem/Camera/Camera.cpp
     fireEmblem/UI/Player/Menu/Menu.cpp
-    fireEmblem/Hitboxes/Attacks/Attack.cpp
+    fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp
+    fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

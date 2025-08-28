@@ -2,9 +2,8 @@
 #include "../../../config.hpp"
 #include "../Unit.hpp"
 #include "../../../GridSystem/GridHandler/GridHandler.hpp"
-#include "../../../Maps/MapLayouts/Map/Map.hpp"
 #include "../../../UI/Player/Menu/Menu.hpp"
-#include "../../../Hitboxes/Attacks/Attack.hpp"
+#include "../../../Hitboxes/Attacks/Attack/Attack.hpp"
 
 
 namespace GridGenerators 
@@ -18,11 +17,8 @@ namespace Players
     {
 
         private:
-            
             GridHandlers::GridHandler& GridHandler;          // Funksjonalitet for bevegelse
             Menus::Menu menu;
-            Attacks::Attack newAttack;                          // Angrep som skal legges til i 'attack'
-            std::vector<Attacks::Attack> attack;                // Vector som eksisterer for å ødelegge 'attack' etter en stund
 
             int playerCurrentTileX = 0;
             int playerCurrentTileY = 0;
@@ -35,7 +31,7 @@ namespace Players
         public:
             std::string state = "Neutral";
             bool inMenu = false;                                // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser
-            Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridHandlers::GridHandler& GridHandler);
+            Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler);
             bool IsPlayerStateReady();                          // Er spillertilstanden ledig?
             void Attack();                                      // Velg en rute innenfor rekkevidde, og angrip den
             void Movement();

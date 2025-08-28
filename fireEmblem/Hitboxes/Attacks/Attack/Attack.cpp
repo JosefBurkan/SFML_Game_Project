@@ -2,14 +2,10 @@
 
 namespace Attacks
 {
-    Attack::Attack()
+    Attack::Attack(float positionX, float positionY)
     {
         hitbox.setSize({50, 50});
         hitbox.setFillColor({0, 0, 0, 0});
-    }
-
-    void Attack::CreateHitbox(float positionX, float positionY)
-    {
         hitbox.setPosition({positionX, positionY});
         hitbox.setFillColor({0, 0, 0, 255});
     }

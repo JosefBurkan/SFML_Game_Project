@@ -2,12 +2,12 @@
 #include "Camera/Camera.hpp"
 #include "GridSystem/GridGenerator/GridGenerator.hpp"
 #include "Entities/Units/Player/Player.hpp"
-#include "Entities/Units/Allies/Ally.cpp"
-#include "Entities/Units/Enemies/Enemy.cpp"
+#include "Entities/Units/Enemies/Enemy.hpp"
 #include "Entities/Units/Unit.hpp"
 #include "Maps/MapLayouts/StartMap/StartMap.cpp"
 #include "GridSystem/GridHandler/GridHandler.hpp"
 #include "Maps/Background/Background1/Background1.hpp"
+#include "Hitboxes/Attacks/AttackManager/AttackManager.hpp"
 #include "UI/Player/Menu/Menu.hpp"
 
 int main()
@@ -34,9 +34,12 @@ int main()
 
     Menus::Menu menu;
 
+    AttackManagers::AttackManager attacks;
+
+
     // rutefelt, rutefeltet til bevegelsen, banen
-    Players::Player you{grid, map, movement};
-    Enemies::Enemy enemy{grid, map};
+    Players::Player you{grid, map, attacks, movement};
+    Enemies::Enemy enemy{grid, map, attacks};
     window.setFramerateLimit(60);
     window.setView(view);
 
@@ -65,6 +68,10 @@ int main()
         {
             movement.Attack();
         }
+
+        enemy.Draw(window);
+        enemy.IsHit();
+        attacks.Update();
 
         window.draw(shader);
         grid.Draw(window);                  // Rutenett

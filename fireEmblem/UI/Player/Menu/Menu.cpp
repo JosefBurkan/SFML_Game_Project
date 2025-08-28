@@ -26,6 +26,7 @@ namespace Menus
 
     }
 
+    // For å vise hvor i menyen som brukeren er
     int Menu::NavigateMenu()
     {
         movementCooldown++;

@@ -3,8 +3,8 @@
 namespace Units 
 {
     // spritePath er for å kunne sette sprites til enheter når de opprettes
-    Unit::Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map) 
-            : gridGenerator(gridReference), map(map)
+    Unit::Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks) 
+            : gridGenerator(gridReference), map(map), attacks(attacks)
     {
 
     }
@@ -35,4 +35,17 @@ namespace Units
             }
         }
     }
+
+    void Unit::IsHit()
+    {
+        for (auto& attack : attacks.activeAttacks)
+        {
+            if (sprite->getPosition().x == attack.hitbox.getPosition().x && sprite->getPosition().y == attack.hitbox.getPosition().y)
+            {
+                healthPoints--;
+                std::cout << name << " er truffet! " << healthPoints;
+            }
+        }
+    }
 }
+

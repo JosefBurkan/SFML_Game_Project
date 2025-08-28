@@ -225,6 +225,30 @@ fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s
 .PHONY : fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s
 
+fireEmblem/Entities/Units/Enemies/Enemy.o: fireEmblem/Entities/Units/Enemies/Enemy.cpp.o
+.PHONY : fireEmblem/Entities/Units/Enemies/Enemy.o
+
+# target to build an object file
+fireEmblem/Entities/Units/Enemies/Enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o
+.PHONY : fireEmblem/Entities/Units/Enemies/Enemy.cpp.o
+
+fireEmblem/Entities/Units/Enemies/Enemy.i: fireEmblem/Entities/Units/Enemies/Enemy.cpp.i
+.PHONY : fireEmblem/Entities/Units/Enemies/Enemy.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Units/Enemies/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.i
+.PHONY : fireEmblem/Entities/Units/Enemies/Enemy.cpp.i
+
+fireEmblem/Entities/Units/Enemies/Enemy.s: fireEmblem/Entities/Units/Enemies/Enemy.cpp.s
+.PHONY : fireEmblem/Entities/Units/Enemies/Enemy.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Units/Enemies/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.s
+.PHONY : fireEmblem/Entities/Units/Enemies/Enemy.cpp.s
+
 fireEmblem/Entities/Units/Player/Player.o: fireEmblem/Entities/Units/Player/Player.cpp.o
 .PHONY : fireEmblem/Entities/Units/Player/Player.o
 
@@ -345,29 +369,53 @@ fireEmblem/GridSystem/Tile/Tile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.s
 .PHONY : fireEmblem/GridSystem/Tile/Tile.cpp.s
 
-fireEmblem/Hitboxes/Attacks/Attack.o: fireEmblem/Hitboxes/Attacks/Attack.cpp.o
-.PHONY : fireEmblem/Hitboxes/Attacks/Attack.o
+fireEmblem/Hitboxes/Attacks/Attack/Attack.o: fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack/Attack.o
 
 # target to build an object file
-fireEmblem/Hitboxes/Attacks/Attack.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.o
-.PHONY : fireEmblem/Hitboxes/Attacks/Attack.cpp.o
+fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o
 
-fireEmblem/Hitboxes/Attacks/Attack.i: fireEmblem/Hitboxes/Attacks/Attack.cpp.i
-.PHONY : fireEmblem/Hitboxes/Attacks/Attack.i
+fireEmblem/Hitboxes/Attacks/Attack/Attack.i: fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.i
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack/Attack.i
 
 # target to preprocess a source file
-fireEmblem/Hitboxes/Attacks/Attack.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.i
-.PHONY : fireEmblem/Hitboxes/Attacks/Attack.cpp.i
+fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.i
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.i
 
-fireEmblem/Hitboxes/Attacks/Attack.s: fireEmblem/Hitboxes/Attacks/Attack.cpp.s
-.PHONY : fireEmblem/Hitboxes/Attacks/Attack.s
+fireEmblem/Hitboxes/Attacks/Attack/Attack.s: fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.s
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack/Attack.s
 
 # target to generate assembly for a file
-fireEmblem/Hitboxes/Attacks/Attack.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.s
-.PHONY : fireEmblem/Hitboxes/Attacks/Attack.cpp.s
+fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.s
+.PHONY : fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.s
+
+fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.o: fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o
+.PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.o
+
+# target to build an object file
+fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o
+.PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o
+
+fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.i: fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.i
+.PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.i
+
+# target to preprocess a source file
+fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.i
+.PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.i
+
+fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.s: fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
+.PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.s
+
+# target to generate assembly for a file
+fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
+.PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
 
 fireEmblem/Maps/Background/Background1/Background1.o: fireEmblem/Maps/Background/Background1/Background1.cpp.o
 .PHONY : fireEmblem/Maps/Background/Background1/Background1.o
@@ -510,6 +558,9 @@ help:
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.o"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.i"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.s"
+	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.o"
+	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.i"
+	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.s"
 	@echo "... fireEmblem/Entities/Units/Player/Player.o"
 	@echo "... fireEmblem/Entities/Units/Player/Player.i"
 	@echo "... fireEmblem/Entities/Units/Player/Player.s"
@@ -525,9 +576,12 @@ help:
 	@echo "... fireEmblem/GridSystem/Tile/Tile.o"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.i"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.s"
-	@echo "... fireEmblem/Hitboxes/Attacks/Attack.o"
-	@echo "... fireEmblem/Hitboxes/Attacks/Attack.i"
-	@echo "... fireEmblem/Hitboxes/Attacks/Attack.s"
+	@echo "... fireEmblem/Hitboxes/Attacks/Attack/Attack.o"
+	@echo "... fireEmblem/Hitboxes/Attacks/Attack/Attack.i"
+	@echo "... fireEmblem/Hitboxes/Attacks/Attack/Attack.s"
+	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.o"
+	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.i"
+	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.s"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.o"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.i"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.s"

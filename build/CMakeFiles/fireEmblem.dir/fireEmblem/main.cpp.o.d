@@ -999,17 +999,18 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/AttackManager/AttackManager.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/AttackManager/../Attack/Attack.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/AttackManager/../Attack/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/AttackManager/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/Menu.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/Attack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Allies/Ally.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Allies/../Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../Unit.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/StartMap/../Map/Map.hpp \
@@ -1019,4 +1020,5 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/../BackgroundTiles/BackgroundTile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/../BackgroundTiles/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp

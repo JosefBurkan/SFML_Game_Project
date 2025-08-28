@@ -31,6 +31,12 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
   "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o"
@@ -85,8 +91,14 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack.cpp",
-  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack.cpp",
-  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack.cpp.o"
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o"
 }
 ]

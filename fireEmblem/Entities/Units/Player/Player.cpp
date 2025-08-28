@@ -3,8 +3,9 @@
 namespace Players 
 {
     // Initialiser spilleren, gridden den hører til og bevegelsen.
-    Player::Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, GridHandlers::GridHandler& GridHandler)
-        : Unit(gridReference, map), GridHandler(GridHandler)
+    Player::Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, 
+                    AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
+        : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
         
         if (!texture.loadFromFile("prinsesse.png")) {
@@ -45,11 +46,7 @@ namespace Players
     {
         window.draw(*sprite);
         menu.Draw(window);
-        
-        for (auto& hitbox : attack)
-        {
-            hitbox.Draw(window);
-        }
+        attacks.Draw(window);
     }
 
     void Player::Attack()
@@ -140,30 +137,20 @@ namespace Players
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0 && menuCooldown >= 30)
             {
                 state = "Attack";
-                std::cout << "Du angriper!";
                 menu.show = false;
                 inMenu = false;
 
             }
         }
 
+        // Lag en ny hitbox, så sett dens posisjon med "CreateHitbox"
         if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
         {
             attackCooldown++;
-            attack.emplace_back(newAttack);
+            Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
+            attacks.CreateAttack(newAttack);
+            state = "Neutral";
 
-            for (auto& hitbox : attack)
-            {
-                hitbox.CreateHitbox(gridCurrentTileX, gridCurrentTileY);
-
-                if (attackCooldown >= 5)
-                {
-                    std::cout << "hei";
-                    attackCooldown = 0;
-                    attack.clear();
-                    state = "Neutral";
-                }
-            }
         }
 
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
