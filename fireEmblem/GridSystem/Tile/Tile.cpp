@@ -7,8 +7,8 @@ namespace Tiles
     {
         rectangle.setSize({50.f, 50.f});
         rectangle.setFillColor(sf::Color(255, 255, 255, 0));
-        rectangle.setOutlineColor(sf::Color(0, 0, 0, 250));
-        rectangle.setOutlineThickness(0.f);
+        rectangle.setOutlineColor(sf::Color(0, 0, 0, 0));
+        rectangle.setOutlineThickness(3.f);
         rectangle.setPosition({x, y});
     }
 
@@ -17,14 +17,14 @@ namespace Tiles
     {
         if (onSelect == true)
         {
-            rectangle.setOutlineColor(sf::Color(115, 50, 250));
+            rectangle.setOutlineColor(sf::Color(115, 50, 250, 255));
             rectangle.setOutlineThickness(5.f);
         }
         else
         {
-            rectangle.setOutlineColor(sf::Color(0, 0, 0, 125));
+            rectangle.setOutlineColor(sf::Color(0, 0, 0, 0));
             rectangle.setFillColor(sf::Color(255, 255, 255, 0));
-            rectangle.setOutlineThickness(0.f);
+            rectangle.setOutlineThickness(3.f);
         }
     }
 
@@ -35,6 +35,11 @@ namespace Tiles
             rectangle.setOutlineColor(sf::Color(255, 0, 255, 255));
             rectangle.setOutlineThickness(3.f);
         }
+    }
+
+    void Tile::MarkPath()
+    {
+        rectangle.setFillColor(sf::Color(100, 100, 255, 130));
     }
 
     void Tile::Select()

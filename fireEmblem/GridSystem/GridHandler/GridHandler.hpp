@@ -1,6 +1,7 @@
 #pragma once
 #include "../Tile/Tile.hpp"
 #include "../GridGenerator/GridGenerator.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.hpp" 
 
 namespace MapObjects 
 {
@@ -19,6 +20,7 @@ namespace GridHandlers
             int coloredTileY = 0; 
             int rows = 0;
             int columns = 0;
+            bool characterIsSelected;    // Er en karakter valgt?
 
             GridGenerators::GridGenerator& grid;
 
@@ -28,14 +30,17 @@ namespace GridHandlers
             GridHandler(GridGenerators::GridGenerator& gridGenerator);
             void Movement();
             void Attack();                                                  // Om spilleren angriper, erstatt "Movement" med "Attack"
+            void MovementWhileSelected(int range);                          // Bevegelseslogikken dersom en karakter er blitt valgt
             void HighlightMovement();
             std::pair<int, int> RetrieveTile() const;                       // Hent rute som spiller har valgt
             std::pair<float, float> SelectedTilePos();                      // Hent rute sin kordinater som spiller har valgt
+            std::pair<int, int> RetrieveTileIndex();
             std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();      // Hent alle ruter
             void SelectTile();
             void UnSelectTile();
             bool IsOccupied(Tiles::Tile tile);
             void RetrieveTileByPositions(float positionX, float positionY); // Sjekk om en rute er okkupert
             void CreateGrid(int r, int c);                                  // Generer gridden her
+            void UpdateGrid();                                              // Sett hele rutefeltet tilbake til sin opprinnelige status
     };
 }

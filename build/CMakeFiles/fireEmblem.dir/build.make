@@ -310,6 +310,34 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManage
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
 
+CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
+CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp
+
+CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
+
+CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
+
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o: CMakeFiles/fireEmblem.dir/flags.make
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o: CMakeFiles/fireEmblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o -MF CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o.d -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp
+
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp > CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+
+CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+
 # Object files for target fireEmblem
 fireEmblem_OBJECTS = \
 "CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o" \
@@ -328,7 +356,9 @@ fireEmblem_OBJECTS = \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o" \
 "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o" \
-"CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o"
+"CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o" \
+"CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o" \
+"CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o"
 
 # External object files for target fireEmblem
 fireEmblem_EXTERNAL_OBJECTS =
@@ -350,12 +380,14 @@ fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o
+fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
+fireEmblem: CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
 fireEmblem: CMakeFiles/fireEmblem.dir/build.make
 fireEmblem: /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/lib/libsfml-graphics.dylib
 fireEmblem: /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/lib/libsfml-window.dylib
 fireEmblem: /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/lib/libsfml-system.dylib
 fireEmblem: CMakeFiles/fireEmblem.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable fireEmblem"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/tastebutter/Desktop/mine_spill/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable fireEmblem"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fireEmblem.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -22,6 +22,8 @@ namespace Tiles
             // Sjekk hva som er inni ruten
             void CheckContents();
             void Draw(sf::RenderWindow& window);
+            // Marker rute som spilleren kan gå til
+            void MarkPath();                   
             void Highlight(std::pair<float, float> playerPosition, int gridSizeY, int gridSizeX);
 
     };

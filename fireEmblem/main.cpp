@@ -10,36 +10,42 @@
 #include "Hitboxes/Attacks/AttackManager/AttackManager.hpp"
 #include "UI/Player/Menu/Menu.hpp"
 
+#include "Managers/EnemyManager/EnemyManager.hpp"
+
 int main()
 {
     StartMap map{};                                         // Opprett et baneobjekt
     map.GenerateGrid();
     GridGenerators::GridGenerator& grid = map.FetchGrid();  // Hent det genererte rutenettet
-    GridHandlers::GridHandler movement(grid);             // Sett bevegelseslogikken til å fungere på det hentet rutenettet
+    GridHandlers::GridHandler gridHandler(grid);             // Sett bevegelseslogikken til å fungere på det hentet rutenettet
     map.LoadWindow();    
 
-    Cameras::Camera camera{movement};
+    Cameras::Camera camera{gridHandler};
     sf::RenderWindow& window = map.window;                  // sett 'vindu' til banen sitt 'vindu'
     sf::View view = camera.LoadView();                      // Last inn startkamera
     sf::View moveView;                                      // Funkjsonalitet for bevegelse av kamera  
-    map.SetGridHandler(movement);                                        
+    map.SetGridHandler(gridHandler);                                        
     map.SpawnObjects();
 
     sf::RectangleShape shader;                              // Gjennomsiktig form som farger banen. Feks får det til å se ut som kveld
     shader.setSize({750.f, 800.f});
     shader.setFillColor(sf::Color(0, 0, 255, 20));
 
-    Backgrounds1::Background1 background1{movement};
+    Backgrounds1::Background1 background1{gridHandler};
     background1.LoadTileMapFromFile();
 
     Menus::Menu menu;
 
     AttackManagers::AttackManager attacks;
 
-
     // rutefelt, rutefeltet til bevegelsen, banen
-    Players::Player you{grid, map, attacks, movement};
-    Enemies::Enemy enemy{grid, map, attacks};
+    Players::Player you{grid, map, attacks, gridHandler};
+    auto enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks);        // Bruker bare auto her, fordi er en avansert type
+
+    EnemyManagers::EnemyManager enemyManager;
+    enemyManager.AddEnemy(enemy1);
+
+    
     window.setFramerateLimit(60);
     window.setView(view);
 
@@ -62,17 +68,14 @@ int main()
 
         if (you.inMenu == false && you.state == "Neutral") 
         {
-            movement.Movement();
+            gridHandler.Movement();
         }
         else if(you.state == "Attack")
         {
-            movement.Attack();
+            gridHandler.Attack();
         }
-
-        enemy.Draw(window);
-        enemy.IsHit();
+        enemyManager.UpdateEnemies(window);
         attacks.Update();
-
         window.draw(shader);
         grid.Draw(window);                  // Rutenett
         window.display();

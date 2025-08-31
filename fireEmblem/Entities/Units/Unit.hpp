@@ -17,10 +17,10 @@ namespace Units
             std::string spritePath;
 
             std::string name = "default";
-            int healthPoints = 5;
-            int movement = 5;
+            int movement = 3;
             
         public: 
+            int healthPoints = 2;
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void spawn();

@@ -1,9 +1,7 @@
-CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o: \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/Map.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/Map.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../GridSystem/GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../GridSystem/GridGenerator/../Tile/../../config.hpp \
+CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o: \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -975,12 +973,20 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Text.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../Unit.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../GridSystem/GridGenerator/GridGenerator.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../GridSystem/GridGenerator/../Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../GridSystem/GridGenerator/../Tile/../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/Map.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../GridSystem/GridGenerator/GridGenerator.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/MapObject.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/../Tile/Tile.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
@@ -1007,12 +1013,17 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/Bat.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/Wall.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../GridSystem/GridHandler/GridHandler.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/Bat.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../MapObject.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Bat/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/Wall.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../GridSystem/GridHandler/GridHandler.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/AttackManager/AttackManager.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/AttackManager/../Attack/Attack.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/AttackManager/../Attack/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/AttackManager/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/Attack/Attack.hpp

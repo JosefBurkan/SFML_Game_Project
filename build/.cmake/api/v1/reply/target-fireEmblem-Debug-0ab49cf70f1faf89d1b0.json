@@ -32,13 +32,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 36,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 35,
+				"line" : 37,
 				"parent" : 0
 			}
 		]
@@ -86,7 +86,9 @@
 				13,
 				14,
 				15,
-				16
+				16,
+				17,
+				18
 			]
 		}
 	],
@@ -150,7 +152,9 @@
 				13,
 				14,
 				15,
-				16
+				16,
+				17,
+				18
 			]
 		}
 	],
@@ -256,6 +260,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/Managers/EnemyManager/EnemyManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -345,6 +345,30 @@ fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
 .PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
 
+fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.o: fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.o
+
+# target to build an object file
+fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
+
+fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.i: fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+
+fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.s: fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+
 fireEmblem/GridSystem/Tile/Tile.o: fireEmblem/GridSystem/Tile/Tile.cpp.o
 .PHONY : fireEmblem/GridSystem/Tile/Tile.o
 
@@ -416,6 +440,30 @@ fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.s: fireEmblem/Hitboxes/A
 fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
 .PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
+
+fireEmblem/Managers/EnemyManager/EnemyManager.o: fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
+.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.o
+
+# target to build an object file
+fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
+.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
+
+fireEmblem/Managers/EnemyManager/EnemyManager.i: fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
+.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.i
+
+# target to preprocess a source file
+fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
+.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
+
+fireEmblem/Managers/EnemyManager/EnemyManager.s: fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
+.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.s
+
+# target to generate assembly for a file
+fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
+.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
 
 fireEmblem/Maps/Background/Background1/Background1.o: fireEmblem/Maps/Background/Background1/Background1.cpp.o
 .PHONY : fireEmblem/Maps/Background/Background1/Background1.o
@@ -573,6 +621,9 @@ help:
 	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.o"
 	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.i"
 	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.s"
+	@echo "... fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.o"
+	@echo "... fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.i"
+	@echo "... fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.s"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.o"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.i"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.s"
@@ -582,6 +633,9 @@ help:
 	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.o"
 	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.i"
 	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.s"
+	@echo "... fireEmblem/Managers/EnemyManager/EnemyManager.o"
+	@echo "... fireEmblem/Managers/EnemyManager/EnemyManager.i"
+	@echo "... fireEmblem/Managers/EnemyManager/EnemyManager.s"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.o"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.i"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.s"

@@ -8,7 +8,7 @@ namespace Maps
         wallTexture.loadFromFile("Bricks.png");
 
         // Lag antall vegger lik størrelsen til i
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 8; i++)
         {
             walls.emplace_back(wallTexture);
         }
@@ -37,6 +37,10 @@ namespace Maps
         walls[1].SetGrid(*GridHandlerPtr);
         walls[2].SetGrid(*GridHandlerPtr);
         walls[3].SetGrid(*GridHandlerPtr);
+        walls[4].SetGrid(*GridHandlerPtr);
+        walls[5].SetGrid(*GridHandlerPtr);
+        walls[6].SetGrid(*GridHandlerPtr);
+        walls[7].SetGrid(*GridHandlerPtr);
     }
 
     void Map::LoadWindow() 
@@ -62,11 +66,19 @@ namespace Maps
         walls[1].Position(gridTiles[4][2].RetrieveTilePos().first, gridTiles[4][2].RetrieveTilePos().second);
         walls[2].Position(gridTiles[4][3].RetrieveTilePos().first, gridTiles[4][3].RetrieveTilePos().second);
         walls[3].Position(gridTiles[4][4].RetrieveTilePos().first, gridTiles[4][4].RetrieveTilePos().second);
+        walls[4].Position(gridTiles[2][1].RetrieveTilePos().first, gridTiles[2][1].RetrieveTilePos().second);
+        walls[5].Position(gridTiles[2][2].RetrieveTilePos().first, gridTiles[2][2].RetrieveTilePos().second);
+        walls[6].Position(gridTiles[2][3].RetrieveTilePos().first, gridTiles[2][3].RetrieveTilePos().second);
+        walls[7].Position(gridTiles[2][4].RetrieveTilePos().first, gridTiles[2][4].RetrieveTilePos().second);
 
         walls[0].SetTileToOccupied();
         walls[1].SetTileToOccupied();
         walls[2].SetTileToOccupied();
         walls[3].SetTileToOccupied();
+        walls[4].SetTileToOccupied();
+        walls[5].SetTileToOccupied();
+        walls[6].SetTileToOccupied();
+        walls[7].SetTileToOccupied();
 
         mapObject2.Position(gridTiles[2][2].RetrieveTilePos().first, gridTiles[2][2].RetrieveTilePos().second);
 
@@ -82,6 +94,10 @@ namespace Maps
         walls[1].Draw(window);
         walls[2].Draw(window);
         walls[3].Draw(window);
+        walls[4].Draw(window);
+        walls[5].Draw(window);
+        walls[6].Draw(window);
+        walls[7].Draw(window);
         mapObject2.Draw(window);
     }
 }
