@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 # Tell CMake where to find your local SFML
 set(SFML_ROOT "${CMAKE_SOURCE_DIR}/Dependencies/SFML")
 
+# Tell the program where to find the assets
+set(ASSETS_DIR "${CMAKE_SOURCE_DIR}/fireEmblem/Assets/")
+add_compile_definitions(ASSETS_DIR="${ASSETS_DIR}")
+
 # You may need to set this policy to use SFML_ROOT properly
 cmake_policy(SET CMP0074 NEW)
 

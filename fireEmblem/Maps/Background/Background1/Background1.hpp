@@ -1,7 +1,7 @@
 #pragma once
 #include "../../../config.hpp"
 #include "../BackgroundTiles/BackgroundTile.hpp"
-#include "../../../GridSystem/GridHandler/GridHandler.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Backgrounds1
 {

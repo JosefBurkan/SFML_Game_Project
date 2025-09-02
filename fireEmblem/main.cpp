@@ -6,6 +6,7 @@
 #include "Entities/Units/Unit.hpp"
 #include "Maps/MapLayouts/StartMap/StartMap.cpp"
 #include "GridSystem/GridHandler/GridHandler.hpp"
+#include "GridSystem/GridMovement/GridMovement.hpp"
 #include "Maps/Background/Background1/Background1.hpp"
 #include "Hitboxes/Attacks/AttackManager/AttackManager.hpp"
 #include "UI/Player/Menu/Menu.hpp"
@@ -17,14 +18,15 @@ int main()
     StartMap map{};                                         // Opprett et baneobjekt
     map.GenerateGrid();
     GridGenerators::GridGenerator& grid = map.FetchGrid();  // Hent det genererte rutenettet
-    GridHandlers::GridHandler gridHandler(grid);             // Sett bevegelseslogikken til å fungere på det hentet rutenettet
+    GridHandlers::GridHandler gridHandler(grid);
+    // GridMovements::GridMovement gridMovement(grid);
     map.LoadWindow();    
 
     Cameras::Camera camera{gridHandler};
     sf::RenderWindow& window = map.window;                  // sett 'vindu' til banen sitt 'vindu'
     sf::View view = camera.LoadView();                      // Last inn startkamera
     sf::View moveView;                                      // Funkjsonalitet for bevegelse av kamera  
-    map.SetGridHandler(gridHandler);                                        
+    map.SetGridMovement(gridHandler);                                        
     map.SpawnObjects();
 
     sf::RectangleShape shader;                              // Gjennomsiktig form som farger banen. Feks får det til å se ut som kveld
@@ -69,6 +71,10 @@ int main()
         if (you.inMenu == false && you.state == "Neutral") 
         {
             gridHandler.Movement();
+        }
+        else if (you.inMenu == false && you.state == "Selected")
+        {
+            gridHandler.MovementWhileSelected();
         }
         else if(you.state == "Attack")
         {

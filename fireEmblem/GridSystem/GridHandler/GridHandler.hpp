@@ -1,7 +1,6 @@
 #pragma once
 #include "../Tile/Tile.hpp"
 #include "../GridGenerator/GridGenerator.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.hpp" 
 
 namespace MapObjects 
 {
@@ -30,7 +29,7 @@ namespace GridHandlers
             GridHandler(GridGenerators::GridGenerator& gridGenerator);
             void Movement();
             void Attack();                                                  // Om spilleren angriper, erstatt "Movement" med "Attack"
-            void MovementWhileSelected(int range);                          // Bevegelseslogikken dersom en karakter er blitt valgt
+            void MovementWhileSelected();                          // Bevegelseslogikken dersom en karakter er blitt valgt
             void HighlightMovement();
             std::pair<int, int> RetrieveTile() const;                       // Hent rute som spiller har valgt
             std::pair<float, float> SelectedTilePos();                      // Hent rute sin kordinater som spiller har valgt

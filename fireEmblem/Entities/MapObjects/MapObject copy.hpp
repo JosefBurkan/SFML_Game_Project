@@ -11,7 +11,7 @@ namespace MapObjects
         sf::Texture texture;
         std::optional<sf::Sprite> sprite;
         std::string name = "Testobjekt ";
-        GridHandlers::GridHandler* GridHandler = nullptr;
+        GridMovements::GridMovement* GridMovement = nullptr;
         
         MapObject();
         sf::Sprite GenerateSprite();
@@ -19,7 +19,7 @@ namespace MapObjects
         std::pair<float, float> printPos();
         void SetTileToOccupied();
         void Position(float positionX, float positionY);
-        void SetGrid(GridHandlers::GridHandler& grid);
+        void SetGrid(GridMovements::GridMovement& grid);
         GridHandlers::GridHandler& FetchGrid();
         void Draw(sf::RenderWindow& window);
         // Transformer koordinater, til index

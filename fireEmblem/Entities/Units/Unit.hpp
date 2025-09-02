@@ -17,7 +17,7 @@ namespace Units
             std::string spritePath;
 
             std::string name = "default";
-            int movement = 3;
+            int movement = 5;
             
         public: 
             int healthPoints = 2;

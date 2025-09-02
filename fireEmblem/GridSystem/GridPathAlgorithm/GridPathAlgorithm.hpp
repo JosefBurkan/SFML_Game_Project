@@ -13,5 +13,6 @@ namespace GridPathAlgorithms
         public:
 
             void CheckAvailableTiles(int startX, int startY, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
+            void CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles);   // Fjern de markerte rutene
     };
 }

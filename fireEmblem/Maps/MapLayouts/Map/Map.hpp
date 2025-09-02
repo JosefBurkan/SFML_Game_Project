@@ -5,6 +5,7 @@
 #include "../../../Entities/MapObjects/Bat/Bat.hpp"
 #include "../../../Entities/MapObjects/Wall/Wall.hpp"
 #include "../../../GridSystem/GridHandler/GridHandler.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Maps 
 {
@@ -29,7 +30,7 @@ namespace Maps
             
             void GenerateGrid();
             GridGenerators::GridGenerator& FetchGrid();                     // returner gridGenerator med verdiene til den eksisterende gridden
-            void SetGridHandler(GridHandlers::GridHandler& movement);    // Hent inn GridHandler, for å lese og påvirke rutefeltet
+            void SetGridMovement(GridHandlers::GridHandler& movement);    // Hent inn GridHandler, for å lese og påvirke rutefeltet
             void LoadWindow();
             sf::View LoadView();                                            // Last inn kameraet
             void SpawnObjects();                                          // Sett objektet sin posisjon

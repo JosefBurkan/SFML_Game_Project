@@ -8,7 +8,7 @@ namespace Players
         : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
         
-        if (!texture.loadFromFile("prinsesse.png")) {
+        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Prinsesse.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
@@ -35,10 +35,7 @@ namespace Players
             return true;
         }
     }              
-    void Player::DrawUI(sf::RenderWindow& window)
-    {
-        menu.Draw(window);
-    }
+
     void Player::Draw(sf::RenderWindow& window) 
     {
         window.draw(*sprite);
@@ -56,8 +53,7 @@ namespace Players
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
 
-        // Plasser menyen, men ikke gjør den synlig enda
-        menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
+
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
@@ -73,6 +69,7 @@ namespace Players
                     isSelected = true;
                     preventSelect = false;
                     algorithm.CheckAvailableTiles(retrievedTileIndex.first, retrievedTileIndex.second, movement, tiles);
+                    state = "Selected";
 
                 }
             }
@@ -86,22 +83,30 @@ namespace Players
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
             
             // Sjekk om ruten er okkupert
-            if (GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false)
+            if (GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false
+             && tiles[selectedTile.first][selectedTile.second].inRange == true)
             {
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
                 {
                     isSelected = false;
                     preventSelect = false;
-                    menu.show = true;
-                    inMenu = true;
+
                     sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
                     GridHandler.UnSelectTile();
+                    algorithm.CleanGrid(tiles);
                     CheckForMapObjects();
                     menuCooldown = 0;
                     attackCooldown = 0;
+                    state = "Selected";
+
+                    // Plasser menyen, gjør den synlig
+                    menu.show = true;
+                    inMenu = true;
+                    menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
+
                 }
             }
         }
@@ -114,9 +119,10 @@ namespace Players
             GridHandler.rangeX = 0;
             GridHandler.rangeY = 0;
         }
+
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
         if (menu.show == true)
-        {
+        {            
             menuCooldown++;
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0 && menuCooldown >= 30)
             {

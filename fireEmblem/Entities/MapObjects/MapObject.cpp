@@ -5,7 +5,7 @@ namespace MapObjects
 
     MapObject::MapObject()
     {
-        texture.loadFromFile("Bricks.png");
+        texture.loadFromFile(std::string(ASSETS_DIR) + "Bricks.png");
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
     }
@@ -15,7 +15,7 @@ namespace MapObjects
         this->GridHandler = &grid;
     }
 
-    GridHandlers::GridHandler& MapObject::FetchGrid() 
+   GridHandlers::GridHandler& MapObject::FetchGrid() 
     {
         return *GridHandler;
     }
@@ -39,7 +39,8 @@ namespace MapObjects
     // endre statusen til ruten som objektet står på
     void MapObject::SetTileToOccupied()
     {
-        // Stopper funksjonen fra å kjøre før gridmovment har fått verdi
+        // Stopper funksjonen fra å kjøre før gridmovment har fått verdi.
+        // Vet ikke hvorfor den trengs, funker ikke uten.
         if (!GridHandler)
         {
             std::cout << "GridHandler is nullptr!" << std::endl;
@@ -47,8 +48,8 @@ namespace MapObjects
         }
 
         auto& tiles = GridHandler->RetrieveAllTiles();
-        std::pair<int, int> index = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
-        tiles[index.first][index.second].isOccupiedByEnemy = true;
+        std::pair<int, int> index = TransformPositionToIndex(sprite->getPosition().y, sprite->getPosition().x);
+        tiles[index.first][index.second].IsOccupied = true;
     }
 
     // Flytt til en annen rute

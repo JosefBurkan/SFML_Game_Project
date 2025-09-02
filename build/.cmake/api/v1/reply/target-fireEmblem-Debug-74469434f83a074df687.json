@@ -12,6 +12,7 @@
 		[
 			"add_executable",
 			"target_link_libraries",
+			"add_compile_definitions",
 			"target_include_directories"
 		],
 		"files" : 
@@ -26,19 +27,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 15,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 38,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 37,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 41,
 				"parent" : 0
 			}
 		]
@@ -52,10 +59,17 @@
 					"fragment" : "-g -std=gnu++17 -arch arm64"
 				}
 			],
-			"includes" : 
+			"defines" : 
 			[
 				{
 					"backtrace" : 3,
+					"define" : "ASSETS_DIR=\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
 					"path" : "/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include"
 				}
 			],

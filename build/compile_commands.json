@@ -1,115 +1,115 @@
 [
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Tile/Tile.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/Map.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/Map.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/Map.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Bat/Bat.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/EnemyManager/EnemyManager.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++  -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o"
 }

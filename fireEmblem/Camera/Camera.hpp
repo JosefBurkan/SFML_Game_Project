@@ -1,5 +1,6 @@
 #include "../config.hpp"
 #include "../GridSystem/GridHandler/GridHandler.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp"
 
 namespace Cameras {
     class Camera 
@@ -11,11 +12,11 @@ namespace Cameras {
             int viewWidth = 600;        // Bredde på skjermen
             int viewHeight = 600;
             sf::Vector2f viewSize;
-            GridHandlers::GridHandler& movement;
+            GridHandlers::GridHandler& GridHandler;
 
         public:
 
-            Camera(GridHandlers::GridHandler& GridHandler);
+            Camera(GridHandlers::GridHandler& gridHandler);
 
             sf::View LoadView();
 

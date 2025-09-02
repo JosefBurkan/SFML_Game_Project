@@ -2,8 +2,8 @@
 
 namespace Cameras {
 
-    Camera::Camera(GridHandlers::GridHandler& GridHandler)
-        : movement(GridHandler)
+    Camera::Camera(GridHandlers::GridHandler& gridHandler)
+        : GridHandler(gridHandler)
     {
 
     }
@@ -26,8 +26,8 @@ namespace Cameras {
         sf::Vector2f moveVertically(0.0f, 5.0f);
         sf::Vector2f standStill(0.0f, 0.0f);
 
-        selectedTileX = movement.SelectedTilePos().first;
-        selectedTileY = movement.SelectedTilePos().second;
+        selectedTileX = GridHandler.SelectedTilePos().first;
+        selectedTileY = GridHandler.SelectedTilePos().second;
 
         viewSize = view.getCenter();
 

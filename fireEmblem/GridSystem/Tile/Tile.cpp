@@ -19,12 +19,14 @@ namespace Tiles
         {
             rectangle.setOutlineColor(sf::Color(115, 50, 250, 255));
             rectangle.setOutlineThickness(5.f);
+            a = true;
         }
         else
         {
             rectangle.setOutlineColor(sf::Color(0, 0, 0, 0));
             rectangle.setFillColor(sf::Color(255, 255, 255, 0));
             rectangle.setOutlineThickness(3.f);
+            a = false;
         }
     }
 
@@ -39,7 +41,14 @@ namespace Tiles
 
     void Tile::MarkPath()
     {
-        rectangle.setFillColor(sf::Color(100, 100, 255, 130));
+        rectangle.setOutlineColor(sf::Color(100, 100, 255, 255));
+        rectangle.setOutlineThickness(2.f);
+    }
+
+    void Tile::MarkAttackRange()
+    {
+        rectangle.setOutlineColor(sf::Color(255, 100, 100, 255));
+        rectangle.setOutlineThickness(4.f);
     }
 
     void Tile::Select()
@@ -58,6 +67,9 @@ namespace Tiles
     }
 
     void Tile::Draw(sf::RenderWindow& window) {
-        window.draw(rectangle);
+        if (a == true || inRange == true)
+        {
+            window.draw(rectangle);
+        }
     }
 }

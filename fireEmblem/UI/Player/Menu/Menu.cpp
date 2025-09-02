@@ -56,7 +56,7 @@ namespace Menus
     // Legg til inholdet i "menuContents" inn i menyboksen
     void Menu::AddItems(sf::RenderWindow& window) 
     {
-        sf::Font font("ARCADECLASSIC.TTF");
+        sf::Font font(std::string(ASSETS_DIR) + "ARCADECLASSIC.TTF");
         font.setSmooth(false); 
 
         for (int itemIndex = 0; itemIndex < menuContents.size(); itemIndex++)

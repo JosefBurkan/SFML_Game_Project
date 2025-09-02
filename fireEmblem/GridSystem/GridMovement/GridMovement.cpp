@@ -1,8 +1,8 @@
-#include "GridHandler.hpp"
+#include "GridMovement.hpp"
 
-namespace GridHandlers
+namespace GridMovements
 {
-    GridHandler::GridHandler(GridGenerators::GridGenerator& gridGenerator)
+    GridMovement::GridMovement(GridGenerators::GridGenerator& gridGenerator)
         : grid(gridGenerator)
     {
         auto& tiles = grid.RetrieveAllTiles();
@@ -10,7 +10,7 @@ namespace GridHandlers
         columns = tiles[0].size();
     }
 
-    void GridHandler::Movement() 
+      void GridMovement::Movement() 
     {
         auto& tiles = grid.RetrieveAllTiles();
         int prevX = selectedTileX;
@@ -34,14 +34,13 @@ namespace GridHandlers
         {
             movementCooldown++;
         }
-        // Visker vekk den valgte ruten, slik at det kun er en om gangen
         if (prevX != selectedTileX || prevY != selectedTileY) {
             tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
     }
 
-    void GridHandler::MovementWhileSelected()
+    void GridMovement::MovementWhileSelected()
     {
         auto& tiles = grid.RetrieveAllTiles();
         int prevX = selectedTileX;
@@ -69,13 +68,11 @@ namespace GridHandlers
             selectedTileY = prevY;
         }
 
-        if (prevX != selectedTileX || prevY != selectedTileY) {
-            tiles[prevY][prevX].ChangeColor(false);
-            tiles[selectedTileY][selectedTileX].ChangeColor(true);
-        }
+        
+
     }
 
-    void GridHandler::Attack()
+    void GridMovement::Attack()
     {
         auto& tiles = grid.RetrieveAllTiles();
 
@@ -109,65 +106,12 @@ namespace GridHandlers
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
 
-    }
+    }    
 
-    // Hent rute som spiller har valgt
-    std::pair<int, int> GridHandler::RetrieveTile() const {
-        return {selectedTileY, selectedTileX};
-    }
-
-    // Hent rute sin kordinater som spiller har valgt
-    std::pair<float, float> GridHandler::SelectedTilePos() 
-    {
-        auto& tiles = grid.RetrieveAllTiles();
-
-        return {tiles[selectedTileY][selectedTileX].RetrieveTilePos().first, 
-                tiles[selectedTileY][selectedTileX].RetrieveTilePos().second};
-    }
-    // Hent alle ruter
-    std::vector<std::vector<Tiles::Tile>>& GridHandler::RetrieveAllTiles()
+    std::vector<std::vector<Tiles::Tile>>& GridMovement::RetrieveAllTiles()
     {
         auto& tiles = grid.RetrieveAllTiles();
         return tiles;
     }
 
-    std::pair<int, int> GridHandler::RetrieveTileIndex()
-    {
-        std::pair<float, float> tilePositions = SelectedTilePos();
-
-         // Hver rute er 50x50 størrelse, så delt på 50, vil gi tilsvarende index for ruten
-        return {tilePositions.first / 50, 
-                tilePositions.second / 50};
-    }
-
-    void GridHandler::SelectTile()
-    {
-        auto& tiles = grid.RetrieveAllTiles();
-        coloredTileX = selectedTileX;
-        coloredTileY = selectedTileY;
-
-        tiles[coloredTileY][coloredTileX].Select();
-    }
-
-    void GridHandler::UnSelectTile()
-    {
-        auto& tiles = grid.RetrieveAllTiles();
-        coloredTileX = selectedTileX;
-        coloredTileY = selectedTileY;
-
-        tiles[coloredTileY][coloredTileX].UnSelect();
-    }
-
-    // Sjekk om en tile har blitt okkupert, og hva den er okkupert av
-    bool GridHandler::IsOccupied(Tiles::Tile tile)
-    {
-        if (tile.IsOccupied == true)
-        {
-            return true;
-        }
-        else 
-        {
-            return false;
-        }
-    }
 }

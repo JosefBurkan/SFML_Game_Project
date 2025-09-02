@@ -5,7 +5,7 @@ namespace Maps
     
     Map::Map()
     {
-        wallTexture.loadFromFile("Bricks.png");
+        wallTexture.loadFromFile(std::string(ASSETS_DIR) + "Bricks.png");
 
         // Lag antall vegger lik størrelsen til i
         for (int i = 0; i < 8; i++)
@@ -27,7 +27,7 @@ namespace Maps
     }
 
 
-    void Map::SetGridHandler(GridHandlers::GridHandler& movement)
+    void Map::SetGridMovement(GridHandlers::GridHandler& movement)
     {
         GridHandlerPtr = &movement;
 
@@ -80,7 +80,7 @@ namespace Maps
         walls[6].SetTileToOccupied();
         walls[7].SetTileToOccupied();
 
-        mapObject2.Position(gridTiles[2][2].RetrieveTilePos().first, gridTiles[2][2].RetrieveTilePos().second);
+        mapObject2.Position(gridTiles[8][8].RetrieveTilePos().first, gridTiles[8][8].RetrieveTilePos().second);
 
         mapObjects.push_back(mapObject2);
 
