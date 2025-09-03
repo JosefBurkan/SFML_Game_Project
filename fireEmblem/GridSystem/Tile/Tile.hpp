@@ -10,7 +10,7 @@ namespace Tiles
         bool IsOccupied = false;
         int tileNumber = 0;
         bool inRange;                            // Har karakteren nok movement for å gå dit
-        bool a;
+        bool display;
 
             Tile() : Tile(0.f, 0.f) {}
             Tile(float x, float y);
@@ -25,7 +25,8 @@ namespace Tiles
             // Marker rute som spilleren kan gå til
             void MarkPath();
             // Marker rute som spilleren kan angripe
-            void MarkAttackRange();                          
+            void MarkAttackRange();
+            void UnMark();
             void Highlight(std::pair<float, float> playerPosition, int gridSizeY, int gridSizeX);
 
     };

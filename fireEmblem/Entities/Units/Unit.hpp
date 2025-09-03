@@ -25,9 +25,9 @@ namespace Units
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void spawn();
             std::pair<int, int> RetriveCoordinations();
-            void Draw(sf::RenderWindow& window);
-            void CheckForMapObjects();
-            void IsHit();
+            virtual void Draw(sf::RenderWindow& window);
+            virtual void CheckForMapObjects();
+            virtual void IsHit();
 
 
     };

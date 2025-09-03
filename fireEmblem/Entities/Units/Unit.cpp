@@ -38,12 +38,22 @@ namespace Units
 
     void Unit::IsHit()
     {
+        int tileSize = 50;
+        
         for (auto& attack : attacks.activeAttacks)
         {
-            if (sprite->getPosition().x == attack.hitbox.getPosition().x && sprite->getPosition().y == attack.hitbox.getPosition().y)
+            int x = sprite->getPosition().x;
+            int y = sprite->getPosition().y;
+            int atkx = attack.hitbox.getPosition().x;
+            int atky = attack.hitbox.getPosition().y;
+
+            if (x >= atkx && y >= atky)
             {
-                healthPoints--;
-                std::cout << name << " er truffet! " << healthPoints;
+                if (x <= atkx + tileSize && x <= atky + tileSize)
+                {
+                    healthPoints--;
+                    std::cout << name << " er truffet! " << healthPoints << "\n";
+                }
             }
         }
     }

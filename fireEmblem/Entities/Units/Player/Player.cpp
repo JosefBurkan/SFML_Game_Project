@@ -13,16 +13,17 @@ namespace Players
         }
 
         name = "Player";
-        healthPoints = 10;
+        healthPoints = 3;
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
         sprite->setPosition({0.f, 0.f});
     }
-    std::pair<int, int> Player::TransformPositionToIndex(float spriteX, float spriteY)
+    std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
     {
-        return {spriteX/50, spriteY/50};
+        return {spriteY/50, spriteX/50};
     }
+
     // Sjekke om spilleren ikke er i et angrep, blir skadet etter noe tilsvarende
     bool Player::IsPlayerStateReady()
     {
@@ -42,6 +43,7 @@ namespace Players
         menu.Draw(window);
         attacks.Draw(window);
     }
+
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
     {
@@ -78,6 +80,7 @@ namespace Players
         else if (isSelected == true && preventSelect == true) 
         {
             auto& tiles = GridHandler.RetrieveAllTiles();
+            
 
             // Koordinatene til spilleren, i form av index
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
@@ -86,22 +89,19 @@ namespace Players
             if (GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false
              && tiles[selectedTile.first][selectedTile.second].inRange == true)
             {
+
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
                 {
                     isSelected = false;
                     preventSelect = false;
-
-                    sprite->setPosition({gridCurrentTileX + 10, gridCurrentTileY});
+                    algorithm.CleanGrid(tiles);     // Fjern rutene 
+                    sprite->setPosition({gridCurrentTileY + 10, gridCurrentTileX});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
-                    GridHandler.UnSelectTile();
-                    algorithm.CleanGrid(tiles);
                     CheckForMapObjects();
                     menuCooldown = 0;
                     attackCooldown = 0;
-                    state = "Selected";
-
                     // Plasser menyen, gjør den synlig
                     menu.show = true;
                     inMenu = true;
@@ -135,7 +135,7 @@ namespace Players
         if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
         {
             attackCooldown++;
-            Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
+            Attacks::Attack newAttack{gridCurrentTileY, gridCurrentTileX};                          
             attacks.CreateAttack(newAttack);
             state = "Neutral";
         }

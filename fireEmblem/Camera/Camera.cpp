@@ -32,19 +32,19 @@ namespace Cameras {
         viewSize = view.getCenter();
 
         // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 
-        if (selectedTileX > viewSize.x + 250)
+        if (selectedTileY > viewSize.x + 250)
         {
             view.move(moveHorisontally);
         }
-        if (selectedTileX < viewSize.x - 300)
+        if (selectedTileY < viewSize.x - 300)
         {
             view.move(-moveHorisontally);
         }
-        if (selectedTileY > viewSize.y + 250)
+        if (selectedTileX > viewSize.y + 250)
         {
             view.move(moveVertically);
         }
-        if (selectedTileY < viewSize.y - 300)
+        if (selectedTileX < viewSize.y - 300)
         {
             view.move(-moveVertically);
         }

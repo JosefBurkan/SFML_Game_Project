@@ -10,8 +10,9 @@
 #include "Maps/Background/Background1/Background1.hpp"
 #include "Hitboxes/Attacks/AttackManager/AttackManager.hpp"
 #include "UI/Player/Menu/Menu.hpp"
+#include "Entities/Units/Enemies/Slime/Slime.hpp"
 
-#include "Managers/EnemyManager/EnemyManager.hpp"
+#include "Managers/UnitManager/UnitManager.hpp"
 
 int main()
 {
@@ -41,16 +42,18 @@ int main()
     AttackManagers::AttackManager attacks;
 
     // rutefelt, rutefeltet til bevegelsen, banen
-    Players::Player you{grid, map, attacks, gridHandler};
+    auto you = std::make_shared<Players::Player>(grid, map, attacks, gridHandler);
+
     auto enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks);        // Bruker bare auto her, fordi er en avansert type
+    auto enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks);
 
-    EnemyManagers::EnemyManager enemyManager;
-    enemyManager.AddEnemy(enemy1);
-
+    UnitsManagers::UnitsManager unitManager;
+    unitManager.AddUnit(enemy1);
+    unitManager.AddUnit(enemy2);
+    unitManager.AddUnit(you);
     
     window.setFramerateLimit(60);
     window.setView(view);
-
 
     while (window.isOpen())
     {
@@ -65,22 +68,22 @@ int main()
         window.setView(moveView);
         background1.Draw(window);
         map.DrawMapObjects(window);
-        you.Movement();
-        you.Draw(window);                   // Spiller
+        you->Movement();
 
-        if (you.inMenu == false && you.state == "Neutral") 
+        if (you->inMenu == false && you->state == "Neutral") 
         {
             gridHandler.Movement();
         }
-        else if (you.inMenu == false && you.state == "Selected")
+        else if (you->inMenu == false && you->state == "Selected")
         {
             gridHandler.MovementWhileSelected();
         }
-        else if(you.state == "Attack")
+        else if(you->state == "Attack")
         {
             gridHandler.Attack();
         }
-        enemyManager.UpdateEnemies(window);
+        unitManager.UpdateUnits(window);
+
         attacks.Update();
         window.draw(shader);
         grid.Draw(window);                  // Rutenett

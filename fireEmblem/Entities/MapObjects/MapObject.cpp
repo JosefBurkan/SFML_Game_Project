@@ -41,11 +41,7 @@ namespace MapObjects
     {
         // Stopper funksjonen fra å kjøre før gridmovment har fått verdi.
         // Vet ikke hvorfor den trengs, funker ikke uten.
-        if (!GridHandler)
-        {
-            std::cout << "GridHandler is nullptr!" << std::endl;
-            return;
-        }
+
 
         auto& tiles = GridHandler->RetrieveAllTiles();
         std::pair<int, int> index = TransformPositionToIndex(sprite->getPosition().y, sprite->getPosition().x);
@@ -53,9 +49,9 @@ namespace MapObjects
     }
 
     // Flytt til en annen rute
-    void MapObject::Position(float positionX, float positionY)
+    void MapObject::Position(float positionY, float positionX)
     {
-        sprite->setPosition({positionX, positionY});
+        sprite->setPosition({positionY, positionX});
     }
 
     void MapObject::Draw(sf::RenderWindow& window) 

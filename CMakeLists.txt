@@ -34,8 +34,10 @@ add_executable(fireEmblem
     fireEmblem/UI/Player/Menu/Menu.cpp
     fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp
     fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp
-    fireEmblem/Managers/EnemyManager/EnemyManager.cpp
+    fireEmblem/Managers/UnitManager/UnitManager.cpp
     fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp
+    fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp
+    
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

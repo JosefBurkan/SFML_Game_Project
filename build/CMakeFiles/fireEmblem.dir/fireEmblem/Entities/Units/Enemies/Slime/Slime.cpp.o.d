@@ -1,7 +1,8 @@
-CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.o: \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
+CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o: \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -973,8 +974,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Text.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridGenerator/../Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../GridSystem/GridGenerator/../Tile/../../config.hpp \

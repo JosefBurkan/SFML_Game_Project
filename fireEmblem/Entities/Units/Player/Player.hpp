@@ -40,7 +40,7 @@ namespace Players
             void Movement();
             std::pair<int, int> TransformPositionToIndex(float spriteX, float spriteY);      // Oversett kordinater til rutenettet. feks. 50x = [5]
             void DrawUI(sf::RenderWindow& window);
-            void Draw(sf::RenderWindow& window);
+            void Draw(sf::RenderWindow& window) override;
 
     };
 }

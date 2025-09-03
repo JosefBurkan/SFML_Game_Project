@@ -249,6 +249,30 @@ fireEmblem/Entities/Units/Enemies/Enemy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.s
 .PHONY : fireEmblem/Entities/Units/Enemies/Enemy.cpp.s
 
+fireEmblem/Entities/Units/Enemies/Slime/Slime.o: fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o
+.PHONY : fireEmblem/Entities/Units/Enemies/Slime/Slime.o
+
+# target to build an object file
+fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o
+.PHONY : fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o
+
+fireEmblem/Entities/Units/Enemies/Slime/Slime.i: fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.i
+.PHONY : fireEmblem/Entities/Units/Enemies/Slime/Slime.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.i
+.PHONY : fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.i
+
+fireEmblem/Entities/Units/Enemies/Slime/Slime.s: fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.s
+.PHONY : fireEmblem/Entities/Units/Enemies/Slime/Slime.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.s
+.PHONY : fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.s
+
 fireEmblem/Entities/Units/Player/Player.o: fireEmblem/Entities/Units/Player/Player.cpp.o
 .PHONY : fireEmblem/Entities/Units/Player/Player.o
 
@@ -441,29 +465,29 @@ fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
 .PHONY : fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp.s
 
-fireEmblem/Managers/EnemyManager/EnemyManager.o: fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
-.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.o
+fireEmblem/Managers/UnitManager/UnitManager.o: fireEmblem/Managers/UnitManager/UnitManager.cpp.o
+.PHONY : fireEmblem/Managers/UnitManager/UnitManager.o
 
 # target to build an object file
-fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
-.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.cpp.o
+fireEmblem/Managers/UnitManager/UnitManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.o
+.PHONY : fireEmblem/Managers/UnitManager/UnitManager.cpp.o
 
-fireEmblem/Managers/EnemyManager/EnemyManager.i: fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
-.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.i
+fireEmblem/Managers/UnitManager/UnitManager.i: fireEmblem/Managers/UnitManager/UnitManager.cpp.i
+.PHONY : fireEmblem/Managers/UnitManager/UnitManager.i
 
 # target to preprocess a source file
-fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
-.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.cpp.i
+fireEmblem/Managers/UnitManager/UnitManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.i
+.PHONY : fireEmblem/Managers/UnitManager/UnitManager.cpp.i
 
-fireEmblem/Managers/EnemyManager/EnemyManager.s: fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
-.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.s
+fireEmblem/Managers/UnitManager/UnitManager.s: fireEmblem/Managers/UnitManager/UnitManager.cpp.s
+.PHONY : fireEmblem/Managers/UnitManager/UnitManager.s
 
 # target to generate assembly for a file
-fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
-.PHONY : fireEmblem/Managers/EnemyManager/EnemyManager.cpp.s
+fireEmblem/Managers/UnitManager/UnitManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.s
+.PHONY : fireEmblem/Managers/UnitManager/UnitManager.cpp.s
 
 fireEmblem/Maps/Background/Background1/Background1.o: fireEmblem/Maps/Background/Background1/Background1.cpp.o
 .PHONY : fireEmblem/Maps/Background/Background1/Background1.o
@@ -609,6 +633,9 @@ help:
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.o"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.i"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.s"
+	@echo "... fireEmblem/Entities/Units/Enemies/Slime/Slime.o"
+	@echo "... fireEmblem/Entities/Units/Enemies/Slime/Slime.i"
+	@echo "... fireEmblem/Entities/Units/Enemies/Slime/Slime.s"
 	@echo "... fireEmblem/Entities/Units/Player/Player.o"
 	@echo "... fireEmblem/Entities/Units/Player/Player.i"
 	@echo "... fireEmblem/Entities/Units/Player/Player.s"
@@ -633,9 +660,9 @@ help:
 	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.o"
 	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.i"
 	@echo "... fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.s"
-	@echo "... fireEmblem/Managers/EnemyManager/EnemyManager.o"
-	@echo "... fireEmblem/Managers/EnemyManager/EnemyManager.i"
-	@echo "... fireEmblem/Managers/EnemyManager/EnemyManager.s"
+	@echo "... fireEmblem/Managers/UnitManager/UnitManager.o"
+	@echo "... fireEmblem/Managers/UnitManager/UnitManager.i"
+	@echo "... fireEmblem/Managers/UnitManager/UnitManager.s"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.o"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.i"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.s"

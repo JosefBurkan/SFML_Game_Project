@@ -3,13 +3,13 @@
 namespace Tiles 
 {
     
-    Tile::Tile(float x, float y)
+    Tile::Tile(float y, float x)
     {
         rectangle.setSize({50.f, 50.f});
         rectangle.setFillColor(sf::Color(255, 255, 255, 0));
         rectangle.setOutlineColor(sf::Color(0, 0, 0, 0));
         rectangle.setOutlineThickness(3.f);
-        rectangle.setPosition({x, y});
+        rectangle.setPosition({y, x});
     }
 
     // Lys opp ruten om en enhet har blitt valgt
@@ -19,14 +19,14 @@ namespace Tiles
         {
             rectangle.setOutlineColor(sf::Color(115, 50, 250, 255));
             rectangle.setOutlineThickness(5.f);
-            a = true;
+            display = true;
         }
         else
         {
             rectangle.setOutlineColor(sf::Color(0, 0, 0, 0));
             rectangle.setFillColor(sf::Color(255, 255, 255, 0));
-            rectangle.setOutlineThickness(3.f);
-            a = false;
+            rectangle.setOutlineThickness(0.f);
+            display = false;
         }
     }
 
@@ -51,6 +51,12 @@ namespace Tiles
         rectangle.setOutlineThickness(4.f);
     }
 
+    void Tile::UnMark() 
+    {
+        rectangle.setFillColor(sf::Color(255, 255, 255, 0));
+        rectangle.setOutlineThickness(0.f);
+    }
+
     void Tile::Select()
     {
         rectangle.setFillColor(sf::Color(180, 200, 250, 130));
@@ -59,15 +65,17 @@ namespace Tiles
     void Tile::UnSelect() 
     {
         rectangle.setFillColor(sf::Color(255, 255, 255, 0));
+        rectangle.setOutlineThickness(5.f);
     }
+
 
     const std::pair<float, float> Tile::RetrieveTilePos() const
     {
-        return {rectangle.getPosition().x, rectangle.getPosition().y};
+        return {rectangle.getPosition().y, rectangle.getPosition().x};
     }
 
     void Tile::Draw(sf::RenderWindow& window) {
-        if (a == true || inRange == true)
+        if (display == true || inRange == true)
         {
             window.draw(rectangle);
         }

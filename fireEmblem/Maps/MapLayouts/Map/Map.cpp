@@ -62,14 +62,14 @@ namespace Maps
     {
         auto& gridTiles = gridGenerator.RetrieveAllTiles();
 
-        walls[0].Position(gridTiles[4][1].RetrieveTilePos().first, gridTiles[4][1].RetrieveTilePos().second);
-        walls[1].Position(gridTiles[4][2].RetrieveTilePos().first, gridTiles[4][2].RetrieveTilePos().second);
-        walls[2].Position(gridTiles[4][3].RetrieveTilePos().first, gridTiles[4][3].RetrieveTilePos().second);
+        walls[0].Position(gridTiles[1][4].RetrieveTilePos().first, gridTiles[1][4].RetrieveTilePos().second);
+        walls[1].Position(gridTiles[2][4].RetrieveTilePos().first, gridTiles[2][4].RetrieveTilePos().second);
+        walls[2].Position(gridTiles[3][4].RetrieveTilePos().first, gridTiles[3][4].RetrieveTilePos().second);
         walls[3].Position(gridTiles[4][4].RetrieveTilePos().first, gridTiles[4][4].RetrieveTilePos().second);
-        walls[4].Position(gridTiles[2][1].RetrieveTilePos().first, gridTiles[2][1].RetrieveTilePos().second);
-        walls[5].Position(gridTiles[2][2].RetrieveTilePos().first, gridTiles[2][2].RetrieveTilePos().second);
-        walls[6].Position(gridTiles[2][3].RetrieveTilePos().first, gridTiles[2][3].RetrieveTilePos().second);
-        walls[7].Position(gridTiles[2][4].RetrieveTilePos().first, gridTiles[2][4].RetrieveTilePos().second);
+        walls[4].Position(gridTiles[1][1].RetrieveTilePos().first, gridTiles[1][1].RetrieveTilePos().second);
+        walls[5].Position(gridTiles[2][1].RetrieveTilePos().first, gridTiles[2][1].RetrieveTilePos().second);
+        walls[6].Position(gridTiles[3][1].RetrieveTilePos().first, gridTiles[3][1].RetrieveTilePos().second);
+        walls[7].Position(gridTiles[4][1].RetrieveTilePos().first, gridTiles[4][1].RetrieveTilePos().second);
 
         walls[0].SetTileToOccupied();
         walls[1].SetTileToOccupied();

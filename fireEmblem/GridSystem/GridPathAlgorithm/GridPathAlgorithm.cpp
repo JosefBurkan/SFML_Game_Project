@@ -1,11 +1,11 @@
 #include "GridPathAlgorithm.hpp"
 
 namespace GridPathAlgorithms
-
 {
-
-    void GridPathAlgorithm::CheckAvailableTiles(int startX, int startY, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
+    void GridPathAlgorithm::CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
+        coordinateY = startY;
+        coordinateX = startX;
         // startX, statY, avstandReist
         std::queue<std::tuple<int, int, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
@@ -17,12 +17,13 @@ namespace GridPathAlgorithms
 
         while (!q.empty())
         {
-            auto [x, y, g] = q.front();
+            auto [y, x, g] = q.front();
             q.pop();
 
             // Dersom g er større enn bevegelseshastigheten til spilleren, hopp over
             if (g > range) continue;
-            for (auto [dx,dy] : directions)
+
+            for (auto [dy,dx] : directions)
             {
                 int nx = x + dx;
                 int ny = y + dy;
@@ -30,24 +31,19 @@ namespace GridPathAlgorithms
                 // Ikke beveg utenfor banen
                 if (nx < 0 || ny < 0 || nx >= tiles.size() || ny >= tiles[0].size()) continue;
                 // Ikke beveg på okkuperte ruter
-                if (tiles[nx][ny].IsOccupied) continue;
+                if (tiles[ny][nx].IsOccupied) continue;
 
-                tiles[startX][startY].inRange = true;
-                tiles[nx][ny].inRange = true;
+                tiles[startY][startX].inRange = true;
+                if (g < range) tiles[ny][nx].inRange = true;
 
-                if (visited.count({nx,ny})) continue;
+                if (visited.count({ny,nx})) continue;
 
-                if (g < range) tiles[nx][ny].MarkPath();
-                else if (g == range) tiles[nx][ny].MarkAttackRange();
+                q.push({ny, nx, g+1});
+                visited.insert({ny, nx});
 
-                q.push({nx, ny, g+1});
-                visited.insert({nx, ny});
-
-
+                if (g < range) tiles[ny][nx].MarkPath();
             }
         }
-
-
     }
 
     void GridPathAlgorithm::CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles)
@@ -56,7 +52,11 @@ namespace GridPathAlgorithms
         {
             for (auto& t : tile)
             {
-                t.UnSelect();
+                if (t.RetrieveTilePos().first !=  coordinateY &&
+                    t.RetrieveTilePos().second != coordinateX)
+                {
+                    t.UnMark();
+                }
                 t.inRange = false;
             }
         }

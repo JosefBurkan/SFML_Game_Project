@@ -18,7 +18,7 @@ namespace MapObjects
         sf::Sprite& RetrieveSprite();
         std::pair<float, float> printPos();
         void SetTileToOccupied();
-        void Position(float positionX, float positionY);
+        void Position(float positionY, float positionX);
         void SetGrid(GridHandlers::GridHandler& grid);
         GridHandlers::GridHandler& FetchGrid();
         void Draw(sf::RenderWindow& window);
