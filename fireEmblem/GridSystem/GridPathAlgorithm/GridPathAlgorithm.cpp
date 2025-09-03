@@ -29,7 +29,7 @@ namespace GridPathAlgorithms
                 int ny = y + dy;
 
                 // Ikke beveg utenfor banen
-                if (nx < 0 || ny < 0 || nx >= tiles.size() || ny >= tiles[0].size()) continue;
+                if (nx < 0 || ny < 0 || ny >= tiles.size() || nx >= tiles[0].size()) continue;
                 // Ikke beveg på okkuperte ruter
                 if (tiles[ny][nx].IsOccupied) continue;
 
