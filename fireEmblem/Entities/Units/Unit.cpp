@@ -49,7 +49,7 @@ namespace Units
 
             if (x >= atkx && y >= atky)
             {
-                if (x <= atkx + tileSize && x <= atky + tileSize)
+                if (x <= atkx + tileSize && y <= atky + tileSize)
                 {
                     healthPoints--;
                     std::cout << name << " er truffet! " << healthPoints << "\n";

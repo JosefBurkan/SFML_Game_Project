@@ -23,8 +23,8 @@ namespace Players
             GridPathAlgorithms::GridPathAlgorithm algorithm;
             Menus::Menu menu;
 
-            int playerCurrentTileX = 0;
-            int playerCurrentTileY = 0;
+            float playerCurrentTileY = 0;
+            float playerCurrentTileX = 0;
             int menuCooldown;                                   // Prevents spammable buttons
             bool isSelected = false;                            // Sjekk om spilleren har blitt valgt
             bool preventSelect = false;                         // Forebygg at spilleren kan velges

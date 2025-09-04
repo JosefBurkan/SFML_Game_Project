@@ -2,6 +2,7 @@
 
 namespace GridPathAlgorithms
 {
+    // Farg de rutene som spilleren kan bevege seg til
     void GridPathAlgorithm::CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
         coordinateY = startY;
@@ -46,18 +47,26 @@ namespace GridPathAlgorithms
         }
     }
 
-    void GridPathAlgorithm::CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles)
+    // Fjern de fargete rutene etter en spiller flytter seg
+    void GridPathAlgorithm::CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles, float gridCurrentTileY, float gridCurrentTileX)
     {
         for (auto& tile : tiles)
         {
+            
+
             for (auto& t : tile)
             {
-                if (t.RetrieveTilePos().first !=  coordinateY &&
-                    t.RetrieveTilePos().second != coordinateX)
+                // Ikke fjern ruta som spilleren står på
+                if (t.RetrieveTilePos().first == gridCurrentTileX &&
+                    t.RetrieveTilePos().second == gridCurrentTileY)
+                {
+
+                }
+                else
                 {
                     t.UnMark();
+                    t.inRange = false;
                 }
-                t.inRange = false;
             }
         }
     }

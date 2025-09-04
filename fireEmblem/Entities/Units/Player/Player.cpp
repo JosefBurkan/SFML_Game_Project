@@ -95,10 +95,10 @@ namespace Players
                 {
                     isSelected = false;
                     preventSelect = false;
-                    algorithm.CleanGrid(tiles);     // Fjern rutene 
                     sprite->setPosition({gridCurrentTileY + 10, gridCurrentTileX});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
+                    algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern rutene 
                     CheckForMapObjects();
                     menuCooldown = 0;
                     attackCooldown = 0;
