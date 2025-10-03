@@ -61,6 +61,12 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
   "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o"
@@ -118,5 +124,11 @@
   "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o"
 }
 ]

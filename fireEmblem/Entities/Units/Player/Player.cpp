@@ -23,7 +23,6 @@ namespace Players
     {
         return {spriteY/50, spriteX/50};
     }
-
     // Sjekke om spilleren ikke er i et angrep, blir skadet etter noe tilsvarende
     bool Player::IsPlayerStateReady()
     {
@@ -36,14 +35,12 @@ namespace Players
             return true;
         }
     }              
-
     void Player::Draw(sf::RenderWindow& window) 
     {
         window.draw(*sprite);
         menu.Draw(window);
         attacks.Draw(window);
     }
-
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
     {
@@ -54,8 +51,6 @@ namespace Players
         
         float gridCurrentTileX = retrievedTile.first;
         float gridCurrentTileY = retrievedTile.second;
-
-
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
@@ -72,7 +67,6 @@ namespace Players
                     preventSelect = false;
                     algorithm.CheckAvailableTiles(retrievedTileIndex.first, retrievedTileIndex.second, movement, tiles);
                     state = "Selected";
-
                 }
             }
         }
@@ -89,7 +83,6 @@ namespace Players
             if (GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false
              && tiles[selectedTile.first][selectedTile.second].inRange == true)
             {
-
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
                 {
@@ -106,7 +99,6 @@ namespace Players
                     menu.show = true;
                     inMenu = true;
                     menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
-
                 }
             }
         }

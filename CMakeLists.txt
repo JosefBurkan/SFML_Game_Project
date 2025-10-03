@@ -27,6 +27,7 @@ add_executable(fireEmblem
     fireEmblem/Maps/MapLayouts/Map/Map.cpp
     fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp
     fireEmblem/Maps/Background/Background1/Background1.cpp
+    fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp
     fireEmblem/Entities/MapObjects/MapObject.cpp
     fireEmblem/Entities/MapObjects/Bat/Bat.cpp
     fireEmblem/Entities/MapObjects/Wall/Wall.cpp
@@ -37,7 +38,7 @@ add_executable(fireEmblem
     fireEmblem/Managers/UnitManager/UnitManager.cpp
     fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp
     fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp
-    
+    fireEmblem/Game/Game.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

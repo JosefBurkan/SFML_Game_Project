@@ -170,4 +170,9 @@ namespace GridHandlers
             return false;
         }
     }
+
+    void GridHandler::Draw(sf::RenderWindow& window) 
+    {
+        grid.Draw(window);
+    }
 }

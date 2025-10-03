@@ -19,7 +19,4 @@ namespace Slimes
             void CheckForAttacks();
             void Draw(sf::RenderWindow& window) override;
     };
-
-
-
 }

@@ -1,3 +1,4 @@
+#pragma once
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 

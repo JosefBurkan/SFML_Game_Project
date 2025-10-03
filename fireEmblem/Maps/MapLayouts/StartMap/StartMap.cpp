@@ -1,22 +1,15 @@
-#include "../Map/Map.hpp"
-using namespace Maps;
+#include "StartMap.hpp"
 
-namespace Maps
+namespace StartMaps
 {
-    class StartMap : public Map
+
+    void StartMap::GenerateGrid() 
     {
-        unsigned int numberOfColumns = 15;
-        unsigned int numberOfRows = 16;
+        gridGenerator.CreateGrid(numberOfRows, numberOfColumns);
+    }
 
-        public: 
-            void GenerateGrid() 
-            {
-                gridGenerator.CreateGrid(numberOfRows, numberOfColumns);
-            }
-
-            void LoadWindow() 
-            {
-                window.create(sf::VideoMode({numberOfColumns * 50, numberOfRows * 50}), "Game Window");
-            }
-    };
+    void StartMap::LoadWindow() 
+    {
+        window.create(sf::VideoMode({numberOfColumns * 50, numberOfRows * 50}), "Game Window");
+    }
 }

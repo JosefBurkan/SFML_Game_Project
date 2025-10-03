@@ -41,5 +41,6 @@ namespace GridHandlers
             void RetrieveTileByPositions(float positionX, float positionY); // Sjekk om en rute er okkupert
             void CreateGrid(int r, int c);                                  // Generer gridden her
             void UpdateGrid();                                              // Sett hele rutefeltet tilbake til sin opprinnelige status
+            void Draw(sf::RenderWindow& window); 
     };
 }

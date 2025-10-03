@@ -321,6 +321,30 @@ fireEmblem/Entities/Units/Unit.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.s
 .PHONY : fireEmblem/Entities/Units/Unit.cpp.s
 
+fireEmblem/Game/Game.o: fireEmblem/Game/Game.cpp.o
+.PHONY : fireEmblem/Game/Game.o
+
+# target to build an object file
+fireEmblem/Game/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o
+.PHONY : fireEmblem/Game/Game.cpp.o
+
+fireEmblem/Game/Game.i: fireEmblem/Game/Game.cpp.i
+.PHONY : fireEmblem/Game/Game.i
+
+# target to preprocess a source file
+fireEmblem/Game/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.i
+.PHONY : fireEmblem/Game/Game.cpp.i
+
+fireEmblem/Game/Game.s: fireEmblem/Game/Game.cpp.s
+.PHONY : fireEmblem/Game/Game.s
+
+# target to generate assembly for a file
+fireEmblem/Game/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.s
+.PHONY : fireEmblem/Game/Game.cpp.s
+
 fireEmblem/GridSystem/GridGenerator/GridGenerator.o: fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
 .PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.o
 
@@ -561,6 +585,30 @@ fireEmblem/Maps/MapLayouts/Map/Map.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.s
 .PHONY : fireEmblem/Maps/MapLayouts/Map/Map.cpp.s
 
+fireEmblem/Maps/MapLayouts/StartMap/StartMap.o: fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o
+.PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.o
+
+# target to build an object file
+fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o
+.PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o
+
+fireEmblem/Maps/MapLayouts/StartMap/StartMap.i: fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.i
+.PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.i
+
+# target to preprocess a source file
+fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.i
+.PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.i
+
+fireEmblem/Maps/MapLayouts/StartMap/StartMap.s: fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s
+.PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.s
+
+# target to generate assembly for a file
+fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s
+.PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s
+
 fireEmblem/UI/Player/Menu/Menu.o: fireEmblem/UI/Player/Menu/Menu.cpp.o
 .PHONY : fireEmblem/UI/Player/Menu/Menu.o
 
@@ -642,6 +690,9 @@ help:
 	@echo "... fireEmblem/Entities/Units/Unit.o"
 	@echo "... fireEmblem/Entities/Units/Unit.i"
 	@echo "... fireEmblem/Entities/Units/Unit.s"
+	@echo "... fireEmblem/Game/Game.o"
+	@echo "... fireEmblem/Game/Game.i"
+	@echo "... fireEmblem/Game/Game.s"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.o"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.i"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.s"
@@ -672,6 +723,9 @@ help:
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.o"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.i"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.s"
+	@echo "... fireEmblem/Maps/MapLayouts/StartMap/StartMap.o"
+	@echo "... fireEmblem/Maps/MapLayouts/StartMap/StartMap.i"
+	@echo "... fireEmblem/Maps/MapLayouts/StartMap/StartMap.s"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.o"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.i"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.s"

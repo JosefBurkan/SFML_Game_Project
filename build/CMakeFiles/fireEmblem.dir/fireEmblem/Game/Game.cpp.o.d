@@ -1,5 +1,5 @@
-CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp \
+CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o: \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.cpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.hpp \
