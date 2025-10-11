@@ -19,7 +19,8 @@ namespace UnitsManagers
 
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
-        for (auto it = units.begin(); it != units.end(); ) {
+        for (auto it = units.begin(); it != units.end(); ) 
+        {
             (*it)->Draw(window);
             (*it)->IsHit();
 
@@ -27,6 +28,17 @@ namespace UnitsManagers
                 it = units.erase(it); 
             } else {
                 ++it;
+            }
+        }
+    }
+
+    // Perform actions automatically, only if the unit is an enemy
+    void UnitsManager::PerformEnemyActions()
+    {
+        for (auto it = units.begin(); it != units.end(); ++it) 
+        {
+            if ((*it)->type == "Enemy") {
+                (*it)->PerformActions(); 
             }
         }
     }

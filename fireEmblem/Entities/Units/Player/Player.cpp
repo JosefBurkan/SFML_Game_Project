@@ -14,6 +14,7 @@ namespace Players
 
         name = "Player";
         healthPoints = 3;
+        type = "Player";
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
@@ -55,6 +56,8 @@ namespace Players
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
         {
+            // Fjerne okkupasjon her, enkel og effektiv måte
+
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
@@ -63,6 +66,7 @@ namespace Players
                 {
                     auto& tiles = GridHandler.RetrieveAllTiles();
 
+                    tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = false;
                     isSelected = true;
                     preventSelect = false;
                     algorithm.CheckAvailableTiles(retrievedTileIndex.first, retrievedTileIndex.second, movement, tiles);
@@ -86,6 +90,7 @@ namespace Players
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
                 {
+                    tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                     isSelected = false;
                     preventSelect = false;
                     sprite->setPosition({gridCurrentTileY + 10, gridCurrentTileX});
@@ -95,7 +100,6 @@ namespace Players
                     CheckForMapObjects();
                     menuCooldown = 0;
                     attackCooldown = 0;
-                    // Plasser menyen, gjør den synlig
                     menu.show = true;
                     inMenu = true;
                     menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);

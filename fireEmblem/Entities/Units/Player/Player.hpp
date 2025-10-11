@@ -4,7 +4,7 @@
 #include "../../../GridSystem/GridHandler/GridHandler.hpp"
 #include "../../../UI/Player/Menu/Menu.hpp"
 #include "../../../Hitboxes/Attacks/Attack/Attack.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp"
 
 
 namespace GridGenerators 

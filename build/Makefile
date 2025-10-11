@@ -345,6 +345,54 @@ fireEmblem/Game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.s
 .PHONY : fireEmblem/Game/Game.cpp.s
 
+fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.o: fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.o
+
+# target to build an object file
+fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o
+
+fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.i: fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.i
+
+fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.s: fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.s
+
+fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.o: fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.o
+
+# target to build an object file
+fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o
+
+fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.i: fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.i
+
+fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.s: fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s
+
 fireEmblem/GridSystem/GridGenerator/GridGenerator.o: fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
 .PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.o
 
@@ -392,30 +440,6 @@ fireEmblem/GridSystem/GridHandler/GridHandler.s: fireEmblem/GridSystem/GridHandl
 fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
 .PHONY : fireEmblem/GridSystem/GridHandler/GridHandler.cpp.s
-
-fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.o: fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
-.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.o
-
-# target to build an object file
-fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
-.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o
-
-fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.i: fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
-.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.i
-
-# target to preprocess a source file
-fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
-.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.i
-
-fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.s: fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
-.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.s
-
-# target to generate assembly for a file
-fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
-.PHONY : fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.s
 
 fireEmblem/GridSystem/Tile/Tile.o: fireEmblem/GridSystem/Tile/Tile.cpp.o
 .PHONY : fireEmblem/GridSystem/Tile/Tile.o
@@ -693,15 +717,18 @@ help:
 	@echo "... fireEmblem/Game/Game.o"
 	@echo "... fireEmblem/Game/Game.i"
 	@echo "... fireEmblem/Game/Game.s"
+	@echo "... fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.o"
+	@echo "... fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.i"
+	@echo "... fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.s"
+	@echo "... fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.o"
+	@echo "... fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.i"
+	@echo "... fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.s"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.o"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.i"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.s"
 	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.o"
 	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.i"
 	@echo "... fireEmblem/GridSystem/GridHandler/GridHandler.s"
-	@echo "... fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.o"
-	@echo "... fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.i"
-	@echo "... fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.s"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.o"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.i"
 	@echo "... fireEmblem/GridSystem/Tile/Tile.s"

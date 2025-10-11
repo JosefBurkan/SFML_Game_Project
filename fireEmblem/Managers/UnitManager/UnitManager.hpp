@@ -17,5 +17,6 @@ namespace UnitsManagers
             std::vector<std::shared_ptr<Units::Unit>> AllUnits();
             void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
+            void PerformEnemyActions();
     };
 }

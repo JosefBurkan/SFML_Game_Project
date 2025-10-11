@@ -115,9 +115,9 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
-  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp",
-  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp",
-  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.cpp.o"
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o"
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
@@ -130,5 +130,11 @@
   "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o"
 }
 ]

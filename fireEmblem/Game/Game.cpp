@@ -57,11 +57,12 @@ namespace Games
             moveView = camera->MoveView();
             window.setView(moveView);
 
-            // Tegn bakgrunn + map
+            // Tegn bakgrunn + bane
             background1->Draw(window);
             map.DrawMapObjects(window);
 
-            // Spilllogikk
+            // logikk for spilleren
+
             you->Movement();
 
             if (!you->inMenu && you->state == "Neutral")
@@ -72,6 +73,8 @@ namespace Games
                 gridHandler->Attack();
 
             unitManager.UpdateUnits(window);
+            unitManager.PerformEnemyActions();
+
             attacks.Update();
 
             // Shader

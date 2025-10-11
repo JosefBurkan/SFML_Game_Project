@@ -1009,7 +1009,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/Menu.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attacks/Attack/Attack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridPathAlgorithm/GridPathAlgorithm.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
@@ -1039,6 +1039,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attacks/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridHandler/GridHandler.hpp \

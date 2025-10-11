@@ -20,6 +20,7 @@ namespace Units
             int movement = 5;
             
         public: 
+            std::string type = "unit";
             int healthPoints = 2;
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
@@ -28,6 +29,7 @@ namespace Units
             virtual void Draw(sf::RenderWindow& window);
             virtual void CheckForMapObjects();
             virtual void IsHit();
+            virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
 
 
     };

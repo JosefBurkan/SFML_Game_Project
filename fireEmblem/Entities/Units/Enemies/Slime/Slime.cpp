@@ -3,7 +3,7 @@
 namespace Slimes
 {
     Slime::Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks)
-        : Unit(gridReference, map, attacks)
+        : Enemy(gridReference, map, attacks)
     {
         if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Slime-2.png")) 
         {
@@ -45,6 +45,22 @@ namespace Slimes
         window.draw(*sprite);
 
     }
+
+    // Håndterer bevegelse og angrep
+    void Slime::PerformActions()
+    {
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+        playerPos = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, 4, tiles);
+
+        // Hopp til spilleren dersom den er innen rekkevidde
+        if (algorithm.playerDetected == true)
+        {
+            sprite->setPosition({150.f, 150.f});
+            std::cout << playerPos.first;
+        }
+
+    }
+
 
 
 

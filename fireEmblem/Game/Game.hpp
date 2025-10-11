@@ -31,7 +31,9 @@ namespace Games
         std::shared_ptr<Slimes::Slime> enemy2;
 
         sf::RectangleShape shader;
-
+        
+        int turn = 0;
+        
     public:
         Game();
         void Run();
