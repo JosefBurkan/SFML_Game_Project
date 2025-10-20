@@ -62,18 +62,40 @@ namespace Games
             map.DrawMapObjects(window);
 
             // logikk for spilleren
-
-            you->Movement();
-
-            if (!you->inMenu && you->state == "Neutral")
-                gridHandler->Movement();
-            else if (!you->inMenu && you->state == "Selected")
-                gridHandler->MovementWhileSelected();
-            else if (you->state == "Attack")
-                gridHandler->Attack();
+            if (you->currentTurn == true)
+            {
+                you->Movement();
+                
+                if (!you->inMenu && you->state == "Neutral")
+                {
+                    gridHandler->Movement();
+                }
+                else if (!you->inMenu && you->state == "Selected")
+                {
+                    gridHandler->MovementWhileSelected();
+                }
+                else if (you->state == "Attack")
+                {
+                    gridHandler->Attack();
+                }
+            }
 
             unitManager.UpdateUnits(window);
-            unitManager.PerformEnemyActions();
+
+            if (you->state != "Selected" && you->state != "Attack" && !you->currentTurn)
+            {
+
+                cooldown++;
+                
+                if (cooldown > 30)
+                {
+                    you->currentTurn = true;
+                    unitManager.PerformEnemyActions();
+                    turn = 0;
+                    cooldown = 0;
+                }
+                
+            }
 
             attacks.Update();
 

@@ -52,6 +52,7 @@ namespace EnemyPathAlgorithms
             }
 
         }
+        playerDetected = false;
         return {startY, startX};
     }
 }

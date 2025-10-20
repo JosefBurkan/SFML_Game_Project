@@ -12,7 +12,6 @@ namespace UnitsManagers
             std::vector<std::shared_ptr<Units::Unit>> units; // Pointer for å sørge at fiendene ikke kopieres inn
 
         public:
-
             void AddUnit(std::shared_ptr<Units::Unit> unit);
             std::vector<std::shared_ptr<Units::Unit>> AllUnits();
             void RemoveUnit();

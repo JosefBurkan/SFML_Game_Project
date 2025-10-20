@@ -7,7 +7,6 @@ namespace Players
                     AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
         : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
-        
         if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Prinsesse.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
@@ -20,10 +19,12 @@ namespace Players
         sprite->setScale({3.f, 3.f});
         sprite->setPosition({0.f, 0.f});
     }
+
     std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
     {
         return {spriteY/50, spriteX/50};
     }
+
     // Sjekke om spilleren ikke er i et angrep, blir skadet etter noe tilsvarende
     bool Player::IsPlayerStateReady()
     {
@@ -35,13 +36,27 @@ namespace Players
         {
             return true;
         }
-    }              
+    }    
+
+    void Player::CancelSelect()
+    {
+        state = "Neutral";
+        menu.show = false;
+        inMenu = false;
+        GridHandler.rangeX = 0;
+        GridHandler.rangeY = 0;
+        currentTurn = false;
+        isSelected = false;
+        preventSelect = false;
+    }   
+
     void Player::Draw(sf::RenderWindow& window) 
     {
         window.draw(*sprite);
         menu.Draw(window);
         attacks.Draw(window);
     }
+
     // Håndtere bevegelsen av spilleren
     void Player::Movement() 
     {
@@ -56,16 +71,15 @@ namespace Players
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
         {
-            // Fjerne okkupasjon her, enkel og effektiv måte
+            auto& tiles = GridHandler.RetrieveAllTiles();
 
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
+
                 // Står spilleren på samme rute som er valgt på rutefeltet
                 if (playerCurrentTileX == gridCurrentTileX && playerCurrentTileY == gridCurrentTileY)
                 {
-                    auto& tiles = GridHandler.RetrieveAllTiles();
-
                     tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = false;
                     isSelected = true;
                     preventSelect = false;
@@ -73,12 +87,18 @@ namespace Players
                     state = "Selected";
                 }
             }
+
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
+            {
+                tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
+                CancelSelect();
+                algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);
+            }
         }
         // Sjekk om spilleren har blitt valgt
         else if (isSelected == true && preventSelect == true) 
         {
             auto& tiles = GridHandler.RetrieveAllTiles();
-            
 
             // Koordinatene til spilleren, i form av index
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
@@ -109,11 +129,7 @@ namespace Players
         // Trykk 'X' for å lukke menyen
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
         {
-            state = "Neutral";
-            menu.show = false;
-            inMenu = false;
-            GridHandler.rangeX = 0;
-            GridHandler.rangeY = 0;
+            CancelSelect();
         }
 
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
@@ -134,6 +150,8 @@ namespace Players
             Attacks::Attack newAttack{gridCurrentTileY, gridCurrentTileX};                          
             attacks.CreateAttack(newAttack);
             state = "Neutral";
+            currentTurn = false;
+
         }
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
         if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))

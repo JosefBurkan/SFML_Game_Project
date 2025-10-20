@@ -37,7 +37,8 @@ namespace UnitsManagers
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
-            if ((*it)->type == "Enemy") {
+            if ((*it)->type == "Enemy") 
+            {
                 (*it)->PerformActions(); 
             }
         }

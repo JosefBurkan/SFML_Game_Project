@@ -31,8 +31,11 @@ namespace Games
         std::shared_ptr<Slimes::Slime> enemy2;
 
         sf::RectangleShape shader;
+        sf::Clock clock;
+
         
         int turn = 0;
+        int cooldown = 0; // Ventetid mellom enheter sine handlinger
         
     public:
         Game();

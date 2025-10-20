@@ -17,6 +17,8 @@ namespace Enemies
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
         sprite->setPosition({300.f, 300.f});
+
+        currentTurn == false;
     }
 
 

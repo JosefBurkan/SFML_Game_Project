@@ -17,6 +17,7 @@ namespace Slimes
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setScale({3.f, 3.f});
         sprite->setPosition({350.f, 150.f});
+        movement = 4;
     }
 
     void Slime::Draw(sf::RenderWindow& window)
@@ -50,13 +51,13 @@ namespace Slimes
     void Slime::PerformActions()
     {
         auto& tiles = gridGenerator.RetrieveAllTiles();
-        playerPos = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, 4, tiles);
+        playerPos = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
 
         // Hopp til spilleren dersom den er innen rekkevidde
         if (algorithm.playerDetected == true)
         {
-            sprite->setPosition({150.f, 150.f});
-            std::cout << playerPos.first;
+            std::cout << playerPos.second << playerPos.second << " ";
+            sprite->setPosition({(playerPos.second * 50) + 50, playerPos.first * 50});
         }
 
     }

@@ -13,6 +13,7 @@ namespace EnemyPathAlgorithms
             float coordinateY;
             float coordinateX;
         public:
+            float isActive = true;
             bool playerDetected = false;
             std::pair<float, float> CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
     };
