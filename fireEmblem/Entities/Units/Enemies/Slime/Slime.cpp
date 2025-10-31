@@ -2,8 +2,8 @@
 
 namespace Slimes
 {
-    Slime::Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks)
-        : Enemy(gridReference, map, attacks)
+    Slime::Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
+        : Enemy(gridReference, map, attacks, yPos, xPos)
     {
         if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Slime-2.png")) 
         {
@@ -16,7 +16,7 @@ namespace Slimes
         sprite.emplace(texture);
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setScale({3.f, 3.f});
-        sprite->setPosition({350.f, 150.f});
+        sprite->setPosition({yPos, xPos});
         movement = 4;
     }
 
@@ -56,7 +56,6 @@ namespace Slimes
         // Hopp til spilleren dersom den er innen rekkevidde
         if (algorithm.playerDetected == true)
         {
-            std::cout << playerPos.second << playerPos.second << " ";
             sprite->setPosition({(playerPos.second * 50) + 50, playerPos.first * 50});
         }
 

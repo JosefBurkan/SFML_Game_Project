@@ -2,7 +2,7 @@
 
 namespace Enemies
 {
-    Enemy::Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks)
+    Enemy::Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
         : Unit(gridReference, map, attacks)
     {
         if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Pixel-Bat.png")) 
@@ -16,10 +16,13 @@ namespace Enemies
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
-        sprite->setPosition({300.f, 300.f});
+        sprite->setPosition({yPos, xPos});
 
-        currentTurn == false;
     }
 
+    void Enemy::PerformActions()
+    {
+        std::cout << "\nDette er BAT som snakker! \n";
+    }
 
 }

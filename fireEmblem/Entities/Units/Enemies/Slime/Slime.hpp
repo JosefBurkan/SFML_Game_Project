@@ -19,7 +19,7 @@ namespace Slimes
             std::pair<float, float> playerPos = {0, 0};
 
         public:
-            Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
+            Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void Draw(sf::RenderWindow& window) override;
             void PerformActions() override;
 

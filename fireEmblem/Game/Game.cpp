@@ -24,16 +24,26 @@ namespace Games
 
         // Units
         you    = std::make_shared<Players::Player>(grid, map, attacks, *gridHandler);
-        enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks);
-        enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks);
+        enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
+        enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
+        slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
 
         unitManager.AddUnit(enemy1);
         unitManager.AddUnit(enemy2);
+        unitManager.AddUnit(slime2);
         unitManager.AddUnit(you);
+
+        unitManager.SortUnits();
 
         // Shader
         shader.setSize({750.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
+
+        for (int i = 0; i < unitManager.GetSize(); i++)
+        {
+            unitManager.GetUnitByTurn(i);
+        }
+
     }
 
     void Game::Run()
@@ -62,10 +72,20 @@ namespace Games
             map.DrawMapObjects(window);
 
             // logikk for spilleren
-            if (you->currentTurn == true)
+            // Lage noe som lignende if (turn == unitmanager.GetUnitByTurn(turn))
+            // Altså turn == indeksen til en enhet i unitlista. Første unit skal ha turn 0, andre unit turn 1, osv
+
+            if (you->turn == gameTurn)
             {
+
                 you->Movement();
-                
+
+                if (lock == false)
+                {
+                    unitManager.GetUnitByTurn(gameTurn);
+                    std::cout << "'s turn: \n";
+                    lock = true;
+                }
                 if (!you->inMenu && you->state == "Neutral")
                 {
                     gridHandler->Movement();
@@ -78,23 +98,33 @@ namespace Games
                 {
                     gridHandler->Attack();
                 }
+                else if (you->state == "Finished")
+                {
+                    gameTurn++;
+                }
             }
 
             unitManager.UpdateUnits(window);
 
-            if (you->state != "Selected" && you->state != "Attack" && !you->currentTurn)
+            if (you->state != "Selected" && you->state != "Attack" && you->turn != gameTurn)
             {
-
                 cooldown++;
-                
-                if (cooldown > 30)
+
+                if (cooldown > 50)
                 {
-                    you->currentTurn = true;
                     unitManager.PerformEnemyActions();
-                    turn = 0;
                     cooldown = 0;
+                    gameTurn++;
+                    unitManager.GetUnitByTurn(gameTurn);
+                    std::cout << "'s turn: \n";
                 }
-                
+            }
+
+            if (gameTurn >= 3)
+            {
+                gameTurn = 0;
+                you->state = "Neutral";
+                lock = false;
             }
 
             attacks.Update();

@@ -10,6 +10,7 @@ namespace UnitsManagers
     {
         private:
             std::vector<std::shared_ptr<Units::Unit>> units; // Pointer for å sørge at fiendene ikke kopieres inn
+            int assignTurn = 0; // Sett 'turn' til units lik indeksen dems i unitlista
 
         public:
             void AddUnit(std::shared_ptr<Units::Unit> unit);
@@ -17,5 +18,8 @@ namespace UnitsManagers
             void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
             void PerformEnemyActions();
+            void SortUnits();      // Sorterer units etter speed. Raskeste går først
+            int GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
+            int GetSize();
     };
 }

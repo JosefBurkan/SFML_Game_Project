@@ -14,7 +14,8 @@ namespace Enemies
         private:
 
         public:
-            Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
+            Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void CheckForAttacks();
+            void PerformActions() override;
     };
 }

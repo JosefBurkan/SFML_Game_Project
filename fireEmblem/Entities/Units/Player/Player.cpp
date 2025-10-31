@@ -14,6 +14,7 @@ namespace Players
         name = "Player";
         healthPoints = 3;
         type = "Player";
+        speed = 3;
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
@@ -45,7 +46,6 @@ namespace Players
         inMenu = false;
         GridHandler.rangeX = 0;
         GridHandler.rangeY = 0;
-        currentTurn = false;
         isSelected = false;
         preventSelect = false;
     }   
@@ -149,8 +149,7 @@ namespace Players
             attackCooldown++;
             Attacks::Attack newAttack{gridCurrentTileY, gridCurrentTileX};                          
             attacks.CreateAttack(newAttack);
-            state = "Neutral";
-            currentTurn = false;
+            state = "Finished";
 
         }
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'

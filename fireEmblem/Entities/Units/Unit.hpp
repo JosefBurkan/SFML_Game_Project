@@ -16,13 +16,14 @@ namespace Units
             std::optional<sf::Sprite> sprite;  
             std::string spritePath;
 
-            std::string name = "default";
             int movement = 5;
             
         public: 
             std::string type = "unit";
             int healthPoints = 2;
-            bool currentTurn = true;
+            int turn = 0;
+            std::string name = "default";
+            int speed = 2;
 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);

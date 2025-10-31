@@ -29,13 +29,15 @@ namespace Games
         std::shared_ptr<Players::Player> you;
         std::shared_ptr<Enemies::Enemy> enemy1;
         std::shared_ptr<Slimes::Slime> enemy2;
+        std::shared_ptr<Slimes::Slime> slime2;
 
         sf::RectangleShape shader;
         sf::Clock clock;
 
         
-        int turn = 0;
+        int gameTurn = 0;
         int cooldown = 0; // Ventetid mellom enheter sine handlinger
+        bool lock = false;  // Brukes for utføre funksjoner en gang, istedenfor at de repeteres mange ganger
         
     public:
         Game();
