@@ -14,12 +14,12 @@ namespace UnitsManagers
 
         public:
             void AddUnit(std::shared_ptr<Units::Unit> unit);
-            std::vector<std::shared_ptr<Units::Unit>> AllUnits();
+            std::vector<std::shared_ptr<Units::Unit>> GetAllUnits();
             void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
-            void PerformEnemyActions();
+            void PerformEnemyActions(int gameTurn);
             void SortUnits();      // Sorterer units etter speed. Raskeste går først
-            int GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
+            std::shared_ptr<Units::Unit> GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
             int GetSize();
     };
 }

@@ -7,7 +7,7 @@ namespace UnitsManagers
         units.push_back(unit);
     }
 
-    std::vector<std::shared_ptr<Units::Unit>> UnitsManager::AllUnits()
+    std::vector<std::shared_ptr<Units::Unit>> UnitsManager::GetAllUnits()
     {
         return units;
     }
@@ -36,11 +36,11 @@ namespace UnitsManagers
     // Endre dette til å ta inn en int (turn) som argument
     // Endre til å gjelde for alle units, ikke bare fiender
     // 
-    void UnitsManager::PerformEnemyActions()
+    void UnitsManager::PerformEnemyActions(int gameTurn)
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
-            if ((*it)->type == "Enemy") 
+            if ((*it)->type == "Enemy" && (*it)->turn == gameTurn) 
             {
                 (*it)->PerformActions(); 
             }
@@ -66,17 +66,14 @@ namespace UnitsManagers
 
     // Hent uniten som har lik index som runden
     // Første unit i lista vil da hentes på første turn, aka den raskeste uniten
-    int UnitsManager::GetUnitByTurn(int turn)
+    std::shared_ptr<Units::Unit> UnitsManager::GetUnitByTurn(int turn)
     {
-        std::cout << units[turn]->name;
-
-        return units[turn]->speed;
+        return units[turn];
     }
 
 
     int UnitsManager::GetSize()
     {
-        std::cout << "\n";
         return units.size();
     }
 

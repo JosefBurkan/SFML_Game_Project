@@ -39,11 +39,6 @@ namespace Games
         shader.setSize({750.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
 
-        for (int i = 0; i < unitManager.GetSize(); i++)
-        {
-            unitManager.GetUnitByTurn(i);
-        }
-
     }
 
     void Game::Run()
@@ -71,56 +66,61 @@ namespace Games
             background1->Draw(window);
             map.DrawMapObjects(window);
 
-            // logikk for spilleren
-            // Lage noe som lignende if (turn == unitmanager.GetUnitByTurn(turn))
-            // Altså turn == indeksen til en enhet i unitlista. Første unit skal ha turn 0, andre unit turn 1, osv
+            // Hent uniten med indeksen lik turnen
+            // Dette fungerer fordi jeg har sortert dem etter fart
+            // Gi kontroll til den unit som skal bevege seg denne runden
+            auto currentTurnUnit = unitManager.GetUnitByTurn(gameTurn);
 
-            if (you->turn == gameTurn)
+            if (gameTurn == currentTurnUnit->turn)
             {
+                // Hvis typen til uniten er en spiller, utføren spilleroppførsel
+                if (currentTurnUnit->type == "Player") 
+                {
+                    you->Movement();
 
-                you->Movement();
+                    if (lock == false)
+                    {
+                        std::cout << "Turn " << gameTurn << ": ";
+                        std::cout << currentTurnUnit->name << "'s turn: \n";
+                        lock = true;
+                    }
 
-                if (lock == false)
-                {
-                    unitManager.GetUnitByTurn(gameTurn);
-                    std::cout << "'s turn: \n";
-                    lock = true;
+                    if (!you->inMenu && you->state == "Neutral")
+                    {
+                        gridHandler->Movement();
+                    }
+                    else if (!you->inMenu && you->state == "Selected")
+                    {
+                        gridHandler->MovementWhileSelected();
+                    }
+                    else if (you->state == "Attack")
+                    {
+                        gridHandler->Attack();
+                    }
+                    else if (you->state == "Finished")
+                    {
+                        gameTurn++;
+                    }
                 }
-                if (!you->inMenu && you->state == "Neutral")
+                // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
+                else if (currentTurnUnit->type == "Enemy")
                 {
-                    gridHandler->Movement();
+                    cooldown++;
+
+                    if (cooldown > 30)
+                    {
+                        unitManager.PerformEnemyActions(gameTurn);
+                        cooldown = 0;
+                        gameTurn++;
+                        std::cout << "Turn " << gameTurn << ": ";
+                        std::cout << currentTurnUnit->name << "'s turn: \n";
+                    }
                 }
-                else if (!you->inMenu && you->state == "Selected")
-                {
-                    gridHandler->MovementWhileSelected();
-                }
-                else if (you->state == "Attack")
-                {
-                    gridHandler->Attack();
-                }
-                else if (you->state == "Finished")
-                {
-                    gameTurn++;
-                }
+
+                unitManager.UpdateUnits(window);
             }
 
-            unitManager.UpdateUnits(window);
-
-            if (you->state != "Selected" && you->state != "Attack" && you->turn != gameTurn)
-            {
-                cooldown++;
-
-                if (cooldown > 50)
-                {
-                    unitManager.PerformEnemyActions();
-                    cooldown = 0;
-                    gameTurn++;
-                    unitManager.GetUnitByTurn(gameTurn);
-                    std::cout << "'s turn: \n";
-                }
-            }
-
-            if (gameTurn >= 3)
+            if (gameTurn >= unitManager.GetSize())
             {
                 gameTurn = 0;
                 you->state = "Neutral";
