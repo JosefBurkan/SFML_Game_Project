@@ -15,7 +15,7 @@ namespace Units
             sf::Texture texture;
             std::optional<sf::Sprite> sprite;  
             std::string spritePath;
-
+            int tileSize = 50;
             int movement = 5;
             
         public: 

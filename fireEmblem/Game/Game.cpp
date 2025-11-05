@@ -71,6 +71,9 @@ namespace Games
             // Gi kontroll til den unit som skal bevege seg denne runden
             auto currentTurnUnit = unitManager.GetUnitByTurn(gameTurn);
 
+            // Dette er hva som kjører det turn-baserte systemet
+            // Sammenligner runden med units sine interne turns
+            // Alle units blir tilgitt en "intern turn" lik sin index i unit-lista
             if (gameTurn == currentTurnUnit->turn)
             {
                 // Hvis typen til uniten er en spiller, utføren spilleroppførsel
@@ -111,20 +114,22 @@ namespace Games
                     {
                         unitManager.PerformEnemyActions(gameTurn);
                         cooldown = 0;
-                        gameTurn++;
                         std::cout << "Turn " << gameTurn << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
+                        gameTurn++;
                     }
                 }
 
                 unitManager.UpdateUnits(window);
             }
 
+            // Hvis runden er lik eller større enn antall units i spillet
             if (gameTurn >= unitManager.GetSize())
             {
                 gameTurn = 0;
                 you->state = "Neutral";
                 lock = false;
+                std::cout << "\n";
             }
 
             attacks.Update();

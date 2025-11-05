@@ -57,6 +57,8 @@ namespace Slimes
         if (algorithm.playerDetected == true)
         {
             sprite->setPosition({(playerPos.second * 50) + 50, playerPos.first * 50});
+            Attacks::Attack newAttack{playerPos.second * 50, playerPos.first * 50};
+            attacks.CreateAttack(newAttack);
         }
 
     }

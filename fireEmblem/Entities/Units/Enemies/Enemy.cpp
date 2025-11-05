@@ -22,7 +22,7 @@ namespace Enemies
 
     void Enemy::PerformActions()
     {
-        std::cout << "\nDette er BAT som snakker! \n";
+        
     }
 
 }

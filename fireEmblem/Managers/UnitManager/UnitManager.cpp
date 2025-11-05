@@ -62,6 +62,7 @@ namespace UnitsManagers
             std::cout << (*it)->name << " speed: " << (*it)->speed << "\n";
             assignTurn++;
         }
+        std::cout << "\n";
     }
 
     // Hent uniten som har lik index som runden

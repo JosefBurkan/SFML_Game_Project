@@ -38,28 +38,41 @@ namespace Units
 
     void Unit::IsHit()
     {
-        int tileSize = 50;
+
+        // Hent uniten sin posisjon for sammenligning
+        int x = sprite->getPosition().x;
+        int y = sprite->getPosition().y;
         
+        // Sjekk eksisterende angrep
         for (auto& attack : attacks.activeAttacks)
         {
-            int x = sprite->getPosition().x;
-            int y = sprite->getPosition().y;
+            // Hent posisjonen til de angrepene
             int atkx = attack.hitbox.getPosition().x;
             int atky = attack.hitbox.getPosition().y;
 
-            if (x >= atkx && y >= atky)
+
+            std::cout << " playerx: " << x << "\n";
+            std::cout << " playery: " << y << "\n";
+            std::cout << " attackX: " << atkx << "\n";
+            std::cout << " attackX: " << atky << "\n";
+
+            // Hvis spilleren sin posisjon er større eller lik angrepet sitt
+            if (x >= atkx - 5 && y >= atky - 5)
             {
-                if (x <= atkx + tileSize && y <= atky + tileSize)
+                // splleren sin posisjon er mindre eller lik angrepet + ruten sin størrelse
+                if (x <= atkx + tileSize - 10 && y <= atky + tileSize - 10)
                 {
                     healthPoints--;
                     std::cout << name << " er truffet! " << healthPoints << "\n";
                 }
             }
+
         }
     }
 
     void Unit::PerformActions()
     {
+        
     }
 }
 

@@ -113,7 +113,7 @@ namespace Players
                     tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                     isSelected = false;
                     preventSelect = false;
-                    sprite->setPosition({gridCurrentTileY + 10, gridCurrentTileX});
+                    sprite->setPosition({gridCurrentTileY, gridCurrentTileX});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
                     algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern rutene 
