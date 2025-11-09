@@ -12,7 +12,9 @@ namespace Players
         }
 
         name = "Player";
-        healthPoints = 3;
+        healthPoints = 4;
+        maxHealth = healthPoints;
+
         type = "Player";
         speed = 3;
 

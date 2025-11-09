@@ -136,5 +136,17 @@
   "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/Health/HealthBar.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/Health/HealthBar.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/OverView/OverView.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/OverView/OverView.cpp.o"
 }
 ]

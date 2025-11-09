@@ -48,15 +48,19 @@ namespace Cameras {
         {
             view.move(-moveVertically);
         }
-
         else 
         {
             view.move(standStill);
         }
 
         return view;
-
     }
 
+    std::pair<int, int> Camera::GetPosition()
+    {
+        viewSize = view.getCenter();
+
+        return {viewSize.x - 250, viewSize.y + 250};
+    }
 
 }

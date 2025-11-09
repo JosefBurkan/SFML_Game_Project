@@ -38,7 +38,6 @@ namespace Games
         // Shader
         shader.setSize({750.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
-
     }
 
     void Game::Run()
@@ -76,7 +75,7 @@ namespace Games
             // Alle units blir tilgitt en "intern turn" lik sin index i unit-lista
             if (gameTurn == currentTurnUnit->turn)
             {
-                // Hvis typen til uniten er en spiller, utføren spilleroppførsel
+                // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player") 
                 {
                     you->Movement();
@@ -139,6 +138,8 @@ namespace Games
 
             // Tegn grid
             gridHandler->Draw(window);
+
+            overView.Draw(window, camera->GetPosition(), overView.CreateText(you->name, you->healthPoints, you->speed));
 
             window.display();
         }

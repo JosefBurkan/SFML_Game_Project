@@ -657,6 +657,54 @@ fireEmblem/UI/Player/Menu/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.s
 .PHONY : fireEmblem/UI/Player/Menu/Menu.cpp.s
 
+fireEmblem/UI/Units/Health/HealthBar.o: fireEmblem/UI/Units/Health/HealthBar.cpp.o
+.PHONY : fireEmblem/UI/Units/Health/HealthBar.o
+
+# target to build an object file
+fireEmblem/UI/Units/Health/HealthBar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/Health/HealthBar.cpp.o
+.PHONY : fireEmblem/UI/Units/Health/HealthBar.cpp.o
+
+fireEmblem/UI/Units/Health/HealthBar.i: fireEmblem/UI/Units/Health/HealthBar.cpp.i
+.PHONY : fireEmblem/UI/Units/Health/HealthBar.i
+
+# target to preprocess a source file
+fireEmblem/UI/Units/Health/HealthBar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/Health/HealthBar.cpp.i
+.PHONY : fireEmblem/UI/Units/Health/HealthBar.cpp.i
+
+fireEmblem/UI/Units/Health/HealthBar.s: fireEmblem/UI/Units/Health/HealthBar.cpp.s
+.PHONY : fireEmblem/UI/Units/Health/HealthBar.s
+
+# target to generate assembly for a file
+fireEmblem/UI/Units/Health/HealthBar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/Health/HealthBar.cpp.s
+.PHONY : fireEmblem/UI/Units/Health/HealthBar.cpp.s
+
+fireEmblem/UI/Units/OverView/OverView.o: fireEmblem/UI/Units/OverView/OverView.cpp.o
+.PHONY : fireEmblem/UI/Units/OverView/OverView.o
+
+# target to build an object file
+fireEmblem/UI/Units/OverView/OverView.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/OverView/OverView.cpp.o
+.PHONY : fireEmblem/UI/Units/OverView/OverView.cpp.o
+
+fireEmblem/UI/Units/OverView/OverView.i: fireEmblem/UI/Units/OverView/OverView.cpp.i
+.PHONY : fireEmblem/UI/Units/OverView/OverView.i
+
+# target to preprocess a source file
+fireEmblem/UI/Units/OverView/OverView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/OverView/OverView.cpp.i
+.PHONY : fireEmblem/UI/Units/OverView/OverView.cpp.i
+
+fireEmblem/UI/Units/OverView/OverView.s: fireEmblem/UI/Units/OverView/OverView.cpp.s
+.PHONY : fireEmblem/UI/Units/OverView/OverView.s
+
+# target to generate assembly for a file
+fireEmblem/UI/Units/OverView/OverView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/OverView/OverView.cpp.s
+.PHONY : fireEmblem/UI/Units/OverView/OverView.cpp.s
+
 fireEmblem/main.o: fireEmblem/main.cpp.o
 .PHONY : fireEmblem/main.o
 
@@ -756,6 +804,12 @@ help:
 	@echo "... fireEmblem/UI/Player/Menu/Menu.o"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.i"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.s"
+	@echo "... fireEmblem/UI/Units/Health/HealthBar.o"
+	@echo "... fireEmblem/UI/Units/Health/HealthBar.i"
+	@echo "... fireEmblem/UI/Units/Health/HealthBar.s"
+	@echo "... fireEmblem/UI/Units/OverView/OverView.o"
+	@echo "... fireEmblem/UI/Units/OverView/OverView.i"
+	@echo "... fireEmblem/UI/Units/OverView/OverView.s"
 	@echo "... fireEmblem/main.o"
 	@echo "... fireEmblem/main.i"
 	@echo "... fireEmblem/main.s"

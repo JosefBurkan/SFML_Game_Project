@@ -40,6 +40,8 @@ add_executable(fireEmblem
     fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp
     fireEmblem/Game/Game.cpp
     fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp
+    fireEmblem/UI/Units/Health/HealthBar.cpp
+    fireEmblem/UI/Units/OverView/OverView.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

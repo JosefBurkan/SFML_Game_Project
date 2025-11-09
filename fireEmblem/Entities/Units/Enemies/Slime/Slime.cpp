@@ -42,9 +42,7 @@ namespace Slimes
 
             framesUntilDraw = 0;
         }
-
         window.draw(*sprite);
-
     }
 
     // Håndterer bevegelse og angrep

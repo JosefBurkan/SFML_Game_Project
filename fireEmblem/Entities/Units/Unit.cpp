@@ -50,12 +50,6 @@ namespace Units
             int atkx = attack.hitbox.getPosition().x;
             int atky = attack.hitbox.getPosition().y;
 
-
-            std::cout << " playerx: " << x << "\n";
-            std::cout << " playery: " << y << "\n";
-            std::cout << " attackX: " << atkx << "\n";
-            std::cout << " attackX: " << atky << "\n";
-
             // Hvis spilleren sin posisjon er større eller lik angrepet sitt
             if (x >= atkx - 5 && y >= atky - 5)
             {

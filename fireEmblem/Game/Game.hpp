@@ -1,5 +1,5 @@
 #pragma once
-
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp"
@@ -11,6 +11,7 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.hpp"
 
 namespace Games
 {
@@ -20,10 +21,11 @@ namespace Games
         StartMaps::StartMap map;
         AttackManagers::AttackManager attacks;
         UnitsManagers::UnitsManager unitManager;
+        OverViews::OverView overView;
 
         // Gjør disse til pointers slik at de kan brukes utenfor konstruktøren
         std::unique_ptr<GridHandlers::GridHandler> gridHandler;
-        std::unique_ptr<Cameras::Camera> camera;
+        std::unique_ptr<Cameras::Camera>           camera;
         std::unique_ptr<Backgrounds1::Background1> background1;
 
         std::shared_ptr<Players::Player> you;
@@ -33,11 +35,11 @@ namespace Games
 
         sf::RectangleShape shader;
         sf::Clock clock;
-
         
         int gameTurn = 0;
         int cooldown = 0; // Ventetid mellom enheter sine handlinger
         bool lock = false;  // Brukes for utføre funksjoner en gang, istedenfor at de repeteres mange ganger
+        
         
     public:
         Game();

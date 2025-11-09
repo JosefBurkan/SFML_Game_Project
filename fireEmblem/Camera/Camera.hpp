@@ -23,6 +23,8 @@ namespace Cameras {
 
             sf::View MoveView();
 
+            std::pair<int, int> GetPosition();
+
     };
 
 }

@@ -27,6 +27,6 @@ namespace BackgroundTiles
             tileLocationX -= 48;
         }
 
-        sprite->setTextureRect(sf::IntRect({tileLocationX, tileLocationY}, {16, 16}));
+        sprite->setTextureRect(sf::IntRect({tileLocationX - 1, tileLocationY}, {16, 16}));
     }
 }

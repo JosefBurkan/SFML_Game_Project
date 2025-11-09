@@ -13,14 +13,15 @@ namespace Units
             AttackManagers::AttackManager& attacks;
             Maps::Map& map;
             sf::Texture texture;
-            std::optional<sf::Sprite> sprite;  
             std::string spritePath;
             int tileSize = 50;
             int movement = 5;
             
         public: 
+            std::optional<sf::Sprite> sprite;  
             std::string type = "unit";
             int healthPoints = 2;
+            int maxHealth = healthPoints;
             int turn = 0;
             std::string name = "default";
             int speed = 2;

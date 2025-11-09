@@ -17,12 +17,30 @@ namespace UnitsManagers
         units.clear();
     }
 
+    std::pair<int, int> UnitsManager::GetCameraPositions(std::pair<int, int> cameraPos)
+    {
+        cameraPositions = cameraPos;
+        return cameraPos;
+    }   
+
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
+
         for (auto it = units.begin(); it != units.end(); ) 
         {
+
+            float posX = (*it)->sprite->getPosition().x;
+            float posY = (*it)->sprite->getPosition().y;
+
+            HealthBars::HealthBar healthBar{posX, posY};
+
             (*it)->Draw(window);
             (*it)->IsHit();
+
+            if ((*it)->type != "Player")
+            {
+                healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
+            }
 
             if ((*it)->healthPoints == 0) {
                 it = units.erase(it);
@@ -31,6 +49,7 @@ namespace UnitsManagers
                 ++it;
             }
         }
+
     }
 
     // Endre dette til å ta inn en int (turn) som argument
@@ -77,5 +96,7 @@ namespace UnitsManagers
     {
         return units.size();
     }
+
+
 
 }
