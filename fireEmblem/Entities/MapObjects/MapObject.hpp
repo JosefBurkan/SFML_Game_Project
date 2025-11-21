@@ -8,17 +8,16 @@ namespace MapObjects
     class MapObject
     {
         public:
-        sf::Texture texture;
         std::optional<sf::Sprite> sprite;
         std::string name = "Testobjekt ";
         GridHandlers::GridHandler* GridHandler = nullptr;
         
-        MapObject();
+        MapObject(const sf::Texture& texture);
         sf::Sprite GenerateSprite();
         sf::Sprite& RetrieveSprite();
         std::pair<float, float> printPos();
-        void SetTileToOccupied();
-        void Position(float positionY, float positionX);
+        virtual void SetTileToOccupied();
+        void Position(std::pair<float, float> position);
         void SetGrid(GridHandlers::GridHandler& grid);
         GridHandlers::GridHandler& FetchGrid();
         void Draw(sf::RenderWindow& window);

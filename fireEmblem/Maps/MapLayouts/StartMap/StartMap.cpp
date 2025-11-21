@@ -10,6 +10,6 @@ namespace StartMaps
 
     void StartMap::LoadWindow() 
     {
-        window.create(sf::VideoMode({numberOfColumns * 50, numberOfRows * 50}), "Game Window");
+        window.create(sf::VideoMode({1280, 720}), "AAAA");
     }
 }

@@ -12,9 +12,7 @@ namespace Enemies
     class Enemy : public Units::Unit 
     {
         private:
-        int framesUntilDraw = 0;
-        int textureLocationY = 0;
-        int textureLocationX = 0;
+
 
         public:
             Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);

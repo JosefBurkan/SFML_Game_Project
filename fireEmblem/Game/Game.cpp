@@ -7,15 +7,19 @@ namespace Games
           attacks(),
           unitManager()
     {
-        // Init map
+        // Lag rutene
         map.GenerateGrid();
 
         GridGenerators::GridGenerator& grid = map.FetchGrid();
+
+        // Lag en pointer til rutenettet
         gridHandler = std::make_unique<GridHandlers::GridHandler>(grid);
         camera = std::make_unique<Cameras::Camera>(*gridHandler);
         background1 = std::make_unique<Backgrounds1::Background1>(*gridHandler);
 
         map.LoadWindow();
+        
+        // Koble banen og rutenettet sammen
         map.SetGridMovement(*gridHandler);
         map.SpawnObjects();
 
@@ -27,17 +31,21 @@ namespace Games
         enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
         enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
         slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
+        swordsman = std::make_shared<Swordsmen::Swordsman>(grid, map, attacks, *gridHandler);
 
         unitManager.AddUnit(enemy1);
         unitManager.AddUnit(enemy2);
         unitManager.AddUnit(slime2);
         unitManager.AddUnit(you);
+        unitManager.AddUnit(swordsman);
 
         unitManager.SortUnits();
 
         // Shader
         shader.setSize({750.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
+
+        swordsman->Move(0, 150);
     }
 
     void Game::Run()
@@ -48,6 +56,8 @@ namespace Games
 
         window.setFramerateLimit(60);
         window.setView(view);
+
+
 
         while (window.isOpen())
         {
@@ -78,7 +88,8 @@ namespace Games
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player") 
                 {
-                    you->Movement();
+                    
+                    currentTurnUnit->Movement();
 
                     if (lock == false)
                     {
@@ -87,21 +98,22 @@ namespace Games
                         lock = true;
                     }
 
-                    if (!you->inMenu && you->state == "Neutral")
+                    if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Neutral")
                     {
                         gridHandler->Movement();
                     }
-                    else if (!you->inMenu && you->state == "Selected")
+                    else if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Selected")
                     {
                         gridHandler->MovementWhileSelected();
                     }
-                    else if (you->state == "Attack")
+                    else if (currentTurnUnit->state == "Attack")
                     {
                         gridHandler->Attack();
                     }
-                    else if (you->state == "Finished")
+                    else if (currentTurnUnit->state == "Finished")
                     {
                         gameTurn++;
+                        currentTurnUnit->state = "Neutral";
                     }
                 }
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
@@ -118,15 +130,15 @@ namespace Games
                         gameTurn++;
                     }
                 }
-
+                
                 unitManager.UpdateUnits(window);
             }
+
 
             // Hvis runden er lik eller større enn antall units i spillet
             if (gameTurn >= unitManager.GetSize())
             {
                 gameTurn = 0;
-                you->state = "Neutral";
                 lock = false;
                 std::cout << "\n";
             }

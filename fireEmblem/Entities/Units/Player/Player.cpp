@@ -7,20 +7,21 @@ namespace Players
                     AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
         : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
-        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Prinsesse.png")) {
+        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Prinsesse-50x50.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
         name = "Player";
         healthPoints = 4;
         maxHealth = healthPoints;
+        texture.setSmooth(false);
 
         type = "Player";
         speed = 3;
 
         sprite.emplace(texture);
-        sprite->setScale({3.f, 3.f});
-        sprite->setPosition({0.f, 0.f});
+        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+        sprite->setPosition({0.f, 100.f});
     }
 
     std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
@@ -39,10 +40,17 @@ namespace Players
         {
             return true;
         }
-    }    
+    }
 
     void Player::CancelSelect()
     {
+        auto& tiles = GridHandler.RetrieveAllTiles();
+
+        std::pair<float, float> retrievedTile = GridHandler.SelectedTilePos(); // Hent hvilken rute spilleren står på
+        
+        float gridCurrentTileX = retrievedTile.first;
+        float gridCurrentTileY = retrievedTile.second;
+        
         state = "Neutral";
         menu.show = false;
         inMenu = false;
@@ -50,17 +58,19 @@ namespace Players
         GridHandler.rangeY = 0;
         isSelected = false;
         preventSelect = false;
+        algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern rutene 
     }   
 
-    void Player::Draw(sf::RenderWindow& window) 
+
+
+    void Player::DrawUI(sf::RenderWindow& window)
     {
-        window.draw(*sprite);
         menu.Draw(window);
         attacks.Draw(window);
     }
 
     // Håndtere bevegelsen av spilleren
-    void Player::Movement() 
+    void Player::Movement()
     {
         std::pair<float, float> retrievedTile = GridHandler.SelectedTilePos(); // Hent hvilken rute spilleren står på
         std::pair<float, float> selectedTile = GridHandler.RetrieveTile();

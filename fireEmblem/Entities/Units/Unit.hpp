@@ -25,15 +25,26 @@ namespace Units
             int turn = 0;
             std::string name = "default";
             int speed = 2;
+            std::string state = "Neutral";  // Kun for player
+            bool inMenu = false;          // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser og brukes kun av player               
+
+            int framesUntilDraw = 0;
+            int textureLocationY = 0;
+            int textureLocationX = 0;
+                
+
+
 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void spawn();
+            void Move(float posX, float posY);
             std::pair<int, int> RetriveCoordinations();
             virtual void Draw(sf::RenderWindow& window);
             virtual void CheckForMapObjects();
             virtual void IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
+            virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
 
 
     };

@@ -3,18 +3,17 @@
 namespace MapObjects
 {
 
-    MapObject::MapObject()
+    MapObject::MapObject(const sf::Texture& texture)
     {
-        texture.loadFromFile(std::string(ASSETS_DIR) + "Bricks.png");
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
+        
     }
 
     void MapObject::SetGrid(GridHandlers::GridHandler& grid)
     {
         this->GridHandler = &grid;
     }
-
    GridHandlers::GridHandler& MapObject::FetchGrid() 
     {
         return *GridHandler;
@@ -41,17 +40,16 @@ namespace MapObjects
     {
         // Stopper funksjonen fra å kjøre før gridmovment har fått verdi.
         // Vet ikke hvorfor den trengs, funker ikke uten.
-
-
+        
         auto& tiles = GridHandler->RetrieveAllTiles();
         std::pair<int, int> index = TransformPositionToIndex(sprite->getPosition().y, sprite->getPosition().x);
         tiles[index.first][index.second].IsOccupied = true;
     }
 
     // Flytt til en annen rute
-    void MapObject::Position(float positionY, float positionX)
+    void MapObject::Position(std::pair<float, float> position)
     {
-        sprite->setPosition({positionY, positionX});
+        sprite->setPosition({position.first, position.second});
     }
 
     void MapObject::Draw(sf::RenderWindow& window) 

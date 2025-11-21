@@ -16,7 +16,7 @@ namespace Enemies
 
         sprite.emplace(texture);
         sprite->setScale({3.f, 3.f});
-        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 12}));
+        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition({yPos, xPos});
 
     }
@@ -25,11 +25,11 @@ namespace Enemies
     {
         framesUntilDraw++;
 
-        if (framesUntilDraw >= 10)
+        if (framesUntilDraw >= 12)
         {
             while (textureLocationX >= 32)
             {
-                textureLocationY += 12;
+                textureLocationY += 16;
                 textureLocationX = 0;
 
                 if (textureLocationY >= 24)
@@ -37,7 +37,7 @@ namespace Enemies
                     textureLocationY = 0;
                 }
             }
-            sprite->setTextureRect(sf::IntRect({textureLocationX, textureLocationY}, {16, 12}));
+            sprite->setTextureRect(sf::IntRect({textureLocationX, textureLocationY}, {16, 16}));
 
             textureLocationX += 16;
 

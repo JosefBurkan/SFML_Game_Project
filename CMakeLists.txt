@@ -3,14 +3,13 @@ project(FireEmblem)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Tell CMake where to find your local SFML
+# Dette er hvor SFML biblioteket ligger
 set(SFML_ROOT "${CMAKE_SOURCE_DIR}/Dependencies/SFML")
 
-# Tell the program where to find the assets
+# En snarevei for å hente sprites
 set(ASSETS_DIR "${CMAKE_SOURCE_DIR}/fireEmblem/Assets/")
 add_compile_definitions(ASSETS_DIR="${ASSETS_DIR}")
 
-# You may need to set this policy to use SFML_ROOT properly
 cmake_policy(SET CMP0074 NEW)
 
 find_package(SFML 3 COMPONENTS Graphics Window System REQUIRED)
@@ -29,7 +28,6 @@ add_executable(fireEmblem
     fireEmblem/Maps/Background/Background1/Background1.cpp
     fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp
     fireEmblem/Entities/MapObjects/MapObject.cpp
-    fireEmblem/Entities/MapObjects/Bat/Bat.cpp
     fireEmblem/Entities/MapObjects/Wall/Wall.cpp
     fireEmblem/Camera/Camera.cpp
     fireEmblem/UI/Player/Menu/Menu.cpp
@@ -42,6 +40,8 @@ add_executable(fireEmblem
     fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp
     fireEmblem/UI/Units/Health/HealthBar.cpp
     fireEmblem/UI/Units/OverView/OverView.cpp
+    fireEmblem/Entities/MapObjects/Tree/Tree.cpp
+    fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

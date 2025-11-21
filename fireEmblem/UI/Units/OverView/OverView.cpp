@@ -5,7 +5,7 @@ namespace OverViews
     OverView::OverView()
     {
         rectangle.setFillColor({125, 0, 175});
-        rectangle.setPosition({0.f, 400});
+        rectangle.setPosition({-300.f, 400});
         rectangle.setSize({250.f, 100});
 
         texture.loadFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/prinsesse_ansikt.png");
@@ -28,7 +28,6 @@ namespace OverViews
         attributes.setFillColor(sf::Color::Red);
 
         return attributes;
-
     }
 
     void OverView::Draw(sf::RenderWindow& window , std::pair<float, float> cameraPositions, sf::Text text)

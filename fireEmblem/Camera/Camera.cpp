@@ -5,17 +5,23 @@ namespace Cameras {
     Camera::Camera(GridHandlers::GridHandler& gridHandler)
         : GridHandler(gridHandler)
     {
+        
 
     }
 
     sf::View Camera::LoadView()
     {
-        sf::Vector2f vec1(0.f, 0.0f);
         sf::Vector2f vec2(viewWidth, viewHeight);
 
-        sf::Vector2f center(300.f, 300.f);
+        sf::Vector2f center(640, 360);
         view.setSize(vec2);
+        // view.setCenter(center);
+
+        sf::Vector2f centera = view.getCenter();
+        center.x = std::round(center.x);
+        center.y = std::round(center.y);
         view.setCenter(center);
+
 
         return view;
     }
@@ -29,9 +35,9 @@ namespace Cameras {
         selectedTileX = GridHandler.SelectedTilePos().first;
         selectedTileY = GridHandler.SelectedTilePos().second;
 
-        viewSize = view.getCenter();
 
         // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 
+        /*
         if (selectedTileY > viewSize.x + 250)
         {
             view.move(moveHorisontally);
@@ -53,7 +59,10 @@ namespace Cameras {
             view.move(standStill);
         }
 
+        */
+
         return view;
+
     }
 
     std::pair<int, int> Camera::GetPosition()

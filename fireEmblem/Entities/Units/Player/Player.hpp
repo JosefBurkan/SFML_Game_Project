@@ -33,14 +33,12 @@ namespace Players
             
 
         public:
-            std::string state = "Neutral";
-            bool inMenu = false;                                // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser
             Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler);
             bool IsPlayerStateReady();                          // Er spillertilstanden ledig?
-            void Movement();
+            void Movement() override;
             std::pair<int, int> TransformPositionToIndex(float spriteX, float spriteY);      // Oversett kordinater til rutenettet. feks. 50x = [5]
             void DrawUI(sf::RenderWindow& window);
-            void Draw(sf::RenderWindow& window) override;
+            // void Draw(sf::RenderWindow& window) override;
             void CancelSelect();
 
     };

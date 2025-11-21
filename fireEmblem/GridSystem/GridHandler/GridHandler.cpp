@@ -50,7 +50,6 @@ namespace GridHandlers
         rangeX = 0;
         rangeY = 0;
 
-
         if (movementCooldown > 2) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && selectedTileX < columns - 1) {
                 selectedTileX++;

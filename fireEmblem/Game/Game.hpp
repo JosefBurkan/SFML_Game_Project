@@ -2,6 +2,7 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
@@ -32,6 +33,7 @@ namespace Games
         std::shared_ptr<Enemies::Enemy> enemy1;
         std::shared_ptr<Slimes::Slime> enemy2;
         std::shared_ptr<Slimes::Slime> slime2;
+        std::shared_ptr<Swordsmen::Swordsman> swordsman;
 
         sf::RectangleShape shader;
         sf::Clock clock;

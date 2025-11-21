@@ -153,30 +153,6 @@ fireEmblem/Camera/Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.s
 .PHONY : fireEmblem/Camera/Camera.cpp.s
 
-fireEmblem/Entities/MapObjects/Bat/Bat.o: fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o
-.PHONY : fireEmblem/Entities/MapObjects/Bat/Bat.o
-
-# target to build an object file
-fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o
-.PHONY : fireEmblem/Entities/MapObjects/Bat/Bat.cpp.o
-
-fireEmblem/Entities/MapObjects/Bat/Bat.i: fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i
-.PHONY : fireEmblem/Entities/MapObjects/Bat/Bat.i
-
-# target to preprocess a source file
-fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i
-.PHONY : fireEmblem/Entities/MapObjects/Bat/Bat.cpp.i
-
-fireEmblem/Entities/MapObjects/Bat/Bat.s: fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s
-.PHONY : fireEmblem/Entities/MapObjects/Bat/Bat.s
-
-# target to generate assembly for a file
-fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s
-.PHONY : fireEmblem/Entities/MapObjects/Bat/Bat.cpp.s
-
 fireEmblem/Entities/MapObjects/MapObject.o: fireEmblem/Entities/MapObjects/MapObject.cpp.o
 .PHONY : fireEmblem/Entities/MapObjects/MapObject.o
 
@@ -200,6 +176,30 @@ fireEmblem/Entities/MapObjects/MapObject.s: fireEmblem/Entities/MapObjects/MapOb
 fireEmblem/Entities/MapObjects/MapObject.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.s
 .PHONY : fireEmblem/Entities/MapObjects/MapObject.cpp.s
+
+fireEmblem/Entities/MapObjects/Tree/Tree.o: fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o
+.PHONY : fireEmblem/Entities/MapObjects/Tree/Tree.o
+
+# target to build an object file
+fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o
+.PHONY : fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o
+
+fireEmblem/Entities/MapObjects/Tree/Tree.i: fireEmblem/Entities/MapObjects/Tree/Tree.cpp.i
+.PHONY : fireEmblem/Entities/MapObjects/Tree/Tree.i
+
+# target to preprocess a source file
+fireEmblem/Entities/MapObjects/Tree/Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.i
+.PHONY : fireEmblem/Entities/MapObjects/Tree/Tree.cpp.i
+
+fireEmblem/Entities/MapObjects/Tree/Tree.s: fireEmblem/Entities/MapObjects/Tree/Tree.cpp.s
+.PHONY : fireEmblem/Entities/MapObjects/Tree/Tree.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/MapObjects/Tree/Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.s
+.PHONY : fireEmblem/Entities/MapObjects/Tree/Tree.cpp.s
 
 fireEmblem/Entities/MapObjects/Wall/Wall.o: fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o
 .PHONY : fireEmblem/Entities/MapObjects/Wall/Wall.o
@@ -296,6 +296,30 @@ fireEmblem/Entities/Units/Player/Player.s: fireEmblem/Entities/Units/Player/Play
 fireEmblem/Entities/Units/Player/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.s
 .PHONY : fireEmblem/Entities/Units/Player/Player.cpp.s
+
+fireEmblem/Entities/Units/Player/Swordsman/Swordsman.o: fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.o
+.PHONY : fireEmblem/Entities/Units/Player/Swordsman/Swordsman.o
+
+# target to build an object file
+fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.o
+.PHONY : fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.o
+
+fireEmblem/Entities/Units/Player/Swordsman/Swordsman.i: fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.i
+.PHONY : fireEmblem/Entities/Units/Player/Swordsman/Swordsman.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.i
+.PHONY : fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.i
+
+fireEmblem/Entities/Units/Player/Swordsman/Swordsman.s: fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.s
+.PHONY : fireEmblem/Entities/Units/Player/Swordsman/Swordsman.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.s
+.PHONY : fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp.s
 
 fireEmblem/Entities/Units/Unit.o: fireEmblem/Entities/Units/Unit.cpp.o
 .PHONY : fireEmblem/Entities/Units/Unit.o
@@ -741,12 +765,12 @@ help:
 	@echo "... fireEmblem/Camera/Camera.o"
 	@echo "... fireEmblem/Camera/Camera.i"
 	@echo "... fireEmblem/Camera/Camera.s"
-	@echo "... fireEmblem/Entities/MapObjects/Bat/Bat.o"
-	@echo "... fireEmblem/Entities/MapObjects/Bat/Bat.i"
-	@echo "... fireEmblem/Entities/MapObjects/Bat/Bat.s"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.o"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.i"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.s"
+	@echo "... fireEmblem/Entities/MapObjects/Tree/Tree.o"
+	@echo "... fireEmblem/Entities/MapObjects/Tree/Tree.i"
+	@echo "... fireEmblem/Entities/MapObjects/Tree/Tree.s"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.o"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.i"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.s"
@@ -759,6 +783,9 @@ help:
 	@echo "... fireEmblem/Entities/Units/Player/Player.o"
 	@echo "... fireEmblem/Entities/Units/Player/Player.i"
 	@echo "... fireEmblem/Entities/Units/Player/Player.s"
+	@echo "... fireEmblem/Entities/Units/Player/Swordsman/Swordsman.o"
+	@echo "... fireEmblem/Entities/Units/Player/Swordsman/Swordsman.i"
+	@echo "... fireEmblem/Entities/Units/Player/Swordsman/Swordsman.s"
 	@echo "... fireEmblem/Entities/Units/Unit.o"
 	@echo "... fireEmblem/Entities/Units/Unit.i"
 	@echo "... fireEmblem/Entities/Units/Unit.s"

@@ -13,9 +13,6 @@ namespace Slimes
     {
         private:
             EnemyPathAlgorithms::EnemyPathAlgorithm algorithm;
-            int framesUntilDraw = 0;
-            int textureLocationY = 0;
-            int textureLocationX = 0;
             std::pair<float, float> playerPos = {0, 0};
 
         public:

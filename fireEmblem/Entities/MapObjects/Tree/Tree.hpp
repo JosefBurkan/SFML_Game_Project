@@ -4,12 +4,13 @@
 #include "../../../GridSystem/GridHandler/GridHandler.hpp"
 
 
-namespace Bats
+namespace Trees
 {
-    class Bat : public MapObjects::MapObject
+    class Tree : public MapObjects::MapObject
     {
         public:
-            Bat();
+            Tree(sf::Texture& texture);
+            void SetTileToOccupied() override;
 
     };
 }

@@ -2,10 +2,14 @@
 
 namespace Walls
 {
-    Wall::Wall(const sf::Texture& texture)
+    Wall::Wall(sf::Texture& texture)
+        : MapObject(texture)
     {
         name = "Wall ";
+        texture.setSmooth(false);
+
         sprite.emplace(texture);
-        sprite->setScale({3.f, 3.f});
+        sprite->setScale({3.1f, 3.1f});
+        
     }
 }

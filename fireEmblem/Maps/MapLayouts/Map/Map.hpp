@@ -1,8 +1,7 @@
 #pragma once
 #include "../../../GridSystem/GridGenerator/GridGenerator.hpp"
 #include "../../../config.hpp"
-#include "../../../Entities/MapObjects/MapObject.hpp"
-#include "../../../Entities/MapObjects/Bat/Bat.hpp"
+#include "../../../Entities/MapObjects/Tree/Tree.hpp"
 #include "../../../Entities/MapObjects/Wall/Wall.hpp"
 #include "../../../GridSystem/GridHandler/GridHandler.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
@@ -14,17 +13,15 @@ namespace Maps
     {
         public:
             sf::Texture wallTexture;
+            sf::Texture treeTexture;
             sf::RenderWindow window;
-            std::vector<MapObjects::MapObject> mapObjects;
+            std::vector<Trees::Tree> trees;
             std::vector<Walls::Wall> walls;
 
             unsigned int numberOfColumns = 15;
             unsigned int numberOfRows = 16;
             GridGenerators::GridGenerator gridGenerator;
             GridHandlers::GridHandler* GridHandlerPtr = nullptr;
-
-            // Baneobjekter
-            Bats::Bat mapObject2;
 
             Map();
             

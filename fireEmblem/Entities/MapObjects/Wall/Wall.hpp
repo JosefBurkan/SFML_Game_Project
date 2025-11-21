@@ -9,7 +9,7 @@ namespace Walls
     class Wall : public MapObjects::MapObject
     {
         public:
-            Wall(const sf::Texture& texture);
+            Wall(sf::Texture& texture);
 
     };
 }

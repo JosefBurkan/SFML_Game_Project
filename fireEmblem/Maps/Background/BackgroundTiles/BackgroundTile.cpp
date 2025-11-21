@@ -5,6 +5,7 @@ namespace BackgroundTiles
     BackgroundTile::BackgroundTile()
     {
         texture.loadFromFile(std::string(ASSETS_DIR) + "Tileset1.png");
+        texture.setSmooth(false);
         sprite.emplace(texture);
         sprite->setTextureRect(sf::IntRect({0, 0}, {17, 17}));
         sprite->setScale({3.15f, 3.15f});
@@ -13,7 +14,6 @@ namespace BackgroundTiles
     void BackgroundTile::Draw(sf::RenderWindow& window)
     {
         window.draw(*sprite);
-
     }
 
     void BackgroundTile::ChangeTile(int tileID)

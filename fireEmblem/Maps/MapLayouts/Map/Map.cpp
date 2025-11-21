@@ -6,11 +6,20 @@ namespace Maps
     Map::Map()
     {
         wallTexture.loadFromFile(std::string(ASSETS_DIR) + "Bricks.png");
+        treeTexture.loadFromFile(std::string(ASSETS_DIR) + "Tree-1.png");
+
+        wallTexture.setSmooth(false);
+        treeTexture.setSmooth(false);
 
         // Lag antall vegger lik størrelsen til i
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 10; i++)
         {
             walls.emplace_back(wallTexture);
+        }
+
+        for (int i = 0; i < 2; i++)
+        {
+            trees.emplace_back(treeTexture);
         }
 
     }
@@ -32,7 +41,7 @@ namespace Maps
         GridHandlerPtr = &movement;
 
         // Tildel objektene rutenettet de hører til
-        mapObject2.SetGrid(*GridHandlerPtr);
+
         walls[0].SetGrid(*GridHandlerPtr);
         walls[1].SetGrid(*GridHandlerPtr);
         walls[2].SetGrid(*GridHandlerPtr);
@@ -41,11 +50,17 @@ namespace Maps
         walls[5].SetGrid(*GridHandlerPtr);
         walls[6].SetGrid(*GridHandlerPtr);
         walls[7].SetGrid(*GridHandlerPtr);
+        walls[8].SetGrid(*GridHandlerPtr);
+        walls[9].SetGrid(*GridHandlerPtr);
+        
+
+        trees[0].SetGrid(*GridHandlerPtr);
+        trees[1].SetGrid(*GridHandlerPtr);
     }
 
     void Map::LoadWindow() 
     {
-        window.create(sf::VideoMode({numberOfColumns * 50, numberOfRows * 50}), "Game Window");
+        window.create(sf::VideoMode({720, 480}), "AAAA ew");
     }
 
     // Last inn kameraet
@@ -62,42 +77,42 @@ namespace Maps
     {
         auto& gridTiles = gridGenerator.RetrieveAllTiles();
 
-        walls[0].Position(gridTiles[1][5].RetrieveTilePos().first, gridTiles[1][5].RetrieveTilePos().second);
-        walls[1].Position(gridTiles[2][5].RetrieveTilePos().first, gridTiles[2][5].RetrieveTilePos().second);
-        walls[2].Position(gridTiles[3][5].RetrieveTilePos().first, gridTiles[3][5].RetrieveTilePos().second);
-        walls[3].Position(gridTiles[4][5].RetrieveTilePos().first, gridTiles[4][5].RetrieveTilePos().second);
-        walls[4].Position(gridTiles[1][1].RetrieveTilePos().first, gridTiles[1][1].RetrieveTilePos().second);
-        walls[5].Position(gridTiles[2][1].RetrieveTilePos().first, gridTiles[2][1].RetrieveTilePos().second);
-        walls[6].Position(gridTiles[3][1].RetrieveTilePos().first, gridTiles[3][1].RetrieveTilePos().second);
-        walls[7].Position(gridTiles[4][1].RetrieveTilePos().first, gridTiles[4][1].RetrieveTilePos().second);
+        walls[0].Position(gridTiles[1][5].RetrieveTilePos());
+        walls[1].Position(gridTiles[2][5].RetrieveTilePos());
+        walls[2].Position(gridTiles[3][5].RetrieveTilePos());
+        walls[3].Position(gridTiles[4][5].RetrieveTilePos());
+        walls[8].Position(gridTiles[0][5].RetrieveTilePos());
+        walls[4].Position(gridTiles[1][1].RetrieveTilePos());
+        walls[5].Position(gridTiles[2][1].RetrieveTilePos());
+        walls[6].Position(gridTiles[3][1].RetrieveTilePos());
+        walls[7].Position(gridTiles[4][1].RetrieveTilePos());
+        walls[9].Position(gridTiles[0][1].RetrieveTilePos());
 
-        walls[0].SetTileToOccupied();
-        walls[1].SetTileToOccupied();
-        walls[2].SetTileToOccupied();
-        walls[3].SetTileToOccupied();
-        walls[4].SetTileToOccupied();
-        walls[5].SetTileToOccupied();
-        walls[6].SetTileToOccupied();
-        walls[7].SetTileToOccupied();
+        for (auto wall : walls)
+        {
+            wall.SetTileToOccupied();
+        }
 
-        mapObject2.Position(gridTiles[8][8].RetrieveTilePos().first, gridTiles[8][8].RetrieveTilePos().second);
-
-        mapObjects.push_back(mapObject2);
-
-
+        trees[0].Position(gridTiles[2][5].RetrieveTilePos());
+        trees[1].Position(gridTiles[9][3].RetrieveTilePos());
+        
+        for (auto iTree : trees)
+        {
+            iTree.SetTileToOccupied();
+        }
     }
 
     // Tegn baneobjekter, feks. trær
     void Map::DrawMapObjects(sf::RenderWindow& window)
     {
-        walls[0].Draw(window);
-        walls[1].Draw(window);
-        walls[2].Draw(window);
-        walls[3].Draw(window);
-        walls[4].Draw(window);
-        walls[5].Draw(window);
-        walls[6].Draw(window);
-        walls[7].Draw(window);
-        mapObject2.Draw(window);
+        for (auto wall : walls)
+        {
+            wall.Draw(window);
+        }
+
+        for (auto iTree : trees)
+        {
+            iTree.Draw(window);
+        }
     }
 }
