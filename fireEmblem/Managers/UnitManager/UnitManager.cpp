@@ -37,7 +37,11 @@ namespace UnitsManagers
             (*it)->Draw(window);
             (*it)->IsHit();
 
-            if ((*it)->type != "Player")
+            if ((*it)->type == "Player")
+            {
+                (*it)->DrawUI(window);
+            }
+            else
             {
                 healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
             }

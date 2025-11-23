@@ -53,6 +53,11 @@ namespace Units
         window.draw(*sprite);
     }
 
+    void Unit::DrawUI(sf::RenderWindow& window)
+    {
+
+    }
+
     // Sjekk hvilket baneobjekt spilleren står på, feks. skog
     // Sjekker kun trær nå, og de kan ikke tråkkes på uansett.
     // Skal ha en felles mappe med alle objekter som er mulige å tråkke på

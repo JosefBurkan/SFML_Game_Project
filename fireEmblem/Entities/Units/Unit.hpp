@@ -41,6 +41,7 @@ namespace Units
             void Move(float posX, float posY);
             std::pair<int, int> RetriveCoordinations();
             virtual void Draw(sf::RenderWindow& window);
+            virtual void DrawUI(sf::RenderWindow& window);
             virtual void CheckForMapObjects();
             virtual void IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender

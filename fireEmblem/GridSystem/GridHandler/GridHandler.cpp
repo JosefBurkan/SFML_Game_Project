@@ -130,15 +130,6 @@ namespace GridHandlers
         return tiles;
     }
 
-    std::pair<int, int> GridHandler::RetrieveTileIndex()
-    {
-        std::pair<float, float> tilePositions = SelectedTilePos();
-
-         // Hver rute er 50x50 størrelse, så delt på 50, vil gi tilsvarende index for ruten
-        return {tilePositions.first / 50, 
-                tilePositions.second / 50};
-    }
-
     void GridHandler::SelectTile()
     {
         auto& tiles = grid.RetrieveAllTiles();

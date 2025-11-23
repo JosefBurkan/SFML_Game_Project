@@ -5,16 +5,17 @@ namespace GridPathAlgorithms
     // Farg de rutene som spilleren kan bevege seg til
     void GridPathAlgorithm::CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
-        coordinateY = startY;
-        coordinateX = startX;
+        // Divider på 50 for å finne index
+        coordinateY = startY / 50;
+        coordinateX = startX / 50;
         // startX, statY, avstandReist
         std::queue<std::tuple<int, int, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
         // Ned, opp, høyre, venstre
         std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}};
 
-        visited.insert({startY, startX});
-        q.push({startY, startX, 0});
+        visited.insert({coordinateY, coordinateX});
+        q.push({coordinateY, coordinateX, 0});
 
         while (!q.empty())
         {
@@ -34,7 +35,7 @@ namespace GridPathAlgorithms
                 // Ikke beveg på okkuperte ruter
                 if (tiles[ny][nx].IsOccupied) continue;
 
-                tiles[startY][startX].inRange = true;
+                tiles[coordinateY][coordinateX].inRange = true;
                 if (g < range) tiles[ny][nx].inRange = true;
 
                 if (visited.count({ny,nx})) continue;

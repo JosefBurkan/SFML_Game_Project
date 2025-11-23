@@ -73,10 +73,8 @@ namespace Players
     void Player::Movement()
     {
         std::pair<float, float> retrievedTile = GridHandler.SelectedTilePos(); // Hent hvilken rute spilleren står på
-        std::pair<float, float> selectedTile = GridHandler.RetrieveTile();
+        std::pair<float, float> selectedTile = GridHandler.RetrieveTile();     // Ruten som for øyeblikket er valgt
 
-        std::pair<float, float> retrievedTileIndex = GridHandler.RetrieveTileIndex();
-        
         float gridCurrentTileX = retrievedTile.second;
         float gridCurrentTileY = retrievedTile.first;
 
@@ -96,7 +94,7 @@ namespace Players
                     tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = false;
                     isSelected = true;
                     preventSelect = false;
-                    algorithm.CheckAvailableTiles(retrievedTileIndex.first, retrievedTileIndex.second, movement, tiles);
+                    algorithm.CheckAvailableTiles(retrievedTile.first, retrievedTile.second, movement, tiles);
                     state = "Selected";
                 }
             }
