@@ -17,13 +17,12 @@ namespace Players
     class Player : public Units::Unit 
     {
 
-        private:
-
+        protected:
             GridHandlers::GridHandler& GridHandler;          // Funksjonalitet for bevegelse
             GridPathAlgorithms::GridPathAlgorithm algorithm;
             Menus::Menu menu;
 
-            float playerCurrentTileY = 0;
+            float playerCurrentTileY = 100;
             float playerCurrentTileX = 0;
             int menuCooldown;                                   // Prevents spammable buttons
             bool isSelected = false;                            // Sjekk om spilleren har blitt valgt

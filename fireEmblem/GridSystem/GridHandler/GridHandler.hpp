@@ -14,7 +14,7 @@ namespace GridHandlers
         private:
             int movementCooldown = 0; // Sette en grense på hvor fort man kan bytte rute
             int selectedTileX = 0;    // Kordinat til valgt rute 
-            int selectedTileY = 0;
+            int selectedTileY = 2;
             int coloredTileX = 0;     // Farge ruten når en karakter er valgt
             int coloredTileY = 0; 
             int rows = 0;

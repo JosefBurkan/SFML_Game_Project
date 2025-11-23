@@ -69,7 +69,7 @@ namespace Tiles
     }
 
 
-    const std::pair<float, float> Tile::RetrieveTilePos() const
+    const std::pair<float, float> Tile::RetrieveTilePos()
     {
         return {rectangle.getPosition().y, rectangle.getPosition().x};
     }

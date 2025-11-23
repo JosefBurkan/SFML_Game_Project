@@ -77,8 +77,8 @@ namespace Players
 
         std::pair<float, float> retrievedTileIndex = GridHandler.RetrieveTileIndex();
         
-        float gridCurrentTileX = retrievedTile.first;
-        float gridCurrentTileY = retrievedTile.second;
+        float gridCurrentTileX = retrievedTile.second;
+        float gridCurrentTileY = retrievedTile.first;
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
@@ -88,9 +88,10 @@ namespace Players
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
+                std::cout << gridCurrentTileY << " " << playerCurrentTileY <<"\n";
 
                 // Står spilleren på samme rute som er valgt på rutefeltet
-                if (playerCurrentTileX == gridCurrentTileX && playerCurrentTileY == gridCurrentTileY)
+                if (playerCurrentTileY == gridCurrentTileY && playerCurrentTileX == gridCurrentTileX)
                 {
                     tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = false;
                     isSelected = true;
@@ -104,7 +105,7 @@ namespace Players
             {
                 tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                 CancelSelect();
-                algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);
+                algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);
             }
         }
         // Sjekk om spilleren har blitt valgt
@@ -125,10 +126,10 @@ namespace Players
                     tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                     isSelected = false;
                     preventSelect = false;
-                    sprite->setPosition({gridCurrentTileY, gridCurrentTileX});
+                    sprite->setPosition({gridCurrentTileX, gridCurrentTileY});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
-                    algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern rutene 
+                    algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);     // Fjern rutene 
                     CheckForMapObjects();
                     menuCooldown = 0;
                     attackCooldown = 0;
@@ -159,7 +160,7 @@ namespace Players
         if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
         {
             attackCooldown++;
-            Attacks::Attack newAttack{gridCurrentTileY, gridCurrentTileX};                          
+            Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
             attacks.CreateAttack(newAttack);
             state = "Finished";
 

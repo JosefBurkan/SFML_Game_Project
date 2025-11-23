@@ -24,7 +24,7 @@ namespace GridGenerators
                 tiles[row][column] = Tiles::Tile(rowX, rowY); // Bygg en rute med tilsvarende kordinater
             }
         }
-        tiles[0][0].ChangeColor(true);
+        tiles[2][0].ChangeColor(true);
     }
 
     // Hent alle ruter

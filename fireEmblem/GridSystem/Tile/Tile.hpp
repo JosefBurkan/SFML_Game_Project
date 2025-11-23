@@ -19,7 +19,7 @@ namespace Tiles
             void ChangeColor(bool onSelect);
             void Select();
             void UnSelect();
-            const std::pair<float, float> RetrieveTilePos() const;
+            const std::pair<float, float> RetrieveTilePos();
             // Sjekk hva som er inni ruten
             void CheckContents();
             void Draw(sf::RenderWindow& window);

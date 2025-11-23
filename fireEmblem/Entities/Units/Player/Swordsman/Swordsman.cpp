@@ -14,6 +14,7 @@ namespace Swordsmen
         healthPoints = 4;
         maxHealth = healthPoints;
         texture.setSmooth(false);
+        playerCurrentTileY = 150;
 
         type = "Player";
         speed = 3;
