@@ -25,10 +25,8 @@ namespace UnitsManagers
 
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
-
         for (auto it = units.begin(); it != units.end(); ) 
         {
-
             float posX = (*it)->sprite->getPosition().x;
             float posY = (*it)->sprite->getPosition().y;
 
@@ -53,7 +51,6 @@ namespace UnitsManagers
                 ++it;
             }
         }
-
     }
 
     // Endre dette til å ta inn en int (turn) som argument
@@ -61,6 +58,7 @@ namespace UnitsManagers
     // 
     void UnitsManager::PerformEnemyActions(int gameTurn)
     {
+
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
             if ((*it)->type == "Enemy" && (*it)->turn == gameTurn) 
@@ -72,6 +70,7 @@ namespace UnitsManagers
 
     void UnitsManager::SortUnits()
     {
+
         // Sorterer etter farten til units. Raske units går først
         std::sort(units.begin(), units.end(), [](const std::shared_ptr<Units::Unit>& a, const std::shared_ptr<Units::Unit>& b) {
             return a->speed > b->speed; 
@@ -82,6 +81,7 @@ namespace UnitsManagers
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
             (*it)->turn = assignTurn;
+            (*it)->currentOrder = assignTurn;
             std::cout << (*it)->name << " speed: " << (*it)->speed << "\n";
             assignTurn++;
         }
@@ -93,6 +93,16 @@ namespace UnitsManagers
     std::shared_ptr<Units::Unit> UnitsManager::GetUnitByTurn(int turn)
     {
         return units[turn];
+    }
+
+    // oppdater rekkefølgen til unitsa, basert på hvilken unit som har
+    // utført en handling
+    void UnitsManager::AssignOrder()
+    {
+        for (auto it = units.begin(); it != units.end(); ++it) 
+        {
+            (*it)->currentOrder -= 1;
+        }
     }
 
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "../../../config.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 
 namespace OverViews
 {
@@ -10,15 +10,26 @@ namespace OverViews
     class OverView
     {
         private:
-        sf::RectangleShape rectangle;
-        sf::Font font;
+            sf::RectangleShape background;
+            sf::Font font;
 
-        sf::Texture texture;
-        std::optional<sf::Sprite> princessFace;
+            sf::Texture princessFaceTexture;
+            std::optional<sf::Sprite> princessFace;
+
+            sf::Texture princessIconTexture;
+            std::optional<sf::Sprite> princessIcon;
+
+            sf::Texture slimeIconTexture;
+            std::optional<sf::Sprite> slimeIcon;
+
+            sf::RectangleShape timeline;    // Vil vise rekkefølgen som units beveger seg i
+
 
         public:
             OverView();
             sf::Text CreateText(std::string name, int health, int speed);
+            void ManageTimeline(std::vector<std::shared_ptr<Units::Unit>> units, sf::RenderWindow& window, int cameraY);   // Håndterer tidslinjen som viser rekkefølgen til units
             void Draw(sf::RenderWindow& window, std::pair<float, float> cameraPositions, sf::Text text);
+            
     };
 }

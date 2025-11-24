@@ -10,7 +10,7 @@ namespace Cameras {
             sf::View view;
             float selectedTileX = 0;    // Kordinat til valgt rute 
             float selectedTileY = 0;
-            int viewWidth = 1280;        // 800 x 475
+            int viewWidth = 1280;        
             int viewHeight = 720;
             sf::Vector2f viewSize;
             GridHandlers::GridHandler& GridHandler;

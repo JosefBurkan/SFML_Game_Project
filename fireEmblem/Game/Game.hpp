@@ -36,10 +36,10 @@ namespace Games
         std::shared_ptr<Swordsmen::Swordsman> swordsman;
 
         sf::RectangleShape shader;
-        sf::Clock clock;
         
         int gameTurn = 0;
         int cooldown = 0; // Ventetid mellom enheter sine handlinger
+        int numberOfUnits = 5; 
         bool lock = false;  // Brukes for utføre funksjoner en gang, istedenfor at de repeteres mange ganger
         
         

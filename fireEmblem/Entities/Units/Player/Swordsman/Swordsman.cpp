@@ -17,10 +17,12 @@ namespace Swordsmen
         playerCurrentTileY = 150;
 
         type = "Player";
-        speed = 3;
+        speed = 1;
 
         sprite->setScale({1, 1});
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Swordsman_Icon.png");
     }
 }
 

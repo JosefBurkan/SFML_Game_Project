@@ -88,7 +88,7 @@ namespace Games
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player") 
                 {
-                    
+
                     currentTurnUnit->Movement();
 
                     if (lock == false)
@@ -114,6 +114,8 @@ namespace Games
                     {
                         gameTurn++;
                         currentTurnUnit->state = "Neutral";
+                        currentTurnUnit->currentOrder = numberOfUnits;
+                        unitManager.AssignOrder();
                     }
                 }
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
@@ -128,16 +130,18 @@ namespace Games
                         std::cout << "Turn " << gameTurn << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
                         gameTurn++;
+                        currentTurnUnit->currentOrder = numberOfUnits;
+                        unitManager.AssignOrder();
                     }
                 }
                 
                 unitManager.UpdateUnits(window);
             }
 
-
             // Hvis runden er lik eller større enn antall units i spillet
             if (gameTurn >= unitManager.GetSize())
             {
+                unitManager.firstUnit = true;
                 gameTurn = 0;
                 lock = false;
                 std::cout << "\n";
@@ -150,6 +154,9 @@ namespace Games
 
             // Tegn grid
             gridHandler->Draw(window);
+
+            // Oppdater tidslinjen
+            overView.ManageTimeline(unitManager.GetAllUnits(), window, camera->GetPosition().second);
 
             overView.Draw(window, camera->GetPosition(), overView.CreateText(you->name, you->healthPoints, you->speed));
 

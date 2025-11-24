@@ -1003,7 +1003,4 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridHandler/GridHandler.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/../../../config.hpp

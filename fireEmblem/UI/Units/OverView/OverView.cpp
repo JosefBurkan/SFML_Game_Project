@@ -4,22 +4,28 @@ namespace OverViews
 {
     OverView::OverView()
     {
-        rectangle.setFillColor({125, 0, 175});
-        rectangle.setPosition({-300.f, 400});
-        rectangle.setSize({250.f, 100});
+        background.setFillColor({125, 0, 175});
+        background.setPosition({-300.f, 400});
+        background.setSize({250.f, 100});
 
-        texture.loadFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/prinsesse_ansikt.png");
-
-        princessFace.emplace(texture);
-
+        princessFaceTexture.loadFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/prinsesse_ansikt.png");
+        princessFace.emplace(princessFaceTexture);
         princessFace->setScale({4.f, 4.f});
 
-        font.openFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/Minecraft.TTF");        
+        slimeIconTexture.loadFromFile(std::string(ASSETS_DIR) + "Slime_Icon.png");
+        slimeIcon.emplace(slimeIconTexture);
+        slimeIcon->setScale({3.f, 3.f});
+
+
+        font.openFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/Minecraft.TTF"); 
+        font.setSmooth(false); 
+        
+        timeline.setSize({400.f, 5.f});
+        timeline.setFillColor(sf::Color(150, 0, 150));      
     }
 
     sf::Text OverView::CreateText(std::string name, int health, int speed)
     {
-        font.setSmooth(false); 
 
         sf::Text attributes(font);
 
@@ -30,14 +36,29 @@ namespace OverViews
         return attributes;
     }
 
-    void OverView::Draw(sf::RenderWindow& window , std::pair<float, float> cameraPositions, sf::Text text)
+    void OverView::ManageTimeline(std::vector<std::shared_ptr<Units::Unit>> units, sf::RenderWindow& window, int cameraY)
     {
-        rectangle.setPosition({cameraPositions.first - 50, cameraPositions.second - 50});
-        text.setPosition({cameraPositions.first - 45, cameraPositions.second - 50});
-        princessFace->setPosition({cameraPositions.first + 80, cameraPositions.second - 90});
-        window.draw(rectangle);
+        for (auto unit : units)
+        {
+            sf::Sprite icon = unit->GetIcon();
+
+            icon.setPosition({320.f + (unit->currentOrder * 50), cameraY + 25.f});
+            window.draw(icon);
+        }
+    }
+
+
+    void OverView::Draw(sf::RenderWindow& window, std::pair<float, float> cameraPositions, sf::Text text)
+    {
+        background.setPosition({cameraPositions.first - 85, cameraPositions.second + 5});
+        text.setPosition({cameraPositions.first - 80, cameraPositions.second + 10});
+        princessFace->setPosition({cameraPositions.first + 40, cameraPositions.second - 40});
+        timeline.setPosition({cameraPositions.first + 200, cameraPositions.second + 50});
+
+        window.draw(background);
         window.draw(text);
         window.draw(*princessFace);
 
+        window.draw(timeline);
     }
 }

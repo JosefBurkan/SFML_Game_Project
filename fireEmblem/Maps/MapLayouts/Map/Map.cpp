@@ -52,7 +52,6 @@ namespace Maps
         walls[7].SetGrid(*GridHandlerPtr);
         walls[8].SetGrid(*GridHandlerPtr);
         walls[9].SetGrid(*GridHandlerPtr);
-        
 
         trees[0].SetGrid(*GridHandlerPtr);
         trees[1].SetGrid(*GridHandlerPtr);

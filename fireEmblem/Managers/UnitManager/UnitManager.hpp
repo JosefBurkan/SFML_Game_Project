@@ -16,7 +16,11 @@ namespace UnitsManagers
             int assignTurn = 0; // Sett 'turn' til units lik indeksen dems i unitlista   
             std::pair<int, int> cameraPositions; 
 
+
+
         public:
+            bool firstUnit = true; // Er for å lage tidslinjen
+
             void AddUnit(std::shared_ptr<Units::Unit> unit);
             std::vector<std::shared_ptr<Units::Unit>> GetAllUnits();
             void RemoveUnit();
@@ -26,5 +30,9 @@ namespace UnitsManagers
             void SortUnits();      // Sorterer units etter speed. Raskeste går først
             std::shared_ptr<Units::Unit> GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
             int GetSize();
+
+            // Setter rekkefølgen til units i ekte tid
+            // Altså den endrer seg hver runde, annerledes fra "turn" som er statisk
+            void AssignOrder();   
     };
 }

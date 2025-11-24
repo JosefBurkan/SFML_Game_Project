@@ -18,6 +18,8 @@ namespace Slimes
         sprite->setScale({3.f, 3.f});
         sprite->setPosition({yPos, xPos});
         movement = 4;
+
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "slime_Icon.png");
     }
 
     void Slime::Draw(sf::RenderWindow& window)

@@ -16,6 +16,8 @@ namespace Units
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
 
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "prinsesse_Icon.png");
+
     }
     
     void Unit::spawn()
@@ -84,7 +86,6 @@ namespace Units
 
     void Unit::IsHit()
     {
-
         // Hent uniten sin posisjon for sammenligning
         int x = sprite->getPosition().x;
         int y = sprite->getPosition().y;
@@ -106,13 +107,19 @@ namespace Units
                     std::cout << name << " er truffet! " << healthPoints << "\n";
                 }
             }
-
         }
     }
 
     void Unit::PerformActions()
     {
         
+    }
+
+    sf::Sprite Unit::GetIcon()
+    {
+        sf::Sprite iconSprite(iconTexture);
+
+        return iconSprite;
     }
 }
 

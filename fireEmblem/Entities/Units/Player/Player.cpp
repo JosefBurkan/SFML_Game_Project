@@ -22,6 +22,7 @@ namespace Players
         sprite.emplace(texture);
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition({0.f, 100.f});
+
     }
 
     std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
