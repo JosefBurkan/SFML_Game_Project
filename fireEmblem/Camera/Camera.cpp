@@ -6,7 +6,6 @@ namespace Cameras {
         : GridHandler(gridHandler)
     {
         
-
     }
 
     sf::View Camera::LoadView()
@@ -16,7 +15,7 @@ namespace Cameras {
         sf::Vector2f center(350, 400);
         view.setSize(vec2);
         view.setCenter(center);
-        view.setViewport(sf::FloatRect({-0.227f, 0.f}, {1.f, 1.f}));
+        view.setViewport(sf::FloatRect({-0.01f, 0.0f}, {1.f, 1.f}));
 
         return view;
     }

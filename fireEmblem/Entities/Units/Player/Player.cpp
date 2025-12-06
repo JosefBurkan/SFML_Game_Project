@@ -82,16 +82,15 @@ namespace Players
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
         {
-            auto& tiles = GridHandler.RetrieveAllTiles();
 
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
-                std::cout << gridCurrentTileY << " " << playerCurrentTileY <<"\n";
-
                 // Står spilleren på samme rute som er valgt på rutefeltet
                 if (playerCurrentTileY == gridCurrentTileY && playerCurrentTileX == gridCurrentTileX)
                 {
+                    auto& tiles = GridHandler.RetrieveAllTiles();
+
                     tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = false;
                     isSelected = true;
                     preventSelect = false;
@@ -102,6 +101,8 @@ namespace Players
 
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
             {
+                auto& tiles = GridHandler.RetrieveAllTiles();
+
                 tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                 CancelSelect();
                 algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);

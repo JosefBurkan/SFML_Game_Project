@@ -58,7 +58,6 @@ namespace UnitsManagers
     // 
     void UnitsManager::PerformEnemyActions(int gameTurn)
     {
-
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
             if ((*it)->type == "Enemy" && (*it)->turn == gameTurn) 
@@ -101,16 +100,16 @@ namespace UnitsManagers
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
-            (*it)->currentOrder -= 1;
+            if ((*it)->currentOrder > 0)
+            {
+                (*it)->currentOrder -= 1;
+            }
         }
     }
-
 
     int UnitsManager::GetSize()
     {
         return units.size();
     }
-
-
 
 }

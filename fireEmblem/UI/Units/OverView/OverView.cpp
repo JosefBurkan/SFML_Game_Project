@@ -12,11 +12,6 @@ namespace OverViews
         princessFace.emplace(princessFaceTexture);
         princessFace->setScale({4.f, 4.f});
 
-        slimeIconTexture.loadFromFile(std::string(ASSETS_DIR) + "Slime_Icon.png");
-        slimeIcon.emplace(slimeIconTexture);
-        slimeIcon->setScale({3.f, 3.f});
-
-
         font.openFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/Minecraft.TTF"); 
         font.setSmooth(false); 
         
