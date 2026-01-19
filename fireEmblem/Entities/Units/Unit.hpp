@@ -48,7 +48,5 @@ namespace Units
             virtual void IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
             virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
-
-
     };
 }

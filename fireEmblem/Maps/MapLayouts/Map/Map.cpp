@@ -24,9 +24,11 @@ namespace Maps
 
     }
 
-    void Map::GenerateGrid() 
+    GridGenerators::GridGenerator& Map::GenerateGrid() 
     {
         gridGenerator.CreateGrid(numberOfRows, numberOfColumns);
+
+        return gridGenerator;
     }
 
     // returner gridGenerator med verdiene til den eksisterende gridden

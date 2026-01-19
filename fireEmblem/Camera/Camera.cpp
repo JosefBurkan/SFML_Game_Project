@@ -12,7 +12,7 @@ namespace Cameras {
     {
         sf::Vector2f vec2(viewWidth, viewHeight);
 
-        sf::Vector2f center(350, 400);
+        sf::Vector2f center(630, 400);
         view.setSize(vec2);
         view.setCenter(center);
         view.setViewport(sf::FloatRect({-0.01f, 0.0f}, {1.f, 1.f}));
@@ -31,11 +31,11 @@ namespace Cameras {
 
 
         // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 
-        if (selectedTileY > viewSize.x + 350)
+        if (selectedTileY > viewSize.x + 650)
         {
             view.move(moveHorisontally);
         }
-        if (selectedTileY < viewSize.x - 350)
+        if (selectedTileY < viewSize.x - 650)
         {
             view.move(-moveHorisontally);
         }

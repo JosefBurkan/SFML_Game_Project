@@ -33,7 +33,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 48,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 47,
+				"line" : 46,
 				"parent" : 0
 			}
 		]
@@ -108,8 +108,7 @@
 				21,
 				22,
 				23,
-				24,
-				25
+				24
 			]
 		}
 	],
@@ -181,8 +180,7 @@
 				21,
 				22,
 				23,
-				24,
-				25
+				24
 			]
 		}
 	],
@@ -234,12 +232,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "fireEmblem/Maps/MapLayouts/Map/Map.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

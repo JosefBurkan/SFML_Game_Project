@@ -1048,8 +1048,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/StartMap/../Map/Map.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/../BackgroundTiles/BackgroundTile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/../BackgroundTiles/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \

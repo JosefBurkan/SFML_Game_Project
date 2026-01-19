@@ -4,34 +4,31 @@ namespace Games
 {
     Game::Game()
         : map(),
+          grid(map.GenerateGrid()),
+          gridHandler{grid},
+          background1(gridHandler),
           attacks(),
-          unitManager()
+          unitManager(),
+          camera{gridHandler}
     {
-        // Lag rutene
-        map.GenerateGrid();
-
-        GridGenerators::GridGenerator& grid = map.FetchGrid();
-
-        // Lag en pointer til rutenettet
-        gridHandler = std::make_unique<GridHandlers::GridHandler>(grid);
-        camera = std::make_unique<Cameras::Camera>(*gridHandler);
-        background1 = std::make_unique<Backgrounds1::Background1>(*gridHandler);
+        
+        
 
         map.LoadWindow();
         
         // Koble banen og rutenettet sammen
-        map.SetGridMovement(*gridHandler);
+        map.SetGridMovement(gridHandler);
         map.SpawnObjects();
 
         // Init background
-        background1->LoadTileMapFromFile();
+        background1.LoadTileMapFromFile();
 
         // Units
-        you    = std::make_shared<Players::Player>(grid, map, attacks, *gridHandler);
+        you    = std::make_shared<Players::Player>(grid, map, attacks, gridHandler);
         enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
         enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
         slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
-        swordsman = std::make_shared<Swordsmen::Swordsman>(grid, map, attacks, *gridHandler);
+        swordsman = std::make_shared<Swordsmen::Swordsman>(grid, map, attacks, gridHandler);
 
         unitManager.AddUnit(enemy1);
         unitManager.AddUnit(enemy2);
@@ -46,18 +43,17 @@ namespace Games
         shader.setFillColor(sf::Color(0, 0, 255, 20));
 
         swordsman->Move(0, 150);
+    
     }
 
     void Game::Run()
     {
         sf::RenderWindow& window = map.window;
-        sf::View view = camera->LoadView();
+        sf::View view = camera.LoadView();
         sf::View moveView;
 
         window.setFramerateLimit(60);
         window.setView(view);
-
-
 
         while (window.isOpen())
         {
@@ -67,12 +63,11 @@ namespace Games
                     window.close();
             }
 
-            // Kamera
-            moveView = camera->MoveView();
+            moveView = camera.MoveView();
             window.setView(moveView);
 
-            // Tegn bakgrunn + bane
-            background1->Draw(window);
+            // Tegn bakgrunn + alle objekter på banen
+            window.draw(background1);
             map.DrawMapObjects(window);
 
             // Hent uniten med indeksen lik turnen
@@ -100,15 +95,15 @@ namespace Games
 
                     if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Neutral")
                     {
-                        gridHandler->Movement();
+                        gridHandler.Movement();
                     }
                     else if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Selected")
                     {
-                        gridHandler->MovementWhileSelected();
+                        gridHandler.MovementWhileSelected();
                     }
                     else if (currentTurnUnit->state == "Attack")
                     {
-                        gridHandler->Attack();
+                        gridHandler.Attack();
                     }
                     else if (currentTurnUnit->state == "Finished")
                     {
@@ -153,12 +148,12 @@ namespace Games
             window.draw(shader);
 
             // Tegn grid
-            gridHandler->Draw(window);
+            gridHandler.Draw(window);
 
             // Oppdater tidslinjen
-            overView.ManageTimeline(unitManager.GetAllUnits(), window, camera->GetPosition().second);
+            overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
 
-            overView.Draw(window, camera->GetPosition(), overView.CreateText(you->name, you->healthPoints, you->speed));
+            overView.Draw(window, camera.GetPosition(), overView.CreateText(you->name, you->healthPoints, you->speed));
 
             window.display();
         }

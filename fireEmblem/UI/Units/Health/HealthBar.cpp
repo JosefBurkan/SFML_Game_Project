@@ -11,6 +11,8 @@ namespace HealthBars
 
         rectangleRed.setFillColor({255, 0, 0});
         rectangleRed.setPosition({unitPosX, unitPosY - 20});
+
+        rectangleRed.setOutlineThickness(2.f);
     }
 
     // Tegn healthbaren

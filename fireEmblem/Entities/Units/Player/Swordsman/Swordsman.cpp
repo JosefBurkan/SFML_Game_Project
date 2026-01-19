@@ -6,7 +6,7 @@ namespace Swordsmen
                     AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
         : Player(gridReference, map, attacks, GridHandler)
     {
-        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Swordsman.png")) {
+        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
@@ -22,7 +22,7 @@ namespace Swordsmen
         sprite->setScale({1, 1});
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Swordsman_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman_Icon.png");
     }
 }
 

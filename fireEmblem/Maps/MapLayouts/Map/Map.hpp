@@ -25,7 +25,7 @@ namespace Maps
 
             Map();
             
-            void GenerateGrid();
+            GridGenerators::GridGenerator& GenerateGrid();
             GridGenerators::GridGenerator& FetchGrid();                     // returner gridGenerator med verdiene til den eksisterende gridden
             void SetGridMovement(GridHandlers::GridHandler& movement);    // Hent inn GridHandler, for å lese og påvirke rutefeltet
             void LoadWindow();

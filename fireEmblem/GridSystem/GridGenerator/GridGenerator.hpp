@@ -14,7 +14,7 @@ namespace GridGenerators
         int rows = 0;
         int columns = 0;
 
-        void CreateGrid(int r, int c);
+        std::vector<std::vector<Tiles::Tile>> CreateGrid(int r, int c);
 
         // Hent alle ruter
         std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();

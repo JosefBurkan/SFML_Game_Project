@@ -35,14 +35,15 @@ namespace UnitsManagers
             (*it)->Draw(window);
             (*it)->IsHit();
 
+            /*
             if ((*it)->type == "Player")
             {
                 (*it)->DrawUI(window);
             }
             else
             {
-                healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
-            }
+            */
+            healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
 
             if ((*it)->healthPoints == 0) {
                 it = units.erase(it);
@@ -55,7 +56,6 @@ namespace UnitsManagers
 
     // Endre dette til å ta inn en int (turn) som argument
     // Endre til å gjelde for alle units, ikke bare fiender
-    // 
     void UnitsManager::PerformEnemyActions(int gameTurn)
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
@@ -69,7 +69,6 @@ namespace UnitsManagers
 
     void UnitsManager::SortUnits()
     {
-
         // Sorterer etter farten til units. Raske units går først
         std::sort(units.begin(), units.end(), [](const std::shared_ptr<Units::Unit>& a, const std::shared_ptr<Units::Unit>& b) {
             return a->speed > b->speed; 

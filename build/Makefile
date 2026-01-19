@@ -585,30 +585,6 @@ fireEmblem/Maps/Background/Background1/Background1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/Background1/Background1.cpp.s
 .PHONY : fireEmblem/Maps/Background/Background1/Background1.cpp.s
 
-fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.o: fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o
-.PHONY : fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.o
-
-# target to build an object file
-fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o
-.PHONY : fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.o
-
-fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.i: fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.i
-.PHONY : fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.i
-
-# target to preprocess a source file
-fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.i
-.PHONY : fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.i
-
-fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.s: fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.s
-.PHONY : fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.s
-
-# target to generate assembly for a file
-fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.s
-.PHONY : fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp.s
-
 fireEmblem/Maps/MapLayouts/Map/Map.o: fireEmblem/Maps/MapLayouts/Map/Map.cpp.o
 .PHONY : fireEmblem/Maps/MapLayouts/Map/Map.o
 
@@ -819,9 +795,6 @@ help:
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.o"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.i"
 	@echo "... fireEmblem/Maps/Background/Background1/Background1.s"
-	@echo "... fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.o"
-	@echo "... fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.i"
-	@echo "... fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.s"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.o"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.i"
 	@echo "... fireEmblem/Maps/MapLayouts/Map/Map.s"

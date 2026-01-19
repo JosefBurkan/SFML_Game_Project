@@ -24,7 +24,6 @@ add_executable(fireEmblem
     fireEmblem/Entities/Units/Enemies/Enemy.cpp
     fireEmblem/Entities/Units/Unit.cpp
     fireEmblem/Maps/MapLayouts/Map/Map.cpp
-    fireEmblem/Maps/Background/BackgroundTiles/BackgroundTile.cpp
     fireEmblem/Maps/Background/Background1/Background1.cpp
     fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp
     fireEmblem/Entities/MapObjects/MapObject.cpp

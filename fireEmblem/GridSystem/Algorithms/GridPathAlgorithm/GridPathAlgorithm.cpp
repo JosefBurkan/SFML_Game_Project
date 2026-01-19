@@ -53,8 +53,6 @@ namespace GridPathAlgorithms
     {
         for (auto& tile : tiles)
         {
-            
-
             for (auto& t : tile)
             {
                 // Ikke fjern ruta som spilleren står på

@@ -7,7 +7,7 @@ namespace Players
                     AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
         : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
-        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Prinsesse-50x50.png")) {
+        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Prinsesse-50x50.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 

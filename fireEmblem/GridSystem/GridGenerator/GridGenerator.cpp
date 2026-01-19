@@ -2,7 +2,7 @@
 
 namespace GridGenerators
 {
-    void GridGenerator::CreateGrid(int r, int c) 
+    std::vector<std::vector<Tiles::Tile>> GridGenerator::CreateGrid(int r, int c) 
     {
         rows = r;
         columns = c;
@@ -25,6 +25,8 @@ namespace GridGenerators
             }
         }
         tiles[2][0].ChangeColor(true);
+
+        return tiles;
     }
 
     // Hent alle ruter

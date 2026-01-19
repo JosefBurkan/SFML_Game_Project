@@ -1,19 +1,25 @@
 #pragma once
 #include "../../../config.hpp"
-#include "../BackgroundTiles/BackgroundTile.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Backgrounds1
 {
-    class Background1
+    class Background1 : public sf::Drawable, public sf::Transformable
     {
         public:
-        BackgroundTiles::BackgroundTile backgroundTile;
-        GridHandlers::GridHandler& movement;
+            GridHandlers::GridHandler& movement;
+            sf::VertexArray m_vertices;
+            sf::Texture     m_tileset;
 
-        Background1(GridHandlers::GridHandler& GridHandler);
-        void LoadTileMapFromFile();
-        void Draw(sf::RenderWindow& window);
+
+            int tileWidt = 10;
+            int tileHeight = 10;
+            sf::Vector2u tileSize = {50, 50};   // Bredde, høyde
+
+            Background1(GridHandlers::GridHandler& GridHandler);
+            bool LoadTileMapFromFile();
+            void ReadTileFile();
+            void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
     };
 

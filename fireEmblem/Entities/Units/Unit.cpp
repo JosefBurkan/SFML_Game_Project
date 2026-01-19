@@ -16,7 +16,7 @@ namespace Units
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "prinsesse_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/prinsesse_Icon.png");
 
     }
     

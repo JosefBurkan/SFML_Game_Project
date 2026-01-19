@@ -5,7 +5,7 @@ namespace Enemies
     Enemy::Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
         : Unit(gridReference, map, attacks)
     {
-        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Pixel_Bat.png")) 
+        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Pixel_Bat.png")) 
         {
             throw std::runtime_error("Failed to load texture!");
 
@@ -19,7 +19,7 @@ namespace Enemies
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition({yPos, xPos});
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "slime_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/slime_Icon.png");
 
     }
 

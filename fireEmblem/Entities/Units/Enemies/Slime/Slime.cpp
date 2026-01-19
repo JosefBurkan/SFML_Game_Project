@@ -5,7 +5,7 @@ namespace Slimes
     Slime::Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
         : Enemy(gridReference, map, attacks, yPos, xPos)
     {
-        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Slime-2.png")) 
+        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime-2.png")) 
         {
             throw std::runtime_error("Failed to load texture!");
 
@@ -19,7 +19,7 @@ namespace Slimes
         sprite->setPosition({yPos, xPos});
         movement = 4;
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "slime_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/slime_Icon.png");
     }
 
     void Slime::Draw(sf::RenderWindow& window)

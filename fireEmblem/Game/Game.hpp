@@ -20,14 +20,14 @@ namespace Games
     {
     private:
         StartMaps::StartMap map;
+        GridGenerators::GridGenerator& grid;
+        GridHandlers::GridHandler gridHandler;
+        Backgrounds1::Background1 background1;
+
+        OverViews::OverView overView;
         AttackManagers::AttackManager attacks;
         UnitsManagers::UnitsManager unitManager;
-        OverViews::OverView overView;
-
-        // Gjør disse til pointers slik at de kan brukes utenfor konstruktøren
-        std::unique_ptr<GridHandlers::GridHandler> gridHandler;
-        std::unique_ptr<Cameras::Camera>           camera;
-        std::unique_ptr<Backgrounds1::Background1> background1;
+        Cameras::Camera camera;
 
         std::shared_ptr<Players::Player> you;
         std::shared_ptr<Enemies::Enemy> enemy1;
@@ -39,7 +39,7 @@ namespace Games
         
         int gameTurn = 0;
         int cooldown = 0; // Ventetid mellom enheter sine handlinger
-        int numberOfUnits = 5; 
+        int numberOfUnits = 5; // Antall enheter i unitmanager
         bool lock = false;  // Brukes for utføre funksjoner en gang, istedenfor at de repeteres mange ganger
         
         
