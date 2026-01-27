@@ -22,8 +22,6 @@ namespace Menus
     {
         optionsMenu.setPosition({positionX, positionY});
         arrow.setPosition({positionX - 30, positionY + 6});
-
-
     }
 
     // For å vise hvor i menyen som brukeren er
@@ -49,7 +47,7 @@ namespace Menus
         {
             menuContentsIndex = 2;
         }
-
+        
         return menuContentsIndex;
     }
 

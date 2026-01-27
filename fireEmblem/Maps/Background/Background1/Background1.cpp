@@ -10,7 +10,7 @@ namespace Backgrounds1
     {
     }
 
-    // Les 
+    // Les tilemap-fila
     bool Background1::LoadTileMapFromFile() 
     {
         auto& tiles = movement.RetrieveAllTiles();
@@ -24,16 +24,15 @@ namespace Backgrounds1
         m_vertices.setPrimitiveType(sf::PrimitiveType::Triangles);
         m_vertices.resize(tiles.size() * tiles[0].size() * 6);
 
-        // populate the vertex array, with two triangles per tile
+        // Fyll vertex arrayen med to triangler per tile
         for (unsigned int i = 0; i < tiles.size(); ++i)
         {
             for (unsigned int j = 0; j < tiles[0].size(); ++j)
             {
                 std::cout << tiles[i][j].tileNumber;
-                // get the current tile number
                 const int tileNumber = tiles[i][j].tileNumber;
 
-                // find its position in the tileset texture
+                // Koble tilenummeret til riktig texture fra bildet
                 const int tu = tileNumber % (m_tileset.getSize().x / tileSize.x);
                 const int tv = tileNumber / (m_tileset.getSize().x / tileSize.x);
 
@@ -75,7 +74,7 @@ namespace Backgrounds1
             int tileNumber;
             int col = 0;
 
-            while (ss >> tileNumber) 
+            while (ss >> tileNumber && col < columns) 
             {
                 tiles[row][col].tileNumber = tileNumber;
                 ++col;

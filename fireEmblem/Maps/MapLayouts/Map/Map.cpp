@@ -12,7 +12,7 @@ namespace Maps
         treeTexture.setSmooth(false);
 
         // Lag antall vegger lik størrelsen til i
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
             walls.emplace_back(wallTexture);
         }
@@ -53,7 +53,6 @@ namespace Maps
         walls[6].SetGrid(*GridHandlerPtr);
         walls[7].SetGrid(*GridHandlerPtr);
         walls[8].SetGrid(*GridHandlerPtr);
-        walls[9].SetGrid(*GridHandlerPtr);
 
         trees[0].SetGrid(*GridHandlerPtr);
         trees[1].SetGrid(*GridHandlerPtr);
@@ -81,13 +80,12 @@ namespace Maps
         walls[0].Position(gridTiles[1][5].RetrieveTilePos());
         walls[1].Position(gridTiles[2][5].RetrieveTilePos());
         walls[2].Position(gridTiles[3][5].RetrieveTilePos());
-        walls[3].Position(gridTiles[4][5].RetrieveTilePos());
+        walls[3].Position(gridTiles[0][1].RetrieveTilePos());
         walls[8].Position(gridTiles[0][5].RetrieveTilePos());
         walls[4].Position(gridTiles[1][1].RetrieveTilePos());
         walls[5].Position(gridTiles[2][1].RetrieveTilePos());
         walls[6].Position(gridTiles[3][1].RetrieveTilePos());
         walls[7].Position(gridTiles[4][1].RetrieveTilePos());
-        walls[9].Position(gridTiles[0][1].RetrieveTilePos());
 
         for (auto wall : walls)
         {

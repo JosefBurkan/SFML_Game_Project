@@ -5,7 +5,6 @@ namespace HealthBars
     // Opprett healthbaren
     HealthBar::HealthBar(float unitPosX, float unitPosY)
     {
-        
         rectangleGreen.setFillColor({0, 255, 0});
         rectangleGreen.setPosition({unitPosX, unitPosY - 20});
 

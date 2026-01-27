@@ -40,7 +40,7 @@ namespace Games
         int gameTurn = 0;
         int cooldown = 0; // Ventetid mellom enheter sine handlinger
         int numberOfUnits = 5; // Antall enheter i unitmanager
-        bool lock = false;  // Brukes for utføre funksjoner en gang, istedenfor at de repeteres mange ganger
+        bool lock = false;  // Brukes for å utføre funksjoner en gang, istedenfor at de repeteres mange ganger
         
         
     public:

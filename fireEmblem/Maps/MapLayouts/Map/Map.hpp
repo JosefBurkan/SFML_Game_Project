@@ -18,13 +18,12 @@ namespace Maps
             std::vector<Trees::Tree> trees;
             std::vector<Walls::Wall> walls;
 
-            unsigned int numberOfColumns = 15;
+            unsigned int numberOfColumns = 20;
             unsigned int numberOfRows = 16;
             GridGenerators::GridGenerator gridGenerator;
             GridHandlers::GridHandler* GridHandlerPtr = nullptr;
 
             Map();
-            
             GridGenerators::GridGenerator& GenerateGrid();
             GridGenerators::GridGenerator& FetchGrid();                     // returner gridGenerator med verdiene til den eksisterende gridden
             void SetGridMovement(GridHandlers::GridHandler& movement);    // Hent inn GridHandler, for å lese og påvirke rutefeltet

@@ -19,5 +19,8 @@ namespace Enemies
             void CheckForAttacks();
             void Draw(sf::RenderWindow& window) override;
             void PerformActions() override;
+            void SetTileToOccupied() override;
+            void SetTileToUnOccupied() override;
+
     };
 }

@@ -23,6 +23,19 @@ namespace UnitsManagers
         return cameraPos;
     }   
 
+    void UnitsManager::DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window)
+    {
+        if (it->state != "Attacking")
+        {
+            it->Draw(window);
+        }
+        else 
+        {
+            it->DrawAttackAnimation(window);
+        }
+    }
+
+    // Kjøres hver frame. Tegner animasjon, sjekker om uniten blir truffet, etc.
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
         for (auto it = units.begin(); it != units.end(); ) 
@@ -32,20 +45,21 @@ namespace UnitsManagers
 
             HealthBars::HealthBar healthBar{posX, posY};
 
-            (*it)->Draw(window);
+            DrawUnit((*it), window);
+
             (*it)->IsHit();
 
-            /*
             if ((*it)->type == "Player")
             {
                 (*it)->DrawUI(window);
             }
             else
             {
-            */
-            healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
+                healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
+            }
 
             if ((*it)->healthPoints == 0) {
+                (*it)->SetTileToUnOccupied();
                 it = units.erase(it);
                 SortUnits(); 
             } else {
@@ -54,15 +68,15 @@ namespace UnitsManagers
         }
     }
 
-    // Endre dette til å ta inn en int (turn) som argument
-    // Endre til å gjelde for alle units, ikke bare fiender
     void UnitsManager::PerformEnemyActions(int gameTurn)
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
             if ((*it)->type == "Enemy" && (*it)->turn == gameTurn) 
             {
+                (*it)->SetTileToUnOccupied();
                 (*it)->PerformActions(); 
+                (*it)->SetTileToOccupied();
             }
         }
     }

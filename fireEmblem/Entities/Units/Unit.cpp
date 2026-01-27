@@ -6,7 +6,7 @@ namespace Units
     Unit::Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks) 
             : gridGenerator(gridReference), map(map), attacks(attacks)
     {
-        texture.setSmooth(false);
+        defaultTexture.setSmooth(false);
 
         int randomNum = rand() % 4;
 
@@ -15,6 +15,7 @@ namespace Units
         std::cout << framesUntilDraw << "\n";
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+        attackSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
 
         iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/prinsesse_Icon.png");
 
@@ -30,29 +31,72 @@ namespace Units
 
     }
 
+    void Unit::ResetAnimations()
+    {
+        defaultTextureX = 0;
+        defaultTextureY = 0;
+
+        attackingTextureX = 0;
+        attackingTextureY = 0;
+
+        attackSpawnTimer = 16;
+    }
+
     void Unit::Draw(sf::RenderWindow& window) 
     {
         framesUntilDraw++;
-
-        if (framesUntilDraw >= 20)
+        spriteSizeY = 50;
+        drawSpeed = 20;
+            
+        if (framesUntilDraw >= drawSpeed)
         {
-            while (textureLocationX >= 100)
+            while (defaultTextureX >= spriteSizeX)
             {
-                textureLocationY += 50;
-                textureLocationX = 0;
+                defaultTextureY += 50;
+                defaultTextureX = 0;
 
-                if (textureLocationY > 50)
+                if (defaultTextureY > spriteSizeY)
                 {
-                    textureLocationY = 0;
+                    defaultTextureY = 0;
                 }
             }
-            sprite->setTextureRect(sf::IntRect({textureLocationX, textureLocationY}, {50, 50}));
 
-            textureLocationX += 50;
+            sprite->setTextureRect(sf::IntRect({defaultTextureX, defaultTextureY}, {50, 50}));
 
+            defaultTextureX += 50;
             framesUntilDraw = 0;
         }
+
         window.draw(*sprite);
+    }
+
+    void Unit::DrawAttackAnimation(sf::RenderWindow& window)
+    {
+        framesUntilDraw++;
+
+        spriteSizeY = 100;
+        drawSpeed = 5;
+
+        if (framesUntilDraw >= drawSpeed)
+        {
+            while (attackingTextureX >= spriteSizeX)
+            {
+                attackingTextureY += 50;
+                attackingTextureX = 0;
+
+                if (attackingTextureY > spriteSizeY)
+                {
+                    attackingTextureY = 0;
+                }
+            }
+
+            attackSprite->setTextureRect(sf::IntRect({attackingTextureX, attackingTextureY}, {50, 50}));
+
+            attackingTextureX += 50;
+            framesUntilDraw = 0;
+        }
+
+        window.draw(*attackSprite);
     }
 
     void Unit::DrawUI(sf::RenderWindow& window)
@@ -120,6 +164,16 @@ namespace Units
         sf::Sprite iconSprite(iconTexture);
 
         return iconSprite;
+    }
+
+    void Unit::SetTileToOccupied()
+    {
+
+    }
+
+    void Unit::SetTileToUnOccupied()
+    {
+
     }
 }
 

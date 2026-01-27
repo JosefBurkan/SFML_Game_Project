@@ -46,7 +46,6 @@ namespace EnemyPathAlgorithms
 
                 if (visited.count({ny,nx})) continue;
 
-
                 q.push({ny, nx, g+1});
                 visited.insert({ny, nx});
             }

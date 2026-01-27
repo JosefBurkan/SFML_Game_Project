@@ -7,19 +7,26 @@ namespace Players
                     AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
         : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
-        if (!texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Prinsesse-50x50.png")) {
+        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Prinsesse-50x50.png")) {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+        if (!attackTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess_Shoot.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
         name = "Player";
         healthPoints = 4;
         maxHealth = healthPoints;
-        texture.setSmooth(false);
+        defaultTexture.setSmooth(false);
+        attackTexture.setSmooth(false);
 
         type = "Player";
         speed = 3;
 
-        sprite.emplace(texture);
+        sprite.emplace(defaultTexture);
+        attackSprite.emplace(attackTexture);
+        
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition({0.f, 100.f});
 
@@ -61,8 +68,6 @@ namespace Players
         preventSelect = false;
         algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern rutene 
     }   
-
-
 
     void Player::DrawUI(sf::RenderWindow& window)
     {
@@ -127,19 +132,19 @@ namespace Players
                     isSelected = false;
                     preventSelect = false;
                     sprite->setPosition({gridCurrentTileX, gridCurrentTileY});
+                    attackSprite->setPosition({gridCurrentTileX, gridCurrentTileY});
                     playerCurrentTileX = gridCurrentTileX;
                     playerCurrentTileY = gridCurrentTileY;
                     algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);     // Fjern rutene 
                     CheckForMapObjects();
                     menuCooldown = 0;
-                    attackCooldown = 0;
                     menu.show = true;
                     inMenu = true;
                     menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
                 }
             }
         }
-        // Trykk 'X' for å lukke menyen
+        // Trykk 'X' for å lukke menyen, og "deselecte" karakteren
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
         {
             CancelSelect();
@@ -159,11 +164,19 @@ namespace Players
         // Lag en ny hitbox, så sett dens posisjon med "CreateHitbox"
         if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
         {
-            attackCooldown++;
-            Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
-            attacks.CreateAttack(newAttack);
-            state = "Finished";
+            state = "Attacking"; // Brukes i "Game" fila
+            ResetAnimations();
+        }
+        else if (state == "Attacking")
+        {
+            attackSpawnTimer--;
 
+            if (attackSpawnTimer <= 0)
+            {
+                Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
+                attacks.CreateAttack(newAttack);
+                attackSpawnTimer = 16;
+            }
         }
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
         if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))

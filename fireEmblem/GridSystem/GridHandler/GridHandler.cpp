@@ -77,7 +77,6 @@ namespace GridHandlers
     void GridHandler::Attack()
     {
         auto& tiles = grid.RetrieveAllTiles();
-
         int prevX = selectedTileX;
         int prevY = selectedTileY;
 

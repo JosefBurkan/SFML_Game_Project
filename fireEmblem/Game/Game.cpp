@@ -11,9 +11,6 @@ namespace Games
           unitManager(),
           camera{gridHandler}
     {
-        
-        
-
         map.LoadWindow();
         
         // Koble banen og rutenettet sammen
@@ -39,7 +36,7 @@ namespace Games
         unitManager.SortUnits();
 
         // Shader
-        shader.setSize({750.f, 800.f});
+        shader.setSize({1000.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
 
         swordsman->Move(0, 150);
@@ -88,7 +85,7 @@ namespace Games
 
                     if (lock == false)
                     {
-                        std::cout << "Turn " << gameTurn << ": ";
+                        std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
                         lock = true;
                     }
@@ -105,14 +102,21 @@ namespace Games
                     {
                         gridHandler.Attack();
                     }
-                    else if (currentTurnUnit->state == "Finished")
+                    else if (currentTurnUnit->state == "Attacking")
                     {
-                        gameTurn++;
-                        currentTurnUnit->state = "Neutral";
-                        currentTurnUnit->currentOrder = numberOfUnits;
-                        unitManager.AssignOrder();
+                        currentTurnUnit->attackTimer--;
+                        
+                        if (currentTurnUnit->attackTimer <= 0)
+                        {
+                            currentTurnUnit->currentOrder = numberOfUnits;
+                            currentTurnUnit->state = "Neutral";
+                            unitManager.AssignOrder();
+                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                            gameTurn++;
+                        }
                     }
                 }
+                
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
                 else if (currentTurnUnit->type == "Enemy")
                 {
@@ -133,7 +137,6 @@ namespace Games
                 unitManager.UpdateUnits(window);
             }
 
-            // Hvis runden er lik eller større enn antall units i spillet
             if (gameTurn >= unitManager.GetSize())
             {
                 unitManager.firstUnit = true;
@@ -144,10 +147,8 @@ namespace Games
 
             attacks.Update();
 
-            // Shader
             window.draw(shader);
 
-            // Tegn grid
             gridHandler.Draw(window);
 
             // Oppdater tidslinjen

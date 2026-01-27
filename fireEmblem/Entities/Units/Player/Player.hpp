@@ -24,12 +24,10 @@ namespace Players
 
             float playerCurrentTileY = 100;
             float playerCurrentTileX = 0;
-            int menuCooldown;                                   // Prevents spammable buttons
+            int menuCooldown = 0;                               // Prevents spammable buttons
             bool isSelected = false;                            // Sjekk om spilleren har blitt valgt
             bool preventSelect = false;                         // Forebygg at spilleren kan velges
             sf::Vector2f realTimePos = sprite->getPosition();   // Hent spilleren sin posisjon
-            int attackCooldown;
-            
 
         public:
             Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler);

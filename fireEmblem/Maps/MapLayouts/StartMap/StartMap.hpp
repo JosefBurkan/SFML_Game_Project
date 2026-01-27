@@ -6,8 +6,8 @@ namespace StartMaps
     class StartMap : public Maps::Map
     {
         private:
-            unsigned int numberOfColumns = 20;
-            unsigned int numberOfRows = 16; 
+            int numberOfColumns = 10;
+            int numberOfRows = 16; 
 
         public:
             void LoadWindow();

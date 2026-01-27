@@ -21,14 +21,15 @@ namespace UnitsManagers
         public:
             bool firstUnit = true; // Er for å lage tidslinjen
 
-            void AddUnit(std::shared_ptr<Units::Unit> unit);
-            std::vector<std::shared_ptr<Units::Unit>> GetAllUnits();
-            void RemoveUnit();
             std::pair<int, int> GetCameraPositions(std::pair<int, int> cameraPos);
+            std::vector<std::shared_ptr<Units::Unit>> GetAllUnits();
+            std::shared_ptr<Units::Unit> GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
+            void AddUnit(std::shared_ptr<Units::Unit> unit);
+            void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
             void PerformEnemyActions(int gameTurn);
             void SortUnits();      // Sorterer units etter speed. Raskeste går først
-            std::shared_ptr<Units::Unit> GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
+            void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
             int GetSize();
 
             // Setter rekkefølgen til units i ekte tid

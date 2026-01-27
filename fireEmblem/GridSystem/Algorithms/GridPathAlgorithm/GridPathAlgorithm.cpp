@@ -59,7 +59,6 @@ namespace GridPathAlgorithms
                 if (t.RetrieveTilePos().first == gridCurrentTileX &&
                     t.RetrieveTilePos().second == gridCurrentTileY)
                 {
-
                 }
                 else
                 {

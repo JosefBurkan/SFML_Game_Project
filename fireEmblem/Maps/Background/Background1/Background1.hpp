@@ -11,9 +11,9 @@ namespace Backgrounds1
             sf::VertexArray m_vertices;
             sf::Texture     m_tileset;
 
-
             int tileWidt = 10;
             int tileHeight = 10;
+            int columns = 20; // For å unngå segmentation fault i ReadTileFile
             sf::Vector2u tileSize = {50, 50};   // Bredde, høyde
 
             Background1(GridHandlers::GridHandler& GridHandler);

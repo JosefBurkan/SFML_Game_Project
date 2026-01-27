@@ -10,10 +10,14 @@ set(SFML_ROOT "${CMAKE_SOURCE_DIR}/Dependencies/SFML")
 set(ASSETS_DIR "${CMAKE_SOURCE_DIR}/fireEmblem/Assets/")
 add_compile_definitions(ASSETS_DIR="${ASSETS_DIR}")
 
+# Kan brukes for debugging dersom det er problemer med minnet
+#set(CMAKE_CXX_FLAGS_DEBUG "-fsanitize=address -g -O0")
+#set(CMAKE_EXE_LINKER_FLAGS_DEBUG "-fsanitize=address")
+
+
 cmake_policy(SET CMP0074 NEW)
 
 find_package(SFML 3 COMPONENTS Graphics Window System REQUIRED)
-
 
 add_executable(fireEmblem
     fireEmblem/main.cpp
