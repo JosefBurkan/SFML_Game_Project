@@ -60,7 +60,7 @@ namespace Backgrounds1
         return true;
     }
 
-    // Les, og sett ruteadressene til å bli likt det i .txt fila til bakgrunnen
+    // Les, og sett ruteadressene til å bli likt det i .txt fila for bakgrunnen
     void Background1::ReadTileFile()
     {
         auto& tiles = movement.RetrieveAllTiles();

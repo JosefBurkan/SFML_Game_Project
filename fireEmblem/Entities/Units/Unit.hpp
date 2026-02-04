@@ -21,7 +21,8 @@ namespace Units
             int movement = 5;
             int spriteSizeY = 50;     // Hvor mange pixler animasjonen skal være
             int spriteSizeX = 100;
-            int drawSpeed = 20;
+            int defaultDrawSpeed = 20;
+            int attackingDrawSpeed = 5;
 
         public: 
             std::optional<sf::Sprite> sprite;
@@ -33,7 +34,9 @@ namespace Units
             int speed = 2;
             int attackTimer = 24;   // Hvor lenge angrepsanimasjonen til uniten varer
             int maxAttackTimer = 24;
+
             int attackSpawnTimer = 16;   // Når angrepet (hitboxen) skal lages
+            int maxAttackSpawnTimer = 16;
 
             bool inMenu = false;          // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser og brukes kun av player               
 

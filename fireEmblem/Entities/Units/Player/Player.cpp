@@ -28,7 +28,15 @@ namespace Players
         attackSprite.emplace(attackTexture);
         
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+        attackSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition({0.f, 100.f});
+
+        attackingDrawSpeed = 7;
+        attackTimer = 42;   
+        maxAttackTimer = attackTimer;
+
+        attackSpawnTimer = 40;   
+        maxAttackSpawnTimer = attackSpawnTimer;
 
     }
 
@@ -175,7 +183,7 @@ namespace Players
             {
                 Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
                 attacks.CreateAttack(newAttack);
-                attackSpawnTimer = 16;
+                attackSpawnTimer = maxAttackSpawnTimer;
             }
         }
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'

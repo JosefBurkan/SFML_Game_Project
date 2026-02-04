@@ -29,6 +29,13 @@ namespace Swordsmen
         if (!attackTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman_Slash.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
+
+        attackingDrawSpeed = 5;
+        attackTimer = 30;
+        maxAttackTimer = attackTimer;
+
+        attackSpawnTimer = 20;
+        maxAttackSpawnTimer = attackSpawnTimer;
     }
 }
 

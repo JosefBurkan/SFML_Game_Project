@@ -116,7 +116,7 @@ namespace Games
                         }
                     }
                 }
-                
+
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
                 else if (currentTurnUnit->type == "Enemy")
                 {
@@ -126,7 +126,7 @@ namespace Games
                     {
                         unitManager.PerformEnemyActions(gameTurn);
                         cooldown = 0;
-                        std::cout << "Turn " << gameTurn << ": ";
+                        std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
                         gameTurn++;
                         currentTurnUnit->currentOrder = numberOfUnits;

@@ -39,16 +39,15 @@ namespace Units
         attackingTextureX = 0;
         attackingTextureY = 0;
 
-        attackSpawnTimer = 16;
+        attackSpawnTimer = maxAttackSpawnTimer;
     }
 
     void Unit::Draw(sf::RenderWindow& window) 
     {
         framesUntilDraw++;
         spriteSizeY = 50;
-        drawSpeed = 20;
             
-        if (framesUntilDraw >= drawSpeed)
+        if (framesUntilDraw >= defaultDrawSpeed)
         {
             while (defaultTextureX >= spriteSizeX)
             {
@@ -75,9 +74,8 @@ namespace Units
         framesUntilDraw++;
 
         spriteSizeY = 100;
-        drawSpeed = 5;
 
-        if (framesUntilDraw >= drawSpeed)
+        if (framesUntilDraw >= attackingDrawSpeed)
         {
             while (attackingTextureX >= spriteSizeX)
             {
