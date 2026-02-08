@@ -83,6 +83,16 @@ namespace Players
         attacks.Draw(window);
     }
 
+    void Player::Attack(float spawnLocationX, float spawnLocationY)
+    {
+        float x = sprite->getPosition().x;
+        float y = sprite->getPosition().y;
+
+        attacks.CreateRangedAttack(spawnLocationX, spawnLocationY, {6, 0});
+        attackSpawnTimer = maxAttackSpawnTimer;
+    }
+
+
     // Håndtere bevegelsen av spilleren
     void Player::Movement()
     {
@@ -130,8 +140,8 @@ namespace Players
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
             
             // Sjekk om ruten er okkupert
-            if (GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second]) == false
-             && tiles[selectedTile.first][selectedTile.second].inRange == true)
+            if (!GridHandler.IsOccupied(tiles[selectedTile.first][selectedTile.second])
+             && tiles[selectedTile.first][selectedTile.second].inRange)
             {
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
@@ -181,9 +191,7 @@ namespace Players
 
             if (attackSpawnTimer <= 0)
             {
-                Attacks::Attack newAttack{gridCurrentTileX, gridCurrentTileY};                          
-                attacks.CreateAttack(newAttack);
-                attackSpawnTimer = maxAttackSpawnTimer;
+                Attack(gridCurrentTileX, gridCurrentTileY);
             }
         }
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
@@ -191,12 +199,11 @@ namespace Players
         {
             preventSelect = true;
         }
-        if (isSelected == true)
+        if (isSelected)
         {
             GridHandler.SelectTile();
         }
     }
 
 }
-
 

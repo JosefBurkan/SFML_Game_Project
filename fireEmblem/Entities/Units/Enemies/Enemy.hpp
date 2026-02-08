@@ -1,7 +1,7 @@
 #pragma once
 #include "../../../config.hpp"
 #include "../Unit.hpp"
-#include "../../../Hitboxes/Attacks/Attack/Attack.hpp"
+#include "../../../Hitboxes/Attack/Attack.hpp"
 
 namespace Maps {
     class Map;

@@ -37,5 +37,14 @@ namespace Swordsmen
         attackSpawnTimer = 20;
         maxAttackSpawnTimer = attackSpawnTimer;
     }
+
+    void Swordsman::Attack(float spawnLocationX, float spawnLocationY)
+    {
+        float x = sprite->getPosition().x;
+        float y = sprite->getPosition().y;
+
+        attacks.CreateAttack(spawnLocationX, spawnLocationY);
+        attackSpawnTimer = maxAttackSpawnTimer;
+    }
 }
 

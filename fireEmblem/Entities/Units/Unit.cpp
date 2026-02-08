@@ -136,17 +136,18 @@ namespace Units
         for (auto& attack : attacks.activeAttacks)
         {
             // Hent posisjonen til de angrepene
-            int atkx = attack.hitbox.getPosition().x;
-            int atky = attack.hitbox.getPosition().y;
+            int atkx = attack->hitbox.getPosition().x;
+            int atky = attack->hitbox.getPosition().y;
 
             // Hvis spilleren sin posisjon er større eller lik angrepet sitt
             if (x >= atkx - 5 && y >= atky - 5)
             {
-                // splleren sin posisjon er mindre eller lik angrepet + ruten sin størrelse
+                // uniten sin posisjon er mindre eller lik angrepet + ruten sin størrelse
                 if (x <= atkx + tileSize - 10 && y <= atky + tileSize - 10)
                 {
                     healthPoints--;
                     std::cout << name << " er truffet! " << healthPoints << "\n";
+                    attacks.Clear();
                 }
             }
         }
@@ -160,7 +161,6 @@ namespace Units
     sf::Sprite Unit::GetIcon()
     {
         sf::Sprite iconSprite(iconTexture);
-
         return iconSprite;
     }
 
@@ -170,6 +170,11 @@ namespace Units
     }
 
     void Unit::SetTileToUnOccupied()
+    {
+
+    }
+
+    void Unit::Attack(float spawnLocationX, float spawnLocationY)
     {
 
     }

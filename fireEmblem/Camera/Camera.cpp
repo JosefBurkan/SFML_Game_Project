@@ -1,4 +1,6 @@
 #include "Camera.hpp"
+#include "../config.hpp"
+
 
 namespace Cameras {
 

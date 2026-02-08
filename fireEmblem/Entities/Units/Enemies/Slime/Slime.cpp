@@ -56,9 +56,13 @@ namespace Slimes
         // Hopp til spilleren dersom den er innen rekkevidde
         if (algorithm.playerDetected == true)
         {
+
             sprite->setPosition({(playerPos.second * 50) + 50, playerPos.first * 50});
-            Attacks::Attack newAttack{playerPos.second * 50, playerPos.first * 50};
-            attacks.CreateAttack(newAttack);
+
+            float x = playerPos.second * 50;
+            float y = playerPos.first * 50;
+
+            attacks.CreateAttack(x, y);
         }
 
     }

@@ -21,7 +21,7 @@ namespace Games
         background1.LoadTileMapFromFile();
 
         // Units
-        you    = std::make_shared<Players::Player>(grid, map, attacks, gridHandler);
+        fireMage    = std::make_shared<FireMages::FireMage>(grid, map, attacks, gridHandler);
         enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
         enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
         slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
@@ -30,7 +30,7 @@ namespace Games
         unitManager.AddUnit(enemy1);
         unitManager.AddUnit(enemy2);
         unitManager.AddUnit(slime2);
-        unitManager.AddUnit(you);
+        unitManager.AddUnit(fireMage);
         unitManager.AddUnit(swordsman);
 
         unitManager.SortUnits();
@@ -40,7 +40,6 @@ namespace Games
         shader.setFillColor(sf::Color(0, 0, 255, 20));
 
         swordsman->Move(0, 150);
-    
     }
 
     void Game::Run()
@@ -154,7 +153,7 @@ namespace Games
             // Oppdater tidslinjen
             overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
 
-            overView.Draw(window, camera.GetPosition(), overView.CreateText(you->name, you->healthPoints, you->speed));
+            overView.Draw(window, camera.GetPosition(), overView.CreateText(fireMage->name, fireMage->healthPoints, fireMage->speed));
 
             window.display();
         }

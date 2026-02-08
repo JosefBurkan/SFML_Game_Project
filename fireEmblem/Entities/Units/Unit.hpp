@@ -2,7 +2,7 @@
 #include "../../config.hpp"
 #include "../../GridSystem/GridGenerator/GridGenerator.hpp"
 #include "../../Maps/MapLayouts/Map/Map.hpp"
-#include "../../Hitboxes/Attacks/AttackManager/AttackManager.hpp"
+#include "../../Hitboxes/AttackManager/AttackManager.hpp"
 
 namespace Units 
 {
@@ -67,5 +67,6 @@ namespace Units
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
             virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
             virtual void ResetAnimations(); // Set animasjoner tilbake til starten, slik at de ikke kan starte midt i
+            virtual void Attack(float spawnLocationX, float spawnLocationY);
     };
 }

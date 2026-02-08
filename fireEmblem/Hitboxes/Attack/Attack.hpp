@@ -1,16 +1,18 @@
 #pragma once
-#include "../../../config.hpp"
+#include "../../config.hpp"
 
 namespace Attacks
 {
     class Attack 
     {
-        private:
+        protected:
+        std::string type = "Attack";
+
 
         public:
             sf::RectangleShape hitbox;
             Attack(float positionX, float positionY);
             void MoveHitbox(float positionX, float positionY);
-            void Draw(sf::RenderWindow& window);
+            virtual void Draw(sf::RenderWindow& window);
     };
 }

@@ -34,8 +34,9 @@ add_executable(fireEmblem
     fireEmblem/Entities/MapObjects/Wall/Wall.cpp
     fireEmblem/Camera/Camera.cpp
     fireEmblem/UI/Player/Menu/Menu.cpp
-    fireEmblem/Hitboxes/Attacks/Attack/Attack.cpp
-    fireEmblem/Hitboxes/Attacks/AttackManager/AttackManager.cpp
+    fireEmblem/Hitboxes/Attack/Attack.cpp
+    fireEmblem/Hitboxes/Attack/RangedAttack/RangedAttack.cpp
+    fireEmblem/Hitboxes/AttackManager/AttackManager.cpp
     fireEmblem/Managers/UnitManager/UnitManager.cpp
     fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp
     fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp
@@ -45,6 +46,7 @@ add_executable(fireEmblem
     fireEmblem/UI/Units/OverView/OverView.cpp
     fireEmblem/Entities/MapObjects/Tree/Tree.cpp
     fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp
+    fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)

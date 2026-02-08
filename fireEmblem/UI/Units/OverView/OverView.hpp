@@ -6,7 +6,7 @@ namespace OverViews
 {
     // Denne klassen handler om å lage et grensesnitt for karakterer
     // Når man holder over dem, skal det vise navnet dems, og litt mer informasjon nede i venstre hjørne
-    // Det kan eventuelt inneholde et bilde også
+    // Og et bilde av karakteren
     class OverView
     {
         private:
