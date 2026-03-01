@@ -9,7 +9,6 @@ namespace Swordsmen
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
-
         name = "Swordsman";
         healthPoints = 4;
         maxHealth = healthPoints;
@@ -18,8 +17,7 @@ namespace Swordsmen
         type = "Player";
         speed = 1;
 
-        sprite->setScale({1, 1});
-        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+        sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
 
         if (!iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman_Icon.png"))
         {

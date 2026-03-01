@@ -6,17 +6,10 @@ namespace Units
     Unit::Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks) 
             : gridGenerator(gridReference), map(map), attacks(attacks)
     {
-        defaultTexture.setSmooth(false);
-
         int randomNum = rand() % 4;
 
         framesUntilDraw = (randomNum * 3) - 1;
         
-        std::cout << framesUntilDraw << "\n";
-
-        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
-        attackSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
-
         iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/prinsesse_Icon.png");
 
     }
@@ -26,9 +19,9 @@ namespace Units
         std::cout << "spawnet! \n";
     }
     
-    std::pair<int, int> Unit::RetriveCoordinations() 
+    std::pair<int, int> Unit::RetrieveCoordinations() 
     {
-
+        return {sprite->getPosition().y, sprite->getPosition().x};
     }
 
     void Unit::ResetAnimations()
@@ -39,13 +32,15 @@ namespace Units
         attackingTextureX = 0;
         attackingTextureY = 0;
 
+        dyingTextureX = 0;
+        dyingTextureY = 0;
+
         attackSpawnTimer = maxAttackSpawnTimer;
     }
 
     void Unit::Draw(sf::RenderWindow& window) 
     {
         framesUntilDraw++;
-        spriteSizeY = 50;
             
         if (framesUntilDraw >= defaultDrawSpeed)
         {
@@ -59,7 +54,6 @@ namespace Units
                     defaultTextureY = 0;
                 }
             }
-
             sprite->setTextureRect(sf::IntRect({defaultTextureX, defaultTextureY}, {50, 50}));
 
             defaultTextureX += 50;
@@ -71,18 +65,16 @@ namespace Units
 
     void Unit::DrawAttackAnimation(sf::RenderWindow& window)
     {
-        framesUntilDraw++;
+        framesUntilAttackDraw++;
 
-        spriteSizeY = 100;
-
-        if (framesUntilDraw >= attackingDrawSpeed)
+        if (framesUntilAttackDraw >= attackingDrawSpeed)
         {
-            while (attackingTextureX >= spriteSizeX)
+            while (attackingTextureX >= attackSpriteSizeX)
             {
                 attackingTextureY += 50;
                 attackingTextureX = 0;
 
-                if (attackingTextureY > spriteSizeY)
+                if (attackingTextureY > attackSpriteSizeY)
                 {
                     attackingTextureY = 0;
                 }
@@ -91,10 +83,37 @@ namespace Units
             attackSprite->setTextureRect(sf::IntRect({attackingTextureX, attackingTextureY}, {50, 50}));
 
             attackingTextureX += 50;
-            framesUntilDraw = 0;
+            framesUntilAttackDraw = 0;
         }
 
         window.draw(*attackSprite);
+    }
+
+    void Unit::DrawDeathAnimation(sf::RenderWindow& window)
+    {
+        framesUntilDeathDraw++;
+
+        if (framesUntilDeathDraw >= 10)
+        {
+            while (dyingTextureX >= dyingTextureSizeX)
+            {
+                dyingTextureY += 50;
+                dyingTextureX = 0;
+
+                if (dyingTextureY > dyingTextureSizeY)
+                {
+                    dyingTextureY = 0;
+                }
+            }
+
+            deathSprite->setTextureRect(sf::IntRect({dyingTextureX, dyingTextureY}, {50, 50}));
+
+            dyingTextureX += 50;
+            framesUntilDeathDraw = 0;
+        }
+
+        window.draw(*deathSprite);
+
     }
 
     void Unit::DrawUI(sf::RenderWindow& window)
@@ -145,9 +164,14 @@ namespace Units
                 // uniten sin posisjon er mindre eller lik angrepet + ruten sin størrelse
                 if (x <= atkx + tileSize - 10 && y <= atky + tileSize - 10)
                 {
-                    healthPoints--;
+                    healthPoints -= 2;
                     std::cout << name << " er truffet! " << healthPoints << "\n";
                     attacks.Clear();
+
+                    if (healthPoints <= 0)
+                    {
+                        state = "Dying";
+                    }
                 }
             }
         }

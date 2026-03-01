@@ -10,8 +10,9 @@ namespace EnemyPathAlgorithms
     class EnemyPathAlgorithm
     {
         private:
-            float coordinateY;
-            float coordinateX;
+            float coordinateY = 0;
+            float coordinateX = 0;
+            int travelCost = 0;
         public:
             float isActive = true;
             bool playerDetected = false;

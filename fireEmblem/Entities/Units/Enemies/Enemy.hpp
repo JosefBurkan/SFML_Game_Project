@@ -1,5 +1,4 @@
 #pragma once
-#include "../../../config.hpp"
 #include "../Unit.hpp"
 #include "../../../Hitboxes/Attack/Attack.hpp"
 

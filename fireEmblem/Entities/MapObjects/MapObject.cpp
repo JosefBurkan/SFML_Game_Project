@@ -1,4 +1,6 @@
 #include "MapObject.hpp"
+#include "../../config.hpp"
+
 
 namespace MapObjects
 {

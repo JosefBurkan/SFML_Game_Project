@@ -129,28 +129,24 @@ namespace GridHandlers
         return tiles;
     }
 
-    void GridHandler::SelectTile()
+    void GridHandler::ColorTile()
     {
         auto& tiles = grid.RetrieveAllTiles();
-        coloredTileX = selectedTileX;
-        coloredTileY = selectedTileY;
 
-        tiles[coloredTileY][coloredTileX].Select();
+        tiles[selectedTileY][selectedTileX].Select();
     }
 
-    void GridHandler::UnSelectTile()
+    void GridHandler::DeColorTile()
     {
         auto& tiles = grid.RetrieveAllTiles();
-        coloredTileX = selectedTileX;
-        coloredTileY = selectedTileY;
 
-        tiles[coloredTileY][coloredTileX].UnSelect();
+        tiles[selectedTileY][selectedTileX].UnSelect();
     }
 
     // Sjekk om en tile har blitt okkupert, og hva den er okkupert av
     bool GridHandler::IsOccupied(Tiles::Tile tile)
     {
-        if (tile.IsOccupied == true)
+        if (tile.IsOccupied)
         {
             return true;
         }
@@ -158,6 +154,19 @@ namespace GridHandlers
         {
             return false;
         }
+    }
+
+    void GridHandler::SelectTile(float coordinateY, float coordinateX)
+    {
+        auto& tiles = grid.RetrieveAllTiles();
+
+        tiles[selectedTileY][selectedTileX].ChangeColor(false);
+
+        selectedTileX = coordinateX;
+        selectedTileY = coordinateY;
+
+        tiles[coordinateY][coordinateX].ChangeColor(true);
+
     }
 
     void GridHandler::Draw(sf::RenderWindow& window) 

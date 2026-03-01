@@ -14,8 +14,7 @@ namespace FireMages
         type = "Player";
         speed = 4;
 
-        sprite->setScale({1, 1});
-        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+        sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
     }
 }
 

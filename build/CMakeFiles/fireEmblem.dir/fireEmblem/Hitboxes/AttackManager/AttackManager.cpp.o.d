@@ -976,5 +976,4 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Hitboxes/AttackManager/AttackManager.cpp.o:
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/AttackManager/../Attack/RangedAttack/RangedAttack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/AttackManager/../Attack/RangedAttack/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/AttackManager/../Attack/RangedAttack/../Attack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/AttackManager/../../config.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Hitboxes/AttackManager/../Attack/RangedAttack/../Attack.hpp

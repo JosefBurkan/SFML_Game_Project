@@ -1,4 +1,5 @@
 #include "Wall.hpp"
+#include "../../../config.hpp"
 
 namespace Walls
 {

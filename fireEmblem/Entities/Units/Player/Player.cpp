@@ -201,7 +201,7 @@ namespace Players
         }
         if (isSelected)
         {
-            GridHandler.SelectTile();
+            GridHandler.ColorTile();
         }
     }
 

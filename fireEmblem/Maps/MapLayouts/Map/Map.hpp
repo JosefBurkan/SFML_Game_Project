@@ -1,13 +1,11 @@
 #pragma once
-#include "../../../GridSystem/GridGenerator/GridGenerator.hpp"
-#include "../../../config.hpp"
 #include "../../../Entities/MapObjects/Tree/Tree.hpp"
 #include "../../../Entities/MapObjects/Wall/Wall.hpp"
-#include "../../../GridSystem/GridHandler/GridHandler.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Maps 
 {
+    class GridGenerator;
 
     class Map 
     {

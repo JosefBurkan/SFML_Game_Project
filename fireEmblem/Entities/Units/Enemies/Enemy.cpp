@@ -1,4 +1,5 @@
 #include "Enemy.hpp"
+#include "../../../config.hpp"
 
 namespace Enemies
 {

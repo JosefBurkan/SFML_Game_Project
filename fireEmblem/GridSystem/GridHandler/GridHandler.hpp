@@ -35,8 +35,9 @@ namespace GridHandlers
             std::pair<float, float> SelectedTilePos();                      // Hent rute sin kordinater som spiller har valgt
             std::pair<int, int> RetrieveTileIndex();
             std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();      // Hent alle ruter
-            void SelectTile();
-            void UnSelectTile();
+            void ColorTile();                                              // Lys opp den ruta som er valgt
+            void DeColorTile();
+            void SelectTile(float coordinateY, float coordinateX);
             bool IsOccupied(Tiles::Tile tile);
             void RetrieveTileByPositions(float positionX, float positionY); // Sjekk om en rute er okkupert
             void CreateGrid(int r, int c);                                  // Generer gridden her

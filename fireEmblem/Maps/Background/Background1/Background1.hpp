@@ -1,5 +1,4 @@
 #pragma once
-#include "../../../config.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp"
 
 namespace Backgrounds1

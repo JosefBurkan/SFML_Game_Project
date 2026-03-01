@@ -1,7 +1,6 @@
 #pragma once
 #include "../Attack/Attack.hpp"
 #include "../Attack/RangedAttack/RangedAttack.hpp"
-#include "../../config.hpp"
 
 namespace AttackManagers
 {

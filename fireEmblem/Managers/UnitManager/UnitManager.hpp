@@ -1,5 +1,4 @@
 #pragma once
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.hpp"

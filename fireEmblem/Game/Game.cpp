@@ -1,5 +1,6 @@
 #include "Game.hpp"
 
+
 namespace Games
 {
     Game::Game()
@@ -66,24 +67,23 @@ namespace Games
             window.draw(background1);
             map.DrawMapObjects(window);
 
-            // Hent uniten med indeksen lik turnen
-            // Dette fungerer fordi jeg har sortert dem etter fart
-            // Gi kontroll til den unit som skal bevege seg denne runden
             auto currentTurnUnit = unitManager.GetUnitByTurn(gameTurn);
 
-            // Dette er hva som kjører det turn-baserte systemet
-            // Sammenligner runden med units sine interne turns
-            // Alle units blir tilgitt en "intern turn" lik sin index i unit-lista
+            // Alle units blir tildelt en "intern turn" lik sin index i unit-lista
+            // Gi kontroll til den uniten som skal bevege seg denne runden
             if (gameTurn == currentTurnUnit->turn)
             {
+                int positionX = currentTurnUnit->RetrieveCoordinations().second / 50;
+                int positionY = currentTurnUnit->RetrieveCoordinations().first / 50;
+
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player") 
                 {
-
                     currentTurnUnit->Movement();
 
                     if (lock == false)
                     {
+                        gridHandler.SelectTile(positionY, positionX);
                         std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
                         lock = true;
@@ -107,19 +107,20 @@ namespace Games
                         
                         if (currentTurnUnit->attackTimer <= 0)
                         {
-                            currentTurnUnit->currentOrder = numberOfUnits;
-                            currentTurnUnit->state = "Neutral";
-                            unitManager.AssignOrder();
-                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
                             gameTurn++;
+
+                            currentTurnUnit->currentOrder = numberOfUnits;
+                            unitManager.AssignOrder();
+                            lock = false;
                         }
                     }
                 }
 
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
-                else if (currentTurnUnit->type == "Enemy")
+                else if (currentTurnUnit->type == "Enemy" && currentTurnUnit->state != "Dying")
                 {
                     cooldown++;
+                    gridHandler.SelectTile(positionY, positionX);
 
                     if (cooldown > 30)
                     {
@@ -130,6 +131,7 @@ namespace Games
                         gameTurn++;
                         currentTurnUnit->currentOrder = numberOfUnits;
                         unitManager.AssignOrder();
+                        lock = false;
                     }
                 }
                 
@@ -138,9 +140,9 @@ namespace Games
 
             if (gameTurn >= unitManager.GetSize())
             {
+                std::cout << unitManager.GetSize();
                 unitManager.firstUnit = true;
                 gameTurn = 0;
-                lock = false;
                 std::cout << "\n";
             }
 

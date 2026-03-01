@@ -1,23 +1,15 @@
 #pragma once
-#include "../../../config.hpp"
 #include "../Unit.hpp"
-#include "../../../GridSystem/GridHandler/GridHandler.hpp"
-#include "../../../UI/Player/Menu/Menu.hpp"
 #include "../../../Hitboxes/Attack/Attack.hpp"
 #include "../../../Hitboxes/Attack/RangedAttack/RangedAttack.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp"
+#include "../../../UI/Player/Menu/Menu.hpp"
 
-
-namespace GridGenerators 
-{
-    class GridGenerator;
-}
 
 namespace Players 
 {
     class Player : public Units::Unit 
     {
-
         protected:
             GridHandlers::GridHandler& GridHandler;          // Funksjonalitet for bevegelse
             GridPathAlgorithms::GridPathAlgorithm algorithm;

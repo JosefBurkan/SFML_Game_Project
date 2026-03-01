@@ -25,13 +25,17 @@ namespace UnitsManagers
 
     void UnitsManager::DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window)
     {
-        if (it->state != "Attacking")
+        if (it->state == "Attacking")
         {
-            it->Draw(window);
+            it->DrawAttackAnimation(window);
+        }
+        else if (it->state == "Dying")
+        {
+            it->DrawDeathAnimation(window);
         }
         else 
         {
-            it->DrawAttackAnimation(window);
+            it->Draw(window);
         }
     }
 
@@ -45,9 +49,9 @@ namespace UnitsManagers
 
             HealthBars::HealthBar healthBar{posX, posY};
 
-            DrawUnit((*it), window);
-
             (*it)->IsHit();
+
+            DrawUnit((*it), window);
 
             if ((*it)->type == "Player")
             {
@@ -58,13 +62,20 @@ namespace UnitsManagers
                 healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
             }
 
-            if ((*it)->healthPoints == 0) {
-                (*it)->SetTileToUnOccupied();
-                it = units.erase(it);
-                SortUnits(); 
-            } else {
-                ++it;
+            if ((*it)->healthPoints <= 0) 
+            {
+                (*it)->deathAnimationTimer--;
+
+                (*it)->state = "Dying";
+                
+                if ((*it)->deathAnimationTimer <= 0)
+                {
+                    (*it)->SetTileToUnOccupied();
+                    it = units.erase(it);
+                    SortUnits(); 
+                }
             }
+            ++it;
         }
     }
 
@@ -94,7 +105,6 @@ namespace UnitsManagers
         {
             (*it)->turn = assignTurn;
             (*it)->currentOrder = assignTurn;
-            std::cout << (*it)->name << " speed: " << (*it)->speed << "\n";
             assignTurn++;
         }
         std::cout << "\n";
@@ -113,7 +123,10 @@ namespace UnitsManagers
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
-            if ((*it)->currentOrder > 0)
+            (*it)->attackTimer = (*it)->maxAttackTimer;
+            (*it)->state = "Neutral";
+
+            if ((*it)->currentOrder >= 0)
             {
                 (*it)->currentOrder -= 1;
             }

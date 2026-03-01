@@ -5,8 +5,6 @@ namespace EnemyPathAlgorithms
     // Farg de rutene som spilleren kan bevege seg til
     std::pair<float, float> EnemyPathAlgorithm::CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
-        coordinateY = startY;
-        coordinateX = startX;
         // startX, statY, avstandReist
         std::queue<std::tuple<int, int, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
@@ -16,40 +14,38 @@ namespace EnemyPathAlgorithms
         tiles[startY][startX].MarkAttackRange();
 
         visited.insert({startY, startX});
-        q.push({startY, startX, 0});
+        q.push({startY, startX, travelCost});
 
         while (!q.empty())
         {
-            auto [y, x, g] = q.front();
+            auto [y, x, tilesTraveled] = q.front();
             q.pop();
 
             // Dersom g er større enn bevegelseshastigheten til spilleren, hopp over
-            if (g > range) continue;
+            if (tilesTraveled > range) continue;
 
-            for (auto [dy,dx] : directions)
+            for (auto [dirY,dirX] : directions)
             {
-                int nx = x + dx;
-                int ny = y + dy;
+                int nextX = x + dirX;
+                int nextY = y + dirY;
 
                 // Ikke beveg utenfor banen
-                if (nx < 0 || ny < 0 || ny >= tiles.size() || nx >= tiles[0].size()) continue;
+                if (nextX < 0 || nextY < 0 || nextY >= tiles.size() || nextX >= tiles[0].size()) continue;
 
                 // Ikke beveg på okkuperte ruter
-                if (tiles[ny][nx].IsOccupied) continue;
+                if (tiles[nextY][nextX].IsOccupied) continue;
 
-                if (tiles[ny][nx].IsOccupiedByPlayer)
+                if (tiles[nextY][nextX].IsOccupiedByPlayer)
                 {
-                    // std::cout << startY << startX;
                     playerDetected = true;
-                    return {ny, nx};
+                    return {nextY, nextX};
                 }
 
-                if (visited.count({ny,nx})) continue;
+                if (visited.count({nextY,nextX})) continue;
 
-                q.push({ny, nx, g+1});
-                visited.insert({ny, nx});
+                q.push({nextY, nextX, tilesTraveled + 1});
+                visited.insert({nextY, nextX});
             }
-
         }
         playerDetected = false;
         return {startY, startX};
