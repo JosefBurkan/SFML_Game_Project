@@ -29,13 +29,22 @@ namespace Units
         defaultTextureX = 0;
         defaultTextureY = 0;
 
+        attackSpawnTimer = maxAttackSpawnTimer;
+    }
+
+    void Unit::ResetAttackAnimation()
+    {
+        framesUntilAttackDraw = 20;
         attackingTextureX = 0;
         attackingTextureY = 0;
+        attackSpawnTimer = maxAttackSpawnTimer;
+    }
 
+    void Unit::ResetDeathAnimation()
+    {
+        framesUntilDeathDraw = 15;
         dyingTextureX = 0;
         dyingTextureY = 0;
-
-        attackSpawnTimer = maxAttackSpawnTimer;
     }
 
     void Unit::Draw(sf::RenderWindow& window) 
@@ -95,7 +104,7 @@ namespace Units
 
         if (framesUntilDeathDraw >= 10)
         {
-            while (dyingTextureX >= dyingTextureSizeX)
+            if (dyingTextureX >= dyingTextureSizeX)
             {
                 dyingTextureY += 50;
                 dyingTextureX = 0;
@@ -113,7 +122,6 @@ namespace Units
         }
 
         window.draw(*deathSprite);
-
     }
 
     void Unit::DrawUI(sf::RenderWindow& window)

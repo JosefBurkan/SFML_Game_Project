@@ -36,12 +36,17 @@ namespace UnitsManagers
         else 
         {
             it->Draw(window);
+            it->ResetAttackAnimation();
         }
     }
 
     // Kjøres hver frame. Tegner animasjon, sjekker om uniten blir truffet, etc.
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
+        // For å sørge for at ingen fiender hoppes over
+        // når listen sorters
+        bool needsSorting = false; 
+
         for (auto it = units.begin(); it != units.end(); ) 
         {
             float posX = (*it)->sprite->getPosition().x;
@@ -50,9 +55,7 @@ namespace UnitsManagers
             HealthBars::HealthBar healthBar{posX, posY};
 
             (*it)->IsHit();
-
-            DrawUnit((*it), window);
-
+            
             if ((*it)->type == "Player")
             {
                 (*it)->DrawUI(window);
@@ -67,16 +70,26 @@ namespace UnitsManagers
                 (*it)->deathAnimationTimer--;
 
                 (*it)->state = "Dying";
-                
+
                 if ((*it)->deathAnimationTimer <= 0)
                 {
                     (*it)->SetTileToUnOccupied();
                     it = units.erase(it);
-                    SortUnits(); 
+                    needsSorting = true;
+                    continue; // Kjør løkken igjen med en gang. Unngår en bug ved tegning av karakter på drap.
                 }
             }
+            
+            DrawUnit((*it), window);
+
             ++it;
         }
+
+        if (needsSorting)
+        {
+            SortUnits();
+        }
+
     }
 
     void UnitsManager::PerformEnemyActions(int gameTurn)
