@@ -34,6 +34,7 @@ add_executable(fireEmblem
     fireEmblem/Entities/MapObjects/Wall/Wall.cpp
     fireEmblem/Camera/Camera.cpp
     fireEmblem/UI/Player/Menu/Menu.cpp
+    fireEmblem/UI/Player/Menu/Skills/Skills.cpp
     fireEmblem/Hitboxes/Attack/Attack.cpp
     fireEmblem/Hitboxes/Attack/RangedAttack/RangedAttack.cpp
     fireEmblem/Hitboxes/AttackManager/AttackManager.cpp

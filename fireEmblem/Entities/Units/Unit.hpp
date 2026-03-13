@@ -63,7 +63,6 @@ namespace Units
 
             int deathAnimationTimer = 60;
 
-
             int attackSpawnTimer = 16;   // Når angrepet (hitboxen) skal lages
             int maxAttackSpawnTimer = 16;
 

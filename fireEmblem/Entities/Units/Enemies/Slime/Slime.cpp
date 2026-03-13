@@ -63,7 +63,7 @@ namespace Slimes
         auto& tiles = gridGenerator.RetrieveAllTiles();
         playerPos = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
 
-        // Hopp til spilleren dersom den er innen rekkevidde
+        // Hopp til spilleren dersom den er innen rekkevidde 
         if (algorithm.playerDetected == true)
         {
             sprite->setPosition({(playerPos.second * 50) + 50, playerPos.first * 50});

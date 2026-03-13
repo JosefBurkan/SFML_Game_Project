@@ -146,6 +146,8 @@ namespace Games
                 std::cout << "\n";
             }
 
+            unitManager.SortUnits();
+
             attacks.Update();
 
             window.draw(shader);

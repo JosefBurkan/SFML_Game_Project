@@ -1024,5 +1024,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.c
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/Menu.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/../../../config.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp

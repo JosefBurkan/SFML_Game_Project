@@ -2,8 +2,7 @@
 
 namespace Menus
 {
-
-    Menu::Menu()
+    Menu::Menu(std::array<std::string, 3> menutext)
     {
         optionsMenu.setSize({100, 200});
         optionsMenu.setFillColor({100, 200, 150, 180});
@@ -13,76 +12,103 @@ namespace Menus
         arrow.setFillColor({255, 255, 255});
         arrow.setSize({20, 20});
 
-        menuContents.push_back("Attack");
-        menuContents.push_back("Skills");
-        menuContents.push_back("Items");
     }
 
     void Menu::SetPosition(float positionX, float positionY)
     {
+        menuPositionX = positionX;
+        menuPositionY = positionY;
+
         optionsMenu.setPosition({positionX, positionY});
-        arrow.setPosition({positionX - 30, positionY + 6});
+        arrow.setPosition({menuPositionX - 30, menuPositionY + (index * 30 + 3)});
     }
 
     // For å vise hvor i menyen som brukeren er
     int Menu::NavigateMenu()
     {
-        movementCooldown++;
+        movementCooldown--;
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && movementCooldown >= 30)
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && movementCooldown <= 0)
         {
-            menuContentsIndex++;
-            movementCooldown = 0;
+            index++;
+            movementCooldown = 10;
         }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && movementCooldown >= 30)
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && movementCooldown <= 0)
         {
-            menuContentsIndex--;
-            movementCooldown = 0;
+            index--;
+            movementCooldown = 10;
         }
-        if (menuContentsIndex < 0)
+        if (index < 0)
         {
-            menuContentsIndex = 0;
+            index = 0;
         }
-        else if (menuContentsIndex > 2)
+        else if (index > 2)
         {
-            menuContentsIndex = 2;
+            index = 2;
         }
+
+        arrow.setPosition({menuPositionX - 30, menuPositionY + (index * 30 + 3)});
         
-        return menuContentsIndex;
+        return index;
     }
 
-    // Legg til inholdet i "menuContents" inn i menyboksen
-    void Menu::AddItems(sf::RenderWindow& window) 
+    // Legg til inholdet fra "menuStrings" inn i menyboksen
+    std::array<sf::Text, 3> Menu::AddItems()
     {
-        sf::Font font(std::string(ASSETS_DIR) + "ARCADECLASSIC.TTF");
+
+        float menyPosX = optionsMenu.getPosition().x;
+        float menyPosY = optionsMenu.getPosition().y;
+
+        font.openFromFile(std::string(ASSETS_DIR) + "ARCADECLASSIC.TTF");
         font.setSmooth(false); 
+        
+        sf::Text attack(font);
+        sf::Text skills(font);
+        sf::Text items(font);
 
-        for (int itemIndex = 0; itemIndex < menuContents.size(); itemIndex++)
+        std::array<sf::Text, 3> menuContents = {attack, skills, items};
+
+        menuContents[0] = attack;
+        menuContents[1] = skills;
+        menuContents[2] = items;
+
+        menuContents[0].setString("Attack");
+        menuContents[1].setString("Skills");
+        menuContents[2].setString("Items");
+
+        menuContents[0].setPosition({menyPosX, menyPosY + 10});
+        menuContents[1].setPosition({menyPosX, menyPosY + 20});
+        menuContents[2].setPosition({menyPosX, menyPosY + 30});
+
+        returnedIndex = NavigateMenu();
+
+        for (int i = 0; i < lengthOfArray; i++)
         {
-            returnedIndex = NavigateMenu();
-            sf::Text text(font);
+            menuContents[i].setCharacterSize(20);
+            menuContents[i].setFillColor(sf::Color::Red);
 
-            text.setString(menuContents[itemIndex]);
-            text.setCharacterSize(20);
-            text.setFillColor(sf::Color::Red);
-
-            if (returnedIndex == itemIndex)
-            {
-                text.setFillColor({255, 255, 100});
-            }
-
-            text.setPosition({optionsMenu.getPosition().x + 3, optionsMenu.getPosition().y + itemIndex * 30 + 3});
-            window.draw(text);
+            menuContents[i].setPosition({menyPosX + 3, menyPosY + (i * 30) + 3});
         }
+
+        menuContents[returnedIndex].setFillColor({255, 255, 100});
+
+        return menuContents; 
+        
     }
 
     void Menu::Draw(sf::RenderWindow& window) 
     {
-        if (show == true)
+        auto menu = AddItems();
+
+        if (show)
         {
             window.draw(optionsMenu);
             window.draw(arrow);
-            AddItems(window);
+
+            for (int i = 0; i < 3; i++)
+            {
+                window.draw(menu[i]);
+            }
         }
     }
 }

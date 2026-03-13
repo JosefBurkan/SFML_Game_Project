@@ -172,7 +172,7 @@ namespace Units
                 // uniten sin posisjon er mindre eller lik angrepet + ruten sin størrelse
                 if (x <= atkx + tileSize - 10 && y <= atky + tileSize - 10)
                 {
-                    healthPoints -= 2;
+                    healthPoints -= 1;
                     std::cout << name << " er truffet! " << healthPoints << "\n";
                     attacks.Clear();
 
@@ -198,12 +198,14 @@ namespace Units
 
     void Unit::SetTileToOccupied()
     {
-
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = true;
     }
 
     void Unit::SetTileToUnOccupied()
     {
-
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
     }
 
     void Unit::Attack(float spawnLocationX, float spawnLocationY)

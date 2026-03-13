@@ -20,7 +20,7 @@ namespace EnemyPathAlgorithms
         {
             auto [y, x, tilesTraveled] = q.front();
             q.pop();
-
+   
             // Dersom g er større enn bevegelseshastigheten til spilleren, hopp over
             if (tilesTraveled > range) continue;
 
@@ -45,6 +45,7 @@ namespace EnemyPathAlgorithms
 
                 q.push({nextY, nextX, tilesTraveled + 1});
                 visited.insert({nextY, nextX});
+                
             }
         }
         playerDetected = false;

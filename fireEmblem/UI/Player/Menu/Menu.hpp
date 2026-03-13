@@ -5,22 +5,34 @@ namespace Menus
 {
     class Menu
     {
+        protected:
+            float menuPositionX = 0;
+            float menuPositionY = 0;
+
+            int arrowIndexX = 0;
+            int arrowIndexY = 0;
+
+            int lengthOfArray = 3;
+
+            sf::Font font;
+
+
+
         public: 
             sf::RectangleShape optionsMenu;
             sf::RectangleShape arrow;
-            std::vector<std::string> menuContents;
             
-            int menuContentsIndex = 0;                   // Hvilket element i menyen man har valgt
-            int movementCooldown = 30;
-            int returnedIndex;
+            
+            int index = 0;                   // Hvilket element i menyen man har valgt
+            int movementCooldown = 15;
+            int returnedIndex = 0;
 
             bool show = false;                  // Vis fram menyen
 
-            Menu();
-
+            Menu(std::array<std::string, 3> menutext);
             void SetPosition(float positionX, float positionY);
             void Draw(sf::RenderWindow& window);
-            void AddItems(sf::RenderWindow& window);
+            virtual std::array<sf::Text, 3> AddItems();
             int NavigateMenu();
     };
 

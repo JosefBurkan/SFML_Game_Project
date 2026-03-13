@@ -22,8 +22,7 @@ namespace OverViews
             std::optional<sf::Sprite> slimeIcon;
 
             sf::RectangleShape timeline;    // Vil vise rekkefølgen som units beveger seg i
-
-
+            
         public:
             OverView();
             sf::Text CreateText(std::string name, int health, int speed);

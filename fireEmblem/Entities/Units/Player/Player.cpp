@@ -45,19 +45,6 @@ namespace Players
         return {spriteY/50, spriteX/50};
     }
 
-    // Sjekke om spilleren ikke er i et angrep, blir skadet etter noe tilsvarende
-    bool Player::IsPlayerStateReady()
-    {
-        if (menu.show == false)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-
     void Player::CancelSelect()
     {
         auto& tiles = GridHandler.RetrieveAllTiles();
@@ -68,8 +55,11 @@ namespace Players
         float gridCurrentTileY = retrievedTile.second;
         
         state = "Neutral";
+
         menu.show = false;
+        skills.show = false;
         inMenu = false;
+
         GridHandler.rangeX = 0;
         GridHandler.rangeY = 0;
         isSelected = false;
@@ -80,6 +70,7 @@ namespace Players
     void Player::DrawUI(sf::RenderWindow& window)
     {
         menu.Draw(window);
+        skills.Draw(window);
         attacks.Draw(window);
     }
 
@@ -92,12 +83,55 @@ namespace Players
         attackSpawnTimer = maxAttackSpawnTimer;
     }
 
+    void Player::ConfirmMovement()
+    {
+        auto& tiles = GridHandler.RetrieveAllTiles();
+
+        retrievedTile = GridHandler.SelectedTilePos(); 
+        selectedTile = GridHandler.RetrieveTile();     
+
+        float gridCurrentTileX = retrievedTile.second;
+        float gridCurrentTileY = retrievedTile.first;
+
+        // Alt relatert til rutenettet
+        isSelected = false;
+        preventSelect = false;
+        sprite->setPosition({gridCurrentTileX, gridCurrentTileY});
+        attackSprite->setPosition({gridCurrentTileX, gridCurrentTileY});
+        playerCurrentTileX = gridCurrentTileX;
+        playerCurrentTileY = gridCurrentTileY;
+        algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);     // Fjern rutene 
+        CheckForMapObjects();
+        SetTileToOccupied();    
+
+
+        // Alt relatert til menyene
+        menuCooldown = 30;
+        menu.show = true;
+        inMenu = true;
+        menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
+        skills.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
+    }
+
+    void Player::SetTileToUnOccupied()
+    {
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupiedByPlayer = false;
+    }
+
+    void Player::SetTileToOccupied()
+    {
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupiedByPlayer = true;
+    }
 
     // Håndtere bevegelsen av spilleren
     void Player::Movement()
     {
-        std::pair<float, float> retrievedTile = GridHandler.SelectedTilePos(); // Hent hvilken rute spilleren står på
-        std::pair<float, float> selectedTile = GridHandler.RetrieveTile();     // Ruten som for øyeblikket er valgt
+        auto& tiles = GridHandler.RetrieveAllTiles();
+
+        retrievedTile = GridHandler.SelectedTilePos(); 
+        selectedTile = GridHandler.RetrieveTile();     
 
         float gridCurrentTileX = retrievedTile.second;
         float gridCurrentTileY = retrievedTile.first;
@@ -105,27 +139,21 @@ namespace Players
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
         {
-
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
                 // Står spilleren på samme rute som er valgt på rutefeltet
                 if (playerCurrentTileY == gridCurrentTileY && playerCurrentTileX == gridCurrentTileX)
                 {
-                    auto& tiles = GridHandler.RetrieveAllTiles();
-
-                    tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = false;
+                    SetTileToUnOccupied();
                     isSelected = true;
                     preventSelect = false;
                     algorithm.CheckAvailableTiles(retrievedTile.first, retrievedTile.second, movement, tiles);
                     state = "Selected";
                 }
             }
-
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
             {
-                auto& tiles = GridHandler.RetrieveAllTiles();
-
                 tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                 CancelSelect();
                 algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);
@@ -134,8 +162,6 @@ namespace Players
         // Sjekk om spilleren har blitt valgt
         else if (isSelected == true && preventSelect == true) 
         {
-            auto& tiles = GridHandler.RetrieveAllTiles();
-
             // Koordinatene til spilleren, i form av index
             std::pair<int, int> coordinates = TransformPositionToIndex(sprite->getPosition().x, sprite->getPosition().y);
             
@@ -146,22 +172,11 @@ namespace Players
                 // Om 'A' trykkes, flytt spilleren
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) 
                 {
-                    tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
-                    isSelected = false;
-                    preventSelect = false;
-                    sprite->setPosition({gridCurrentTileX, gridCurrentTileY});
-                    attackSprite->setPosition({gridCurrentTileX, gridCurrentTileY});
-                    playerCurrentTileX = gridCurrentTileX;
-                    playerCurrentTileY = gridCurrentTileY;
-                    algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);     // Fjern rutene 
-                    CheckForMapObjects();
-                    menuCooldown = 0;
-                    menu.show = true;
-                    inMenu = true;
-                    menu.SetPosition(sprite->getPosition().x - 120, sprite->getPosition().y - 50);
+                    ConfirmMovement();
                 }
             }
         }
+
         // Trykk 'X' for å lukke menyen, og "deselecte" karakteren
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
         {
@@ -171,18 +186,28 @@ namespace Players
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
         if (menu.show == true)
         {            
-            menuCooldown++;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menu.menuContentsIndex == 0 && menuCooldown >= 30)
+            menuCooldown--;
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menuCooldown <= 0)
             {
-                state = "Attack";
                 menu.show = false;
-                inMenu = false;
+                
+
+                switch(menu.index)
+                {
+                    case 0:
+                        state = "Attack";
+                        inMenu = false;
+                    case 1:
+                        std::cout << "Menyen har blitt åpnet";
+                        //skills.show = true;
+                }
             }
         }
         // Lag en ny hitbox, så sett dens posisjon med "CreateHitbox"
         if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
         {
-            state = "Attacking"; // Brukes i "Game" fila
+            state = "Attacking"; 
             ResetAnimations();
         }
         else if (state == "Attacking")

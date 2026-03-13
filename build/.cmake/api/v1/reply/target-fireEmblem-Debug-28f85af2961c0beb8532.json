@@ -33,7 +33,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 53,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 52,
+				"line" : 53,
 				"parent" : 0
 			}
 		]
@@ -110,7 +110,8 @@
 				23,
 				24,
 				25,
-				26
+				26,
+				27
 			]
 		}
 	],
@@ -184,7 +185,8 @@
 				23,
 				24,
 				25,
-				26
+				26,
+				27
 			]
 		}
 	],
@@ -272,6 +274,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "fireEmblem/UI/Player/Menu/Menu.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/UI/Player/Menu/Skills/Skills.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

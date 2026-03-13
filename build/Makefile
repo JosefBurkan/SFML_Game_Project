@@ -705,6 +705,30 @@ fireEmblem/UI/Player/Menu/Menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Menu.cpp.s
 .PHONY : fireEmblem/UI/Player/Menu/Menu.cpp.s
 
+fireEmblem/UI/Player/Menu/Skills/Skills.o: fireEmblem/UI/Player/Menu/Skills/Skills.cpp.o
+.PHONY : fireEmblem/UI/Player/Menu/Skills/Skills.o
+
+# target to build an object file
+fireEmblem/UI/Player/Menu/Skills/Skills.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Skills/Skills.cpp.o
+.PHONY : fireEmblem/UI/Player/Menu/Skills/Skills.cpp.o
+
+fireEmblem/UI/Player/Menu/Skills/Skills.i: fireEmblem/UI/Player/Menu/Skills/Skills.cpp.i
+.PHONY : fireEmblem/UI/Player/Menu/Skills/Skills.i
+
+# target to preprocess a source file
+fireEmblem/UI/Player/Menu/Skills/Skills.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Skills/Skills.cpp.i
+.PHONY : fireEmblem/UI/Player/Menu/Skills/Skills.cpp.i
+
+fireEmblem/UI/Player/Menu/Skills/Skills.s: fireEmblem/UI/Player/Menu/Skills/Skills.cpp.s
+.PHONY : fireEmblem/UI/Player/Menu/Skills/Skills.s
+
+# target to generate assembly for a file
+fireEmblem/UI/Player/Menu/Skills/Skills.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Player/Menu/Skills/Skills.cpp.s
+.PHONY : fireEmblem/UI/Player/Menu/Skills/Skills.cpp.s
+
 fireEmblem/UI/Units/Health/HealthBar.o: fireEmblem/UI/Units/Health/HealthBar.cpp.o
 .PHONY : fireEmblem/UI/Units/Health/HealthBar.o
 
@@ -858,6 +882,9 @@ help:
 	@echo "... fireEmblem/UI/Player/Menu/Menu.o"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.i"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.s"
+	@echo "... fireEmblem/UI/Player/Menu/Skills/Skills.o"
+	@echo "... fireEmblem/UI/Player/Menu/Skills/Skills.i"
+	@echo "... fireEmblem/UI/Player/Menu/Skills/Skills.s"
 	@echo "... fireEmblem/UI/Units/Health/HealthBar.o"
 	@echo "... fireEmblem/UI/Units/Health/HealthBar.i"
 	@echo "... fireEmblem/UI/Units/Health/HealthBar.s"

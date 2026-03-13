@@ -34,6 +34,7 @@ namespace GridPathAlgorithms
                 if (nx < 0 || ny < 0 || ny >= tiles.size() || nx >= tiles[0].size()) continue;
                 // Ikke beveg på okkuperte ruter
                 if (tiles[ny][nx].IsOccupied) continue;
+                if (tiles[ny][nx].IsOccupiedByPlayer) continue;
 
                 tiles[coordinateY][coordinateX].inRange = true;
                 if (g < range) tiles[ny][nx].inRange = true;

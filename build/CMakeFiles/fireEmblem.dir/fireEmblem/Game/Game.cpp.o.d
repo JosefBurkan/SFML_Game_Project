@@ -1026,8 +1026,9 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/Menu.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../UI/Player/Menu/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/../../../config.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../Unit.hpp \

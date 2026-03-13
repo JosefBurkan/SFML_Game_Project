@@ -49,11 +49,6 @@ namespace Enemies
         window.draw(*sprite);
     }
 
-    void Enemy::PerformActions()
-    {
-        
-    }
-
     void Enemy::SetTileToOccupied()
     {
         auto& tiles = gridGenerator.RetrieveAllTiles();
@@ -64,6 +59,11 @@ namespace Enemies
     {
         auto& tiles = gridGenerator.RetrieveAllTiles();
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
+    }
+
+    void Enemy::PerformActions()
+    {
+        
     }
 
 }

@@ -79,7 +79,7 @@ namespace UnitsManagers
                     continue; // Kjør løkken igjen med en gang. Unngår en bug ved tegning av karakter på drap.
                 }
             }
-            
+
             DrawUnit((*it), window);
 
             ++it;
@@ -120,7 +120,6 @@ namespace UnitsManagers
             (*it)->currentOrder = assignTurn;
             assignTurn++;
         }
-        std::cout << "\n";
     }
 
     // Hent uniten som har lik index som runden
