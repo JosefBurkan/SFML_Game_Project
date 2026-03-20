@@ -6,12 +6,13 @@ namespace Tiles
     class Tile
     {
         public:
-        sf::RectangleShape rectangle;
-        bool IsOccupied = false;
-        bool IsOccupiedByPlayer = false;
-        int tileNumber = 0;
-        bool inRange = false;                            // Har karakteren nok movement for å gå dit
-        bool display = false;
+            sf::RectangleShape rectangle;
+            bool IsOccupied = false;
+            bool IsOccupiedByPlayer = false;
+            int tileNumber = 0;
+            bool inRange = false;                            // Har karakteren nok movement for å gå dit
+            bool display = false;
+
 
             Tile() : Tile(0.f, 0.f) {}
             Tile(float x, float y);

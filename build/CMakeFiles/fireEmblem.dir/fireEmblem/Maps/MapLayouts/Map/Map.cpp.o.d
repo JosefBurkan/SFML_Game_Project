@@ -979,9 +979,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/../../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/../../../GridSystem/GridHandler/../GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/Wall.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \

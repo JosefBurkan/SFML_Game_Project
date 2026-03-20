@@ -16,9 +16,9 @@ namespace Players
             GridPathAlgorithms::GridPathAlgorithm algorithm;
 
             std::array<std::string, 3> menutext = {"Attack", "Skills", "Items"};
-
+            std::array<std::string, 3> skillsMenu = {"Stefiny", "Pow", "Love"};
             Menus::Menu menu{menutext};
-            Skillss::Skills skills{menutext};
+            Skillss::Skills skills{skillsMenu};
 
             float playerCurrentTileY = 100;
             float playerCurrentTileX = 0;
@@ -28,7 +28,6 @@ namespace Players
             std::pair<float, float> selectedTile;               // Ruten som spilleren står spilleren på
             std::pair<float, float> retrievedTile;              // Ruten som for øyeblikket er valgt
             sf::Vector2f realTimePos = sprite->getPosition();   // Hent spilleren sin posisjon
-
 
 
         public:
@@ -42,6 +41,7 @@ namespace Players
             void CancelSelect();
             void Attack(float spawnLocationX, float spawnLocationY) override;
             void ConfirmMovement();
+            bool IsMenuOpen();
 
     };
 }

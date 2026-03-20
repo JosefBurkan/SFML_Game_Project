@@ -16,11 +16,12 @@ namespace Menus
 
             sf::Font font;
 
+            std::array<std::string, 3> content;
 
+            sf::ConvexShape arrow;
 
         public: 
             sf::RectangleShape optionsMenu;
-            sf::RectangleShape arrow;
             
             
             int index = 0;                   // Hvilket element i menyen man har valgt

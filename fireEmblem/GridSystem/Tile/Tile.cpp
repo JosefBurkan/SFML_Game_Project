@@ -15,7 +15,7 @@ namespace Tiles
     // Lys opp ruten om en enhet har blitt valgt
     void Tile::ChangeColor(bool onSelect)
     {
-        if (onSelect == true)
+        if (onSelect)
         {
             rectangle.setOutlineColor(sf::Color(115, 50, 250, 255));
             rectangle.setOutlineThickness(5.f);
@@ -23,9 +23,8 @@ namespace Tiles
         }
         else
         {
-            rectangle.setOutlineColor(sf::Color(0, 0, 0, 0));
             rectangle.setFillColor(sf::Color(255, 255, 255, 0));
-            rectangle.setOutlineThickness(0.f);
+            rectangle.setOutlineThickness(2.f);
             display = false;
         }
     }

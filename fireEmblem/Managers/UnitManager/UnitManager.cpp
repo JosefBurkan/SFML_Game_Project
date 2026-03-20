@@ -123,7 +123,6 @@ namespace UnitsManagers
     }
 
     // Hent uniten som har lik index som runden
-    // Første unit i lista vil da hentes på første turn, aka den raskeste uniten
     std::shared_ptr<Units::Unit> UnitsManager::GetUnitByTurn(int turn)
     {
         return units[turn];
@@ -135,12 +134,9 @@ namespace UnitsManagers
     {
         for (auto it = units.begin(); it != units.end(); ++it) 
         {
-            (*it)->attackTimer = (*it)->maxAttackTimer;
-            (*it)->state = "Neutral";
-
-            if ((*it)->currentOrder >= 0)
+            if ((*it)->currentOrder > 0)
             {
-                (*it)->currentOrder -= 1;
+                (*it)->currentOrder--;
             }
         }
     }

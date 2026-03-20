@@ -56,16 +56,7 @@ namespace GridPathAlgorithms
         {
             for (auto& t : tile)
             {
-                // Ikke fjern ruta som spilleren står på
-                if (t.RetrieveTilePos().first == gridCurrentTileX &&
-                    t.RetrieveTilePos().second == gridCurrentTileY)
-                {
-                }
-                else
-                {
-                    t.UnMark();
-                    t.inRange = false;
-                }
+                t.inRange = false;
             }
         }
     }

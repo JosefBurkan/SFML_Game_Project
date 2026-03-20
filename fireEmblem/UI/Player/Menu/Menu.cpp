@@ -4,13 +4,18 @@ namespace Menus
 {
     Menu::Menu(std::array<std::string, 3> menutext)
     {
+        arrow.setPointCount(3);
+        arrow.setPoint(0, sf::Vector2f(0.5, 0.5));
+        arrow.setPoint(1, sf::Vector2f(0.5, 4.5));
+        arrow.setPoint(2, sf::Vector2f(4.5, 2.5));
+        arrow.setScale({6.f, 6.f});
+
         optionsMenu.setSize({100, 200});
         optionsMenu.setFillColor({100, 200, 150, 180});
         optionsMenu.setOutlineColor({0, 0, 0, 255});
         optionsMenu.setOutlineThickness(3.f);
 
-        arrow.setFillColor({255, 255, 255});
-        arrow.setSize({20, 20});
+        content = menutext;
 
     }
 
@@ -20,7 +25,7 @@ namespace Menus
         menuPositionY = positionY;
 
         optionsMenu.setPosition({positionX, positionY});
-        arrow.setPosition({menuPositionX - 30, menuPositionY + (index * 30 + 3)});
+        arrow.setPosition({menuPositionX - 35, menuPositionY + (index * 30 - 20)});
     }
 
     // For å vise hvor i menyen som brukeren er
@@ -72,9 +77,9 @@ namespace Menus
         menuContents[1] = skills;
         menuContents[2] = items;
 
-        menuContents[0].setString("Attack");
-        menuContents[1].setString("Skills");
-        menuContents[2].setString("Items");
+        menuContents[0].setString(content[0]);
+        menuContents[1].setString(content[1]);
+        menuContents[2].setString(content[2]);
 
         menuContents[0].setPosition({menyPosX, menyPosY + 10});
         menuContents[1].setPosition({menyPosX, menyPosY + 20});
@@ -98,10 +103,10 @@ namespace Menus
 
     void Menu::Draw(sf::RenderWindow& window) 
     {
-        auto menu = AddItems();
-
         if (show)
         {
+            auto menu = AddItems();
+
             window.draw(optionsMenu);
             window.draw(arrow);
 

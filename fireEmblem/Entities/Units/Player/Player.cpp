@@ -125,6 +125,19 @@ namespace Players
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupiedByPlayer = true;
     }
 
+    bool Player::IsMenuOpen()
+    {
+        if (menu.show == true || skills.show == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
     // Håndtere bevegelsen av spilleren
     void Player::Movement()
     {
@@ -154,7 +167,6 @@ namespace Players
             }
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
             {
-                tiles[selectedTile.first][selectedTile.second].IsOccupiedByPlayer = true;
                 CancelSelect();
                 algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);
             }
@@ -184,23 +196,27 @@ namespace Players
         }
 
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
-        if (menu.show == true)
+        if (IsMenuOpen())
         {            
             menuCooldown--;
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menuCooldown <= 0)
             {
                 menu.show = false;
-                
-
+                 
                 switch(menu.index)
                 {
                     case 0:
                         state = "Attack";
                         inMenu = false;
+                        break;
                     case 1:
                         std::cout << "Menyen har blitt åpnet";
-                        //skills.show = true;
+                        skills.show = true;
+                        break;
+                    case 2:
+                        std::cout << "???";
+                        break;
                 }
             }
         }

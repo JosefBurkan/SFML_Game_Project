@@ -983,9 +983,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/Tree.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/../MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/../../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/Wall.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \
@@ -999,6 +996,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \

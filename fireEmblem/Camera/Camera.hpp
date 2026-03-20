@@ -1,6 +1,5 @@
 #pragma once
 #include "../GridSystem/GridHandler/GridHandler.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp"
 
 namespace Cameras {
     class Camera 

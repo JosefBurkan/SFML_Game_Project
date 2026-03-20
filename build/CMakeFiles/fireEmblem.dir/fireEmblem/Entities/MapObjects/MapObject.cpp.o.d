@@ -977,7 +977,4 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/../../GridSystem/GridHandler/../GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/../GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/../../config.hpp

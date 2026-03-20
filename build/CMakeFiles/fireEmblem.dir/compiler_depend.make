@@ -979,10 +979,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o: /Users/tastebutter/Des
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1962,10 +1959,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o: /Users
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Tree/Tree.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -2946,10 +2940,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o: /Users
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Tree/Tree.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Tree/Tree.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -3930,10 +3921,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o: /Users
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -4929,10 +4917,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o: /Users/
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -5955,8 +5940,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o: /
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp \
@@ -6981,8 +6964,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
@@ -8009,8 +7990,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Player.cpp.o: /Users/
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
@@ -9038,8 +9017,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.c
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
@@ -10037,10 +10014,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Unit.cpp.o: /Users/tastebutt
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/Map/Map.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Game.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -11074,8 +11048,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.o: /Users/tastebutter/Desktop
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.hpp \
@@ -19940,9 +19912,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Managers/UnitManager/UnitManager.cpp.o: /Us
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp \
@@ -21902,9 +21871,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/Map/Map.cpp.o: /Users/taste
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Window/WindowEnums.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Window/WindowHandle.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
@@ -22890,9 +22856,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.o: /U
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Window/WindowEnums.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Window/WindowHandle.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
@@ -26825,9 +26788,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/UI/Units/OverView/OverView.cpp.o: /Users/ta
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.hpp
 
 CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: /Users/tastebutter/Desktop/mine_spill/fireEmblem/main.cpp \
@@ -27862,8 +27822,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: /Users/tastebutter/Desktop/mine
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.hpp \
@@ -29292,8 +29250,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: /Users/tastebutter/Desktop/mine
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_is_sorted_until.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/reverse_copy.h:
-
-/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridMovement/GridMovement.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/reverse.h:
 

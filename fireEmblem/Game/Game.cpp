@@ -109,8 +109,12 @@ namespace Games
                         {
                             gameTurn++;
 
-                            currentTurnUnit->currentOrder = numberOfUnits;
+                            currentTurnUnit->currentOrder = unitManager.GetSize();
                             unitManager.AssignOrder();
+
+                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                            currentTurnUnit->state = "Neutral";
+
                             lock = false;
                         }
                     }
@@ -124,12 +128,16 @@ namespace Games
 
                     if (cooldown > 30)
                     {
+
+                        currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                        currentTurnUnit->state = "Neutral";
+
                         unitManager.PerformEnemyActions(gameTurn);
                         cooldown = 0;
                         std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
                         gameTurn++;
-                        currentTurnUnit->currentOrder = numberOfUnits;
+                        currentTurnUnit->currentOrder = unitManager.GetSize();
                         unitManager.AssignOrder();
                         lock = false;
                     }
@@ -145,8 +153,6 @@ namespace Games
                 gameTurn = 0;
                 std::cout << "\n";
             }
-
-            unitManager.SortUnits();
 
             attacks.Update();
 
