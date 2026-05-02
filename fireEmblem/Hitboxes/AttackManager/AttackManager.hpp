@@ -17,8 +17,8 @@ namespace AttackManagers
             std::vector<std::unique_ptr<Attacks::Attack>> activeAttacks;    // Vector som eksisterer for å ødelegge 'attack' etter en stund
 
             AttackManager();
-            void CreateAttack(float x, float y);
-            void CreateRangedAttack(float x, float y, std::pair<int, int> directions);
+            void CreateAttack(std::string source, int atkValue, float x, float y);
+            void CreateRangedAttack(std::string source, int atkValue, float x, float y, std::pair<int, int> directions);
             void Draw(sf::RenderWindow& window);
             void Update();
             void Clear();

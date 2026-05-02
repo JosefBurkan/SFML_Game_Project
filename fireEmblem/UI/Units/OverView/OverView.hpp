@@ -25,7 +25,7 @@ namespace OverViews
             
         public:
             OverView();
-            sf::Text CreateText(std::string name, int health, int speed);
+            sf::Text CreateText(std::string name, int health, int speed, int level);
             void ManageTimeline(std::vector<std::shared_ptr<Units::Unit>> units, sf::RenderWindow& window, int cameraY);   // Håndterer tidslinjen som viser rekkefølgen til units
             void Draw(sf::RenderWindow& window, std::pair<float, float> cameraPositions, sf::Text text);
             

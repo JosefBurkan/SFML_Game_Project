@@ -15,7 +15,7 @@ namespace Backgrounds1
     {
         auto& tiles = movement.RetrieveAllTiles();
 
-        if (!m_tileset.loadFromFile(std::string(ASSETS_DIR) + "Tileset1.png"))
+        if (!m_tileset.loadFromFile(std::string(ASSETS_DIR) + "Maps/Forest/Tileset1.png"))
             return false;
 
         ReadTileFile();
@@ -65,7 +65,7 @@ namespace Backgrounds1
     {
         auto& tiles = movement.RetrieveAllTiles();
                 
-        std::ifstream file(std::string(ASSETS_DIR) + "Background_One.txt");
+        std::ifstream file(std::string(ASSETS_DIR) + "Maps/Forest/Background_One.txt");
         std::string line;
         int row = 0;
 

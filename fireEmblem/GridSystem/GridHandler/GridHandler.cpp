@@ -109,6 +109,12 @@ namespace GridHandlers
 
     }
 
+    void GridHandler::RestorePosition(sf::Vector2f position)
+    {
+        
+    }
+
+
     // Hent rute som spiller har valgt
     std::pair<int, int> GridHandler::RetrieveTile() const {
         return {selectedTileY, selectedTileX};

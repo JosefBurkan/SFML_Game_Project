@@ -39,13 +39,25 @@ namespace Units
             // For deathsprite
             int dyingTextureSizeX = 100;
             int dyingTextureSizeY = 100;
+            int dyingTextureY = 0;
+            int dyingTextureX = 0;
 
+            // For levelUpEffekt
+            
+
+
+            bool resetAnimationsLock = false;
             int framesUntilDraw = 20;       // Hvor fort en animasjon skal tegnes
             int framesUntilAttackDraw = 20;
             int framesUntilDeathDraw = 15;
+            int framesUntilLevelUpDraw = 10;
             
-            int dyingTextureY = 0;      // Lokasjonen til deathsprite
-            int dyingTextureX = 0;
+
+            std::string lastHitBy = "None";
+
+            int experience = 0;
+            int experienceToLevelUp = 5;
+            int experienceToGrant = 5;
 
         public: 
             std::optional<sf::Sprite> sprite;
@@ -53,10 +65,12 @@ namespace Units
             std::optional<sf::Sprite> deathSprite;    
 
             int healthPoints = 2;
+            int attackLevel = 1;
             int maxHealth = healthPoints;
             int turn = 0;           // Hvor i lista starter uniten
             int currentOrder = 0;   // Hvor i lista er uniten hver runde
             int speed = 2;
+            int level = 1;
 
             int attackTimer = 24;           // Hvor lenge angrepsanimasjonen til uniten varer
             int maxAttackTimer = 24;
@@ -85,9 +99,10 @@ namespace Units
             virtual void DrawUI(sf::RenderWindow& window);
             virtual void DrawAttackAnimation(sf::RenderWindow& window); // Når de angriper
             virtual void DrawDeathAnimation(sf::RenderWindow& window); 
+            virtual void DrawLevelUpAnmiation (sf::RenderWindow& window);
 
             virtual void CheckForMapObjects();
-            virtual void IsHit();
+            virtual bool IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
             virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
             virtual void ResetAnimations(); // Set animasjoner tilbake til starten, slik at de ikke kan starte midt i
@@ -95,5 +110,12 @@ namespace Units
             virtual void ResetDeathAnimation();
 
             virtual void Attack(float spawnLocationX, float spawnLocationY);
+
+            void RecieveExperience(int exp);
+            int GrantExperience();
+            int GetExperience();
+            bool CheckForLevelUp();
+
+            std::string LastHitBy();
     };
 }

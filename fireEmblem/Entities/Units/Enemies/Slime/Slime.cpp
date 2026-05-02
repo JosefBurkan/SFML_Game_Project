@@ -5,12 +5,12 @@ namespace Slimes
     Slime::Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
         : Enemy(gridReference, map, attacks, yPos, xPos)
     {
-        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime-2.png")) 
+        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime-2.png")) 
         {
             throw std::runtime_error("Failed to load texture!");
         }
 
-        if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime_Death_Animation.png")) 
+        if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Death_Animation.png")) 
         {
             throw std::runtime_error("Failed to load texture!");
         }
@@ -29,7 +29,7 @@ namespace Slimes
 
         movement = 4;
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/slime_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/slime_Icon.png");
     }
 
     void Slime::Draw(sf::RenderWindow& window)
@@ -73,7 +73,7 @@ namespace Slimes
             float x = playerPos.second * 50;
             float y = playerPos.first * 50;
 
-            attacks.CreateAttack(x, y);
+            attacks.CreateAttack(name, attackLevel, x, y);
         }
 
     }

@@ -2,8 +2,8 @@
 
 namespace RangedAttacks
 {
-    RangedAttack::RangedAttack(float positionX, float positionY, std::pair<float, float> directions)
-        : Attack(positionX, positionY)
+    RangedAttack::RangedAttack(std::string src, int atkValue, float positionX, float positionY, std::pair<float, float> directions)
+        : Attack(src, atkValue, positionX, positionY)
     {
         hitbox.setSize({40, 40});
         hitbox.setFillColor({0, 0, 0, 0});
@@ -14,12 +14,15 @@ namespace RangedAttacks
 
         std::string type = "Ranged"; 
 
-        texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Fireball.png");
+        texture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Fireball.png");
 
         sprite.emplace(texture);
 
         sprite->setScale({5.f, 5.f});
         sprite->setPosition({positionX, positionY - 5});
+
+        source = src;
+        value = atkValue;
         
     }
 

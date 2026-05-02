@@ -9,22 +9,21 @@ namespace AttackManagers
 
     void AttackManager::Draw(sf::RenderWindow& window)
     {
-
         for (auto& attack : activeAttacks)
         {
             attack->Draw(window);
         }
     }
 
-    void AttackManager::CreateAttack(float positionX, float positionY)
+    void AttackManager::CreateAttack(std::string source, int atkValue, float positionX, float positionY)
     {
-        activeAttacks.push_back(std::make_unique<Attacks::Attack>(positionX, positionY));
+        activeAttacks.push_back(std::make_unique<Attacks::Attack>(source, atkValue, positionX, positionY));
         attackLife = 0;
     }
 
-    void AttackManager::CreateRangedAttack(float positionX, float positionY, std::pair<int, int> directions)
+    void AttackManager::CreateRangedAttack(std::string source, int atkValue, float positionX, float positionY, std::pair<int, int> directions)
     {
-        activeAttacks.push_back(std::make_unique<RangedAttacks::RangedAttack>(positionX, positionY, directions));
+        activeAttacks.push_back(std::make_unique<RangedAttacks::RangedAttack>(source, atkValue, positionX, positionY, directions));
         attackLife = 0;
     }
 

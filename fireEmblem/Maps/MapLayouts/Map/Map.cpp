@@ -5,8 +5,8 @@ namespace Maps
     
     Map::Map()
     {
-        wallTexture.loadFromFile(std::string(ASSETS_DIR) + "Bricks.png");
-        treeTexture.loadFromFile(std::string(ASSETS_DIR) + "Tree-1.png");
+        wallTexture.loadFromFile(std::string(ASSETS_DIR) + "Maps/Forest/Bricks.png");
+        treeTexture.loadFromFile(std::string(ASSETS_DIR) + "Maps/Forest/Tree-1.png");
 
         wallTexture.setSmooth(false);
         treeTexture.setSmooth(false);

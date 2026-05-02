@@ -10,8 +10,7 @@ namespace Enemies
 {
     class Enemy : public Units::Unit 
     {
-        private:
-
+        protected:
 
         public:
             Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);

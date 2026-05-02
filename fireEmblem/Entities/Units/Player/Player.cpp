@@ -7,11 +7,11 @@ namespace Players
                     AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
         : Unit(gridReference, map, attacks), GridHandler(GridHandler)
     {
-        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Prinsesse-50x50.png")) {
+        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Prinsesse-50x50.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
-        if (!attackTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess_Shoot.png")) {
+        if (!attackTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Princess_Shoot.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
@@ -38,6 +38,10 @@ namespace Players
         attackSpawnTimer = 40;   
         maxAttackSpawnTimer = attackSpawnTimer;
 
+        experienceToLevelUp *= level;
+
+        previousPosition = sprite->getPosition();
+
     }
 
     std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
@@ -60,11 +64,16 @@ namespace Players
         skills.show = false;
         inMenu = false;
 
-        GridHandler.rangeX = 0;
-        GridHandler.rangeY = 0;
         isSelected = false;
         preventSelect = false;
-        algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern rutene 
+        SetTileToUnOccupied();
+        algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern de markerte rutene 
+
+        sprite->setPosition({previousPosition});
+        attackSprite->setPosition({previousPosition});
+
+        playerCurrentTileY = previousPosition.y / 50;
+        playerCurrentTileX = previousPosition.x / 50;
     }   
 
     void Player::DrawUI(sf::RenderWindow& window)
@@ -79,7 +88,7 @@ namespace Players
         float x = sprite->getPosition().x;
         float y = sprite->getPosition().y;
 
-        attacks.CreateRangedAttack(spawnLocationX, spawnLocationY, {6, 0});
+        attacks.CreateRangedAttack(name, attackLevel, spawnLocationX, spawnLocationY, {6, 0});
         attackSpawnTimer = maxAttackSpawnTimer;
     }
 
@@ -88,7 +97,9 @@ namespace Players
         auto& tiles = GridHandler.RetrieveAllTiles();
 
         retrievedTile = GridHandler.SelectedTilePos(); 
-        selectedTile = GridHandler.RetrieveTile();     
+        selectedTile = GridHandler.RetrieveTile();    
+
+        previousPosition = sprite->getPosition();
 
         float gridCurrentTileX = retrievedTile.second;
         float gridCurrentTileY = retrievedTile.first;
@@ -103,7 +114,6 @@ namespace Players
         algorithm.CleanGrid(tiles, gridCurrentTileX, gridCurrentTileY);     // Fjern rutene 
         CheckForMapObjects();
         SetTileToOccupied();    
-
 
         // Alt relatert til menyene
         menuCooldown = 30;
@@ -149,15 +159,21 @@ namespace Players
         float gridCurrentTileX = retrievedTile.second;
         float gridCurrentTileY = retrievedTile.first;
 
+
+
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
         if (isSelected == false && preventSelect == true && inMenu == false && state == "Neutral")
         {
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
+                playerCurrentTileY = sprite->getPosition().y;
+                playerCurrentTileX = sprite->getPosition().x;
+
                 // Står spilleren på samme rute som er valgt på rutefeltet
                 if (playerCurrentTileY == gridCurrentTileY && playerCurrentTileX == gridCurrentTileX)
                 {
+                    previousTilePosition = {playerCurrentTileY, playerCurrentTileX};
                     SetTileToUnOccupied();
                     isSelected = true;
                     preventSelect = false;

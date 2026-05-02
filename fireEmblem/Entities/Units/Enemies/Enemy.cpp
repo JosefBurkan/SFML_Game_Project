@@ -20,7 +20,7 @@ namespace Enemies
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition({yPos, xPos});
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/slime_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/slime_Icon.png");
 
     }
 

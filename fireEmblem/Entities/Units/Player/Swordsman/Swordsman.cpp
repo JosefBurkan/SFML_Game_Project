@@ -13,8 +13,8 @@ namespace Swordsmen
         healthPoints = 4;
         maxHealth = healthPoints;
         playerCurrentTileY = 150;
+        attackLevel = 2;
 
-        type = "Player";
         speed = 1;
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
@@ -41,7 +41,7 @@ namespace Swordsmen
         float x = sprite->getPosition().x;
         float y = sprite->getPosition().y;
 
-        attacks.CreateAttack(spawnLocationX, spawnLocationY);
+        attacks.CreateAttack(name, attackLevel, spawnLocationX, spawnLocationY);
         attackSpawnTimer = maxAttackSpawnTimer;
     }
 }

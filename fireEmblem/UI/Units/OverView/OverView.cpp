@@ -9,21 +9,24 @@ namespace OverViews
         background.setPosition({-300.f, 400});
         background.setSize({250.f, 100});
 
-        princessFaceTexture.loadFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/prinsesse_ansikt.png");
+        princessFaceTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_ansikt.png");
         princessFace.emplace(princessFaceTexture);
         princessFace->setScale({4.f, 4.f});
 
-        font.openFromFile("/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/Minecraft.TTF"); 
+        font.openFromFile(std::string(ASSETS_DIR) + "Minecraft.TTF"); 
         font.setSmooth(false); 
         
         timeline.setSize({400.f, 5.f});
         timeline.setFillColor(sf::Color(150, 0, 150));      
     }
 
-    sf::Text OverView::CreateText(std::string name, int health, int speed)
+    sf::Text OverView::CreateText(std::string name, int health, int speed, int level)
     {
         sf::Text attributes(font);
-        attributes.setString("Name\t" + name +"\nHealth\t" + std::to_string(health) + "\nSpeed\t" + std::to_string(speed));
+        attributes.setString("Name\t" + name +
+                            "\nHealth\t" + std::to_string(health) +
+                            "\nSpeed\t" + std::to_string(speed) +
+                            "\nLevel\t" + std::to_string(level));
         attributes.setCharacterSize(16);
         attributes.setFillColor(sf::Color::Red);
 

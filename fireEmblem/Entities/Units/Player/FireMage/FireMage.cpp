@@ -11,12 +11,9 @@ namespace FireMages
         maxHealth = healthPoints;
         playerCurrentTileY = 100;
 
-        type = "Player";
         speed = 4;
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
-
-        std::cout << "\nmenutext: Fungerte!";
     }
 }
 

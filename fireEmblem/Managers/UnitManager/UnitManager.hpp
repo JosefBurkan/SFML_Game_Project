@@ -31,8 +31,7 @@ namespace UnitsManagers
             void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
             int GetSize();
 
-            // Setter rekkefølgen til units i ekte tid
-            // Altså den endrer seg hver runde, annerledes fra "turn" som er statisk
+            // Setter rekkefølgen til units i hver runde
             void AssignOrder();   
     };
 }

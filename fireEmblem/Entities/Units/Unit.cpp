@@ -10,7 +10,7 @@ namespace Units
 
         framesUntilDraw = (randomNum * 3) - 1;
         
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/prinsesse_Icon.png");
+        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_Icon.png");
 
     }
     
@@ -26,25 +26,46 @@ namespace Units
 
     void Unit::ResetAnimations()
     {
-        defaultTextureX = 0;
-        defaultTextureY = 0;
+        resetAnimationsLock = false;
 
-        attackSpawnTimer = maxAttackSpawnTimer;
+        if (!resetAnimationsLock)
+        {
+            defaultTextureX = 0;
+            defaultTextureY = 0;
+            attackSpawnTimer = maxAttackSpawnTimer;
+
+            resetAnimationsLock = true;
+        }
+
     }
 
     void Unit::ResetAttackAnimation()
     {
-        framesUntilAttackDraw = 20;
-        attackingTextureX = 0;
-        attackingTextureY = 0;
-        attackSpawnTimer = maxAttackSpawnTimer;
+        resetAnimationsLock = false;
+
+        if (!resetAnimationsLock)
+        {
+            framesUntilAttackDraw = 20;
+            attackingTextureX = 0;
+            attackingTextureY = 0;
+            attackSpawnTimer = maxAttackSpawnTimer;
+
+            resetAnimationsLock = true;
+        }
     }
 
     void Unit::ResetDeathAnimation()
     {
-        framesUntilDeathDraw = 15;
-        dyingTextureX = 0;
-        dyingTextureY = 0;
+        resetAnimationsLock = false;
+
+        if (!resetAnimationsLock)
+        {
+            framesUntilDeathDraw = 15;
+            dyingTextureX = 0;
+            dyingTextureY = 0;
+
+            resetAnimationsLock = true;
+        }
     }
 
     void Unit::Draw(sf::RenderWindow& window) 
@@ -124,14 +145,23 @@ namespace Units
         window.draw(*deathSprite);
     }
 
+    void Unit::DrawLevelUpAnmiation (sf::RenderWindow& window)
+    {
+        framesUntilLevelUpDraw++;
+
+        if (framesUntilLevelUpDraw >= 10)
+        {
+
+        }
+
+    }
+
     void Unit::DrawUI(sf::RenderWindow& window)
     {
 
     }
 
-    // Sjekk hvilket baneobjekt spilleren står på, feks. skog
-    // Sjekker kun trær nå, og de kan ikke tråkkes på uansett.
-    // Skal ha en felles mappe med alle objekter som er mulige å tråkke på
+    // Sjekk hvilket baneobjekt spilleren står på, feks. sand
     void Unit::CheckForMapObjects()
     {
         for (auto& object : map.trees)
@@ -153,7 +183,7 @@ namespace Units
 
     }
 
-    void Unit::IsHit()
+    bool Unit::IsHit()
     {
         // Hent uniten sin posisjon for sammenligning
         int x = sprite->getPosition().x;
@@ -172,16 +202,26 @@ namespace Units
                 // uniten sin posisjon er mindre eller lik angrepet + ruten sin størrelse
                 if (x <= atkx + tileSize - 10 && y <= atky + tileSize - 10)
                 {
-                    healthPoints -= 1;
                     std::cout << name << " er truffet! " << healthPoints << "\n";
+
+                    lastHitBy = attack->GetSource();
+                    int damageToBeTaken = attack->GetValue();
+
+                    healthPoints -= damageToBeTaken;
+
+                    
                     attacks.Clear();
 
                     if (healthPoints <= 0)
                     {
                         state = "Dying";
                     }
+
+                    // Kan føre til bugs senere med angrep som kan treffe flere fiender.
+                    return true;
                 }
             }
+            return false;
         }
     }
 
@@ -211,6 +251,41 @@ namespace Units
     void Unit::Attack(float spawnLocationX, float spawnLocationY)
     {
 
+    }
+
+    std::string Unit::LastHitBy()
+    {
+        return lastHitBy;
+    }
+
+    void Unit::RecieveExperience(int exp)
+    {
+        experience += exp;
+    }
+
+    int Unit::GrantExperience()
+    {
+        return experienceToGrant;
+    }
+
+    int Unit::GetExperience()
+    {
+        return experience;
+    }
+
+    bool Unit::CheckForLevelUp()
+    {
+        if (experience >= experienceToLevelUp)
+        {
+            experience = 0;
+            level++;
+            experienceToLevelUp *= level;
+
+            std::cout << "Leveled up! ";
+            return true;
+        }
+
+        return false;
     }
 }
 

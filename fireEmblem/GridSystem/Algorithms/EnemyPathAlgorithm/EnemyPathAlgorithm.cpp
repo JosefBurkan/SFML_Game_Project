@@ -11,8 +11,6 @@ namespace EnemyPathAlgorithms
         // Ned, opp, høyre, venstre
         std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}};
 
-        tiles[startY][startX].MarkAttackRange();
-
         visited.insert({startY, startX});
         q.push({startY, startX, travelCost});
 

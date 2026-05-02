@@ -54,8 +54,17 @@ namespace UnitsManagers
 
             HealthBars::HealthBar healthBar{posX, posY};
 
-            (*it)->IsHit();
-            
+            // Hvis uniten blir truffet, sjekk hvem som traff den
+            if ((*it)->IsHit())
+            {
+                std::string lastHitBy = (*it)->LastHitBy();
+
+                // Finn uniten den selv ble drept av
+                auto hitIt = std::find_if(units.begin(), units.end(),
+                    [&lastHitBy](const auto& unit) { return unit->name == lastHitBy; });
+
+            }
+
             if ((*it)->type == "Player")
             {
                 (*it)->DrawUI(window);
@@ -73,12 +82,26 @@ namespace UnitsManagers
 
                 if ((*it)->deathAnimationTimer <= 0)
                 {
+                    std::string lastHitBy = (*it)->LastHitBy();
+
+                    // Finn uniten den selv ble drept av
+                    auto hitIt = std::find_if(units.begin(), units.end(),
+                        [&lastHitBy](const auto& unit) { return unit->name == lastHitBy; });
+
+                    // Gi den uniten XP
+                    if (hitIt != units.end())
+                    {
+                        (*hitIt)->RecieveExperience((*it)->GrantExperience());
+                    }
+
                     (*it)->SetTileToUnOccupied();
                     it = units.erase(it);
                     needsSorting = true;
                     continue; // Kjør løkken igjen med en gang. Unngår en bug ved tegning av karakter på drap.
                 }
             }
+
+            (*it)->CheckForLevelUp();
 
             DrawUnit((*it), window);
 

@@ -5,10 +5,10 @@ namespace Menus
     Menu::Menu(std::array<std::string, 3> menutext)
     {
         arrow.setPointCount(3);
-        arrow.setPoint(0, sf::Vector2f(0.5, 0.5));
-        arrow.setPoint(1, sf::Vector2f(0.5, 4.5));
-        arrow.setPoint(2, sf::Vector2f(4.5, 2.5));
-        arrow.setScale({6.f, 6.f});
+        arrow.setPoint(0, sf::Vector2f(0.1, 0.1));
+        arrow.setPoint(1, sf::Vector2f(0.1, 0.9));
+        arrow.setPoint(2, sf::Vector2f(0.9, 0.5));
+        arrow.setScale({30.f, 30.f});
 
         optionsMenu.setSize({100, 200});
         optionsMenu.setFillColor({100, 200, 150, 180});
