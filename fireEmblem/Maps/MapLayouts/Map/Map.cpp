@@ -58,11 +58,6 @@ namespace Maps
         trees[1].SetGrid(*GridHandlerPtr);
     }
 
-    void Map::LoadWindow() 
-    {
-        window.create(sf::VideoMode({720, 480}), "AAAA ew");
-    }
-
     // Last inn kameraet
     sf::View Map::LoadView()
     {

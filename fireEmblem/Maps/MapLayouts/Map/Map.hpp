@@ -12,7 +12,6 @@ namespace Maps
         public:
             sf::Texture wallTexture;
             sf::Texture treeTexture;
-            sf::RenderWindow window;
             std::vector<Trees::Tree> trees;
             std::vector<Walls::Wall> walls;
 
@@ -25,7 +24,6 @@ namespace Maps
             GridGenerators::GridGenerator& GenerateGrid();
             GridGenerators::GridGenerator& FetchGrid();                     // returner gridGenerator med verdiene til den eksisterende gridden
             void SetGridMovement(GridHandlers::GridHandler& movement);    // Hent inn GridHandler, for å lese og påvirke rutefeltet
-            void LoadWindow();
             sf::View LoadView();                                            // Last inn kameraet
             void SpawnObjects();                                          // Sett objektet sin posisjon
             void DrawMapObjects(sf::RenderWindow& window);                  // Tegn baneobjekter, feks. trær

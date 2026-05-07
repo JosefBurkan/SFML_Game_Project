@@ -393,6 +393,30 @@ fireEmblem/Game/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Game.cpp.s
 .PHONY : fireEmblem/Game/Game.cpp.s
 
+fireEmblem/Game/Map_1/Map_1.o: fireEmblem/Game/Map_1/Map_1.cpp.o
+.PHONY : fireEmblem/Game/Map_1/Map_1.o
+
+# target to build an object file
+fireEmblem/Game/Map_1/Map_1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Map_1/Map_1.cpp.o
+.PHONY : fireEmblem/Game/Map_1/Map_1.cpp.o
+
+fireEmblem/Game/Map_1/Map_1.i: fireEmblem/Game/Map_1/Map_1.cpp.i
+.PHONY : fireEmblem/Game/Map_1/Map_1.i
+
+# target to preprocess a source file
+fireEmblem/Game/Map_1/Map_1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Map_1/Map_1.cpp.i
+.PHONY : fireEmblem/Game/Map_1/Map_1.cpp.i
+
+fireEmblem/Game/Map_1/Map_1.s: fireEmblem/Game/Map_1/Map_1.cpp.s
+.PHONY : fireEmblem/Game/Map_1/Map_1.s
+
+# target to generate assembly for a file
+fireEmblem/Game/Map_1/Map_1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Game/Map_1/Map_1.cpp.s
+.PHONY : fireEmblem/Game/Map_1/Map_1.cpp.s
+
 fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.o: fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o
 .PHONY : fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.o
 
@@ -681,6 +705,54 @@ fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s
 .PHONY : fireEmblem/Maps/MapLayouts/StartMap/StartMap.cpp.s
 
+fireEmblem/UI/Game/StartMenu/Button/Button.o: fireEmblem/UI/Game/StartMenu/Button/Button.cpp.o
+.PHONY : fireEmblem/UI/Game/StartMenu/Button/Button.o
+
+# target to build an object file
+fireEmblem/UI/Game/StartMenu/Button/Button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Game/StartMenu/Button/Button.cpp.o
+.PHONY : fireEmblem/UI/Game/StartMenu/Button/Button.cpp.o
+
+fireEmblem/UI/Game/StartMenu/Button/Button.i: fireEmblem/UI/Game/StartMenu/Button/Button.cpp.i
+.PHONY : fireEmblem/UI/Game/StartMenu/Button/Button.i
+
+# target to preprocess a source file
+fireEmblem/UI/Game/StartMenu/Button/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Game/StartMenu/Button/Button.cpp.i
+.PHONY : fireEmblem/UI/Game/StartMenu/Button/Button.cpp.i
+
+fireEmblem/UI/Game/StartMenu/Button/Button.s: fireEmblem/UI/Game/StartMenu/Button/Button.cpp.s
+.PHONY : fireEmblem/UI/Game/StartMenu/Button/Button.s
+
+# target to generate assembly for a file
+fireEmblem/UI/Game/StartMenu/Button/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Game/StartMenu/Button/Button.cpp.s
+.PHONY : fireEmblem/UI/Game/StartMenu/Button/Button.cpp.s
+
+fireEmblem/UI/Game/StartMenu/StartMenu.o: fireEmblem/UI/Game/StartMenu/StartMenu.cpp.o
+.PHONY : fireEmblem/UI/Game/StartMenu/StartMenu.o
+
+# target to build an object file
+fireEmblem/UI/Game/StartMenu/StartMenu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Game/StartMenu/StartMenu.cpp.o
+.PHONY : fireEmblem/UI/Game/StartMenu/StartMenu.cpp.o
+
+fireEmblem/UI/Game/StartMenu/StartMenu.i: fireEmblem/UI/Game/StartMenu/StartMenu.cpp.i
+.PHONY : fireEmblem/UI/Game/StartMenu/StartMenu.i
+
+# target to preprocess a source file
+fireEmblem/UI/Game/StartMenu/StartMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Game/StartMenu/StartMenu.cpp.i
+.PHONY : fireEmblem/UI/Game/StartMenu/StartMenu.cpp.i
+
+fireEmblem/UI/Game/StartMenu/StartMenu.s: fireEmblem/UI/Game/StartMenu/StartMenu.cpp.s
+.PHONY : fireEmblem/UI/Game/StartMenu/StartMenu.s
+
+# target to generate assembly for a file
+fireEmblem/UI/Game/StartMenu/StartMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/UI/Game/StartMenu/StartMenu.cpp.s
+.PHONY : fireEmblem/UI/Game/StartMenu/StartMenu.cpp.s
+
 fireEmblem/UI/Player/Menu/Menu.o: fireEmblem/UI/Player/Menu/Menu.cpp.o
 .PHONY : fireEmblem/UI/Player/Menu/Menu.o
 
@@ -843,6 +915,9 @@ help:
 	@echo "... fireEmblem/Game/Game.o"
 	@echo "... fireEmblem/Game/Game.i"
 	@echo "... fireEmblem/Game/Game.s"
+	@echo "... fireEmblem/Game/Map_1/Map_1.o"
+	@echo "... fireEmblem/Game/Map_1/Map_1.i"
+	@echo "... fireEmblem/Game/Map_1/Map_1.s"
 	@echo "... fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.o"
 	@echo "... fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.i"
 	@echo "... fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.s"
@@ -879,6 +954,12 @@ help:
 	@echo "... fireEmblem/Maps/MapLayouts/StartMap/StartMap.o"
 	@echo "... fireEmblem/Maps/MapLayouts/StartMap/StartMap.i"
 	@echo "... fireEmblem/Maps/MapLayouts/StartMap/StartMap.s"
+	@echo "... fireEmblem/UI/Game/StartMenu/Button/Button.o"
+	@echo "... fireEmblem/UI/Game/StartMenu/Button/Button.i"
+	@echo "... fireEmblem/UI/Game/StartMenu/Button/Button.s"
+	@echo "... fireEmblem/UI/Game/StartMenu/StartMenu.o"
+	@echo "... fireEmblem/UI/Game/StartMenu/StartMenu.i"
+	@echo "... fireEmblem/UI/Game/StartMenu/StartMenu.s"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.o"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.i"
 	@echo "... fireEmblem/UI/Player/Menu/Menu.s"

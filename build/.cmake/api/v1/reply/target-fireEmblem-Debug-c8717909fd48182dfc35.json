@@ -33,7 +33,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 54,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 53,
+				"line" : 56,
 				"parent" : 0
 			}
 		]
@@ -111,7 +111,10 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30
 			]
 		}
 	],
@@ -186,7 +189,10 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30
 			]
 		}
 	],
@@ -358,6 +364,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/UI/Game/StartMenu/StartMenu.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/UI/Game/StartMenu/Button/Button.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/Game/Map_1/Map_1.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -4,53 +4,38 @@
 namespace Games
 {
     Game::Game()
-        : map(),
-          grid(map.GenerateGrid()),
-          gridHandler{grid},
-          background1(gridHandler),
-          attacks(),
-          unitManager(),
-          camera{gridHandler}
     {
-        map.LoadWindow();
-        
-        // Koble banen og rutenettet sammen
-        map.SetGridMovement(gridHandler);
-        map.SpawnObjects();
-
-        // Init background
-        background1.LoadTileMapFromFile();
-
-        // Units
-        fireMage = std::make_shared<FireMages::FireMage>(grid, map, attacks, gridHandler);
-        enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
-        enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
-        slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
-        swordsman = std::make_shared<Swordsmen::Swordsman>(grid, map, attacks, gridHandler);
-
-        unitManager.AddUnit(enemy1);
-        unitManager.AddUnit(enemy2);
-        unitManager.AddUnit(slime2);
-        unitManager.AddUnit(fireMage);
-        unitManager.AddUnit(swordsman);
-
-        unitManager.SortUnits();
-
-        // Shader
-        shader.setSize({1000.f, 800.f});
-        shader.setFillColor(sf::Color(0, 0, 255, 20));
-
-        swordsman->Move(0, 150);
+        LoadWindow();
     }
+
+
+    void Game::LoadWindow() 
+    {
+        newWindow.create(sf::VideoMode({1280, 720}), "AAAA ew");
+    }
+
+    void Game::Pause()
+    {
+        bool currentEscapeState = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape);
+
+        // Dette lager en frame som avgjører om spillet skal pauses eller ikke
+        if (currentEscapeState && !previousEscapeState)
+        {
+            // Hopper mellom true og false
+            paused = !paused;
+        }
+
+        previousEscapeState = currentEscapeState;
+    }
+
 
     void Game::Run()
     {
-        sf::RenderWindow& window = map.window;
-        sf::View view = camera.LoadView();
-        sf::View moveView;
+
+        sf::RenderWindow& window = newWindow;
 
         window.setFramerateLimit(60);
-        window.setView(view);
+        window.setView(map1.GetView());
 
         while (window.isOpen())
         {
@@ -60,112 +45,26 @@ namespace Games
                     window.close();
             }
 
-            moveView = camera.MoveView();
+            Pause();
+
+            moveView = map1.MoveView();
+        
             window.setView(moveView);
 
-            // Tegn bakgrunn + alle objekter på banen
-            window.draw(background1);
-            map.DrawMapObjects(window);
-
-            auto currentTurnUnit = unitManager.GetUnitByTurn(gameTurn);
-
-            // Alle units blir tildelt en "intern turn" lik sin index i unit-lista
-            // Gi kontroll til den uniten som skal bevege seg denne runden
-            if (gameTurn == currentTurnUnit->turn)
+            if (!paused)
             {
-                int positionX = currentTurnUnit->RetrieveCoordinations().second / 50;
-                int positionY = currentTurnUnit->RetrieveCoordinations().first / 50;
-
-                // Hvis typen til uniten er en spiller, utfør spilleroppførsel
-                if (currentTurnUnit->type == "Player") 
-                {
-                    currentTurnUnit->Movement();
-
-                    if (lock == false)
-                    {
-                        gridHandler.SelectTile(positionY, positionX);
-                        std::cout << "Turn " << gameTurn + 1 << ": ";
-                        std::cout << currentTurnUnit->name << "'s turn: \n";
-                        lock = true;
-                    }
-
-                    if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Neutral")
-                    {
-                        gridHandler.Movement();
-                    }
-                    else if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Selected")
-                    {
-                        gridHandler.MovementWhileSelected();
-                    }
-                    else if (currentTurnUnit->state == "Attack")
-                    {
-                        gridHandler.Attack();
-                    }
-                    else if (currentTurnUnit->state == "Attacking")
-                    {
-                        currentTurnUnit->attackTimer--;
-                        
-                        if (currentTurnUnit->attackTimer <= 0)
-                        {
-                            gameTurn++;
-
-                            currentTurnUnit->currentOrder = unitManager.GetSize();
-                            unitManager.AssignOrder();
-
-                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
-                            currentTurnUnit->state = "Neutral";
-
-                            lock = false;
-                        }
-                    }
-                }
-
-                // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
-                else if (currentTurnUnit->type == "Enemy" && currentTurnUnit->state != "Dying")
-                {
-                    cooldown++;
-                    gridHandler.SelectTile(positionY, positionX);
-
-                    if (cooldown > 30)
-                    {
-
-                        currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
-                        currentTurnUnit->state = "Neutral";
-
-                        unitManager.PerformEnemyActions(gameTurn);
-                        cooldown = 0;
-                        std::cout << "Turn " << gameTurn + 1 << ": ";
-                        std::cout << currentTurnUnit->name << "'s turn: \n";
-                        gameTurn++;
-                        currentTurnUnit->currentOrder = unitManager.GetSize();
-                        unitManager.AssignOrder();
-                        lock = false;
-                    }
-                }
-                
-                unitManager.UpdateUnits(window);
+                // Banen, og alt som skjer på den kjører her
+                map1.Run(window);
             }
-
-            if (gameTurn >= unitManager.GetSize())
+            else 
             {
-                std::cout << unitManager.GetSize();
-                unitManager.firstUnit = true;
-                gameTurn = 0;
-                std::cout << "\n";
+                menu.Run(window);
+
             }
-
-            attacks.Update();
-
-            window.draw(shader);
-
-            gridHandler.Draw(window);
-
-            // Oppdater tidslinjen
-            overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
-
-            overView.Draw(window, camera.GetPosition(), overView.CreateText(fireMage->name, fireMage->healthPoints, fireMage->speed, fireMage->level));
 
             window.display();
+
+
         }
     }
 }

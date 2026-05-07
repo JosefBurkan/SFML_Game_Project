@@ -1,46 +1,31 @@
 #pragma once
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/MapLayouts/StartMap/StartMap.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Maps/Background/Background1/Background1.hpp"
-#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Managers/UnitManager/UnitManager.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Map_1/Map_1.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Game/StartMenu/StartMenu.hpp"
 
 namespace Games
 {
 
     class Game
-    {
-    private:
-        StartMaps::StartMap map;
-        GridGenerators::GridGenerator& grid;
-        GridHandlers::GridHandler gridHandler;
-        Backgrounds1::Background1 background1;
+    {   
+        private:
+        bool paused = false;
+        bool previousEscapeState = false; // Omhandler knappen "escape"
 
-        OverViews::OverView overView;
-        AttackManagers::AttackManager attacks;
-        UnitsManagers::UnitsManager unitManager;
-        Cameras::Camera camera;
+        Maps1::Map1 map1;
+        sf::RenderWindow newWindow; // vinduet som lages når spillet kjøres
+        sf::RenderWindow window;    // vindet som skal brukes
 
-        std::shared_ptr<FireMages::FireMage> fireMage;
-        std::shared_ptr<Enemies::Enemy> enemy1;
-        std::shared_ptr<Slimes::Slime> enemy2;
-        std::shared_ptr<Slimes::Slime> slime2;
-        std::shared_ptr<Swordsmen::Swordsman> swordsman;
+        //Bruk forward declaration på dette:
+        StartMenus::StartMenu menu;
 
-        sf::RectangleShape shader;
-        
-        int gameTurn = 0;
-        int cooldown = 0; // Ventetid mellom enheter sine handlinger
-        int numberOfUnits = 5; // Antall enheter i unitmanager
-        bool lock = false;  // Brukes for å utføre funksjoner en gang, istedenfor at de repeteres mange ganger
-        
-        
-    public:
-        Game();
-        void Run();
+        sf::View moveView;
+
+        // Cameras::Camera camera;
+            
+        public:
+            Game();
+            void Pause();
+            void LoadWindow();
+            void Run();
     };
 }

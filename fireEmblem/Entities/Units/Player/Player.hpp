@@ -43,6 +43,9 @@ namespace Players
             void Attack(float spawnLocationX, float spawnLocationY) override;
             void ConfirmMovement();
             bool IsMenuOpen();
+            
+            void SaveData();    // Lagre og hente data fra tidligere økter
+            void ReadData();
 
     };
 }

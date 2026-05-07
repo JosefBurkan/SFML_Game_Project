@@ -48,6 +48,9 @@ add_executable(fireEmblem
     fireEmblem/Entities/MapObjects/Tree/Tree.cpp
     fireEmblem/Entities/Units/Player/Swordsman/Swordsman.cpp
     fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp
+    fireEmblem/UI/Game/StartMenu/StartMenu.cpp
+    fireEmblem/UI/Game/StartMenu/Button/Button.cpp
+    fireEmblem/Game/Map_1/Map_1.cpp
 )
 
 target_include_directories(fireEmblem PRIVATE ${SFML_ROOT}/include)
