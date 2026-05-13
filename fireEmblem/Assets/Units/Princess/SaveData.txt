@@ -1,0 +1,6 @@
+Level: 3
+Experience: 0
+MaxHealth: 3
+CurrentHealth: 3
+AttackLevel: 1
+Speed: 2

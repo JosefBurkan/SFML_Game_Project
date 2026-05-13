@@ -29,7 +29,6 @@ namespace Backgrounds1
         {
             for (unsigned int j = 0; j < tiles[0].size(); ++j)
             {
-                std::cout << tiles[i][j].tileNumber;
                 const int tileNumber = tiles[i][j].tileNumber;
 
                 // Koble tilenummeret til riktig texture fra bildet

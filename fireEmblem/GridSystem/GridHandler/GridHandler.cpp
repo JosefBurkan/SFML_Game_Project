@@ -111,12 +111,12 @@ namespace GridHandlers
 
     void GridHandler::RestorePosition(sf::Vector2f position)
     {
-        
+
     }
 
 
     // Hent rute som spiller har valgt
-    std::pair<int, int> GridHandler::RetrieveTile() const {
+    std::pair<int, int> GridHandler::RetrieveTile() {
         return {selectedTileY, selectedTileX};
     }
 
@@ -132,6 +132,7 @@ namespace GridHandlers
     std::vector<std::vector<Tiles::Tile>>& GridHandler::RetrieveAllTiles()
     {
         auto& tiles = grid.RetrieveAllTiles();
+        
         return tiles;
     }
 
@@ -172,7 +173,6 @@ namespace GridHandlers
         selectedTileY = coordinateY;
 
         tiles[coordinateY][coordinateX].ChangeColor(true);
-
     }
 
     void GridHandler::Draw(sf::RenderWindow& window) 

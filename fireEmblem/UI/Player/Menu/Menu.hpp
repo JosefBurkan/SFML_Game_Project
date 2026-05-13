@@ -16,7 +16,12 @@ namespace Menus
 
             sf::Font font;
 
+            sf::Text attack;
+            sf::Text skills;
+            sf::Text items;
+
             std::array<std::string, 3> content;
+            std::array<sf::Text*, 3> menuContents;
 
             sf::ConvexShape arrow;
 
@@ -33,7 +38,7 @@ namespace Menus
             Menu(std::array<std::string, 3> menutext);
             void SetPosition(float positionX, float positionY);
             void Draw(sf::RenderWindow& window);
-            virtual std::array<sf::Text, 3> AddItems();
+            virtual std::array<sf::Text*, 3> AddItems();
             int NavigateMenu();
     };
 

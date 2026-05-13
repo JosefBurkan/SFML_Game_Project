@@ -8,14 +8,14 @@ namespace Allies
     {
 
         public:
-            Ally(std::string name, int healthPoints, std::string spritePath) : Unit::Unit(name, healthPoints, spritePath)
+            Ally(std::string name, int currentHealth, std::string spritePath) : Unit::Unit(name, currentHealth, spritePath)
             {
 
             }
 
             void spawn() 
             {
-                std::cout << name << " has spawned! with health: " << healthPoints;
+                std::cout << name << " has spawned! with health: " << currentHealth;
             }
     };
 }

@@ -71,10 +71,10 @@ namespace UnitsManagers
             }
             else
             {
-                healthBar.Draw(window, (*it)->healthPoints, (*it)->maxHealth);
+                healthBar.Draw(window, (*it)->currentHealth, (*it)->maxHealth);
             }
 
-            if ((*it)->healthPoints <= 0) 
+            if ((*it)->currentHealth <= 0) 
             {
                 (*it)->deathAnimationTimer--;
 
@@ -112,8 +112,17 @@ namespace UnitsManagers
         {
             SortUnits();
         }
-
     }
+
+
+    void UnitsManager::LoadUnits()
+    {
+        for (auto it = units.begin(); it != units.end(); ++it) 
+        {
+            (*it)->ReadData();
+        }
+    }
+    
 
     void UnitsManager::PerformEnemyActions(int gameTurn)
     {

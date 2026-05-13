@@ -8,7 +8,6 @@ namespace Games
         LoadWindow();
     }
 
-
     void Game::LoadWindow() 
     {
         newWindow.create(sf::VideoMode({1280, 720}), "AAAA ew");
@@ -28,7 +27,6 @@ namespace Games
         previousEscapeState = currentEscapeState;
     }
 
-
     void Game::Run()
     {
 
@@ -45,11 +43,11 @@ namespace Games
                     window.close();
             }
 
-            Pause();
-
             moveView = map1.MoveView();
-        
+
             window.setView(moveView);
+
+            window.display();
 
             if (!paused)
             {
@@ -60,11 +58,17 @@ namespace Games
             {
                 menu.Run(window);
 
+                if (menu.Action() == "Resume")
+                {
+                    paused = !paused;
+                }
+                else if (menu.Action() == "Quit")
+                {
+                    window.close();
+                }
             }
 
-            window.display();
-
-
+            Pause();
         }
     }
 }

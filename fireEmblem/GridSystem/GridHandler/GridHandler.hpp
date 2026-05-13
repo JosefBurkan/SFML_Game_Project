@@ -33,7 +33,7 @@ namespace GridHandlers
             void HighlightMovement();
             void RestorePosition(sf::Vector2f position);           // Flytt posisjonen til det den var før en 'x' input
 
-            std::pair<int, int> RetrieveTile() const;                       // Hent rute som spiller har valgt
+            std::pair<int, int> RetrieveTile();                             // Hent rute som spiller har valgt
             std::pair<float, float> SelectedTilePos();                      // Hent rute sin kordinater som spiller har valgt
             std::pair<int, int> RetrieveTileIndex();
             std::vector<std::vector<Tiles::Tile>>& RetrieveAllTiles();      // Hent alle ruter

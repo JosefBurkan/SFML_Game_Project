@@ -7,11 +7,7 @@ namespace FireMages
         : Player(gridReference, map, attacks, GridHandler)
     {
         name = "FireMage";
-        healthPoints = 3;
-        maxHealth = healthPoints;
         playerCurrentTileY = 100;
-
-        speed = 4;
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
     }

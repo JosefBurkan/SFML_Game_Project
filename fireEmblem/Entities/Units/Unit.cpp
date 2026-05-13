@@ -202,17 +202,17 @@ namespace Units
                 // uniten sin posisjon er mindre eller lik angrepet + ruten sin størrelse
                 if (x <= atkx + tileSize - 10 && y <= atky + tileSize - 10)
                 {
-                    std::cout << name << " er truffet! " << healthPoints << "\n";
+                    std::cout << name << " er truffet! " << currentHealth << "\n";
 
                     lastHitBy = attack->GetSource();
                     int damageToBeTaken = attack->GetValue();
 
-                    healthPoints -= damageToBeTaken;
+                    currentHealth -= damageToBeTaken;
 
                     
                     attacks.Clear();
 
-                    if (healthPoints <= 0)
+                    if (currentHealth <= 0)
                     {
                         state = "Dying";
                     }
@@ -286,6 +286,19 @@ namespace Units
         }
 
         return false;
+    }
+
+    void Unit::SaveData()
+    {
+        // Lagre data her
+    }    
+    void Unit::ReadData()
+    {   
+        // Lese data her
+    }
+    void Unit::SetData(std::array<int, 6> stats)
+    {
+        // Sette data her
     }
 }
 

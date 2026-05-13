@@ -7,6 +7,25 @@ namespace StartMenus
 
     }
 
+    std::string StartMenu::Action()
+    {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Z))
+        {
+            switch (index)
+            {
+                case 0:
+                    return "Resume";
+
+                case 1:
+                    return "Options";
+
+                case 2:
+                    return "Quit";
+            }
+        }
+        return "Nothing";
+    }
+
     void StartMenu::Run(sf::RenderWindow& window)
     {
         if (menuCooldown <= 0)
@@ -15,13 +34,11 @@ namespace StartMenus
             {
                 index--;
                 menuCooldown = 10;
-                std::cout << index;
             }
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && index < menuButtons.size() - 1)
             {
                 index++;
                 menuCooldown = 10;
-                std::cout << index;
             }
         }
 

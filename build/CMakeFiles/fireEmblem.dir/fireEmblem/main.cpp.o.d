@@ -1028,6 +1028,8 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../Unit.hpp \

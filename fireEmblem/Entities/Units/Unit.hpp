@@ -64,9 +64,9 @@ namespace Units
             std::optional<sf::Sprite> attackSprite;
             std::optional<sf::Sprite> deathSprite;    
 
-            int healthPoints = 2;
+            int currentHealth = 2;
             int attackLevel = 1;
-            int maxHealth = healthPoints;
+            int maxHealth = currentHealth;
             int turn = 0;           // Hvor i lista starter uniten
             int currentOrder = 0;   // Hvor i lista er uniten hver runde
             int speed = 2;
@@ -115,6 +115,10 @@ namespace Units
             int GrantExperience();
             int GetExperience();
             bool CheckForLevelUp();
+
+            virtual void SaveData();    // Lagre, hente og sette data fra tidligere økter
+            virtual void ReadData();
+            virtual void SetData(std::array<int, 6> stats);
 
             std::string LastHitBy();
     };

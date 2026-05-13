@@ -34,6 +34,8 @@ namespace Maps1 {
 
         unitManager.SortUnits();
 
+        unitManager.LoadUnits();
+
         // Shader
         shader.setSize({1000.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
@@ -158,7 +160,7 @@ namespace Maps1 {
             // Oppdater tidslinjen
             overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
 
-            overView.Draw(window, camera.GetPosition(), overView.CreateText(fireMage->name, fireMage->healthPoints, fireMage->speed, fireMage->level));
+            overView.Draw(window, camera.GetPosition(), overView.CreateText(fireMage->name, fireMage->currentHealth, fireMage->speed, fireMage->level));
 
     }
 }

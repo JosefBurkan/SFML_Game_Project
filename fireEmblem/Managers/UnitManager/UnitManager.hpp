@@ -26,10 +26,12 @@ namespace UnitsManagers
             void AddUnit(std::shared_ptr<Units::Unit> unit);
             void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
+            void LoadUnits();
             void PerformEnemyActions(int gameTurn);
             void SortUnits();      // Sorterer units etter speed. Raskeste går først
             void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
             int GetSize();
+
 
             // Setter rekkefølgen til units i hver runde
             void AssignOrder();   

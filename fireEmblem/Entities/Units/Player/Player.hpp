@@ -5,6 +5,8 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp"
+#include <fstream>
+#include <sstream> 
 
 
 namespace Players 
@@ -44,8 +46,9 @@ namespace Players
             void ConfirmMovement();
             bool IsMenuOpen();
             
-            void SaveData();    // Lagre og hente data fra tidligere økter
-            void ReadData();
+            void SaveData() override;    // Lagre og hente data fra tidligere økter
+            void ReadData() override;
+            void SetData(std::array<int, 6> stats) override;
 
     };
 }

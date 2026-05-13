@@ -15,9 +15,10 @@ namespace Players
             throw std::runtime_error("Failed to load texture!");
         }
 
+
         name = "Player";
-        healthPoints = 4;
-        maxHealth = healthPoints;
+        currentHealth = 4;
+        maxHealth = currentHealth;
         defaultTexture.setSmooth(false);
         attackTexture.setSmooth(false);
 
@@ -67,6 +68,7 @@ namespace Players
         isSelected = false;
         preventSelect = false;
         SetTileToUnOccupied();
+        tiles[gridCurrentTileX/50][gridCurrentTileY/50].UnSelect();
         algorithm.CleanGrid(tiles, gridCurrentTileY, gridCurrentTileX);     // Fjern de markerte rutene 
 
         sprite->setPosition({previousPosition});
@@ -227,7 +229,6 @@ namespace Players
                         inMenu = false;
                         break;
                     case 1:
-                        std::cout << "Menyen har blitt åpnet";
                         skills.show = true;
                         break;
                     case 2:
@@ -260,6 +261,48 @@ namespace Players
         {
             GridHandler.ColorTile();
         }
+    }
+
+    // Hent dataen lagret i .txt fila til karakteren
+    void Player::ReadData()
+    {
+        std::ifstream file(std::string(ASSETS_DIR) + "Units/Princess/SaveData.txt");
+        std::string word = "";
+
+        // 'r' står for retrieved
+        int r_level = 0;
+        int r_experience = 0;
+        int r_maxHealth = 0;
+        int r_currentHealth = 0;
+        int r_attackLevel = 0;
+        int r_speed = 0;
+
+        int index = 0;
+
+        std::array stats = {r_level, r_experience, r_maxHealth, r_currentHealth, r_attackLevel, r_speed};
+
+        while (file >> word) 
+        {
+            file >> stats[index];
+            index++;
+        }
+
+        SetData(stats);
+    }
+
+    void Player::SetData(std::array<int, 6> stats)
+    {
+        level = stats[0];
+        experience = stats[1];
+        maxHealth = stats[2];
+        currentHealth = stats[3];
+        attackLevel = stats[4];
+        speed = stats[5];
+    }
+
+    void Player::SaveData()
+    {
+
     }
 
 }

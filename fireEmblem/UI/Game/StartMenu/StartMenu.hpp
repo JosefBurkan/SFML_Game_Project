@@ -19,6 +19,7 @@ namespace StartMenus
 
         public:
             StartMenu();
+            std::string Action();
             void Run(sf::RenderWindow& window);
 
     };

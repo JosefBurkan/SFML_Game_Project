@@ -10,12 +10,8 @@ namespace Swordsmen
             throw std::runtime_error("Failed to load texture!");
         }
         name = "Swordsman";
-        healthPoints = 4;
-        maxHealth = healthPoints;
+        maxHealth = currentHealth;
         playerCurrentTileY = 150;
-        attackLevel = 2;
-
-        speed = 1;
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
 

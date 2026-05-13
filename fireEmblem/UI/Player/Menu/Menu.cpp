@@ -3,6 +3,11 @@
 namespace Menus
 {
     Menu::Menu(std::array<std::string, 3> menutext)
+        :   font(std::string(ASSETS_DIR) + "ARCADECLASSIC.TTF"),
+            attack(font),
+            skills(font),
+            items(font),
+            menuContents{&attack, &skills, &items}
     {
         arrow.setPointCount(3);
         arrow.setPoint(0, sf::Vector2f(0.1, 0.1));
@@ -16,6 +21,14 @@ namespace Menus
         optionsMenu.setOutlineThickness(3.f);
 
         content = menutext;
+        
+
+        // Sett menuContents sitt innhold til riktige verdier, utenom posisjon
+        for (int i = 0; i < menuContents.size(); i++)
+        {
+            menuContents[i]->setString(content[i]);
+            menuContents[i]->setCharacterSize(20);
+        }
 
     }
 
@@ -52,50 +65,26 @@ namespace Menus
             index = 2;
         }
 
-        arrow.setPosition({menuPositionX - 30, menuPositionY + (index * 30 + 3)});
+        arrow.setPosition({menuPositionX - 35, menuPositionY + (index * 30)});
         
         return index;
     }
 
     // Legg til inholdet fra "menuStrings" inn i menyboksen
-    std::array<sf::Text, 3> Menu::AddItems()
+    std::array<sf::Text*, 3> Menu::AddItems()
     {
-
         float menyPosX = optionsMenu.getPosition().x;
         float menyPosY = optionsMenu.getPosition().y;
 
-        font.openFromFile(std::string(ASSETS_DIR) + "ARCADECLASSIC.TTF");
-        font.setSmooth(false); 
-        
-        sf::Text attack(font);
-        sf::Text skills(font);
-        sf::Text items(font);
-
-        std::array<sf::Text, 3> menuContents = {attack, skills, items};
-
-        menuContents[0] = attack;
-        menuContents[1] = skills;
-        menuContents[2] = items;
-
-        menuContents[0].setString(content[0]);
-        menuContents[1].setString(content[1]);
-        menuContents[2].setString(content[2]);
-
-        menuContents[0].setPosition({menyPosX, menyPosY + 10});
-        menuContents[1].setPosition({menyPosX, menyPosY + 20});
-        menuContents[2].setPosition({menyPosX, menyPosY + 30});
-
         returnedIndex = NavigateMenu();
 
-        for (int i = 0; i < lengthOfArray; i++)
+        for (int i = 0; i < menuContents.size(); i++)
         {
-            menuContents[i].setCharacterSize(20);
-            menuContents[i].setFillColor(sf::Color::Red);
-
-            menuContents[i].setPosition({menyPosX + 3, menyPosY + (i * 30) + 3});
+            menuContents[i]->setPosition({menyPosX, menyPosY + (i * 30)});
+            menuContents[i]->setFillColor(sf::Color::Red);
         }
 
-        menuContents[returnedIndex].setFillColor({255, 255, 100});
+        menuContents[returnedIndex]->setFillColor({255, 255, 100});
 
         return menuContents; 
         
@@ -112,7 +101,7 @@ namespace Menus
 
             for (int i = 0; i < 3; i++)
             {
-                window.draw(menu[i]);
+                window.draw(*menu[i]);
             }
         }
     }
