@@ -60,25 +60,60 @@ namespace Slimes
     // Håndterer bevegelse og angrep
     void Slime::PerformActions()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
-        playerPos = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
-
-        // Hopp til spilleren dersom den er innen rekkevidde 
-        if (algorithm.playerDetected == true)
+        if (!pathToPlayer.empty())
         {
-            sprite->setPosition({(playerPos.second * 50) + 50, playerPos.first * 50});
-
-            deathSprite->setPosition({sprite->getPosition().x, sprite->getPosition().y});
-
-            float x = playerPos.second * 50;
-            float y = playerPos.first * 50;
-
-            attacks.CreateAttack(name, attackLevel, x, y);
+            attacks.CreateAttack(name, attackLevel, pathToPlayer[0].GetPosition().second, pathToPlayer[0].GetPosition().first);
         }
-
     }
 
+    void Slime::Movement()
+    {
+        if (!pathToPlayer.empty())
+        {
+            if (cooldown == 0)
+            {
+
+                auto& tiles = gridGenerator.RetrieveAllTiles();
+
+                float currentTileY = pathToPlayer[numOfMoves].GetPosition().first;
+                float currentTileX = pathToPlayer[numOfMoves].GetPosition().second;
+
+                if (numOfMoves > 1)
+                {
+                    numOfMoves--;
+                }
+
+                nextTileY = pathToPlayer[numOfMoves].GetPosition().first;
+                nextTileX = pathToPlayer[numOfMoves].GetPosition().second;
 
 
+                calculatedPathX = (nextTileX - currentTileX) / 10;
+                calculatedPathY = (nextTileY - currentTileY) / 10;
 
+                cooldown = 10;
+            }
+
+            cooldown--;
+
+            
+
+            if (algorithm.playerDetected == true)
+            {
+                sprite->move({calculatedPathX, calculatedPathY});
+                deathSprite->setPosition({sprite->getPosition().x, sprite->getPosition().y});
+            }
+        }
+    }
+
+    std::vector<Tiles::Tile> Slime::SetPathToPlayer()
+    {
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+
+        pathToPlayer = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
+
+        numOfMoves = pathToPlayer.size() - 1;
+
+        return {};
+
+    }
 }

@@ -67,8 +67,7 @@ namespace Tiles
         rectangle.setOutlineThickness(5.f);
     }
 
-
-    const std::pair<float, float> Tile::RetrieveTilePos()
+    std::pair<float, float> Tile::GetPosition()
     {
         return {rectangle.getPosition().y, rectangle.getPosition().x};
     }

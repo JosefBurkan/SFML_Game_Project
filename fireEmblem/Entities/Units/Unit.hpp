@@ -20,7 +20,8 @@ namespace Units
             sf::Texture iconTexture;
             
             int tileSize = 50;
-            int movement = 5;
+            int movement = 20;
+
 
             // For defaultsprite
             int spriteSizeY = 50;           // Størrelse på spritesheet
@@ -74,6 +75,9 @@ namespace Units
 
             int attackTimer = 24;           // Hvor lenge angrepsanimasjonen til uniten varer
             int maxAttackTimer = 24;
+            int numOfMoves = 0;     // For bevegelse. Brukes kun for fiender for øyeblikket
+            int movementSpeedY = 2;  // For bevegelsesanimasjon
+            int movementSpeedX = 2; 
 
             int deathAnimationTimer = 60;
 
@@ -89,7 +93,6 @@ namespace Units
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void spawn();
-            void Move(float posX, float posY);
             virtual sf::Sprite GetIcon();
             std::pair<int, int> RetrieveCoordinations();
             virtual void SetTileToOccupied();
@@ -101,13 +104,15 @@ namespace Units
             virtual void DrawDeathAnimation(sf::RenderWindow& window); 
             virtual void DrawLevelUpAnmiation (sf::RenderWindow& window);
 
-            virtual void CheckForMapObjects();
             virtual bool IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
+            virtual void CheckForMapObjects();
+            virtual void Move(float posX, float posY);
             virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
             virtual void ResetAnimations(); // Set animasjoner tilbake til starten, slik at de ikke kan starte midt i
             virtual void ResetAttackAnimation();
             virtual void ResetDeathAnimation();
+            virtual std::vector<Tiles::Tile> SetPathToPlayer();             // Kjør algorithmen som scanner etter spiller og lager vei (For fiender)
 
             virtual void Attack(float spawnLocationX, float spawnLocationY);
 

@@ -22,12 +22,12 @@ namespace Maps1 {
         // Units
         fireMage = std::make_shared<FireMages::FireMage>(grid, map, attacks, gridHandler);
         enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
-        enemy2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
+        slime1 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
         slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
         swordsman = std::make_shared<Swordsmen::Swordsman>(grid, map, attacks, gridHandler);
 
-        unitManager.AddUnit(enemy1);
-        unitManager.AddUnit(enemy2);
+        // unitManager.AddUnit(enemy1);
+        unitManager.AddUnit(slime1);
         unitManager.AddUnit(slime2);
         unitManager.AddUnit(fireMage);
         unitManager.AddUnit(swordsman);
@@ -66,7 +66,7 @@ namespace Maps1 {
 
         map.DrawMapObjects(window);
 
-        auto currentTurnUnit = unitManager.GetUnitByTurn(gameTurn);
+        std::shared_ptr<Units::Unit> currentTurnUnit = unitManager.GetUnitByTurn(gameTurn);
 
         if (gameTurn == currentTurnUnit->turn)
             {
@@ -101,12 +101,12 @@ namespace Maps1 {
                     else if (currentTurnUnit->state == "Attacking")
                     {
                         currentTurnUnit->attackTimer--;
-                        
+
                         if (currentTurnUnit->attackTimer <= 0)
                         {
                             gameTurn++;
 
-                            currentTurnUnit->currentOrder = unitManager.GetSize();
+                            //currentTurnUnit->currentOrder = unitManager.GetSize();
                             unitManager.AssignOrder();
 
                             currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
@@ -121,25 +121,53 @@ namespace Maps1 {
                 else if (currentTurnUnit->type == "Enemy" && currentTurnUnit->state != "Dying")
                 {
                     cooldown++;
+
                     gridHandler.SelectTile(positionY, positionX);
 
-                    if (cooldown > 30)
+                    // Kalkuler ruta kun en gang                     
+                    if (!moveLock)
+                    {
+                        path = unitManager.SetEnemyPath(*currentTurnUnit);
+                        currentTurnUnit->state = "Moving";
+                        moveLock = true;
+                        cooldownBetweenMoves = 80;
+                    }
+                    // Beveg fienden mot spilleren til den stopper en rute forran
+                    if (currentTurnUnit->state == "Moving")
                     {
 
-                        currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
-                        currentTurnUnit->state = "Neutral";
+                        std::cout << "\n" << cooldownBetweenMoves;
 
-                        unitManager.PerformEnemyActions(gameTurn);
+                        if (cooldownBetweenMoves >= 0)
+                        {
+                            unitManager.PerformEnemyMovement(*currentTurnUnit, cooldownBetweenMoves);
+                            cooldownBetweenMoves--;
+                        }
+
+                        if (cooldownBetweenMoves == 0)
+                        {
+                            currentTurnUnit->state = "Neutral";
+                        }
+
+
                         cooldown = 0;
+
+                    }
+                    else if (currentTurnUnit->state == "Neutral")
+                    {
                         std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
+
+                        currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                        unitManager.PerformEnemyActions(*currentTurnUnit);
                         gameTurn++;
+                        cooldown = 0;
                         currentTurnUnit->currentOrder = unitManager.GetSize();
                         unitManager.AssignOrder();
                         lock = false;
+                        moveLock = false;
                     }
                 }
-                
                 unitManager.UpdateUnits(window);
             }
 

@@ -43,6 +43,7 @@ namespace UnitsManagers
     // Kjøres hver frame. Tegner animasjon, sjekker om uniten blir truffet, etc.
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
+
         // For å sørge for at ingen fiender hoppes over
         // når listen sorters
         bool needsSorting = false; 
@@ -55,6 +56,7 @@ namespace UnitsManagers
             HealthBars::HealthBar healthBar{posX, posY};
 
             // Hvis uniten blir truffet, sjekk hvem som traff den
+            
             if ((*it)->IsHit())
             {
                 std::string lastHitBy = (*it)->LastHitBy();
@@ -112,6 +114,7 @@ namespace UnitsManagers
         {
             SortUnits();
         }
+
     }
 
 
@@ -122,19 +125,23 @@ namespace UnitsManagers
             (*it)->ReadData();
         }
     }
-    
 
-    void UnitsManager::PerformEnemyActions(int gameTurn)
+    void UnitsManager::PerformEnemyActions(Units::Unit& currentTurnUnit)
     {
-        for (auto it = units.begin(); it != units.end(); ++it) 
-        {
-            if ((*it)->type == "Enemy" && (*it)->turn == gameTurn) 
-            {
-                (*it)->SetTileToUnOccupied();
-                (*it)->PerformActions(); 
-                (*it)->SetTileToOccupied();
-            }
-        }
+        currentTurnUnit.PerformActions();
+    }
+
+    std::vector<Tiles::Tile> UnitsManager::SetEnemyPath(Units::Unit& currentTurnUnit)
+    {
+        std::vector<Tiles::Tile> path = currentTurnUnit.SetPathToPlayer();
+        return path;
+    }
+
+    void UnitsManager::PerformEnemyMovement(Units::Unit& currentTurnUnit, int movementCooldown)
+    {
+        currentTurnUnit.SetTileToUnOccupied();
+        currentTurnUnit.Movement(); 
+        currentTurnUnit.SetTileToOccupied();
     }
 
     void UnitsManager::SortUnits()

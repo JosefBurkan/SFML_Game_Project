@@ -27,17 +27,23 @@ namespace Maps1
 
         std::shared_ptr<FireMages::FireMage> fireMage;
         std::shared_ptr<Enemies::Enemy> enemy1;
-        std::shared_ptr<Slimes::Slime> enemy2;
+        std::shared_ptr<Slimes::Slime> slime1;
         std::shared_ptr<Slimes::Slime> slime2;
         std::shared_ptr<Swordsmen::Swordsman> swordsman;
 
         sf::RectangleShape shader;
+
+        std::vector<Tiles::Tile> path;
         
         
         int gameTurn = 0;
+        int timeToMove = 10;
         int cooldown = 0; // Ventetid mellom enheter sine handlinger
         int numberOfUnits = 5; // Antall enheter i unitmanager
         bool lock = false;  // Brukes for å utføre funksjoner en gang, istedenfor at de repeteres mange ganger
+        bool moveLock = false; // Samme men for bevegelse
+        int cooldownBetweenMoves = 30;
+
         
         
     public:

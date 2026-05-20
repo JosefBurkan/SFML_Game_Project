@@ -13,9 +13,17 @@ namespace EnemyPathAlgorithms
             float coordinateY = 0;
             float coordinateX = 0;
             int travelCost = 0;
+            
+
+
         public:
             float isActive = true;
             bool playerDetected = false;
-            std::pair<float, float> CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
+
+            // Vectoren er veien til spilleren
+            // Tilen er den ruta spilleren på
+            // Måtte skille den siste ruta fra resten av veien
+            std::vector<Tiles::Tile> CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
+            std::vector<Tiles::Tile> TracePath(Tiles::Tile* goal);
     };
 }

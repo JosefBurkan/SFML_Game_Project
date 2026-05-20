@@ -15,10 +15,24 @@ namespace Slimes
             EnemyPathAlgorithms::EnemyPathAlgorithm algorithm;
             std::pair<float, float> playerPos = {0, 0};
 
+            std::vector<Tiles::Tile> pathToPlayer;
+
+            float nextTileY = 0;
+            float nextTileX = 0;
+
+            float calculatedPathX = 0;
+            float calculatedPathY = 0;
+            int cooldown = 0;
+
+
+
+
         public:
             Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void Draw(sf::RenderWindow& window) override;
             void PerformActions() override;
+            std::vector<Tiles::Tile> SetPathToPlayer() override;             // Kjør algorithmen som scanner etter spiller og lager vei
+            void Movement() override;
 
     };
 }

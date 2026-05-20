@@ -13,6 +13,7 @@ namespace GridPathAlgorithms
         private:
             float coordinateY;
             float coordinateX;
+            
         public:
             void CheckAvailableTiles(int startX, int startY, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
             void CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles, float gridCurrentTileY, float gridCurrentTileX);   // Fjern de markerte rutene

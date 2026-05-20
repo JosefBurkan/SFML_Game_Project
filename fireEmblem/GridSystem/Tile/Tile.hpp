@@ -14,22 +14,25 @@ namespace Tiles
             bool display = false;
 
 
+            // Disse ID'ene er kun for algorithme pathfinding
+            Tile* parent = nullptr;
+            int nodeID = 0;
+            int parentID = 0;
+
+
             Tile() : Tile(0.f, 0.f) {}
             Tile(float x, float y);
-            // Lys opp ruten om en enhet har blitt valgt
-            void ChangeColor(bool onSelect);
+            void ChangeColor(bool onSelect);        // Lys opp ruten om en enhet har blitt valgt
             void Select();
             void UnSelect();
-            const std::pair<float, float> RetrieveTilePos();
-            // Sjekk hva som er inni ruten
-            void CheckContents();
+            std::pair<float, float> GetPosition();
             void Draw(sf::RenderWindow& window);
-            // Marker rute som spilleren kan gå til
-            void MarkPath();
-            // Marker rute som spilleren kan angripe
+            void MarkPath(); // Marker rute som spilleren kan gå til
             void MarkAttackRange();
             void UnMark();
             void Highlight(std::pair<float, float> playerPosition, int gridSizeY, int gridSizeX);
+
+
 
     };
 

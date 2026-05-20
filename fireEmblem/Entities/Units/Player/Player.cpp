@@ -43,6 +43,9 @@ namespace Players
 
         previousPosition = sprite->getPosition();
 
+        maxHealth = 3;
+        currentHealth = 3;
+
     }
 
     std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
@@ -266,7 +269,13 @@ namespace Players
     // Hent dataen lagret i .txt fila til karakteren
     void Player::ReadData()
     {
-        std::ifstream file(std::string(ASSETS_DIR) + "Units/Princess/SaveData.txt");
+        std::ifstream file(std::string(ASSETS_DIR) + "Units/Princess/SavedData.txt");
+
+        if (!file)
+        {
+            throw std::runtime_error("failed to load texture! ");
+        }
+
         std::string word = "";
 
         // 'r' står for retrieved
@@ -283,6 +292,7 @@ namespace Players
 
         while (file >> word) 
         {
+
             file >> stats[index];
             index++;
         }

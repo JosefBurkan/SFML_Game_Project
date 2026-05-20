@@ -12,6 +12,16 @@ namespace Units
         
         iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_Icon.png");
 
+        
+        if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Death_Animation.png")) 
+        {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+        deathSprite.emplace(deathTexture);
+        deathSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
+        deathSprite->setPosition({0, 0});
+
     }
     
     void Unit::spawn()
@@ -299,6 +309,11 @@ namespace Units
     void Unit::SetData(std::array<int, 6> stats)
     {
         // Sette data her
+    }
+
+    std::vector<Tiles::Tile> Unit::SetPathToPlayer()
+    {
+        return {};
     }
 }
 

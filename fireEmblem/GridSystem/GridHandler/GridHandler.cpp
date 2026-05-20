@@ -125,8 +125,8 @@ namespace GridHandlers
     {
         auto& tiles = grid.RetrieveAllTiles();
 
-        return {tiles[selectedTileY][selectedTileX].RetrieveTilePos().first, 
-                tiles[selectedTileY][selectedTileX].RetrieveTilePos().second};
+        return {tiles[selectedTileY][selectedTileX].GetPosition().first, 
+                tiles[selectedTileY][selectedTileX].GetPosition().second};
     }
     // Hent alle ruter
     std::vector<std::vector<Tiles::Tile>>& GridHandler::RetrieveAllTiles()

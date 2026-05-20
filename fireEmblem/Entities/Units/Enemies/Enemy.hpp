@@ -19,5 +19,6 @@ namespace Enemies
             void SetTileToOccupied() override;
             void SetTileToUnOccupied() override;
             void PerformActions() override;
+            
         };
 }
