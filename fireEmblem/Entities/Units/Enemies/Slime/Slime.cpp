@@ -95,8 +95,6 @@ namespace Slimes
 
             cooldown--;
 
-            
-
             if (algorithm.playerDetected == true)
             {
                 sprite->move({calculatedPathX, calculatedPathY});
@@ -105,15 +103,12 @@ namespace Slimes
         }
     }
 
-    std::vector<Tiles::Tile> Slime::SetPathToPlayer()
+    void Slime::SetPathToPlayer()
     {
         auto& tiles = gridGenerator.RetrieveAllTiles();
 
         pathToPlayer = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
 
         numOfMoves = pathToPlayer.size() - 1;
-
-        return {};
-
     }
 }

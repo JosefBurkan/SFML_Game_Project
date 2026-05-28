@@ -1,5 +1,4 @@
 #include "Camera.hpp"
-#include "../config.hpp"
 
 
 namespace Cameras {
@@ -28,12 +27,14 @@ namespace Cameras {
         sf::Vector2f moveVertically(0.0f, 5.0f);
         sf::Vector2f standStill(0.0f, 0.0f);
 
-        selectedTileX = GridHandler.SelectedTilePos().first;
-        selectedTileY = GridHandler.SelectedTilePos().second;
+        Tiles::Tile tile = GridHandler.GetSelectedTile();
+
+        selectedTileY = tile.GetPosition().second;
+        selectedTileX = tile.GetPosition().first;
 
 
         // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 
-        if (selectedTileY > viewSize.x + 650)
+        if (selectedTileY > viewSize.x + 250)
         {
             view.move(moveHorisontally);
         }

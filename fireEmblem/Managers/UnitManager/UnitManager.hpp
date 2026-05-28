@@ -32,8 +32,9 @@ namespace UnitsManagers
             void UpdateUnits(sf::RenderWindow& window);
             void LoadUnits();
             void PerformEnemyActions(Units::Unit& currentTurnUnit);
-            void PerformEnemyMovement(Units::Unit& currentTurnUnit, int movementCooldown);
-            std::vector<Tiles::Tile> SetEnemyPath(Units::Unit& currentTurnUnit);
+            void PerformEnemyMovement(Units::Unit& currentTurnUnit);
+            void PerformPlayerSmoothMovement(Units::Unit& currentTurnUnit);
+            void SetEnemyPath(Units::Unit& currentTurnUnit);
             void SortUnits();      // Sorterer units etter speed. Raskeste går først
             void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
             int GetSize();

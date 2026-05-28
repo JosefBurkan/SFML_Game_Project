@@ -116,18 +116,15 @@ namespace GridHandlers
 
 
     // Hent rute som spiller har valgt
-    std::pair<int, int> GridHandler::RetrieveTile() {
-        return {selectedTileY, selectedTileX};
-    }
-
-    // Hent rute sin kordinater som spiller har valgt
-    std::pair<float, float> GridHandler::SelectedTilePos() 
+    Tiles::Tile GridHandler::GetSelectedTile()
     {
         auto& tiles = grid.RetrieveAllTiles();
 
-        return {tiles[selectedTileY][selectedTileX].GetPosition().first, 
-                tiles[selectedTileY][selectedTileX].GetPosition().second};
+        Tiles::Tile tile = tiles[selectedTileY][selectedTileX];
+
+        return tile;
     }
+
     // Hent alle ruter
     std::vector<std::vector<Tiles::Tile>>& GridHandler::RetrieveAllTiles()
     {

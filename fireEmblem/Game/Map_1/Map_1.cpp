@@ -30,7 +30,7 @@ namespace Maps1 {
         unitManager.AddUnit(slime1);
         unitManager.AddUnit(slime2);
         unitManager.AddUnit(fireMage);
-        unitManager.AddUnit(swordsman);
+        // unitManager.AddUnit(swordsman);
 
         unitManager.SortUnits();
 
@@ -40,7 +40,10 @@ namespace Maps1 {
         shader.setSize({1000.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
 
-        swordsman->Move(0, 150);
+        // swordsman->Place(0, 150);
+
+        // swordsman->SetTileToOccupied();
+        fireMage->SetTileToOccupied();
     }
 
     sf::View Map1::GetView()
@@ -61,7 +64,6 @@ namespace Maps1 {
 
     void Map1::Run(sf::RenderWindow& window)
     {
-
         window.draw(background1);
 
         map.DrawMapObjects(window);
@@ -70,19 +72,20 @@ namespace Maps1 {
 
         if (gameTurn == currentTurnUnit->turn)
             {
-                int positionX = currentTurnUnit->RetrieveCoordinations().second / 50;
-                int positionY = currentTurnUnit->RetrieveCoordinations().first / 50;
+                int positionX = currentTurnUnit->GetPosition().second / 50;
+                int positionY = currentTurnUnit->GetPosition().first / 50;
 
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player") 
                 {
                     currentTurnUnit->Movement();
 
-                    if (lock == false)
+                    if (!lock)
                     {
                         gridHandler.SelectTile(positionY, positionX);
                         std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
+                        currentTurnUnit->state = "Neutral";
                         lock = true;
                     }
 
@@ -93,6 +96,19 @@ namespace Maps1 {
                     else if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Selected")
                     {
                         gridHandler.MovementWhileSelected();
+                    }
+                    else if (currentTurnUnit->state == "Moving")
+                    {
+                        if (!moveLock)
+                        {
+                            moveLock = true;
+                            cooldownBetweenMoves = currentTurnUnit->movementTime;
+                        }
+                        if (cooldownBetweenMoves >= 0)
+                        {
+                            unitManager.PerformPlayerSmoothMovement(*currentTurnUnit);
+                            cooldownBetweenMoves--;
+                        }
                     }
                     else if (currentTurnUnit->state == "Attack")
                     {
@@ -113,6 +129,7 @@ namespace Maps1 {
                             currentTurnUnit->state = "Neutral";
 
                             lock = false;
+                            moveLock = false;
                         }
                     }
                 }
@@ -127,7 +144,7 @@ namespace Maps1 {
                     // Kalkuler ruta kun en gang                     
                     if (!moveLock)
                     {
-                        path = unitManager.SetEnemyPath(*currentTurnUnit);
+                        unitManager.SetEnemyPath(*currentTurnUnit);
                         currentTurnUnit->state = "Moving";
                         moveLock = true;
                         cooldownBetweenMoves = 80;
@@ -136,11 +153,9 @@ namespace Maps1 {
                     if (currentTurnUnit->state == "Moving")
                     {
 
-                        std::cout << "\n" << cooldownBetweenMoves;
-
                         if (cooldownBetweenMoves >= 0)
                         {
-                            unitManager.PerformEnemyMovement(*currentTurnUnit, cooldownBetweenMoves);
+                            unitManager.PerformEnemyMovement(*currentTurnUnit);
                             cooldownBetweenMoves--;
                         }
 
@@ -148,7 +163,6 @@ namespace Maps1 {
                         {
                             currentTurnUnit->state = "Neutral";
                         }
-
 
                         cooldown = 0;
 

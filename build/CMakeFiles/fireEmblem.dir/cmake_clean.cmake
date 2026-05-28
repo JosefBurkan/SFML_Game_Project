@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.o.d"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.o"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o"

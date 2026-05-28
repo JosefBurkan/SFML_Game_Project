@@ -1,9 +1,9 @@
-#include "EnemyPathAlgorithm.hpp"
+#include "PlayerPathAlgorithm.hpp"
 
-namespace EnemyPathAlgorithms
+namespace PlayerPathAlgorithms
 {
     // Farg de rutene som spilleren kan bevege seg til
-    std::vector<Tiles::Tile> EnemyPathAlgorithm::CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
+    std::vector<Tiles::Tile> PlayerPathAlgorithm::CheckAvailableTiles(int startY, int startX, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
 
         // Først rens alle ruter sine parentpekere, ellers kan det kræsje
@@ -26,13 +26,11 @@ namespace EnemyPathAlgorithms
         visited.insert({startY, startX});
         q.push({startY, startX, travelCost});
 
+
         while (!q.empty())
         {
             auto [y, x, tilesTraveled] = q.front();
             q.pop();
-
-            if (tilesTraveled > range)
-                continue;
 
             for (auto [dirY, dirX] : directions)
             {
@@ -53,6 +51,8 @@ namespace EnemyPathAlgorithms
 
                 tiles[nextY][nextX].parent = &tiles[y][x];
 
+                tiles[nextY][nextX].MarkAttackRange();
+
 
                 if (tiles[nextY][nextX].IsOccupiedByPlayer)
                 {
@@ -65,13 +65,12 @@ namespace EnemyPathAlgorithms
         }
 
         playerDetected = false;
-
-
+        std::cout << "Spiller Ikke oppdaget: ";
         return {};
     }
 
     // Spor veien tilbake ved å se på hver tile sin parent
-    std::vector<Tiles::Tile> EnemyPathAlgorithm::TracePath(Tiles::Tile* goal)
+    std::vector<Tiles::Tile> PlayerPathAlgorithm::TracePath(Tiles::Tile* goal)
     {
         std::vector<Tiles::Tile> path;
         Tiles::Tile* current = goal;

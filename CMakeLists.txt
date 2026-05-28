@@ -43,6 +43,7 @@ add_executable(fireEmblem
     fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp
     fireEmblem/Game/Game.cpp
     fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.cpp
+    fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp
     fireEmblem/UI/Units/Health/HealthBar.cpp
     fireEmblem/UI/Units/OverView/OverView.cpp
     fireEmblem/Entities/MapObjects/Tree/Tree.cpp

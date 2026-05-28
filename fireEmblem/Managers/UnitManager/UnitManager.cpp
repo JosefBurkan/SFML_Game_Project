@@ -131,17 +131,21 @@ namespace UnitsManagers
         currentTurnUnit.PerformActions();
     }
 
-    std::vector<Tiles::Tile> UnitsManager::SetEnemyPath(Units::Unit& currentTurnUnit)
+    void UnitsManager::SetEnemyPath(Units::Unit& currentTurnUnit)
     {
-        std::vector<Tiles::Tile> path = currentTurnUnit.SetPathToPlayer();
-        return path;
+        currentTurnUnit.SetPathToPlayer();
     }
 
-    void UnitsManager::PerformEnemyMovement(Units::Unit& currentTurnUnit, int movementCooldown)
+    void UnitsManager::PerformEnemyMovement(Units::Unit& currentTurnUnit)
     {
         currentTurnUnit.SetTileToUnOccupied();
         currentTurnUnit.Movement(); 
         currentTurnUnit.SetTileToOccupied();
+    }
+
+    void UnitsManager::PerformPlayerSmoothMovement(Units::Unit& currentTurnUnit)
+    {
+        currentTurnUnit.SmoothMove(); 
     }
 
     void UnitsManager::SortUnits()

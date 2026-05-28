@@ -1,5 +1,6 @@
 #pragma once
 #include "../GridSystem/GridHandler/GridHandler.hpp"
+#include "../config.hpp"
 
 namespace Cameras {
     class Camera 

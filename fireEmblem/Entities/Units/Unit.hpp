@@ -21,6 +21,8 @@ namespace Units
             
             int tileSize = 50;
             int movement = 20;
+            float calculatedPathX = 0;
+            float calculatedPathY = 0;
 
 
             // For defaultsprite
@@ -76,8 +78,8 @@ namespace Units
             int attackTimer = 24;           // Hvor lenge angrepsanimasjonen til uniten varer
             int maxAttackTimer = 24;
             int numOfMoves = 0;     // For bevegelse. Brukes kun for fiender for øyeblikket
-            int movementSpeedY = 2;  // For bevegelsesanimasjon
-            int movementSpeedX = 2; 
+            int movementSpeed = 7;  // For bevegelsesanimasjonen sin hastighet
+            int movementTime = 0;       // Hvor lenge skal bevegelsen vare
 
             int deathAnimationTimer = 60;
 
@@ -94,7 +96,7 @@ namespace Units
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void spawn();
             virtual sf::Sprite GetIcon();
-            std::pair<int, int> RetrieveCoordinations();
+            std::pair<int, int> GetPosition();
             virtual void SetTileToOccupied();
             virtual void SetTileToUnOccupied();
 
@@ -107,12 +109,13 @@ namespace Units
             virtual bool IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
             virtual void CheckForMapObjects();
-            virtual void Move(float posX, float posY);
+            virtual void Place(float posX, float posY);
             virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
+            virtual void SmoothMove();
             virtual void ResetAnimations(); // Set animasjoner tilbake til starten, slik at de ikke kan starte midt i
             virtual void ResetAttackAnimation();
             virtual void ResetDeathAnimation();
-            virtual std::vector<Tiles::Tile> SetPathToPlayer();             // Kjør algorithmen som scanner etter spiller og lager vei (For fiender)
+            virtual void SetPathToPlayer();             // Kjør algorithmen som scanner etter spiller og lager vei (For fiender)
 
             virtual void Attack(float spawnLocationX, float spawnLocationY);
 

@@ -465,6 +465,30 @@ fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s
 .PHONY : fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.cpp.s
 
+fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.o: fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.o
+
+# target to build an object file
+fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.o
+.PHONY : fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.o
+
+fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.i: fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.i
+
+# target to preprocess a source file
+fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.i
+.PHONY : fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.i
+
+fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.s: fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.s
+
+# target to generate assembly for a file
+fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.s
+.PHONY : fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.cpp.s
+
 fireEmblem/GridSystem/GridGenerator/GridGenerator.o: fireEmblem/GridSystem/GridGenerator/GridGenerator.cpp.o
 .PHONY : fireEmblem/GridSystem/GridGenerator/GridGenerator.o
 
@@ -924,6 +948,9 @@ help:
 	@echo "... fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.o"
 	@echo "... fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.i"
 	@echo "... fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.s"
+	@echo "... fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.o"
+	@echo "... fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.i"
+	@echo "... fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.s"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.o"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.i"
 	@echo "... fireEmblem/GridSystem/GridGenerator/GridGenerator.s"

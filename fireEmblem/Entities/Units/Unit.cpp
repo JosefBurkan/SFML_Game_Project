@@ -29,7 +29,7 @@ namespace Units
         std::cout << "spawnet! \n";
     }
     
-    std::pair<int, int> Unit::RetrieveCoordinations() 
+    std::pair<int, int> Unit::GetPosition() 
     {
         return {sprite->getPosition().y, sprite->getPosition().x};
     }
@@ -183,12 +183,17 @@ namespace Units
         }
     }
 
-    void Unit::Move(float posX, float posY)
+    void Unit::Place(float posX, float posY)
     {
         sprite->setPosition({posX, posY});
     }
 
     void Unit::Movement()
+    {
+
+    }
+
+    void Unit::SmoothMove()
     {
 
     }
@@ -311,9 +316,9 @@ namespace Units
         // Sette data her
     }
 
-    std::vector<Tiles::Tile> Unit::SetPathToPlayer()
+    void  Unit::SetPathToPlayer()
     {
-        return {};
+        
     }
 }
 

@@ -3,27 +3,26 @@
 namespace GridPathAlgorithms
 {
     // Farg de rutene som spilleren kan bevege seg til
-    void GridPathAlgorithm::CheckAvailableTiles(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
+    void GridPathAlgorithm::CreateRoute(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
-        // Divider på 50 for å finne index
-        coordinateY = startY / 50;
-        coordinateX = startX / 50;
-        // startX, statY, avstandReist
+
         std::queue<std::tuple<int, int, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
-        // Ned, opp, høyre, venstre
-        std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}};
+        std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}}; // Ned, opp, høyre, venstre
 
-        visited.insert({coordinateY, coordinateX});
-        q.push({coordinateY, coordinateX, 0});
+        visited.insert({startY / 50, startX / 50});
+        q.push({startY / 50, startX / 50, 0});
 
         while (!q.empty())
         {
-            auto [y, x, g] = q.front();
+            auto [y, x, cost] = q.front();
             q.pop();
 
             // Dersom g er større enn bevegelseshastigheten til spilleren, hopp over
-            if (g > range) continue;
+            if (cost > range)
+            {
+                continue;
+            }
 
             for (auto [dy,dx] : directions)
             {
@@ -36,15 +35,16 @@ namespace GridPathAlgorithms
                 if (tiles[ny][nx].IsOccupied) continue;
                 if (tiles[ny][nx].IsOccupiedByPlayer) continue;
 
-                tiles[coordinateY][coordinateX].inRange = true;
-                if (g < range) tiles[ny][nx].inRange = true;
-
                 if (visited.count({ny,nx})) continue;
 
-                q.push({ny, nx, g+1});
+                tiles[startY / 50][startX / 50].inRange = true;
+                tiles[ny][nx].inRange = true;
+
                 visited.insert({ny, nx});
 
-                if (g < range) tiles[ny][nx].MarkPath();
+                q.push({ny, nx, cost+1});
+
+                tiles[ny][nx].MarkPath();
             }
         }
     }
@@ -57,6 +57,7 @@ namespace GridPathAlgorithms
             for (auto& t : tile)
             {
                 t.inRange = false;
+                t.parent = nullptr;
             }
         }
     }
