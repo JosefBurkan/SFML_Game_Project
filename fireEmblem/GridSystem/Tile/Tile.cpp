@@ -67,9 +67,9 @@ namespace Tiles
         rectangle.setOutlineThickness(5.f);
     }
 
-    std::pair<float, float> Tile::GetPosition()
+    sf::Vector2f Tile::GetPosition()
     {
-        return {rectangle.getPosition().y, rectangle.getPosition().x};
+        return rectangle.getPosition();
     }
 
     void Tile::Draw(sf::RenderWindow& window) {

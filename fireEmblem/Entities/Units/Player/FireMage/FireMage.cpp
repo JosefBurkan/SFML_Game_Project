@@ -7,7 +7,7 @@ namespace FireMages
         : Player(gridReference, map, attacks, GridHandler)
     {
         name = "FireMage";
-        playerCurrentTileY = 100;
+        tileLocation.y = 100;
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
     }

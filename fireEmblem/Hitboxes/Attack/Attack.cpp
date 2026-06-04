@@ -2,20 +2,20 @@
 
 namespace Attacks
 {
-    Attack::Attack(std::string src, int atkValue, float positionX, float positionY)
+    Attack::Attack(std::string src, int atkValue, sf::Vector2f position)
     {
         hitbox.setSize({40, 40});
         hitbox.setFillColor({0, 0, 0, 0});
-        hitbox.setPosition({positionX + 5, positionY + 5});
+        hitbox.setPosition({position.x + 5, position.y + 5});
         hitbox.setFillColor({0, 0, 0, 255});
 
         source = src;
         value = atkValue;
     }
 
-    void Attack::MoveHitbox(float positionX, float positionY)
+    void Attack::MoveHitbox(sf::Vector2f position)
     {
-        hitbox.setPosition({positionX + 5, positionY + 5});
+        hitbox.setPosition({position.x + 5, position.y + 5});
     }
 
     void Attack::Draw(sf::RenderWindow& window)

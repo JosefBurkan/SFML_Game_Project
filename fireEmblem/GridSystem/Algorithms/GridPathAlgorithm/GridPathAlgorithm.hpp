@@ -13,7 +13,7 @@ namespace GridPathAlgorithms
         private:
             
         public:
-            void CreateRoute(int startX, int startY, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
+            void CreateRoute(sf::Vector2f start, int range, std::vector<std::vector<Tiles::Tile>>& tiles);
             void CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles, float gridCurrentTileY, float gridCurrentTileX);   // Fjern de markerte rutene
     };
 }

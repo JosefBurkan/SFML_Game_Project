@@ -3,12 +3,15 @@
 namespace GridPathAlgorithms
 {
     // Farg de rutene som spilleren kan bevege seg til
-    void GridPathAlgorithm::CreateRoute(int startY, int startX, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
+    void GridPathAlgorithm::CreateRoute(sf::Vector2f start, int range, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
 
         std::queue<std::tuple<int, int, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
         std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}}; // Ned, opp, høyre, venstre
+
+        int startY = start.x;
+        int startX = start.y;
 
         visited.insert({startY / 50, startX / 50});
         q.push({startY / 50, startX / 50, 0});

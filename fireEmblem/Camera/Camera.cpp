@@ -29,8 +29,8 @@ namespace Cameras {
 
         Tiles::Tile tile = GridHandler.GetSelectedTile();
 
-        selectedTileY = tile.GetPosition().second;
-        selectedTileX = tile.GetPosition().first;
+        selectedTileY = tile.GetPosition().x;
+        selectedTileX = tile.GetPosition().y;
 
 
         // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 

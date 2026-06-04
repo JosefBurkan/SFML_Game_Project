@@ -30,6 +30,8 @@ namespace Slimes
         movement = 4;
 
         iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/slime_Icon.png");
+
+        SetTileToOccupied();
     }
 
     void Slime::Draw(sf::RenderWindow& window)
@@ -62,7 +64,7 @@ namespace Slimes
     {
         if (!pathToPlayer.empty())
         {
-            attacks.CreateAttack(name, attackLevel, pathToPlayer[0].GetPosition().second, pathToPlayer[0].GetPosition().first);
+            attacks.CreateAttack(name, attackLevel, pathToPlayer[0].GetPosition());
         }
     }
 
@@ -75,16 +77,16 @@ namespace Slimes
 
                 auto& tiles = gridGenerator.RetrieveAllTiles();
 
-                float currentTileY = pathToPlayer[numOfMoves].GetPosition().first;
-                float currentTileX = pathToPlayer[numOfMoves].GetPosition().second;
+                float currentTileY = pathToPlayer[numOfMoves].GetPosition().y;
+                float currentTileX = pathToPlayer[numOfMoves].GetPosition().x;
 
                 if (numOfMoves > 1)
                 {
                     numOfMoves--;
                 }
 
-                nextTileY = pathToPlayer[numOfMoves].GetPosition().first;
-                nextTileX = pathToPlayer[numOfMoves].GetPosition().second;
+                nextTileY = pathToPlayer[numOfMoves].GetPosition().y;
+                nextTileX = pathToPlayer[numOfMoves].GetPosition().x;
 
 
                 calculatedPathX = (nextTileX - currentTileX) / 10;

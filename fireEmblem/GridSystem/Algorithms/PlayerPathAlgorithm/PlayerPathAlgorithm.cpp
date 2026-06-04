@@ -3,7 +3,7 @@
 namespace PlayerPathAlgorithms
 {
     // Farg de rutene som spilleren kan bevege seg til
-    std::vector<Tiles::Tile> PlayerPathAlgorithm::CheckAvailableTiles(int startY, int startX, std::vector<std::vector<Tiles::Tile>>& tiles)
+    std::vector<Tiles::Tile> PlayerPathAlgorithm::CheckAvailableTiles(sf::Vector2f start, std::vector<std::vector<Tiles::Tile>>& tiles)
     {
 
         // Først rens alle ruter sine parentpekere, ellers kan det kræsje
@@ -15,52 +15,54 @@ namespace PlayerPathAlgorithms
             }
         }
 
+        std::pair<int, int> startPair = {start.y / 50, start.x / 50};
+
         // startX, statY, avstandReist
-        std::queue<std::tuple<int, int, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
+        std::queue<std::tuple<std::pair<int, int>, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk
 
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
 
         // Ned, opp, høyre, venstre
-        std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}};
+        std::vector<sf::Vector2f> directions = {{1,0},{-1,0},{0,1},{0,-1}};
 
-        visited.insert({startY, startX});
-        q.push({startY, startX, travelCost});
+        visited.insert(startPair);
+        q.push({startPair, travelCost});
 
 
         while (!q.empty())
         {
-            auto [y, x, tilesTraveled] = q.front();
+            auto [pos, tilesTraveled] = q.front();
             q.pop();
 
             for (auto [dirY, dirX] : directions)
             {
-                int nextX = x + dirX;
-                int nextY = y + dirY;
+                std::pair<int, int> next = {0, 0};
+                
+                next.first = pos.first + dirY;
+                next.second = pos.second + dirX;
 
-                if (nextX < 0 || nextY < 0 ||
-                    nextY >= tiles.size() || nextX >= tiles[0].size())
+                if (next.first < 0 || next.second < 0 ||
+                    next.first >= tiles.size() || next.second >= tiles[0].size())
                     continue;
 
-                if (tiles[nextY][nextX].IsOccupied)
+                if (tiles[next.first][next.second].IsOccupied)
                     continue;
 
-                if (visited.count({nextY, nextX}))
+                if (visited.count(next))
                     continue;
 
-                visited.insert({nextY, nextX});
+                visited.insert(next);
 
-                tiles[nextY][nextX].parent = &tiles[y][x];
+                tiles[next.first][next.second].parent = &tiles[pos.first][pos.second];
 
-                tiles[nextY][nextX].MarkAttackRange();
-
-
-                if (tiles[nextY][nextX].IsOccupiedByPlayer)
+                if (tiles[next.first][next.second].IsOccupiedByPlayer)
                 {
                     playerDetected = true;
-                    return TracePath(&tiles[nextY][nextX]);
+                    return TracePath(&tiles[next.first][next.second]);
                 }
 
-                q.push({nextY, nextX, tilesTraveled + 1});
+                q.push({next, tilesTraveled + 1});
+
             }
         }
 

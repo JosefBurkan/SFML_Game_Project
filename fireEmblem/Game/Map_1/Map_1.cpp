@@ -16,6 +16,7 @@ namespace Maps1 {
         map.SetGridMovement(gridHandler);
         map.SpawnObjects();
 
+
         // Init background
         background1.LoadTileMapFromFile();
 
@@ -34,7 +35,7 @@ namespace Maps1 {
 
         unitManager.SortUnits();
 
-        unitManager.LoadUnits();
+        // unitManager.LoadUnits();
 
         // Shader
         shader.setSize({1000.f, 800.f});
@@ -122,7 +123,6 @@ namespace Maps1 {
                         {
                             gameTurn++;
 
-                            //currentTurnUnit->currentOrder = unitManager.GetSize();
                             unitManager.AssignOrder();
 
                             currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
@@ -192,6 +192,7 @@ namespace Maps1 {
                 gameTurn = 0;
                 std::cout << "\n";
             }
+            
 
             attacks.Update();
 
@@ -203,6 +204,5 @@ namespace Maps1 {
             overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
 
             overView.Draw(window, camera.GetPosition(), overView.CreateText(fireMage->name, fireMage->currentHealth, fireMage->speed, fireMage->level));
-
     }
 }

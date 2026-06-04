@@ -11,7 +11,7 @@ namespace Swordsmen
         }
         name = "Swordsman";
         maxHealth = currentHealth;
-        playerCurrentTileY = 150;
+        tileLocation.y = 150;
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
 
@@ -32,12 +32,9 @@ namespace Swordsmen
         maxAttackSpawnTimer = attackSpawnTimer;
     }
 
-    void Swordsman::Attack(float spawnLocationX, float spawnLocationY)
+    void Swordsman::Attack(sf::Vector2f position)
     {
-        float x = sprite->getPosition().x;
-        float y = sprite->getPosition().y;
-
-        attacks.CreateAttack(name, attackLevel, spawnLocationX, spawnLocationY);
+        attacks.CreateAttack(name, attackLevel, position);
         attackSpawnTimer = maxAttackSpawnTimer;
     }
 }

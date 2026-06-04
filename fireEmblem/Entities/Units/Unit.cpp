@@ -24,11 +24,6 @@ namespace Units
 
     }
     
-    void Unit::spawn()
-    {
-        std::cout << "spawnet! \n";
-    }
-    
     std::pair<int, int> Unit::GetPosition() 
     {
         return {sprite->getPosition().y, sprite->getPosition().x};
@@ -185,6 +180,7 @@ namespace Units
 
     void Unit::Place(float posX, float posY)
     {
+        tileLocation = {posX / 50, posY / 50};
         sprite->setPosition({posX, posY});
     }
 
@@ -263,7 +259,14 @@ namespace Units
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
     }
 
-    void Unit::Attack(float spawnLocationX, float spawnLocationY)
+    void Unit::setTileUnit()
+    {
+        auto& tiles = gridGenerator.RetrieveAllTiles();
+        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].unit = this;
+
+    }
+
+    void Unit::Attack(sf::Vector2f position)
     {
 
     }

@@ -1,8 +1,15 @@
 #pragma once
 #include "../../config.hpp"
 
+// Deklarer klassen unit for pointer
+namespace Units
+{
+    class Unit;
+}
+
 namespace Tiles 
 {
+
     class Tile
     {
         public:
@@ -16,6 +23,8 @@ namespace Tiles
 
             // Disse ID'ene er kun for algorithme pathfinding
             Tile* parent = nullptr;
+            Units::Unit* unit = nullptr;
+
             int nodeID = 0;
             int parentID = 0;
 
@@ -25,12 +34,14 @@ namespace Tiles
             void ChangeColor(bool onSelect);        // Lys opp ruten om en enhet har blitt valgt
             void Select();
             void UnSelect();
-            std::pair<float, float> GetPosition();
+            sf::Vector2f GetPosition();
+            std::string OccupiedBy();
             void Draw(sf::RenderWindow& window);
             void MarkPath(); // Marker rute som spilleren kan gå til
             void MarkAttackRange();
             void UnMark();
             void Highlight(std::pair<float, float> playerPosition, int gridSizeY, int gridSizeX);
+
 
 
 

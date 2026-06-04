@@ -2,12 +2,12 @@
 
 namespace RangedAttacks
 {
-    RangedAttack::RangedAttack(std::string src, int atkValue, float positionX, float positionY, std::pair<float, float> directions)
-        : Attack(src, atkValue, positionX, positionY)
+    RangedAttack::RangedAttack(std::string src, int atkValue, sf::Vector2f position, std::pair<float, float> directions)
+        : Attack(src, atkValue, position)
     {
         hitbox.setSize({40, 40});
         hitbox.setFillColor({0, 0, 0, 0});
-        hitbox.setPosition({positionX + 5, positionY + 5});
+        hitbox.setPosition({position.x + 5, position.y + 5});
         hitbox.setFillColor({0, 0, 0, 255});
 
         assignedDirections = directions;
@@ -19,7 +19,7 @@ namespace RangedAttacks
         sprite.emplace(texture);
 
         sprite->setScale({5.f, 5.f});
-        sprite->setPosition({positionX, positionY - 5});
+        sprite->setPosition({position.x, position.y - 5});
 
         source = src;
         value = atkValue;

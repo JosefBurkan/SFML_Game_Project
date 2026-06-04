@@ -13,8 +13,8 @@ namespace Attacks
 
         public:
             sf::RectangleShape hitbox;
-            Attack(std::string src, int atkValue, float positionX, float positionY);
-            void MoveHitbox(float positionX, float positionY);
+            Attack(std::string src, int atkValue, sf::Vector2f position);
+            void MoveHitbox(sf::Vector2f position);
             std::string GetSource();
             int GetValue();
             virtual void Draw(sf::RenderWindow& window);

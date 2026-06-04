@@ -15,15 +15,15 @@ namespace AttackManagers
         }
     }
 
-    void AttackManager::CreateAttack(std::string source, int atkValue, float positionX, float positionY)
+    void AttackManager::CreateAttack(std::string source, int atkValue, sf::Vector2f position)
     {
-        activeAttacks.push_back(std::make_unique<Attacks::Attack>(source, atkValue, positionX, positionY));
+        activeAttacks.push_back(std::make_unique<Attacks::Attack>(source, atkValue, position));
         attackLife = 0;
     }
 
-    void AttackManager::CreateRangedAttack(std::string source, int atkValue, float positionX, float positionY, std::pair<int, int> directions)
+    void AttackManager::CreateRangedAttack(std::string source, int atkValue, sf::Vector2f position, std::pair<int, int> directions)
     {
-        activeAttacks.push_back(std::make_unique<RangedAttacks::RangedAttack>(source, atkValue, positionX, positionY, directions));
+        activeAttacks.push_back(std::make_unique<RangedAttacks::RangedAttack>(source, atkValue, position, directions));
         attackLife = 0;
     }
 

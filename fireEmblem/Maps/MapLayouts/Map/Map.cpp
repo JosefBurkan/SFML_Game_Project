@@ -72,23 +72,23 @@ namespace Maps
     {
         auto& gridTiles = gridGenerator.RetrieveAllTiles();
 
-        walls[0].Position(gridTiles[1][5].GetPosition());
-        walls[1].Position(gridTiles[2][5].GetPosition());
-        walls[2].Position(gridTiles[3][5].GetPosition());
-        walls[3].Position(gridTiles[0][1].GetPosition());
-        walls[8].Position(gridTiles[0][5].GetPosition());
-        walls[4].Position(gridTiles[1][1].GetPosition());
-        walls[5].Position(gridTiles[2][1].GetPosition());
-        walls[6].Position(gridTiles[3][1].GetPosition());
-        walls[7].Position(gridTiles[4][1].GetPosition());
+        walls[0].SetPosition(gridTiles[5][1].GetPosition());
+        walls[1].SetPosition(gridTiles[5][2].GetPosition());
+        walls[2].SetPosition(gridTiles[5][3].GetPosition());
+        walls[3].SetPosition(gridTiles[1][0].GetPosition());
+        walls[8].SetPosition(gridTiles[5][0].GetPosition());
+        walls[4].SetPosition(gridTiles[1][1].GetPosition());
+        walls[5].SetPosition(gridTiles[1][2].GetPosition());
+        walls[6].SetPosition(gridTiles[1][3].GetPosition());
+        walls[7].SetPosition(gridTiles[1][4].GetPosition());
 
         for (auto wall : walls)
         {
             wall.SetTileToOccupied();
         }
 
-        trees[0].Position(gridTiles[2][5].GetPosition());
-        trees[1].Position(gridTiles[9][3].GetPosition());
+        trees[0].SetPosition(gridTiles[5][2].GetPosition());
+        trees[1].SetPosition(gridTiles[3][9].GetPosition());
         
         for (auto iTree : trees)
         {

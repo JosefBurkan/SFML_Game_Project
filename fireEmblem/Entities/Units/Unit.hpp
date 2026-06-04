@@ -18,6 +18,8 @@ namespace Units
             sf::Texture deathTexture;
             std::string spritePath;
             sf::Texture iconTexture;
+
+            sf::Vector2f tileLocation = {0, 0}; // Kordinater i index
             
             int tileSize = 50;
             int movement = 20;
@@ -94,7 +96,7 @@ namespace Units
 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
-            void spawn();
+            void setTileUnit();                 // Sette seg selv som peker for en spesifik tile
             virtual sf::Sprite GetIcon();
             std::pair<int, int> GetPosition();
             virtual void SetTileToOccupied();
@@ -117,7 +119,7 @@ namespace Units
             virtual void ResetDeathAnimation();
             virtual void SetPathToPlayer();             // Kjør algorithmen som scanner etter spiller og lager vei (For fiender)
 
-            virtual void Attack(float spawnLocationX, float spawnLocationY);
+            virtual void Attack(sf::Vector2f position);
 
             void RecieveExperience(int exp);
             int GrantExperience();

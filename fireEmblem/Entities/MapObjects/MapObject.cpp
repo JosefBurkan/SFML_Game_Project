@@ -49,9 +49,9 @@ namespace MapObjects
     }
 
     // Flytt til en annen rute
-    void MapObject::Position(std::pair<float, float> position)
+    void MapObject::SetPosition(sf::Vector2f position)
     {
-        sprite->setPosition({position.first, position.second});
+        sprite->setPosition(position);
     }
 
     void MapObject::Draw(sf::RenderWindow& window) 

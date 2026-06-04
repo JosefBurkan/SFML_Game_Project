@@ -8,7 +8,7 @@ namespace Swordsmen
     {
         public:
             Swordsman(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler);
-            void Attack(float spawnLocationX, float spawnLocationY) override;
+            void Attack(sf::Vector2f position) override;
 
     };
 }

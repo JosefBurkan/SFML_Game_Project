@@ -27,18 +27,14 @@ namespace Players
             int moving = 0;                                    // Hvor lenge animasjonen for å bevege seg skal vare
             bool finishedMoving = false;
 
-            float playerCurrentTileY = 100;
-            float playerCurrentTileX = 0;
-            float gridCurrentTileX = 0;
-            float gridCurrentTileY = 0;
+            sf::Vector2f gridCurrentTile = {0, 0};
 
             int menuCooldown = 30;                              // Gjør at det enklere å bruke menyen
             bool isSelected = false;                            // Sjekk om spilleren har blitt valgt
             bool preventSelect = false;                         // Forebygg at spilleren kan velges
             Tiles::Tile selectedTile;                           // Ruten som spilleren står spilleren på
             std::pair<float, float> retrievedTile;              // Ruten som for øyeblikket er valgt
-            sf::Vector2f previousPosition = sprite->getPosition();   // Hent spilleren sin posisjon
-            std::pair<int, int> previousTilePosition = {0, 0};   // Hent spilleren sin posisjon
+            sf::Vector2f previousPosition = {0, 0};   // Hent spilleren sin posisjon
             std::vector<Tiles::Tile> path = {};
 
 
@@ -53,7 +49,7 @@ namespace Players
             void SetTileToOccupied() override;
             void SetTileToUnOccupied() override;            
             void CancelSelect();
-            void Attack(float spawnLocationX, float spawnLocationY) override;
+            void Attack(sf::Vector2f position) override;
             void ConfirmMovement();
             bool IsMenuOpen();
             
