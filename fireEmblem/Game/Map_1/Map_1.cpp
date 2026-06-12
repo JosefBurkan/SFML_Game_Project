@@ -16,35 +16,30 @@ namespace Maps1 {
         map.SetGridMovement(gridHandler);
         map.SpawnObjects();
 
-
         // Init background
         background1.LoadTileMapFromFile();
 
         // Units
-        fireMage = std::make_shared<FireMages::FireMage>(grid, map, attacks, gridHandler);
-        enemy1 = std::make_shared<Enemies::Enemy>(grid, map, attacks, 300, 300);
-        slime1 = std::make_shared<Slimes::Slime>(grid, map, attacks, 350, 150);
-        slime2 = std::make_shared<Slimes::Slime>(grid, map, attacks, 400, 150);
-        swordsman = std::make_shared<Swordsmen::Swordsman>(grid, map, attacks, gridHandler);
+        fireMage = std::make_shared<FireMages::FireMage>(gridHandler, map, attacks);
+        slime1 = std::make_shared<Slimes::Slime>(gridHandler, map, attacks, 300, 150);
+        slime2 = std::make_shared<Slimes::Slime>(gridHandler, map, attacks, 400, 150);
+        swordsman = std::make_shared<Swordsmen::Swordsman>(gridHandler, map, attacks);
 
-        // unitManager.AddUnit(enemy1);
         unitManager.AddUnit(slime1);
         unitManager.AddUnit(slime2);
         unitManager.AddUnit(fireMage);
-        // unitManager.AddUnit(swordsman);
+        unitManager.AddUnit(swordsman);
 
         unitManager.SortUnits();
 
-        // unitManager.LoadUnits();
+        unitManager.LoadUnits();
 
         // Shader
         shader.setSize({1000.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
 
-        // swordsman->Place(0, 150);
+        swordsman->Place(0, 150);
 
-        // swordsman->SetTileToOccupied();
-        fireMage->SetTileToOccupied();
     }
 
     sf::View Map1::GetView()
@@ -147,7 +142,7 @@ namespace Maps1 {
                         unitManager.SetEnemyPath(*currentTurnUnit);
                         currentTurnUnit->state = "Moving";
                         moveLock = true;
-                        cooldownBetweenMoves = 80;
+                        cooldownBetweenMoves = 30;
                     }
                     // Beveg fienden mot spilleren til den stopper en rute forran
                     if (currentTurnUnit->state == "Moving")
@@ -203,6 +198,6 @@ namespace Maps1 {
             // Oppdater tidslinjen
             overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
 
-            overView.Draw(window, camera.GetPosition(), overView.CreateText(fireMage->name, fireMage->currentHealth, fireMage->speed, fireMage->level));
+            unitManager.DrawOverview(window, gridHandler.GetSelectedUnit());
     }
 }

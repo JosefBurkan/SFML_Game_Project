@@ -7,7 +7,7 @@ namespace Swordsmen
     class Swordsman : public Players::Player 
     {
         public:
-            Swordsman(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler);
+            Swordsman(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void Attack(sf::Vector2f position) override;
 
     };

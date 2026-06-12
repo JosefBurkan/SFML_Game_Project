@@ -3,15 +3,23 @@
 namespace Players 
 {
     // Initialiser spilleren, gridden den hører til og bevegelsen.
-    Player::Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, 
-                    AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
-        : Unit(gridReference, map, attacks), GridHandler(GridHandler)
+    Player::Player(GridHandlers::GridHandler& gridHandler, Maps::Map& map, 
+                    AttackManagers::AttackManager& attacks)
+        : Unit(gridHandler, map, attacks)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Prinsesse-50x50.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
         if (!attackTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Princess_Shoot.png")) {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+        if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_death.png")) {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+        if (!iconTextureLarge.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_ansikt.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
@@ -31,6 +39,7 @@ namespace Players
 
         sprite.emplace(defaultTexture);
         attackSprite.emplace(attackTexture);
+        deathSprite.emplace(deathTexture);
         
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition(tileLocation * 50.f);
@@ -67,9 +76,9 @@ namespace Players
 
     void Player::CancelSelect()
     {
-        auto& tiles = GridHandler.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
 
-        Tiles::Tile tile = GridHandler.GetSelectedTile(); // Hent hvilken rute spilleren står på
+        Tiles::Tile tile = gridHandler.GetSelectedTile(); // Hent hvilken rute spilleren står på
         
         gridCurrentTile = tile.GetPosition();
         
@@ -84,7 +93,7 @@ namespace Players
         preventSelect = false;
         SetTileToUnOccupied();
         tile.UnSelect();
-        algorithm.CleanGrid(tiles, gridCurrentTile.x, gridCurrentTile.y);     // Fjern de markerte rutene 
+        algorithm.CleanGrid(tiles);     // Fjern de markerte rutene 
 
         sprite->setPosition({previousPosition});
         attackSprite->setPosition({previousPosition});
@@ -97,9 +106,9 @@ namespace Players
     void Player::ConfirmMovement()
     {
 
-        auto& tiles = GridHandler.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
 
-        selectedTile = GridHandler.GetSelectedTile();    
+        selectedTile = gridHandler.GetSelectedTile();    
 
         SetPathToSelectedTile();
 
@@ -109,7 +118,7 @@ namespace Players
         isSelected = false;
         preventSelect = false;
 
-        algorithm.CleanGrid(tiles, previousPosition.y, previousPosition.x);     // Fjern rutene
+        algorithm.CleanGrid(tiles);     // Fjern rutene
 
         CheckForMapObjects();
 
@@ -131,15 +140,15 @@ namespace Players
         {
             if (moving <= 0)
             {
-                auto& tiles = gridGenerator.RetrieveAllTiles();
+                auto& tiles = gridHandler.RetrieveAllTiles();
 
                 // Her så må currentTile settes til sine motsatte verdier, da mitt tilesystem og Vector2f fungerer motsatt vei
                 float currentTileY = path[numOfMoves].GetPosition().x;
                 float currentTileX = path[numOfMoves].GetPosition().y;
 
-                if (numOfMoves < path.size() - 1)
+                if (numOfMoves > 0)
                 {
-                    numOfMoves++;
+                    numOfMoves--;
                 }
                 else
                 {
@@ -161,37 +170,44 @@ namespace Players
             {
                 sprite->move({calculatedPathY, calculatedPathX});
             }
-
         }
     }
 
     void Player::SetPathToSelectedTile()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
 
-        path = pathAlgorithm.CheckAvailableTiles(selectedTile.GetPosition(), tiles);
+
+        path = pathAlgorithm.CheckAvailableTiles(sprite->getPosition(), tiles);
 
         moving = 0;
-        numOfMoves = 0;
+        numOfMoves = path.size() - 1;
 
         movementTime = path.size() * 10;    // Setter tiden som gåanimasjonen skal vare
 
         for (int i = 0; i < path.size(); i++)
         {
-            std::cout << " X: " << path[i].GetPosition().x << " Y: " << path[i].GetPosition().y;
+            // std::cout << " X: " << path[i].GetPosition().x << " Y: " << path[i].GetPosition().y;
         }
     }
 
     void Player::SetTileToUnOccupied()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = false;
     }
 
     void Player::SetTileToOccupied()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
-        tiles[tileLocation.y / 50][tileLocation.x].IsOccupiedByPlayer = true;
+        auto& tiles = gridHandler.RetrieveAllTiles();
+
+        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = false;
+        tiles[tileLocation.y][tileLocation.x].RemoveUnit();
+
+        tiles[gridCurrentTile.y][gridCurrentTile.x].IsOccupiedByPlayer = true;
+        tiles[gridCurrentTile.y][gridCurrentTile.x].SetUnit(this);
+
+        tiles[gridCurrentTile.y][gridCurrentTile.x].isSelected = false;
     }
 
     bool Player::IsMenuOpen()
@@ -209,9 +225,9 @@ namespace Players
     // Håndtere bevegelsen av spilleren
     void Player::Movement()
     {
-        auto& tiles = GridHandler.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
 
-        selectedTile = GridHandler.GetSelectedTile();     
+        selectedTile = gridHandler.GetSelectedTile();     
 
         gridCurrentTile = selectedTile.GetPosition() / 50.f;
 
@@ -232,7 +248,7 @@ namespace Players
                 {
                     isSelected = true;
                     preventSelect = false;
-                    algorithm.CreateRoute(gridCurrentTile, movement, tiles);
+                    algorithm.CreateRoute(sprite->getPosition() / 50.f, movement, tiles);
                     state = "Selected";
                 }
             }
@@ -245,7 +261,7 @@ namespace Players
         else if (isSelected == true && preventSelect == true) 
         {
             // Sjekk om ruten er okkupert
-            if (!GridHandler.IsOccupied(selectedTile)
+            if (!gridHandler.IsOccupied(selectedTile)
              && selectedTile.inRange)
             {
                 // Om 'A' trykkes, flytt spilleren
@@ -282,8 +298,8 @@ namespace Players
                         sprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
                         attackSprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
                         deathSprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
-                        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = false;
-                        tiles[gridCurrentTile.y][gridCurrentTile.x].IsOccupiedByPlayer = true;
+                        SetTileToOccupied();
+
                         finishedMoving = false;
                         break;
                     case 1:
@@ -317,7 +333,7 @@ namespace Players
         }
         if (isSelected)
         {
-            GridHandler.ColorTile();
+            gridHandler.ColorTile();
         }
     }
 

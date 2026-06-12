@@ -19,6 +19,7 @@ namespace Tiles
             int tileNumber = 0;
             bool inRange = false;                            // Har karakteren nok movement for å gå dit
             bool display = false;
+            bool isSelected = false;                // For den ruta som er valgt av spilleren
 
 
             // Disse ID'ene er kun for algorithme pathfinding
@@ -31,6 +32,9 @@ namespace Tiles
 
             Tile() : Tile(0.f, 0.f) {}
             Tile(float x, float y);
+            void SetUnit(Units::Unit* unitPtr);  // Sett peker til uniten som står oppå den
+            void RemoveUnit();  // Sett peker til uniten som står oppå den
+            Units::Unit* GetUnit();
             void ChangeColor(bool onSelect);        // Lys opp ruten om en enhet har blitt valgt
             void Select();
             void UnSelect();

@@ -53,7 +53,7 @@ namespace GridPathAlgorithms
     }
 
     // Fjern de fargete rutene etter en spiller flytter seg
-    void GridPathAlgorithm::CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles, float gridCurrentTileY, float gridCurrentTileX)
+    void GridPathAlgorithm::CleanGrid(std::vector<std::vector<Tiles::Tile>>& tiles)
     {
         for (auto& tile : tiles)
         {

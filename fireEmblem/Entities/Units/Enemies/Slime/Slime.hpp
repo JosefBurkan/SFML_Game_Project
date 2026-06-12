@@ -24,7 +24,7 @@ namespace Slimes
             int cooldown = 0;
 
         public:
-            Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
+            Slime(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void Draw(sf::RenderWindow& window) override;
             void PerformActions() override;
             void SetPathToPlayer() override;             // Kjør algorithmen som scanner etter spiller og lager vei

@@ -10,10 +10,11 @@ namespace OverViews
     {
         private:
             sf::RectangleShape background;
+
             sf::Font font;
 
-            sf::Texture princessFaceTexture;
-            std::optional<sf::Sprite> princessFace;
+            sf::Texture unitFaceTexture;
+            std::optional<sf::Sprite> unitFace;
 
             sf::Texture princessIconTexture;
             std::optional<sf::Sprite> princessIcon;
@@ -25,9 +26,9 @@ namespace OverViews
             
         public:
             OverView();
-            sf::Text CreateText(std::string name, int health, int speed, int level);
+            sf::Text CreateText(Units::Unit* unit);
             void ManageTimeline(std::vector<std::shared_ptr<Units::Unit>> units, sf::RenderWindow& window, int cameraY);   // Håndterer tidslinjen som viser rekkefølgen til units
-            void Draw(sf::RenderWindow& window, std::pair<float, float> cameraPositions, sf::Text text);
+            void Draw(sf::RenderWindow& window, sf::Text text, sf::Texture texture);
             
     };
 }

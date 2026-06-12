@@ -109,14 +109,19 @@ namespace UnitsManagers
 
             ++it;
         }
-
         if (needsSorting)
         {
             SortUnits();
         }
-
     }
 
+    void UnitsManager::DrawOverview(sf::RenderWindow& window, Units::Unit* unit)
+    {
+        if (unit)
+        {
+            overView.Draw(window, overView.CreateText(unit), unit->iconTextureLarge);
+        }
+    }
 
     void UnitsManager::LoadUnits()
     {

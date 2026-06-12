@@ -55,7 +55,7 @@ namespace PlayerPathAlgorithms
 
                 tiles[next.first][next.second].parent = &tiles[pos.first][pos.second];
 
-                if (tiles[next.first][next.second].IsOccupiedByPlayer)
+                if (tiles[next.first][next.second].isSelected)
                 {
                     playerDetected = true;
                     return TracePath(&tiles[next.first][next.second]);

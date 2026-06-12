@@ -3,24 +3,22 @@
 namespace Units 
 {
     // spritePath er for å kunne sette sprites til enheter når de opprettes
-    Unit::Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks) 
-            : gridGenerator(gridReference), map(map), attacks(attacks)
+    Unit::Unit(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks) 
+            : gridHandler(gridHandler), map(map), attacks(attacks)
     {
         int randomNum = rand() % 4;
 
         framesUntilDraw = (randomNum * 3) - 1;
         
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_Icon.png");
-
-        
-        if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Death_Animation.png")) 
+        if (!iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_Icon.png"))
         {
-            throw std::runtime_error("Failed to load texture!");
+            throw ("File not found");
         }
 
-        deathSprite.emplace(deathTexture);
-        deathSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
-        deathSprite->setPosition({0, 0});
+        if (!iconTextureLarge.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_Icon.png"))
+        {
+            throw ("File not found ");
+        }
 
     }
     
@@ -139,7 +137,7 @@ namespace Units
                 {
                     dyingTextureY = 0;
                 }
-            }
+            } 
 
             deathSprite->setTextureRect(sf::IntRect({dyingTextureX, dyingTextureY}, {50, 50}));
 
@@ -249,19 +247,19 @@ namespace Units
 
     void Unit::SetTileToOccupied()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = true;
     }
 
     void Unit::SetTileToUnOccupied()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
     }
 
     void Unit::setTileUnit()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].unit = this;
 
     }

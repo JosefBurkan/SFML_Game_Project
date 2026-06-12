@@ -2,12 +2,20 @@
 
 namespace FireMages
 {
-    FireMage::FireMage(GridGenerators::GridGenerator& gridReference, Maps::Map& map, 
-                    AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler)
-        : Player(gridReference, map, attacks, GridHandler)
+    FireMage::FireMage(GridHandlers::GridHandler& gridHandler, Maps::Map& map, 
+                    AttackManagers::AttackManager& attacks)
+        : Player(gridHandler, map, attacks)
     {
         name = "FireMage";
-        tileLocation.y = 100;
+
+        
+
+        auto& tiles = gridHandler.RetrieveAllTiles();
+
+        tileLocation.y = 2;
+
+        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = true;
+        tiles[tileLocation.y][tileLocation.x].SetUnit(this);
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
     }

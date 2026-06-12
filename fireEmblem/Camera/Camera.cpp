@@ -34,7 +34,7 @@ namespace Cameras {
 
 
         // det er plusset med 250, fordi viewsize teller bare fra midten av skjermen. 
-        if (selectedTileY > viewSize.x + 250)
+        if (selectedTileY > viewSize.x + 350)
         {
             view.move(moveHorisontally);
         }

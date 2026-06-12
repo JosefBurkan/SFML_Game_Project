@@ -10,7 +10,7 @@ namespace Units
     class Unit 
     {
         protected:  
-            GridGenerators::GridGenerator& gridGenerator;
+            GridHandlers::GridHandler& gridHandler;
             AttackManagers::AttackManager& attacks;
             Maps::Map& map;
             sf::Texture defaultTexture;
@@ -65,6 +65,8 @@ namespace Units
             int experienceToGrant = 5;
 
         public: 
+            sf::Texture iconTextureLarge;
+    
             std::optional<sf::Sprite> sprite;
             std::optional<sf::Sprite> attackSprite;
             std::optional<sf::Sprite> deathSprite;    
@@ -95,7 +97,7 @@ namespace Units
             std::string state = "Neutral";  // Kun for player
 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
-            Unit(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks);
+            Unit(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void setTileUnit();                 // Sette seg selv som peker for en spesifik tile
             virtual sf::Sprite GetIcon();
             std::pair<int, int> GetPosition();

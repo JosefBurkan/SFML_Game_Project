@@ -9,9 +9,10 @@ namespace HealthBars
         // De ulike lagene til healthbaren
         sf::RectangleShape rectangleGreen;
         sf::RectangleShape rectangleRed;
+        int width = 50;
 
         public:
         HealthBar(float unitPosX, float unitPosY);
-        void Draw(sf::RenderWindow& window, float health, float maxHealth);
+        void Draw(sf::RenderWindow& window, int health, int maxHealth);
     };
 }

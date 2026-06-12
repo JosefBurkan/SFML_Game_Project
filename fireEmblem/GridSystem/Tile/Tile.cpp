@@ -1,4 +1,5 @@
 #include "Tile.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 
 namespace Tiles 
 {
@@ -12,12 +13,32 @@ namespace Tiles
         rectangle.setPosition({y, x});
     }
 
+
+    void Tile::SetUnit(Units::Unit* unitPtr)
+    {
+        unit = unitPtr;
+    }
+
+    void Tile::RemoveUnit()
+    {
+        unit = nullptr;
+    }
+
+    Units::Unit* Tile::GetUnit()
+    {
+        if (unit != nullptr)
+        {
+            return unit;
+        }
+        return {};
+    }
+
     // Lys opp ruten om en enhet har blitt valgt
     void Tile::ChangeColor(bool onSelect)
     {
         if (onSelect)
         {
-            rectangle.setOutlineColor(sf::Color(115, 50, 250, 255));
+            rectangle.setOutlineColor(sf::Color(100, 100, 255, 255));
             rectangle.setOutlineThickness(5.f);
             display = true;
         }
@@ -28,6 +49,7 @@ namespace Tiles
             display = false;
         }
     }
+
 
     void Tile::Highlight(std::pair<float, float> playerPosition, int gridSizeX, int gridSizeY)
     {

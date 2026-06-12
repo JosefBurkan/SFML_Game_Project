@@ -3,8 +3,8 @@
 
 namespace Enemies
 {
-    Enemy::Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
-        : Unit(gridReference, map, attacks)
+    Enemy::Enemy(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
+        : Unit(gridHandler, map, attacks)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Pixel_Bat.png")) 
         {
@@ -51,13 +51,13 @@ namespace Enemies
 
     void Enemy::SetTileToOccupied()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = true;
     }
 
     void Enemy::SetTileToUnOccupied()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
     }
 

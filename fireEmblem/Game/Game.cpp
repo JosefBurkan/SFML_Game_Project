@@ -33,7 +33,7 @@ namespace Games
         sf::RenderWindow& window = newWindow;
 
         window.setFramerateLimit(60);
-        // window.setView(map1.GetView());
+        window.setView(map1.GetView());
 
         while (window.isOpen())
         {
@@ -43,9 +43,9 @@ namespace Games
                     window.close();
             }
 
-            // moveView = map1.MoveView();
+            moveView = map1.MoveView();
 
-            // window.setView(moveView);
+            window.setView(moveView);
 
             window.display();
 

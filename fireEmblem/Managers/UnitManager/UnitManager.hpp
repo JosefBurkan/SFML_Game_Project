@@ -31,14 +31,17 @@ namespace UnitsManagers
             void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
             void LoadUnits();
+            void SortUnits();      // Sorterer units etter speed. Raskeste går først
+
             void PerformEnemyActions(Units::Unit& currentTurnUnit);
             void PerformEnemyMovement(Units::Unit& currentTurnUnit);
             void PerformPlayerSmoothMovement(Units::Unit& currentTurnUnit);
             void SetEnemyPath(Units::Unit& currentTurnUnit);
-            void SortUnits();      // Sorterer units etter speed. Raskeste går først
-            void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
-            int GetSize();
 
+
+            void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
+            void DrawOverview(sf::RenderWindow& window, Units::Unit* unit);
+            int GetSize();
 
             // Setter rekkefølgen til units i hver runde
             void AssignOrder();   

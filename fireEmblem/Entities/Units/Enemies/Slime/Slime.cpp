@@ -2,8 +2,8 @@
 
 namespace Slimes
 {
-    Slime::Slime(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
-        : Enemy(gridReference, map, attacks, yPos, xPos)
+    Slime::Slime(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
+        : Enemy(gridHandler, map, attacks, yPos, xPos)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime-2.png")) 
         {
@@ -15,7 +15,32 @@ namespace Slimes
             throw std::runtime_error("Failed to load texture!");
         }
 
+        if (!iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Icon.png")) {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+        if (!iconTextureLarge.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Icon_Zoom.png"))
+        {
+            throw ("File not found ");
+        }
+
+
         name = "Slime";
+
+        auto& tiles = gridHandler.RetrieveAllTiles();
+
+        // Må reverseres her
+        tileLocation.x = yPos / 50;
+        tileLocation.y = xPos / 50;
+
+        std::cout << "\nY Koordinat:" << tileLocation.y;
+
+        tiles[tileLocation.y][tileLocation.x].SetUnit(this);
+        tiles[tileLocation.y][tileLocation.x].IsOccupied = true;
+
+        // std::cout << "\nTest: " << tiles[tileLocation.y][tileLocation.x].unit->name;
+
+        std::cout << "Stored ptr: " << tiles[tileLocation.y][tileLocation.x].unit << '\n';
 
         sprite.emplace(defaultTexture);
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
@@ -26,12 +51,8 @@ namespace Slimes
         deathSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
         deathSprite->setPosition({yPos, xPos});
 
-
         movement = 4;
 
-        iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/slime_Icon.png");
-
-        SetTileToOccupied();
     }
 
     void Slime::Draw(sf::RenderWindow& window)
@@ -75,7 +96,7 @@ namespace Slimes
             if (cooldown == 0)
             {
 
-                auto& tiles = gridGenerator.RetrieveAllTiles();
+                auto& tiles = gridHandler.RetrieveAllTiles();
 
                 float currentTileY = pathToPlayer[numOfMoves].GetPosition().y;
                 float currentTileX = pathToPlayer[numOfMoves].GetPosition().x;
@@ -107,10 +128,11 @@ namespace Slimes
 
     void Slime::SetPathToPlayer()
     {
-        auto& tiles = gridGenerator.RetrieveAllTiles();
+        auto& tiles = gridHandler.RetrieveAllTiles();
 
         pathToPlayer = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
 
         numOfMoves = pathToPlayer.size() - 1;
+
     }
 }

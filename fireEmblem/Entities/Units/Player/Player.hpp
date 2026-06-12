@@ -15,7 +15,6 @@ namespace Players
     class Player : public Units::Unit 
     {
         protected:
-            GridHandlers::GridHandler& GridHandler;          // Funksjonalitet for bevegelse
             GridPathAlgorithms::GridPathAlgorithm algorithm;
             PlayerPathAlgorithms::PlayerPathAlgorithm pathAlgorithm;
 
@@ -39,7 +38,7 @@ namespace Players
 
 
         public:
-            Player(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, GridHandlers::GridHandler& GridHandler);
+            Player(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void Movement() override;
             void SmoothMove() override;
             void SetPathToSelectedTile();

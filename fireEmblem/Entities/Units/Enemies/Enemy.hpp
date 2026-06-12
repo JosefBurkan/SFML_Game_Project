@@ -13,7 +13,7 @@ namespace Enemies
         protected:
 
         public:
-            Enemy(GridGenerators::GridGenerator& gridReference, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
+            Enemy(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void CheckForAttacks();
             void Draw(sf::RenderWindow& window) override;
             void SetTileToOccupied() override;

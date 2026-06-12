@@ -1,4 +1,5 @@
 #include "GridHandler.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Unit.hpp"
 
 namespace GridHandlers
 {
@@ -15,30 +16,58 @@ namespace GridHandlers
         auto& tiles = grid.RetrieveAllTiles();
         int prevX = selectedTileX;
         int prevY = selectedTileY;
+        static bool firstMove = true;      // Skal gjøre det enklere å bevege presist
+        static int movementDelay = 0;      // Skal gjøre det enklere å bevege presist
 
         rangeX = 0;
         rangeY = 0;
 
-        if (movementCooldown > 2) {
+    // Sekvensen under er for å skape 'hakkende' bevegelse når man først beveger seg. Gjør det enklere å beve en rute om gangen
+    if (movementCooldown > 2) 
+    {
+        if (NoMovement())      // Dersom spilleren ikke beveger seg
+        {
+            firstMove = true;
+        }
+        else if (firstMove || movementDelay == 0)    // Første bevegelse
+        {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && selectedTileX < columns - 1) {
                 selectedTileX++;
+                firstMove = false;
             } if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && selectedTileX > 0) {
                 selectedTileX--;
+                firstMove = false;
             } if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) && selectedTileY < rows - 1) {
                 selectedTileY++;
+                firstMove = false;
             } if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) && selectedTileY > 0) {
                 selectedTileY--;
+                firstMove = false;
             }
             movementCooldown = 0;
-        } else 
+        } 
+        else                        // Skaper delay mellom første og de neste bevegelsene
         {
-            movementCooldown++;
+            movementDelay--;
         }
+
+        if (firstMove)
+        {
+            movementDelay = 10;
+        }
+    }
+    else 
+    {
+        movementCooldown++;
+    }
+
+
         // Visker vekk den valgte ruten, slik at det kun er en om gangen
         if (prevX != selectedTileX || prevY != selectedTileY) {
             tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
         }
+
     }
 
     void GridHandler::MovementWhileSelected()
@@ -47,6 +76,7 @@ namespace GridHandlers
         int prevX = selectedTileX;
         int prevY = selectedTileY;
 
+
         rangeX = 0;
         rangeY = 0;
 
@@ -61,6 +91,7 @@ namespace GridHandlers
                 selectedTileY--;
             }
             movementCooldown = 0;
+
         } else 
         {
             movementCooldown++;
@@ -71,6 +102,9 @@ namespace GridHandlers
         if (prevX != selectedTileX || prevY != selectedTileY) {
             tiles[prevY][prevX].ChangeColor(false);
             tiles[selectedTileY][selectedTileX].ChangeColor(true);
+
+            tiles[prevY][prevX].isSelected = false;
+            tiles[selectedTileY][selectedTileX].isSelected = true;
         }
     }
 
@@ -109,6 +143,19 @@ namespace GridHandlers
 
     }
 
+    bool GridHandler::NoMovement()
+    {
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) &&  
+            !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) &&
+            !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down) &&
+            !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
+            {
+                return true;
+            }
+
+        return false;
+    }
+
     void GridHandler::RestorePosition(sf::Vector2f position)
     {
 
@@ -131,6 +178,14 @@ namespace GridHandlers
         auto& tiles = grid.RetrieveAllTiles();
         
         return tiles;
+    }
+
+    // Hent uniten som ruta peker til, om den ikke er null
+    Units::Unit* GridHandler::GetSelectedUnit()
+    {
+        auto& tiles = grid.RetrieveAllTiles();
+
+        return tiles[selectedTileY][selectedTileX].GetUnit();
     }
 
     void GridHandler::ColorTile()
