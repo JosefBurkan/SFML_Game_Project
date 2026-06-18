@@ -22,7 +22,7 @@ namespace Units
             sf::Vector2f tileLocation = {0, 0}; // Kordinater i index
             
             int tileSize = 50;
-            int movement = 20;
+            int movement = 5;
             float calculatedPathX = 0;
             float calculatedPathY = 0;
 
@@ -87,7 +87,7 @@ namespace Units
 
             int deathAnimationTimer = 60;
 
-            int attackSpawnTimer = 16;   // Når angrepet (hitboxen) skal lages
+            int attackSpawnTimer = 16;   // Når angrepet (hitboxen) skal lages 
             int maxAttackSpawnTimer = 16;
 
             bool inMenu = false;          // Sjekk om menyen er åpen, eksisterer for å fortelle dette til andre klasser og brukes kun av player               

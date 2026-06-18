@@ -46,7 +46,8 @@ namespace Players
             void DrawUI(sf::RenderWindow& window) override;
             // void Draw(sf::RenderWindow& window) override;
             void SetTileToOccupied() override;
-            void SetTileToUnOccupied() override;            
+            void SetTileToUnOccupied() override;      
+            void RevertOccupation();     // Sett okkupasjonen til sånn den var før spilleren bevegde seg      
             void CancelSelect();
             void Attack(sf::Vector2f position) override;
             void ConfirmMovement();

@@ -38,8 +38,6 @@ namespace Slimes
         tiles[tileLocation.y][tileLocation.x].SetUnit(this);
         tiles[tileLocation.y][tileLocation.x].IsOccupied = true;
 
-        // std::cout << "\nTest: " << tiles[tileLocation.y][tileLocation.x].unit->name;
-
         std::cout << "Stored ptr: " << tiles[tileLocation.y][tileLocation.x].unit << '\n';
 
         sprite.emplace(defaultTexture);
@@ -131,6 +129,12 @@ namespace Slimes
         auto& tiles = gridHandler.RetrieveAllTiles();
 
         pathToPlayer = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
+
+        if (algorithm.playerDetected == true)
+        {
+            tileLocation.x = pathToPlayer[1].GetPosition().x / 50;
+            tileLocation.y = pathToPlayer[1].GetPosition().y / 50;
+        }
 
         numOfMoves = pathToPlayer.size() - 1;
 

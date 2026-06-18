@@ -36,7 +36,6 @@ namespace Players
         tileLocation.y = 2;
         tileLocation.x = 0;
 
-
         sprite.emplace(defaultTexture);
         attackSprite.emplace(attackTexture);
         deathSprite.emplace(deathTexture);
@@ -45,6 +44,8 @@ namespace Players
         sprite->setPosition(tileLocation * 50.f);
 
         attackSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+
+        previousPosition = sprite->getPosition();
 
         attackingDrawSpeed = 7;
         attackTimer = 42;   
@@ -78,34 +79,33 @@ namespace Players
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        Tiles::Tile tile = gridHandler.GetSelectedTile(); // Hent hvilken rute spilleren står på
-        
-        gridCurrentTile = tile.GetPosition();
-        
-        state = "Neutral";
+        selectedTile = gridHandler.GetSelectedTile();
 
+        Tiles::Tile tile = gridHandler.GetSelectedTile(); // Hent hvilken rute som er valgt
+        
+        gridCurrentTile = tile.GetPosition() / 50.f;
+        
         menu.show = false;
         skills.show = false;
         inMenu = false;
+
         finishedMoving = false;
 
-        isSelected = false;
-        preventSelect = false;
-        SetTileToUnOccupied();
         tile.UnSelect();
         algorithm.CleanGrid(tiles);     // Fjern de markerte rutene 
 
         sprite->setPosition({previousPosition});
         attackSprite->setPosition({previousPosition});
-        SetTileToOccupied();
+        RevertOccupation();
 
         tileLocation.y = previousPosition.y / 50;
         tileLocation.x = previousPosition.x / 50;
+
+        state = "Neutral";
     }   
 
     void Player::ConfirmMovement()
     {
-
         auto& tiles = gridHandler.RetrieveAllTiles();
 
         selectedTile = gridHandler.GetSelectedTile();    
@@ -123,7 +123,6 @@ namespace Players
         CheckForMapObjects();
 
         // Alt relatert til menyene pathToPlayer
-        selectedTile.IsOccupiedByPlayer = true;
         menuCooldown = 30;
         menu.show = true;
         inMenu = true;
@@ -131,7 +130,6 @@ namespace Players
         skills.SetPosition((tileLocation.x * 50) - 120, (tileLocation.y * 50) - 50);
 
         state = "Moving";
-
     }
 
     void Player::SmoothMove()
@@ -177,7 +175,6 @@ namespace Players
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-
         path = pathAlgorithm.CheckAvailableTiles(sprite->getPosition(), tiles);
 
         moving = 0;
@@ -187,7 +184,7 @@ namespace Players
 
         for (int i = 0; i < path.size(); i++)
         {
-            // std::cout << " X: " << path[i].GetPosition().x << " Y: " << path[i].GetPosition().y;
+            std::cout << " X: " << path[i].GetPosition().x << " Y: " << path[i].GetPosition().y;
         }
     }
 
@@ -195,6 +192,7 @@ namespace Players
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
         tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = false;
+        tiles[tileLocation.y][tileLocation.x].RemoveUnit();
     }
 
     void Player::SetTileToOccupied()
@@ -208,6 +206,19 @@ namespace Players
         tiles[gridCurrentTile.y][gridCurrentTile.x].SetUnit(this);
 
         tiles[gridCurrentTile.y][gridCurrentTile.x].isSelected = false;
+
+    }
+
+    void Player::RevertOccupation()
+    {
+        auto& tiles = gridHandler.RetrieveAllTiles();
+
+        tiles[gridCurrentTile.y][gridCurrentTile.x].IsOccupiedByPlayer = false;
+        tiles[gridCurrentTile.y][gridCurrentTile.x].RemoveUnit();
+
+        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = true;
+        tiles[tileLocation.y][tileLocation.x].SetUnit(this);
+
     }
 
     bool Player::IsMenuOpen()
@@ -252,10 +263,6 @@ namespace Players
                     state = "Selected";
                 }
             }
-            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
-            {
-                CancelSelect();
-            }
         }
         // Sjekk om spilleren har blitt valgt
         else if (isSelected == true && preventSelect == true) 
@@ -285,6 +292,9 @@ namespace Players
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menuCooldown <= 0 && finishedMoving)
             {
+                std::cout << "\nCD: " << menuCooldown;
+                std::cout << "\nBevegelse: " << finishedMoving;
+                
                 menu.show = false;
 
                 deathSprite->setPosition(tileLocation * 50.f);
@@ -298,9 +308,10 @@ namespace Players
                         sprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
                         attackSprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
                         deathSprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
+                        previousPosition = sprite->getPosition();
                         SetTileToOccupied();
 
-                        finishedMoving = false;
+                        finishedMoving = true;
                         break;
                     case 1:
                         skills.show = true;

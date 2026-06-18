@@ -85,6 +85,7 @@ namespace Tiles
 
     void Tile::UnSelect() 
     {
+        bool isSelected = false;
         rectangle.setFillColor(sf::Color(255, 255, 255, 0));
         rectangle.setOutlineThickness(5.f);
     }

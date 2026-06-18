@@ -48,6 +48,9 @@ namespace PlayerPathAlgorithms
                 if (tiles[next.first][next.second].IsOccupied)
                     continue;
 
+                if (tiles[next.first][next.second].unit != nullptr)
+                    continue;
+
                 if (visited.count(next))
                     continue;
 

@@ -10,11 +10,11 @@ namespace GridPathAlgorithms
         std::set<std::pair<int, int>> visited;          // Hvilke ruter er besøkt
         std::vector<std::pair<int, int>> directions = {{1,0},{-1,0},{0,1},{0,-1}}; // Ned, opp, høyre, venstre
 
-        int startY = start.x;
-        int startX = start.y;
+        int startY = start.y;
+        int startX = start.x;
 
-        visited.insert({startY / 50, startX / 50});
-        q.push({startY / 50, startX / 50, 0});
+        visited.insert({startY, startX});
+        q.push({startY, startX, 0});
 
         while (!q.empty())
         {
@@ -36,7 +36,7 @@ namespace GridPathAlgorithms
                 if (nx < 0 || ny < 0 || ny >= tiles.size() || nx >= tiles[0].size()) continue;
                 // Ikke beveg på okkuperte ruter
                 if (tiles[ny][nx].IsOccupied) continue;
-                if (tiles[ny][nx].IsOccupiedByPlayer) continue;
+                if (tiles[ny][nx].unit != nullptr) continue;
 
                 if (visited.count({ny,nx})) continue;
 
@@ -59,6 +59,7 @@ namespace GridPathAlgorithms
         {
             for (auto& t : tile)
             {
+                t.isSelected = false;
                 t.inRange = false;
                 t.parent = nullptr;
             }

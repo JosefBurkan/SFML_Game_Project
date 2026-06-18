@@ -52,13 +52,18 @@ namespace Enemies
     void Enemy::SetTileToOccupied()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
-        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = true;
+
+        tiles[tileLocation.y][tileLocation.x].IsOccupied = true;
+        tiles[tileLocation.y][tileLocation.x].SetUnit(this);
     }
 
     void Enemy::SetTileToUnOccupied()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
-        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
+
+        tiles[tileLocation.y][tileLocation.x].IsOccupied = false;
+        tiles[tileLocation.y][tileLocation.x].RemoveUnit();
+
     }
 
     void Enemy::PerformActions()

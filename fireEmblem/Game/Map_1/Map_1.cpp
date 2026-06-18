@@ -60,6 +60,9 @@ namespace Maps1 {
 
     void Map1::Run(sf::RenderWindow& window)
     {
+        static int cooldownBetweenMoves = 30;
+        static int gameTurn = 0;
+
         window.draw(background1);
 
         map.DrawMapObjects(window);
@@ -87,6 +90,7 @@ namespace Maps1 {
 
                     if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Neutral")
                     {
+                        moveLock = false;
                         gridHandler.Movement();
                     }
                     else if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Selected")
@@ -102,6 +106,7 @@ namespace Maps1 {
                         }
                         if (cooldownBetweenMoves >= 0)
                         {
+                            std::cout << "\nMovementTimer: " << cooldownBetweenMoves;
                             unitManager.PerformPlayerSmoothMovement(*currentTurnUnit);
                             cooldownBetweenMoves--;
                         }

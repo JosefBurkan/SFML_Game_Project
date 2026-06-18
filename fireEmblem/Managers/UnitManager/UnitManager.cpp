@@ -138,14 +138,15 @@ namespace UnitsManagers
 
     void UnitsManager::SetEnemyPath(Units::Unit& currentTurnUnit)
     {
+        currentTurnUnit.SetTileToUnOccupied();
         currentTurnUnit.SetPathToPlayer();
+        currentTurnUnit.SetTileToOccupied();
+
     }
 
     void UnitsManager::PerformEnemyMovement(Units::Unit& currentTurnUnit)
     {
-        currentTurnUnit.SetTileToUnOccupied();
         currentTurnUnit.Movement(); 
-        currentTurnUnit.SetTileToOccupied();
     }
 
     void UnitsManager::PerformPlayerSmoothMovement(Units::Unit& currentTurnUnit)
