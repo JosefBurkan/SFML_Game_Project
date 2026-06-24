@@ -54,7 +54,7 @@ namespace EnemyPathAlgorithms
                 tiles[nextY][nextX].parent = &tiles[y][x];
 
 
-                if (tiles[nextY][nextX].IsOccupiedByPlayer)
+                if (tiles[nextY][nextX].unit != nullptr)
                 {
                     playerDetected = true;
                     return TracePath(&tiles[nextY][nextX]);

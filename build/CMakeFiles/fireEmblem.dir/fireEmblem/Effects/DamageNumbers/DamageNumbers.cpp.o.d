@@ -1,11 +1,7 @@
-CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp.o: \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../Unit.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/../Tile/../../config.hpp \
+CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o: \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
@@ -976,57 +972,4 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Glsl.inl \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/Text.hpp \
-  /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/../GridGenerator/GridGenerator.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../GridSystem/GridHandler/../GridGenerator/../Tile/Tile.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/Map.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/Tree.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/../MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Tree/../../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/Wall.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../MapObject.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Maps/MapLayouts/Map/../../../Entities/MapObjects/Wall/../../../GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/GridHandler/GridHandler.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/AttackManager/AttackManager.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/AttackManager/../Attack/Attack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/AttackManager/../Attack/../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/AttackManager/../Attack/RangedAttack/RangedAttack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/AttackManager/../Attack/RangedAttack/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/AttackManager/../Attack/RangedAttack/../Attack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attack/Attack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attack/RangedAttack/RangedAttack.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/GridPathAlgorithm/GridPathAlgorithm.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binary_negate.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind_back.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/perfect_forward.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/bind_front.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binder1st.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/binder2nd.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/boyer_moore_searcher.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/compose.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/default_searcher.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/function.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__memory/builtin_new_allocator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/strip_signature.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/mem_fn.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/mem_fun_ref.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/not_fn.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream
+  /Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include/SFML/Graphics/VertexBuffer.hpp

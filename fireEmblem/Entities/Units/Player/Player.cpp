@@ -19,10 +19,13 @@ namespace Players
             throw std::runtime_error("Failed to load texture!");
         }
 
-        if (!iconTextureLarge.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_ansikt.png")) {
+        if (!movingTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Princess_Running.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
 
+        if (!iconTextureLarge.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_ansikt.png")) {
+            throw std::runtime_error("Failed to load texture!");
+        }
 
         name = "Player";
         currentHealth = 4;
@@ -39,9 +42,12 @@ namespace Players
         sprite.emplace(defaultTexture);
         attackSprite.emplace(attackTexture);
         deathSprite.emplace(deathTexture);
+        movingSprite.emplace(movingTexture);
         
         sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
         sprite->setPosition(tileLocation * 50.f);
+
+        movingSprite->setPosition(tileLocation * 50.f);
 
         attackSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
 
@@ -55,6 +61,8 @@ namespace Players
         maxAttackSpawnTimer = attackSpawnTimer;
 
         experienceToLevelUp *= level;
+
+        movementSpeed = 10;
     }
 
     std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
@@ -166,7 +174,7 @@ namespace Players
 
             if (pathAlgorithm.playerDetected == true)
             {
-                sprite->move({calculatedPathY, calculatedPathX});
+                movingSprite->move({calculatedPathY, calculatedPathX});
             }
         }
     }
@@ -188,21 +196,12 @@ namespace Players
         }
     }
 
-    void Player::SetTileToUnOccupied()
-    {
-        auto& tiles = gridHandler.RetrieveAllTiles();
-        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = false;
-        tiles[tileLocation.y][tileLocation.x].RemoveUnit();
-    }
-
     void Player::SetTileToOccupied()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = false;
         tiles[tileLocation.y][tileLocation.x].RemoveUnit();
 
-        tiles[gridCurrentTile.y][gridCurrentTile.x].IsOccupiedByPlayer = true;
         tiles[gridCurrentTile.y][gridCurrentTile.x].SetUnit(this);
 
         tiles[gridCurrentTile.y][gridCurrentTile.x].isSelected = false;
@@ -213,10 +212,8 @@ namespace Players
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        tiles[gridCurrentTile.y][gridCurrentTile.x].IsOccupiedByPlayer = false;
         tiles[gridCurrentTile.y][gridCurrentTile.x].RemoveUnit();
 
-        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = true;
         tiles[tileLocation.y][tileLocation.x].SetUnit(this);
 
     }
@@ -306,8 +303,9 @@ namespace Players
                         state = "Attack";
                         inMenu = false;
                         sprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
-                        attackSprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
-                        deathSprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
+                        attackSprite->setPosition({gridCurrentTile * 50.f});   
+                        deathSprite->setPosition({gridCurrentTile * 50.f});    
+                        movingSprite->setPosition({gridCurrentTile * 50.f});    
                         previousPosition = sprite->getPosition();
                         SetTileToOccupied();
 

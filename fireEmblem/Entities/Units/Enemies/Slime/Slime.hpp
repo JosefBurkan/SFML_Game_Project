@@ -25,7 +25,6 @@ namespace Slimes
 
         public:
             Slime(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
-            void Draw(sf::RenderWindow& window) override;
             void PerformActions() override;
             void SetPathToPlayer() override;             // Kjør algorithmen som scanner etter spiller og lager vei
             void Movement() override;

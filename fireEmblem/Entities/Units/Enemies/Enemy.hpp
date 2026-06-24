@@ -15,7 +15,6 @@ namespace Enemies
         public:
             Enemy(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void CheckForAttacks();
-            void Draw(sf::RenderWindow& window) override;
             void SetTileToOccupied() override;
             void SetTileToUnOccupied() override;
             void PerformActions() override;

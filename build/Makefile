@@ -153,6 +153,30 @@ fireEmblem/Camera/Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.s
 .PHONY : fireEmblem/Camera/Camera.cpp.s
 
+fireEmblem/Effects/DamageNumbers/DamageNumbers.o: fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o
+.PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.o
+
+# target to build an object file
+fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o
+.PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o
+
+fireEmblem/Effects/DamageNumbers/DamageNumbers.i: fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.i
+.PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.i
+
+# target to preprocess a source file
+fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.i
+.PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.i
+
+fireEmblem/Effects/DamageNumbers/DamageNumbers.s: fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s
+.PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.s
+
+# target to generate assembly for a file
+fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s
+.PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s
+
 fireEmblem/Entities/MapObjects/MapObject.o: fireEmblem/Entities/MapObjects/MapObject.cpp.o
 .PHONY : fireEmblem/Entities/MapObjects/MapObject.o
 
@@ -909,6 +933,9 @@ help:
 	@echo "... fireEmblem/Camera/Camera.o"
 	@echo "... fireEmblem/Camera/Camera.i"
 	@echo "... fireEmblem/Camera/Camera.s"
+	@echo "... fireEmblem/Effects/DamageNumbers/DamageNumbers.o"
+	@echo "... fireEmblem/Effects/DamageNumbers/DamageNumbers.i"
+	@echo "... fireEmblem/Effects/DamageNumbers/DamageNumbers.s"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.o"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.i"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.s"

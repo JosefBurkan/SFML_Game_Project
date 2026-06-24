@@ -22,9 +22,20 @@ namespace Units
 
     }
     
-    std::pair<int, int> Unit::GetPosition() 
+    sf::Vector2f Unit::GetPosition() 
     {
-        return {sprite->getPosition().y, sprite->getPosition().x};
+        return sprite->getPosition();
+    }
+
+    // For tallet som kommer over uniten når de blir skadet
+    void Unit::SetDamageNumber(std::string damageTaken)
+    {
+        damageNumber.PrepareDraw(damageTaken, sprite->getPosition());
+    }
+
+    void Unit::DrawDamageNumber(sf::RenderWindow& window)
+    {
+        damageNumber.Draw(window);
     }
 
     void Unit::ResetAnimations()
@@ -73,6 +84,8 @@ namespace Units
 
     void Unit::Draw(sf::RenderWindow& window) 
     {
+
+
         framesUntilDraw++;
             
         if (framesUntilDraw >= defaultDrawSpeed)
@@ -97,7 +110,7 @@ namespace Units
     }
 
     void Unit::DrawAttackAnimation(sf::RenderWindow& window)
-    {
+    {       
         framesUntilAttackDraw++;
 
         if (framesUntilAttackDraw >= attackingDrawSpeed)
@@ -128,12 +141,12 @@ namespace Units
 
         if (framesUntilDeathDraw >= 10)
         {
-            if (dyingTextureX >= dyingTextureSizeX)
+            if (dyingTextureX >= dyingSpriteSizeX)
             {
                 dyingTextureY += 50;
                 dyingTextureX = 0;
 
-                if (dyingTextureY > dyingTextureSizeY)
+                if (dyingTextureY > dyingSpriteSizeY)
                 {
                     dyingTextureY = 0;
                 }
@@ -146,6 +159,32 @@ namespace Units
         }
 
         window.draw(*deathSprite);
+    }
+
+    void Unit::DrawMovingAnimation(sf::RenderWindow& window)
+    {
+        framesUntilMovementDraw++;
+
+        if (framesUntilMovementDraw >= movingDrawSpeed)
+        {
+            if (movingTextureX >= movingSpriteSizeX)
+            {
+                movingTextureY += 50;
+                movingTextureX = 0;
+
+                if (movingTextureY > movingSpriteSizeY)
+                {
+                    movingTextureY = 0;
+                }
+            } 
+
+            movingSprite->setTextureRect(sf::IntRect({movingTextureX, movingTextureY}, {50, 50}));
+
+            movingTextureX += 50;
+            framesUntilMovementDraw = 0;
+        }
+
+        window.draw(*movingSprite);
     }
 
     void Unit::DrawLevelUpAnmiation (sf::RenderWindow& window)
@@ -254,7 +293,7 @@ namespace Units
     void Unit::SetTileToUnOccupied()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
-        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = false;
+        tiles[tileLocation.y][tileLocation.x].RemoveUnit();
     }
 
     void Unit::setTileUnit()

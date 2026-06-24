@@ -3,6 +3,12 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/OverView/OverView.hpp"
 
+
+namespace DamageNumbers
+{
+    class DamageNumber;
+}
+
 namespace UnitsManagers
 {
     // Klasse for å håndtere fiender. Altså ødelegge dem når de dør, 
@@ -12,14 +18,12 @@ namespace UnitsManagers
         private:
             OverViews::OverView overView;
             std::vector<std::shared_ptr<Units::Unit>> units; // Pointer for å sørge at fiendene ikke kopieres inn
-            int assignTurn = 0; // Sett 'turn' til units lik indeksen dems i unitlista   
             std::pair<int, int> cameraPositions; 
 
+
             int allowTimeToFinish = 60;
-
+            int assignTurn = 0; // Sett 'turn' til units lik indeksen dems i unitlista   
             int moving = 20; // Imens en unit beveger seg    
-
-
 
         public:
             bool firstUnit = true; // Er for å lage tidslinjen

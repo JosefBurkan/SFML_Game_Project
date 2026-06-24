@@ -14,7 +14,6 @@ namespace FireMages
 
         tileLocation.y = 2;
 
-        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = true;
         tiles[tileLocation.y][tileLocation.x].SetUnit(this);
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));

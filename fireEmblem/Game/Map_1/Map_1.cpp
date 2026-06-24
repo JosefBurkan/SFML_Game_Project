@@ -60,6 +60,7 @@ namespace Maps1 {
 
     void Map1::Run(sf::RenderWindow& window)
     {
+        static int cooldown = 30;
         static int cooldownBetweenMoves = 30;
         static int gameTurn = 0;
 
@@ -71,11 +72,11 @@ namespace Maps1 {
 
         if (gameTurn == currentTurnUnit->turn)
             {
-                int positionX = currentTurnUnit->GetPosition().second / 50;
-                int positionY = currentTurnUnit->GetPosition().first / 50;
+                int positionX = currentTurnUnit->GetPosition().x / 50;
+                int positionY = currentTurnUnit->GetPosition().y / 50;
 
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
-                if (currentTurnUnit->type == "Player") 
+                if (currentTurnUnit->type == "Player" && cooldown <= 0) 
                 {
                     currentTurnUnit->Movement();
 
@@ -106,7 +107,6 @@ namespace Maps1 {
                         }
                         if (cooldownBetweenMoves >= 0)
                         {
-                            std::cout << "\nMovementTimer: " << cooldownBetweenMoves;
                             unitManager.PerformPlayerSmoothMovement(*currentTurnUnit);
                             cooldownBetweenMoves--;
                         }
@@ -130,6 +130,7 @@ namespace Maps1 {
 
                             lock = false;
                             moveLock = false;
+                            cooldown = 20;
                         }
                     }
                 }
@@ -137,61 +138,66 @@ namespace Maps1 {
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
                 else if (currentTurnUnit->type == "Enemy" && currentTurnUnit->state != "Dying")
                 {
-                    cooldown++;
-
                     gridHandler.SelectTile(positionY, positionX);
 
-                    // Kalkuler ruta kun en gang                     
-                    if (!moveLock)
+                    // Kalkuler ruta kun en gang  
+                    if (cooldown <= 0)
                     {
-                        unitManager.SetEnemyPath(*currentTurnUnit);
-                        currentTurnUnit->state = "Moving";
-                        moveLock = true;
-                        cooldownBetweenMoves = 30;
-                    }
-                    // Beveg fienden mot spilleren til den stopper en rute forran
-                    if (currentTurnUnit->state == "Moving")
-                    {
-
-                        if (cooldownBetweenMoves >= 0)
+                        if (!moveLock)
                         {
-                            unitManager.PerformEnemyMovement(*currentTurnUnit);
-                            cooldownBetweenMoves--;
+                            unitManager.SetEnemyPath(*currentTurnUnit);
+                            currentTurnUnit->state = "Moving";
+                            moveLock = true;
+                            cooldownBetweenMoves = currentTurnUnit->movementTime;
+                            std::cout << "\nCBM: " << cooldownBetweenMoves;
                         }
-
-                        if (cooldownBetweenMoves == 0)
+                        // Beveg fienden mot spilleren til den stopper en rute forran
+                        if (currentTurnUnit->state == "Moving")
                         {
-                            currentTurnUnit->state = "Neutral";
+                            if (currentTurnUnit->playerDetected && cooldownBetweenMoves >= 0)
+                            {
+                                unitManager.PerformEnemyMovement(*currentTurnUnit);
+                                cooldownBetweenMoves--;
+                            }
+
+                            if (cooldownBetweenMoves <= 0)
+                            {
+                                currentTurnUnit->state = "Neutral";
+                            }
+
                         }
+                        else if (currentTurnUnit->state == "Neutral")
+                        {
+                            std::cout << "Turn " << gameTurn + 1 << ": ";
+                            std::cout << currentTurnUnit->name << "'s turn: \n";
 
-                        cooldown = 0;
-
+                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                            currentTurnUnit->playerDetected = false;
+                            unitManager.PerformEnemyActions(*currentTurnUnit);
+                            gameTurn++;
+                            cooldown = 0;
+                            currentTurnUnit->currentOrder = unitManager.GetSize();
+                            unitManager.AssignOrder();
+                            lock = false;
+                            moveLock = false;
+                        }
                     }
-                    else if (currentTurnUnit->state == "Neutral")
-                    {
-                        std::cout << "Turn " << gameTurn + 1 << ": ";
-                        std::cout << currentTurnUnit->name << "'s turn: \n";
 
-                        currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
-                        unitManager.PerformEnemyActions(*currentTurnUnit);
-                        gameTurn++;
-                        cooldown = 0;
-                        currentTurnUnit->currentOrder = unitManager.GetSize();
-                        unitManager.AssignOrder();
-                        lock = false;
-                        moveLock = false;
-                    }
-                }
+
+                }                   
+
                 unitManager.UpdateUnits(window);
             }
 
             if (gameTurn >= unitManager.GetSize())
             {
-                std::cout << unitManager.GetSize();
                 unitManager.firstUnit = true;
                 gameTurn = 0;
                 std::cout << "\n";
             }
+
+            cooldown--;
+
             
 
             attacks.Update();
@@ -204,5 +210,7 @@ namespace Maps1 {
             overView.ManageTimeline(unitManager.GetAllUnits(), window, camera.GetPosition().second);
 
             unitManager.DrawOverview(window, gridHandler.GetSelectedUnit());
+
+
     }
 }

@@ -991,4 +991,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/GridSystem/GridHandler/GridHandler.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../Hitboxes/AttackManager/../Attack/RangedAttack/RangedAttack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../Hitboxes/AttackManager/../Attack/RangedAttack/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../Hitboxes/AttackManager/../Attack/RangedAttack/../Attack.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.hpp

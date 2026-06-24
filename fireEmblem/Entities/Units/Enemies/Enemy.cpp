@@ -24,31 +24,6 @@ namespace Enemies
 
     }
 
-    void Enemy::Draw(sf::RenderWindow& window)
-    {
-        framesUntilDraw++;
-
-        if (framesUntilDraw >= 12)
-        {
-            while (defaultTextureX >= 32)
-            {
-                defaultTextureY += 16;
-                defaultTextureX = 0;
-
-                if (defaultTextureY >= 24)
-                {
-                    defaultTextureY = 0;
-                }
-            }
-            sprite->setTextureRect(sf::IntRect({defaultTextureX, defaultTextureY}, {16, 16}));
-
-            defaultTextureX += 16;
-
-            framesUntilDraw = 0;
-        }
-        window.draw(*sprite);
-    }
-
     void Enemy::SetTileToOccupied()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();

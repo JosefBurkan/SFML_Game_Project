@@ -205,7 +205,7 @@ namespace GridHandlers
     // Sjekk om en tile har blitt okkupert, og hva den er okkupert av
     bool GridHandler::IsOccupied(Tiles::Tile tile)
     {
-        if (tile.IsOccupied || tile.IsOccupiedByPlayer)
+        if (tile.IsOccupied || tile.unit != nullptr)
         {
             return true;
         }

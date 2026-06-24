@@ -33,6 +33,10 @@ namespace UnitsManagers
         {
             it->DrawDeathAnimation(window);
         }
+        else if (it->state == "Moving")
+        {
+            it->DrawMovingAnimation(window);
+        }
         else 
         {
             it->Draw(window);
@@ -47,18 +51,21 @@ namespace UnitsManagers
         // For å sørge for at ingen fiender hoppes over
         // når listen sorters
         bool needsSorting = false; 
+        static bool hit = false;
 
         for (auto it = units.begin(); it != units.end(); ) 
         {
             float posX = (*it)->sprite->getPosition().x;
             float posY = (*it)->sprite->getPosition().y;
 
-            HealthBars::HealthBar healthBar{posX, posY};
+            HealthBars::HealthBar healthBar{posX, posY + 20.f};
 
             // Hvis uniten blir truffet, sjekk hvem som traff den
             
             if ((*it)->IsHit())
             {
+                hit = true;
+                (*it)->SetDamageNumber("1");
                 std::string lastHitBy = (*it)->LastHitBy();
 
                 // Finn uniten den selv ble drept av
@@ -106,6 +113,11 @@ namespace UnitsManagers
             (*it)->CheckForLevelUp();
 
             DrawUnit((*it), window);
+            
+            if (hit)
+            {
+                (*it)->DrawDamageNumber(window);
+            }
 
             ++it;
         }

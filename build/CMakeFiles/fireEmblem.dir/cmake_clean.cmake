@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o.d"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o"
+  "CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o.d"
   "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o"

@@ -33,7 +33,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 58,
+				"line" : 59,
 				"parent" : 0
 			},
 			{
@@ -45,7 +45,7 @@
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 57,
+				"line" : 58,
 				"parent" : 0
 			}
 		]
@@ -115,7 +115,8 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32
 			]
 		}
 	],
@@ -194,7 +195,8 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32
 			]
 		}
 	],
@@ -390,6 +392,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "fireEmblem/Game/Map_1/Map_1.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

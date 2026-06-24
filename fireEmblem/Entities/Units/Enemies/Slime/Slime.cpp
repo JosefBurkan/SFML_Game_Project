@@ -5,12 +5,17 @@ namespace Slimes
     Slime::Slime(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
         : Enemy(gridHandler, map, attacks, yPos, xPos)
     {
-        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime-2.png")) 
+        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Idle.png")) 
         {
             throw std::runtime_error("Failed to load texture!");
         }
 
         if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Death_Animation.png")) 
+        {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+        if (!movingTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Moving.png")) 
         {
             throw std::runtime_error("Failed to load texture!");
         }
@@ -29,6 +34,14 @@ namespace Slimes
 
         auto& tiles = gridHandler.RetrieveAllTiles();
 
+        defaultDrawSpeed = 20;
+
+        movingSpriteSizeY = 100;           // Størrelse på spritesheet
+        movingSpriteSizeX = 150;
+
+
+        movingDrawSpeed = 4;
+
         // Må reverseres her
         tileLocation.x = yPos / 50;
         tileLocation.y = xPos / 50;
@@ -41,41 +54,20 @@ namespace Slimes
         std::cout << "Stored ptr: " << tiles[tileLocation.y][tileLocation.x].unit << '\n';
 
         sprite.emplace(defaultTexture);
-        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
-        sprite->setScale({3.f, 3.f});
         sprite->setPosition({yPos, xPos});
+        sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
 
         deathSprite.emplace(deathTexture);
-        deathSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
         deathSprite->setPosition({yPos, xPos});
+        deathSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
 
+        movingSprite.emplace(movingTexture);
+        movingSprite->setPosition({yPos, xPos});
+        movingSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
+
+        movementSpeed = 10;
         movement = 4;
 
-    }
-
-    void Slime::Draw(sf::RenderWindow& window)
-    {
-        framesUntilDraw++;
-
-        if (framesUntilDraw >= 8)
-        {
-            while (defaultTextureX >= 48)
-            {
-                defaultTextureY += 16;
-                defaultTextureX = 0;
-
-                if (defaultTextureY >= 48)
-                {
-                    defaultTextureY = 0;
-                }
-            }
-            sprite->setTextureRect(sf::IntRect({defaultTextureX, defaultTextureY}, {16, 16}));
-
-            defaultTextureX += 16;
-
-            framesUntilDraw = 0;
-        }
-        window.draw(*sprite);
     }
 
     // Håndterer bevegelse og angrep
@@ -103,22 +95,24 @@ namespace Slimes
                 {
                     numOfMoves--;
                 }
+                else    // Hvis ferdig
+                {
+                }
 
                 nextTileY = pathToPlayer[numOfMoves].GetPosition().y;
                 nextTileX = pathToPlayer[numOfMoves].GetPosition().x;
 
+                calculatedPathX = (nextTileX - currentTileX) / movementSpeed;
+                calculatedPathY = (nextTileY - currentTileY) / movementSpeed;
 
-                calculatedPathX = (nextTileX - currentTileX) / 10;
-                calculatedPathY = (nextTileY - currentTileY) / 10;
-
-                cooldown = 10;
+                cooldown = movementSpeed;
             }
 
             cooldown--;
 
             if (algorithm.playerDetected == true)
             {
-                sprite->move({calculatedPathX, calculatedPathY});
+                movingSprite->move({calculatedPathX, calculatedPathY});
                 deathSprite->setPosition({sprite->getPosition().x, sprite->getPosition().y});
             }
         }
@@ -128,12 +122,20 @@ namespace Slimes
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        pathToPlayer = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement, tiles);
+        pathToPlayer = algorithm.CheckAvailableTiles(sprite->getPosition().y / 50, sprite->getPosition().x / 50, movement - 1, tiles);
+
+        movementTime = pathToPlayer.size() * 10;    // Setter tiden som gåanimasjonen skal vare
 
         if (algorithm.playerDetected == true)
         {
+            playerDetected = true;
             tileLocation.x = pathToPlayer[1].GetPosition().x / 50;
             tileLocation.y = pathToPlayer[1].GetPosition().y / 50;
+            sprite->setPosition(pathToPlayer[1].GetPosition());
+        }
+        else
+        {
+            playerDetected = false;
         }
 
         numOfMoves = pathToPlayer.size() - 1;

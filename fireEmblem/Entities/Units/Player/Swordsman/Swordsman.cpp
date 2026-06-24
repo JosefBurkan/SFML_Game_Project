@@ -24,12 +24,18 @@ namespace Swordsmen
             throw std::runtime_error("Failed to load texture!");
         }
 
+        if (!movingTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman_Running.png")) {
+            throw std::runtime_error("Failed to load texture!");
+        }
+
+
         auto& tiles = gridHandler.RetrieveAllTiles();
 
         tileLocation.y = 3;
 
-        tiles[tileLocation.y][tileLocation.x].IsOccupiedByPlayer = true;
         tiles[tileLocation.y][tileLocation.x].SetUnit(this);
+
+        movingSprite->setPosition(tileLocation * 50.f);
 
         sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
 

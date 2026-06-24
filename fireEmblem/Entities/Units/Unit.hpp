@@ -1,8 +1,8 @@
 #pragma once
-#include <iostream>
 #include "../../GridSystem/GridHandler/GridHandler.hpp"
 #include "../../Maps/MapLayouts/Map/Map.hpp"
 #include "../../Hitboxes/AttackManager/AttackManager.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp"
 #include "../../config.hpp"
 
 namespace Units 
@@ -16,8 +16,10 @@ namespace Units
             sf::Texture defaultTexture;
             sf::Texture attackTexture;      // Animasjon for når en karakter angriper
             sf::Texture deathTexture;
+            sf::Texture movingTexture;       // Bevegelsesanimasjon
             std::string spritePath;
             sf::Texture iconTexture;
+            DamageNumbers::DamageNumber damageNumber;
 
             sf::Vector2f tileLocation = {0, 0}; // Kordinater i index
             
@@ -26,13 +28,12 @@ namespace Units
             float calculatedPathX = 0;
             float calculatedPathY = 0;
 
-
             // For defaultsprite
             int spriteSizeY = 50;           // Størrelse på spritesheet
             int spriteSizeX = 100;
-            int defaultDrawSpeed = 20;
             int defaultTextureY = 0;        // Lokasjonen til defaultsprite
             int defaultTextureX = 0;
+            int defaultDrawSpeed = 20;
 
             // For attacksprite
             int attackSpriteSizeY = 100;           // Størrelse på spritesheet
@@ -42,12 +43,17 @@ namespace Units
             int attackingDrawSpeed = 5;
 
             // For deathsprite
-            int dyingTextureSizeX = 100;
-            int dyingTextureSizeY = 100;
+            int dyingSpriteSizeX = 100; // Størrelse på spritesheet
+            int dyingSpriteSizeY = 100;
             int dyingTextureY = 0;
             int dyingTextureX = 0;
 
-            // For levelUpEffekt
+            // For bevegelsessprite
+            int movingSpriteSizeY = 50;           // Størrelse på spritesheet
+            int movingSpriteSizeX = 100;
+            int movingTextureY = 0;      // Lokasjonen til attacksprite
+            int movingTextureX = 0;
+            int movingDrawSpeed = 5;
             
 
 
@@ -55,6 +61,7 @@ namespace Units
             int framesUntilDraw = 20;       // Hvor fort en animasjon skal tegnes
             int framesUntilAttackDraw = 20;
             int framesUntilDeathDraw = 15;
+            int framesUntilMovementDraw = 15;
             int framesUntilLevelUpDraw = 10;
             
 
@@ -69,7 +76,8 @@ namespace Units
     
             std::optional<sf::Sprite> sprite;
             std::optional<sf::Sprite> attackSprite;
-            std::optional<sf::Sprite> deathSprite;    
+            std::optional<sf::Sprite> deathSprite;  
+            std::optional<sf::Sprite> movingSprite;    
 
             int currentHealth = 2;
             int attackLevel = 1;
@@ -85,6 +93,8 @@ namespace Units
             int movementSpeed = 7;  // For bevegelsesanimasjonen sin hastighet
             int movementTime = 0;       // Hvor lenge skal bevegelsen vare
 
+            bool playerDetected = false;    // For fiender
+
             int deathAnimationTimer = 60;
 
             int attackSpawnTimer = 16;   // Når angrepet (hitboxen) skal lages 
@@ -99,8 +109,9 @@ namespace Units
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
             void setTileUnit();                 // Sette seg selv som peker for en spesifik tile
+            void SetDamageNumber(std::string damageTaken); // For tallet som kommer over uniten når de blir skadet
             virtual sf::Sprite GetIcon();
-            std::pair<int, int> GetPosition();
+            sf::Vector2f GetPosition();
             virtual void SetTileToOccupied();
             virtual void SetTileToUnOccupied();
 
@@ -108,7 +119,9 @@ namespace Units
             virtual void DrawUI(sf::RenderWindow& window);
             virtual void DrawAttackAnimation(sf::RenderWindow& window); // Når de angriper
             virtual void DrawDeathAnimation(sf::RenderWindow& window); 
-            virtual void DrawLevelUpAnmiation (sf::RenderWindow& window);
+            virtual void DrawMovingAnimation(sf::RenderWindow& window); // Når en enhet beveger seg
+            virtual void DrawLevelUpAnmiation(sf::RenderWindow& window);
+            void DrawDamageNumber(sf::RenderWindow& window);
 
             virtual bool IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender

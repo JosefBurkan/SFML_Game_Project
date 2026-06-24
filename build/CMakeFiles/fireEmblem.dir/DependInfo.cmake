@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Camera/Camera.cpp.o.d"
+  "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/MapObject.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/MapObject.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Tree/Tree.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Tree/Tree.cpp.o.d"
   "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/MapObjects/Wall/Wall.cpp" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o" "gcc" "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.o.d"

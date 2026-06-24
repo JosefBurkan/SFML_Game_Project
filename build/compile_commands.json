@@ -190,5 +190,11 @@
   "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Game/Map_1/Map_1.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Map_1/Map_1.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Game/Map_1/Map_1.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Game/Map_1/Map_1.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.o"
 }
 ]
