@@ -47,77 +47,43 @@ namespace UnitsManagers
     // Kjøres hver frame. Tegner animasjon, sjekker om uniten blir truffet, etc.
     void UnitsManager::UpdateUnits(sf::RenderWindow& window)
     {
-
         // For å sørge for at ingen fiender hoppes over
         // når listen sorters
         bool needsSorting = false; 
-        static bool hit = false;
 
         for (auto it = units.begin(); it != units.end(); ) 
         {
             float posX = (*it)->sprite->getPosition().x;
             float posY = (*it)->sprite->getPosition().y;
 
-            HealthBars::HealthBar healthBar{posX, posY + 20.f};
-
-            // Hvis uniten blir truffet, sjekk hvem som traff den
-            
+            // Sjekk om enheten blir truffet av et angrep
             if ((*it)->IsHit())
             {
-                hit = true;
-                (*it)->SetDamageNumber("1");
-                std::string lastHitBy = (*it)->LastHitBy();
-
-                // Finn uniten den selv ble drept av
-                auto hitIt = std::find_if(units.begin(), units.end(),
-                    [&lastHitBy](const auto& unit) { return unit->name == lastHitBy; });
-
+                (*it)->SetDamageNumber(std::to_string((*it)->attackLevel));
             }
 
+            // Tegne menyen for spilleren
             if ((*it)->type == "Player")
             {
                 (*it)->DrawUI(window);
             }
             else
             {
-                healthBar.Draw(window, (*it)->currentHealth, (*it)->maxHealth);
+                (*it)->DrawHealthBar(window);
             }
 
-            if ((*it)->currentHealth <= 0) 
+            if (CheckStatus((it)))
             {
-                (*it)->deathAnimationTimer--;
-
-                (*it)->state = "Dying";
-
-                if ((*it)->deathAnimationTimer <= 0)
-                {
-                    std::string lastHitBy = (*it)->LastHitBy();
-
-                    // Finn uniten den selv ble drept av
-                    auto hitIt = std::find_if(units.begin(), units.end(),
-                        [&lastHitBy](const auto& unit) { return unit->name == lastHitBy; });
-
-                    // Gi den uniten XP
-                    if (hitIt != units.end())
-                    {
-                        (*hitIt)->RecieveExperience((*it)->GrantExperience());
-                    }
-
-                    (*it)->SetTileToUnOccupied();
-                    it = units.erase(it);
-                    needsSorting = true;
-                    continue; // Kjør løkken igjen med en gang. Unngår en bug ved tegning av karakter på drap.
-                }
+                needsSorting = true;
+                continue; // Kjør løkken igjen med en gang. Unngår en bug ved tegning av karakter på drap.
             }
 
             (*it)->CheckForLevelUp();
 
             DrawUnit((*it), window);
             
-            if (hit)
-            {
-                (*it)->DrawDamageNumber(window);
-            }
+
+            (*it)->DrawDamageNumber(window);
 
             ++it;
         }
@@ -164,6 +130,37 @@ namespace UnitsManagers
     void UnitsManager::PerformPlayerSmoothMovement(Units::Unit& currentTurnUnit)
     {
         currentTurnUnit.SmoothMove(); 
+    }
+
+    bool UnitsManager::CheckStatus(std::vector<std::shared_ptr<Units::Unit>>::iterator it)
+    {
+        if ((*it)->currentHealth <= 0) 
+        {
+            (*it)->deathAnimationTimer--;
+
+            (*it)->state = "Dying";
+
+            if ((*it)->deathAnimationTimer <= 0)
+            {
+                std::string lastHitBy = (*it)->LastHitBy();
+
+                // Finn uniten den selv ble drept av
+                auto hitIt = std::find_if(units.begin(), units.end(),
+                    [&lastHitBy](const auto& unit) { return unit->name == lastHitBy; });
+
+                // Gi den uniten XP
+                if (hitIt != units.end())
+                {
+                    (*hitIt)->RecieveExperience((*it)->GrantExperience());
+                }
+
+                (*it)->SetTileToUnOccupied();
+                it = units.erase(it);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void UnitsManager::SortUnits()

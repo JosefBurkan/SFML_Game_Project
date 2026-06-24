@@ -2,9 +2,9 @@
 
 namespace FireMages
 {
-    FireMage::FireMage(GridHandlers::GridHandler& gridHandler, Maps::Map& map, 
+    FireMage::FireMage(GridHandlers::GridHandler& gridHandler,
                     AttackManagers::AttackManager& attacks)
-        : Player(gridHandler, map, attacks)
+        : Player(gridHandler, attacks)
     {
         name = "FireMage";
 

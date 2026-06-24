@@ -42,6 +42,7 @@ namespace UnitsManagers
             void PerformPlayerSmoothMovement(Units::Unit& currentTurnUnit);
             void SetEnemyPath(Units::Unit& currentTurnUnit);
 
+            bool CheckStatus(std::vector<std::shared_ptr<Units::Unit>>::iterator it);
 
             void DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window);
             void DrawOverview(sf::RenderWindow& window, Units::Unit* unit);

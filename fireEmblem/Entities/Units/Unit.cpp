@@ -2,9 +2,9 @@
 
 namespace Units 
 {
-    // spritePath er for å kunne sette sprites til enheter når de opprettes
-    Unit::Unit(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks) 
-            : gridHandler(gridHandler), map(map), attacks(attacks)
+    // spritePath er for å kunne sette sprites til enheter når de opprettes map
+    Unit::Unit(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks) 
+            : gridHandler(gridHandler), attacks(attacks)
     {
         int randomNum = rand() % 4;
 
@@ -198,6 +198,12 @@ namespace Units
 
     }
 
+    void Unit::DrawHealthBar(sf::RenderWindow& window)
+    {
+        healthBar.SetPosition(sprite->getPosition());
+        healthBar.Draw(window, currentHealth, maxHealth);
+    }
+
     void Unit::DrawUI(sf::RenderWindow& window)
     {
 
@@ -206,13 +212,7 @@ namespace Units
     // Sjekk hvilket baneobjekt spilleren står på, feks. sand
     void Unit::CheckForMapObjects()
     {
-        for (auto& object : map.trees)
-        {
-            if (sprite->getPosition().x == object.printPos().first + 10 && sprite->getPosition().y == object.printPos().second)
-            {
-                std::cout << "Nå står du på: " << object.name << "\n";
-            }
-        }
+      // Bytte til pointerløsning
     }
 
     void Unit::Place(float posX, float posY)
@@ -226,9 +226,29 @@ namespace Units
 
     }
 
+    void Unit::MenuActions()
+    {
+
+    }
+
     void Unit::SmoothMove()
     {
 
+    }
+
+    void Unit::ReverseSprite(int movementX, int movementY)
+    {
+        
+        if (movementX == 5)
+        {
+            movingSprite->setOrigin({0.f, 0.f}); 
+            movingSprite->setScale({1, 1});
+        }
+        else if (movementX == -5 && !finishedMoving)
+        {
+            movingSprite->setOrigin({50.f, 0.f}); 
+            movingSprite->setScale({-1, 1});
+        }
     }
 
     bool Unit::IsHit()
@@ -257,7 +277,6 @@ namespace Units
 
                     currentHealth -= damageToBeTaken;
 
-                    
                     attacks.Clear();
 
                     if (currentHealth <= 0)
@@ -269,8 +288,9 @@ namespace Units
                     return true;
                 }
             }
-            return false;
         }
+
+        return false;
     }
 
     void Unit::PerformActions()

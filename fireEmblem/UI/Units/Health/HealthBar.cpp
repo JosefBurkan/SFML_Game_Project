@@ -3,17 +3,20 @@
 namespace HealthBars
 {
     // Opprett healthbaren
-    HealthBar::HealthBar(float unitPosX, float unitPosY)
+    HealthBar::HealthBar()
     {
         rectangleGreen.setFillColor({0, 255, 0});
-        rectangleGreen.setPosition({unitPosX, unitPosY - 20});
 
         rectangleRed.setFillColor({255, 0, 0});
-        rectangleRed.setPosition({unitPosX, unitPosY - 20});
         rectangleRed.setSize({static_cast<float>(width), 5});
 
-
         rectangleRed.setOutlineThickness(2.f);
+    }
+
+    void HealthBar::SetPosition(sf::Vector2f position)
+    {
+        rectangleGreen.setPosition(position);
+        rectangleRed.setPosition(position);
     }
 
     // Tegn healthbaren

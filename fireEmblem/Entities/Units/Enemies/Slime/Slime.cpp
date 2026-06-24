@@ -2,8 +2,8 @@
 
 namespace Slimes
 {
-    Slime::Slime(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
-        : Enemy(gridHandler, map, attacks, yPos, xPos)
+    Slime::Slime(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks, float yPos, float xPos)
+        : Enemy(gridHandler, attacks, yPos, xPos)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Slime/Slime_Idle.png")) 
         {
@@ -83,6 +83,9 @@ namespace Slimes
     {
         if (!pathToPlayer.empty())
         {
+            static float calculatedPathX = 0;
+            static float calculatedPathY = 0;
+
             if (cooldown == 0)
             {
 

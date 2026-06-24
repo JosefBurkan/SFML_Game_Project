@@ -2,9 +2,9 @@
 
 namespace Swordsmen
 {
-    Swordsman::Swordsman(GridHandlers::GridHandler& gridHandler, Maps::Map& map, 
+    Swordsman::Swordsman(GridHandlers::GridHandler& gridHandler,
                     AttackManagers::AttackManager& attacks)
-        : Player(gridHandler, map, attacks)
+        : Player(gridHandler, attacks)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Swordsman/Swordsman.png")) {
             throw std::runtime_error("Failed to load texture!");

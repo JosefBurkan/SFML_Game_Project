@@ -7,7 +7,7 @@ namespace FireMages
     class FireMage : public Players::Player 
     {
         public:
-            FireMage(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
+            FireMage(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks);
 
     };
 }

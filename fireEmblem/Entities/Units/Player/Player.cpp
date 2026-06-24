@@ -1,11 +1,12 @@
 #include "Player.hpp"
+#include "fstream"
 
 namespace Players 
 {
-    // Initialiser spilleren, gridden den hører til og bevegelsen.
-    Player::Player(GridHandlers::GridHandler& gridHandler, Maps::Map& map, 
+    // Initialiser spilleren, gridden den hører til og bevegelsen
+    Player::Player(GridHandlers::GridHandler& gridHandler, 
                     AttackManagers::AttackManager& attacks)
-        : Unit(gridHandler, map, attacks)
+        : Unit(gridHandler, attacks)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Prinsesse-50x50.png")) {
             throw std::runtime_error("Failed to load texture!");
@@ -79,7 +80,9 @@ namespace Players
 
     void Player::Attack(sf::Vector2f position)
     {
+        position.x += 30.f;
         attacks.CreateRangedAttack(name, attackLevel, position, {6, 0});
+        std::cout << "\nAngrip!";
         attackSpawnTimer = maxAttackSpawnTimer;
     }
 
@@ -103,7 +106,7 @@ namespace Players
         algorithm.CleanGrid(tiles);     // Fjern de markerte rutene 
 
         sprite->setPosition({previousPosition});
-        attackSprite->setPosition({previousPosition});
+        movingSprite->setPosition({previousPosition});
         RevertOccupation();
 
         tileLocation.y = previousPosition.y / 50;
@@ -144,6 +147,9 @@ namespace Players
     {
         if (!path.empty())
         {
+            static float calculatedPathX = 0;
+            static float calculatedPathY = 0;
+
             if (moving <= 0)
             {
                 auto& tiles = gridHandler.RetrieveAllTiles();
@@ -168,12 +174,14 @@ namespace Players
                 calculatedPathY = (nextTileY - currentTileY) / movementSpeed;
 
                 moving = movementSpeed;
+
             }
 
             moving--;
 
             if (pathAlgorithm.playerDetected == true)
             {
+                ReverseSprite(calculatedPathY, calculatedPathX);
                 movingSprite->move({calculatedPathY, calculatedPathX});
             }
         }
@@ -275,13 +283,24 @@ namespace Players
                 }
             }
         }
-
         // Trykk 'X' for å lukke menyen, og "deselecte" karakteren
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
         {
             CancelSelect();
         }
+        // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+        {
+            preventSelect = true;
+        }
+        if (isSelected)
+        {
+            gridHandler.ColorTile();
+        }
+    }
 
+    void Player::MenuActions()
+    {
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
         if (IsMenuOpen())
         {            
@@ -300,8 +319,8 @@ namespace Players
                 switch(menu.index)
                 {
                     case 0:
+
                         state = "Attack";
-                        inMenu = false;
                         sprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
                         attackSprite->setPosition({gridCurrentTile * 50.f});   
                         deathSprite->setPosition({gridCurrentTile * 50.f});    
@@ -323,6 +342,9 @@ namespace Players
         // Lag en ny hitbox, så sett dens posisjon med "CreateHitbox"
         if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
         {
+            selectedTile = gridHandler.GetSelectedTile();     
+            gridCurrentTile = selectedTile.GetPosition() / 50.f;
+
             state = "Attacking"; 
             ResetAnimations();
         }
@@ -330,19 +352,14 @@ namespace Players
         {
             attackSpawnTimer--;
 
+            std::cout << "\ntimer" << attackSpawnTimer;
+
             if (attackSpawnTimer <= 0)
             {
-                Attack(gridCurrentTile * 50.f);
+                Attack((gridCurrentTile * 50.f));
+                inMenu = false;
             }
-        }
-        // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
-        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-        {
-            preventSelect = true;
-        }
-        if (isSelected)
-        {
-            gridHandler.ColorTile();
+
         }
     }
 

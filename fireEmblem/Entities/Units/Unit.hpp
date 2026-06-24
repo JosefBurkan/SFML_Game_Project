@@ -1,8 +1,8 @@
 #pragma once
 #include "../../GridSystem/GridHandler/GridHandler.hpp"
-#include "../../Maps/MapLayouts/Map/Map.hpp"
 #include "../../Hitboxes/AttackManager/AttackManager.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp"
 #include "../../config.hpp"
 
 namespace Units 
@@ -12,7 +12,8 @@ namespace Units
         protected:  
             GridHandlers::GridHandler& gridHandler;
             AttackManagers::AttackManager& attacks;
-            Maps::Map& map;
+            HealthBars::HealthBar healthBar;
+
             sf::Texture defaultTexture;
             sf::Texture attackTexture;      // Animasjon for når en karakter angriper
             sf::Texture deathTexture;
@@ -24,9 +25,7 @@ namespace Units
             sf::Vector2f tileLocation = {0, 0}; // Kordinater i index
             
             int tileSize = 50;
-            int movement = 5;
-            float calculatedPathX = 0;
-            float calculatedPathY = 0;
+            int movement = 20;
 
             // For defaultsprite
             int spriteSizeY = 50;           // Størrelse på spritesheet
@@ -86,6 +85,7 @@ namespace Units
             int currentOrder = 0;   // Hvor i lista er uniten hver runde
             int speed = 2;
             int level = 1;
+            bool finishedMoving = false;
 
             int attackTimer = 24;           // Hvor lenge angrepsanimasjonen til uniten varer
             int maxAttackTimer = 24;
@@ -107,7 +107,7 @@ namespace Units
             std::string state = "Neutral";  // Kun for player
 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
-            Unit(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
+            Unit(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks);
             void setTileUnit();                 // Sette seg selv som peker for en spesifik tile
             void SetDamageNumber(std::string damageTaken); // For tallet som kommer over uniten når de blir skadet
             virtual sf::Sprite GetIcon();
@@ -122,6 +122,7 @@ namespace Units
             virtual void DrawMovingAnimation(sf::RenderWindow& window); // Når en enhet beveger seg
             virtual void DrawLevelUpAnmiation(sf::RenderWindow& window);
             void DrawDamageNumber(sf::RenderWindow& window);
+            void DrawHealthBar(sf::RenderWindow& window);
 
             virtual bool IsHit();
             virtual void PerformActions(); // Bevegelse, angrep, osv.. Men kun for fiender
@@ -133,6 +134,8 @@ namespace Units
             virtual void ResetAttackAnimation();
             virtual void ResetDeathAnimation();
             virtual void SetPathToPlayer();             // Kjør algorithmen som scanner etter spiller og lager vei (For fiender)
+            virtual void MenuActions();
+            void ReverseSprite(int movementX, int movementY);               // Snu spriten rundt (Hovedsakelig hjelpsom for løping)
 
             virtual void Attack(sf::Vector2f position);
 

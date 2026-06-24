@@ -17,6 +17,7 @@ namespace AttackManagers
 
     void AttackManager::CreateAttack(std::string source, int atkValue, sf::Vector2f position)
     {
+        std::cout << "\n" << "Nå er jeg inni createattack";
         activeAttacks.push_back(std::make_unique<Attacks::Attack>(source, atkValue, position));
         attackLife = 0;
     }

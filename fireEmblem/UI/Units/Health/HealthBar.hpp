@@ -12,7 +12,8 @@ namespace HealthBars
         int width = 50;
 
         public:
-        HealthBar(float unitPosX, float unitPosY);
+        HealthBar();
+        void SetPosition(sf::Vector2f position);
         void Draw(sf::RenderWindow& window, int health, int maxHealth);
     };
 }

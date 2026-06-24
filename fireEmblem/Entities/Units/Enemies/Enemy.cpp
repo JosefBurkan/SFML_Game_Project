@@ -3,8 +3,8 @@
 
 namespace Enemies
 {
-    Enemy::Enemy(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks, float yPos, float xPos)
-        : Unit(gridHandler, map, attacks)
+    Enemy::Enemy(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks, float yPos, float xPos)
+        : Unit(gridHandler, attacks)
     {
         if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Pixel_Bat.png")) 
         {

@@ -20,10 +20,10 @@ namespace Maps1 {
         background1.LoadTileMapFromFile();
 
         // Units
-        fireMage = std::make_shared<FireMages::FireMage>(gridHandler, map, attacks);
-        slime1 = std::make_shared<Slimes::Slime>(gridHandler, map, attacks, 300, 150);
-        slime2 = std::make_shared<Slimes::Slime>(gridHandler, map, attacks, 400, 150);
-        swordsman = std::make_shared<Swordsmen::Swordsman>(gridHandler, map, attacks);
+        fireMage = std::make_shared<FireMages::FireMage>(gridHandler, attacks);
+        slime1 = std::make_shared<Slimes::Slime>(gridHandler, attacks, 300, 150);
+        slime2 = std::make_shared<Slimes::Slime>(gridHandler, attacks, 400, 150);
+        swordsman = std::make_shared<Swordsmen::Swordsman>(gridHandler, attacks);
 
         unitManager.AddUnit(slime1);
         unitManager.AddUnit(slime2);
@@ -78,7 +78,14 @@ namespace Maps1 {
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player" && cooldown <= 0) 
                 {
-                    currentTurnUnit->Movement();
+                    if (!currentTurnUnit->inMenu)
+                    {
+                        currentTurnUnit->Movement();
+                    }
+                    else
+                    {
+                        currentTurnUnit->MenuActions();
+                    }
 
                     if (!lock)
                     {

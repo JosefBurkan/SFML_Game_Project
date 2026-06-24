@@ -6,8 +6,6 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp"
-#include <fstream>
-#include <sstream> 
 
 
 namespace Players 
@@ -24,7 +22,6 @@ namespace Players
             Skillss::Skills skills{skillsMenu};
 
             int moving = 0;                                    // Hvor lenge animasjonen for å bevege seg skal vare
-            bool finishedMoving = false;
 
             sf::Vector2f gridCurrentTile = {0, 0};
 
@@ -38,7 +35,7 @@ namespace Players
 
 
         public:
-            Player(GridHandlers::GridHandler& gridHandler, Maps::Map& map, AttackManagers::AttackManager& attacks);
+            Player(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks);
             void Movement() override;
             void SmoothMove() override;
             void SetPathToSelectedTile();
@@ -52,6 +49,8 @@ namespace Players
             void ConfirmMovement();
             bool IsMenuOpen();
             
+            void MenuActions() override;
+
             void SaveData() override;    // Lagre og hente data fra tidligere økter
             void ReadData() override;
             void SetData(std::array<int, 6> stats) override;
