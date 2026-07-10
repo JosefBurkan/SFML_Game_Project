@@ -26,6 +26,8 @@ namespace UnitsManagers
             int moving = 20; // Imens en unit beveger seg    
 
         public:
+            using S = Units::Unit::State;
+
             bool firstUnit = true; // Er for å lage tidslinjen
 
             std::pair<int, int> GetCameraPositions(std::pair<int, int> cameraPos);

@@ -3,16 +3,19 @@
 #include "../../Hitboxes/AttackManager/AttackManager.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp"
 #include "../../config.hpp"
 
 namespace Units 
 {
+
     class Unit 
     {
         protected:  
             GridHandlers::GridHandler& gridHandler;
             AttackManagers::AttackManager& attacks;
             HealthBars::HealthBar healthBar;
+            
 
             sf::Texture defaultTexture;
             sf::Texture attackTexture;      // Animasjon for når en karakter angriper
@@ -42,8 +45,8 @@ namespace Units
             int attackingDrawSpeed = 5;
 
             // For deathsprite
-            int dyingSpriteSizeX = 100; // Størrelse på spritesheet
-            int dyingSpriteSizeY = 100;
+            int dyingSpriteSizeX = 32; // Størrelse på spritesheet
+            int dyingSpriteSizeY = 48;
             int dyingTextureY = 0;
             int dyingTextureX = 0;
 
@@ -71,6 +74,17 @@ namespace Units
             int experienceToGrant = 5;
 
         public: 
+
+            enum class State 
+            {
+                idle,
+                selected,
+                moving,
+                attack,
+                attacking,
+                dying
+            };
+
             sf::Texture iconTextureLarge;
     
             std::optional<sf::Sprite> sprite;
@@ -104,7 +118,8 @@ namespace Units
 
             std::string type = "unit";
             std::string name = "default";
-            std::string state = "Neutral";  // Kun for player
+
+            enum State state = State::idle;
 
             // spritePath er for å kunne sette sprites til enheter når de opprettes
             Unit(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks);

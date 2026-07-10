@@ -29,17 +29,14 @@ namespace Slimes
             throw ("File not found ");
         }
 
-
         name = "Slime";
 
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        defaultDrawSpeed = 20;
-
         movingSpriteSizeY = 100;           // Størrelse på spritesheet
         movingSpriteSizeX = 150;
 
-
+        defaultDrawSpeed = 10;
         movingDrawSpeed = 4;
 
         // Må reverseres her
@@ -59,7 +56,8 @@ namespace Slimes
 
         deathSprite.emplace(deathTexture);
         deathSprite->setPosition({yPos, xPos});
-        deathSprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
+        deathSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
+        deathSprite->setScale({3.f, 3.f});
 
         movingSprite.emplace(movingTexture);
         movingSprite->setPosition({yPos, xPos});

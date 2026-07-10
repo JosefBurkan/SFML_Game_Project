@@ -68,6 +68,7 @@ namespace Tiles
 
     void Tile::MarkAttackRange()
     {
+        display == true;
         rectangle.setOutlineColor(sf::Color(255, 100, 100, 255));
         rectangle.setOutlineThickness(4.f);
     }

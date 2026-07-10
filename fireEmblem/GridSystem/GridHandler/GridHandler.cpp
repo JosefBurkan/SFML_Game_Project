@@ -135,6 +135,11 @@ namespace GridHandlers
             movementCooldown++;
         }
 
+        tiles[selectedTileY][selectedTileX - 1].MarkAttackRange();
+        tiles[selectedTileY - 1][selectedTileX].MarkAttackRange();
+        tiles[selectedTileY][selectedTileX + 1].MarkAttackRange();
+        tiles[selectedTileY + 1][selectedTileX].MarkAttackRange();
+
         if (prevX != selectedTileX || prevY != selectedTileY) 
         {
             tiles[prevY][prevX].ChangeColor(false);

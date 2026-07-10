@@ -79,71 +79,79 @@ namespace Maps1 {
                 if (currentTurnUnit->type == "Player" && cooldown <= 0) 
                 {
                     if (!currentTurnUnit->inMenu)
-                    {
                         currentTurnUnit->Movement();
-                    }
                     else
-                    {
                         currentTurnUnit->MenuActions();
-                    }
 
                     if (!lock)
                     {
                         gridHandler.SelectTile(positionY, positionX);
                         std::cout << "Turn " << gameTurn + 1 << ": ";
                         std::cout << currentTurnUnit->name << "'s turn: \n";
-                        currentTurnUnit->state = "Neutral";
+                        currentTurnUnit->state = S::idle;
                         lock = true;
                     }
 
-                    if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Neutral")
+                    switch (currentTurnUnit->state)
                     {
-                        moveLock = false;
-                        gridHandler.Movement();
-                    }
-                    else if (!currentTurnUnit->inMenu && currentTurnUnit->state == "Selected")
-                    {
-                        gridHandler.MovementWhileSelected();
-                    }
-                    else if (currentTurnUnit->state == "Moving")
-                    {
-                        if (!moveLock)
-                        {
-                            moveLock = true;
-                            cooldownBetweenMoves = currentTurnUnit->movementTime;
-                        }
-                        if (cooldownBetweenMoves >= 0)
-                        {
-                            unitManager.PerformPlayerSmoothMovement(*currentTurnUnit);
-                            cooldownBetweenMoves--;
-                        }
-                    }
-                    else if (currentTurnUnit->state == "Attack")
-                    {
-                        gridHandler.Attack();
-                    }
-                    else if (currentTurnUnit->state == "Attacking")
-                    {
-                        currentTurnUnit->attackTimer--;
+                        case S::idle:
+                            if (!currentTurnUnit->inMenu)
+                                moveLock = false;
+                                gridHandler.Movement();
+                            
+                            break;
+                        
+                        case S::selected:
 
-                        if (currentTurnUnit->attackTimer <= 0)
-                        {
-                            gameTurn++;
+                            if (!currentTurnUnit->inMenu)
+                                gridHandler.MovementWhileSelected();
+                            
+                            break;
 
-                            unitManager.AssignOrder();
+                        case S::moving:
 
-                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
-                            currentTurnUnit->state = "Neutral";
+                            if (!moveLock)
+                                moveLock = true;
+                                cooldownBetweenMoves = currentTurnUnit->movementTime;
+                            
+                            if (cooldownBetweenMoves >= 0)
+                                unitManager.PerformPlayerSmoothMovement(*currentTurnUnit);
+                                cooldownBetweenMoves--;
+                            
+                            break;
+                        
+                        case S::attack:
 
-                            lock = false;
-                            moveLock = false;
-                            cooldown = 20;
-                        }
+                            gridHandler.Attack();
+                            break;
+
+                        case S::attacking:
+
+                            currentTurnUnit->attackTimer--;
+
+                            if (currentTurnUnit->attackTimer <= 0)
+                            {
+                                gameTurn++;
+
+                                unitManager.AssignOrder();
+
+                                currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                                currentTurnUnit->state = S::idle;
+
+                                lock = false;
+                                moveLock = false;
+                                cooldown = 20;
+                            }
+                            break;
+
+                        case S::dying:
+                            //Logikken skal flyttes hit
+                            break;
                     }
                 }
 
                 // Hvis typen til uniten er en fiende, utfør fiendeoppførsel
-                else if (currentTurnUnit->type == "Enemy" && currentTurnUnit->state != "Dying")
+                else if (currentTurnUnit->type == "Enemy" && currentTurnUnit->state != S::dying)
                 {
                     gridHandler.SelectTile(positionY, positionX);
 
@@ -153,44 +161,47 @@ namespace Maps1 {
                         if (!moveLock)
                         {
                             unitManager.SetEnemyPath(*currentTurnUnit);
-                            currentTurnUnit->state = "Moving";
+                            currentTurnUnit->state = S::moving;
                             moveLock = true;
                             cooldownBetweenMoves = currentTurnUnit->movementTime;
-                            std::cout << "\nCBM: " << cooldownBetweenMoves;
                         }
+
                         // Beveg fienden mot spilleren til den stopper en rute forran
-                        if (currentTurnUnit->state == "Moving")
+                        switch (currentTurnUnit->state)
                         {
-                            if (currentTurnUnit->playerDetected && cooldownBetweenMoves >= 0)
-                            {
-                                unitManager.PerformEnemyMovement(*currentTurnUnit);
-                                cooldownBetweenMoves--;
-                            }
 
-                            if (cooldownBetweenMoves <= 0)
-                            {
-                                currentTurnUnit->state = "Neutral";
-                            }
+                            case S::idle:
 
-                        }
-                        else if (currentTurnUnit->state == "Neutral")
-                        {
-                            std::cout << "Turn " << gameTurn + 1 << ": ";
-                            std::cout << currentTurnUnit->name << "'s turn: \n";
+                                std::cout << "Turn " << gameTurn + 1 << ": ";
+                                std::cout << currentTurnUnit->name << "'s turn: \n";
 
-                            currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
-                            currentTurnUnit->playerDetected = false;
-                            unitManager.PerformEnemyActions(*currentTurnUnit);
-                            gameTurn++;
-                            cooldown = 0;
-                            currentTurnUnit->currentOrder = unitManager.GetSize();
-                            unitManager.AssignOrder();
-                            lock = false;
-                            moveLock = false;
+                                currentTurnUnit->attackTimer = currentTurnUnit->maxAttackTimer;
+                                currentTurnUnit->playerDetected = false;
+                                unitManager.PerformEnemyActions(*currentTurnUnit);
+                                gameTurn++;
+                                cooldown = 0;
+                                currentTurnUnit->currentOrder = unitManager.GetSize();
+                                unitManager.AssignOrder();
+                                lock = false;
+                                moveLock = false;
+
+                                break;
+                            
+                            case S::moving:
+
+                                if (currentTurnUnit->playerDetected && cooldownBetweenMoves >= 0)
+                                {
+                                    unitManager.PerformEnemyMovement(*currentTurnUnit);
+                                    cooldownBetweenMoves--;
+                                }
+
+                                if (cooldownBetweenMoves <= 0)
+                                {
+                                    currentTurnUnit->state = S::idle;
+                                }
+                                break;
                         }
                     }
-
-
                 }                   
 
                 unitManager.UpdateUnits(window);

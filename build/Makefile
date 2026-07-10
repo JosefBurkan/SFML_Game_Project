@@ -177,6 +177,30 @@ fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s
 .PHONY : fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp.s
 
+fireEmblem/Entities/Animations/Animation.o: fireEmblem/Entities/Animations/Animation.cpp.o
+.PHONY : fireEmblem/Entities/Animations/Animation.o
+
+# target to build an object file
+fireEmblem/Entities/Animations/Animation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Animations/Animation.cpp.o
+.PHONY : fireEmblem/Entities/Animations/Animation.cpp.o
+
+fireEmblem/Entities/Animations/Animation.i: fireEmblem/Entities/Animations/Animation.cpp.i
+.PHONY : fireEmblem/Entities/Animations/Animation.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Animations/Animation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Animations/Animation.cpp.i
+.PHONY : fireEmblem/Entities/Animations/Animation.cpp.i
+
+fireEmblem/Entities/Animations/Animation.s: fireEmblem/Entities/Animations/Animation.cpp.s
+.PHONY : fireEmblem/Entities/Animations/Animation.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Animations/Animation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Animations/Animation.cpp.s
+.PHONY : fireEmblem/Entities/Animations/Animation.cpp.s
+
 fireEmblem/Entities/MapObjects/MapObject.o: fireEmblem/Entities/MapObjects/MapObject.cpp.o
 .PHONY : fireEmblem/Entities/MapObjects/MapObject.o
 
@@ -248,6 +272,54 @@ fireEmblem/Entities/MapObjects/Wall/Wall.s: fireEmblem/Entities/MapObjects/Wall/
 fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s
 .PHONY : fireEmblem/Entities/MapObjects/Wall/Wall.cpp.s
+
+fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.o: fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.o
+
+# target to build an object file
+fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.o
+
+fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.i: fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.i
+
+fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.s: fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s
+
+fireEmblem/Entities/Sprites/Sprite.o: fireEmblem/Entities/Sprites/Sprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/Sprite.o
+
+# target to build an object file
+fireEmblem/Entities/Sprites/Sprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/Sprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/Sprite.cpp.o
+
+fireEmblem/Entities/Sprites/Sprite.i: fireEmblem/Entities/Sprites/Sprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/Sprite.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Sprites/Sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/Sprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/Sprite.cpp.i
+
+fireEmblem/Entities/Sprites/Sprite.s: fireEmblem/Entities/Sprites/Sprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/Sprite.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Sprites/Sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/Sprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/Sprite.cpp.s
 
 fireEmblem/Entities/Units/Enemies/Enemy.o: fireEmblem/Entities/Units/Enemies/Enemy.cpp.o
 .PHONY : fireEmblem/Entities/Units/Enemies/Enemy.o
@@ -936,6 +1008,9 @@ help:
 	@echo "... fireEmblem/Effects/DamageNumbers/DamageNumbers.o"
 	@echo "... fireEmblem/Effects/DamageNumbers/DamageNumbers.i"
 	@echo "... fireEmblem/Effects/DamageNumbers/DamageNumbers.s"
+	@echo "... fireEmblem/Entities/Animations/Animation.o"
+	@echo "... fireEmblem/Entities/Animations/Animation.i"
+	@echo "... fireEmblem/Entities/Animations/Animation.s"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.o"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.i"
 	@echo "... fireEmblem/Entities/MapObjects/MapObject.s"
@@ -945,6 +1020,12 @@ help:
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.o"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.i"
 	@echo "... fireEmblem/Entities/MapObjects/Wall/Wall.s"
+	@echo "... fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.o"
+	@echo "... fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.i"
+	@echo "... fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.s"
+	@echo "... fireEmblem/Entities/Sprites/Sprite.o"
+	@echo "... fireEmblem/Entities/Sprites/Sprite.i"
+	@echo "... fireEmblem/Entities/Sprites/Sprite.s"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.o"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.i"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.s"

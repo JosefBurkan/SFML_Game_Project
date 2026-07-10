@@ -25,15 +25,16 @@ namespace UnitsManagers
 
     void UnitsManager::DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window)
     {
-        if (it->state == "Attacking")
+
+        if (it->state == S::attacking)
         {
             it->DrawAttackAnimation(window);
         }
-        else if (it->state == "Dying")
+        else if (it->state == S::dying)
         {
             it->DrawDeathAnimation(window);
         }
-        else if (it->state == "Moving")
+        else if (it->state == S::moving)
         {
             it->DrawMovingAnimation(window);
         }
@@ -138,7 +139,7 @@ namespace UnitsManagers
         {
             (*it)->deathAnimationTimer--;
 
-            (*it)->state = "Dying";
+            (*it)->state = S::dying;
 
             if ((*it)->deathAnimationTimer <= 0)
             {

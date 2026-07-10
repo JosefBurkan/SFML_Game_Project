@@ -112,7 +112,7 @@ namespace Players
         tileLocation.y = previousPosition.y / 50;
         tileLocation.x = previousPosition.x / 50;
 
-        state = "Neutral";
+        state = State::idle;
     }   
 
     void Player::ConfirmMovement()
@@ -140,7 +140,7 @@ namespace Players
         menu.SetPosition((tileLocation.x * 50) - 120, (tileLocation.y * 50) - 50);
         skills.SetPosition((tileLocation.x * 50) - 120, (tileLocation.y * 50) - 50);
 
-        state = "Moving";
+        state = State::moving;
     }
 
     void Player::SmoothMove()
@@ -241,6 +241,12 @@ namespace Players
     // Håndtere bevegelsen av spilleren
     void Player::Movement()
     {
+        // Trykk 'X' for å lukke menyen, og "deselecte" karakteren
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
+        {
+            CancelSelect();
+        }
+
         auto& tiles = gridHandler.RetrieveAllTiles();
 
         selectedTile = gridHandler.GetSelectedTile();     
@@ -248,7 +254,7 @@ namespace Players
         gridCurrentTile = selectedTile.GetPosition() / 50.f;
 
         // Velg spilleren, dersom ingen enheter har blitt valgt enda
-        if (!isSelected && preventSelect && !inMenu && state == "Neutral")
+        if (!isSelected && preventSelect && !inMenu && state == State::idle)
         {
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
@@ -265,7 +271,7 @@ namespace Players
                     isSelected = true;
                     preventSelect = false;
                     algorithm.CreateRoute(sprite->getPosition() / 50.f, movement, tiles);
-                    state = "Selected";
+                    state = State::selected;
                 }
             }
         }
@@ -283,11 +289,7 @@ namespace Players
                 }
             }
         }
-        // Trykk 'X' for å lukke menyen, og "deselecte" karakteren
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
-        {
-            CancelSelect();
-        }
+
         // Gjør at man ikke kan velge, og uvelge en karakter kjempefort ved å holde 'A'
         if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
         {
@@ -299,8 +301,15 @@ namespace Players
         }
     }
 
+    // Alle handlinger en karakter kan ta etter de har bevegd seg
+    // Åpner menyen med "Attack", "Item", osv..
     void Player::MenuActions()
     {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X))
+        {
+            CancelSelect();
+        }
+
         // Funksjonalitet for de ulike knappene å trykke på inne i menyen
         if (IsMenuOpen())
         {            
@@ -308,9 +317,6 @@ namespace Players
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && menuCooldown <= 0 && finishedMoving)
             {
-                std::cout << "\nCD: " << menuCooldown;
-                std::cout << "\nBevegelse: " << finishedMoving;
-                
                 menu.show = false;
 
                 deathSprite->setPosition(tileLocation * 50.f);
@@ -319,8 +325,7 @@ namespace Players
                 switch(menu.index)
                 {
                     case 0:
-
-                        state = "Attack";
+                        state = State::attack;
                         sprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
                         attackSprite->setPosition({gridCurrentTile * 50.f});   
                         deathSprite->setPosition({gridCurrentTile * 50.f});    
@@ -340,15 +345,15 @@ namespace Players
             }
         }
         // Lag en ny hitbox, så sett dens posisjon med "CreateHitbox"
-        if (state == "Attack" && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+        if (state == State::attack && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && sprite->getPosition() != gridHandler.GetSelectedTile().GetPosition())
         {
             selectedTile = gridHandler.GetSelectedTile();     
             gridCurrentTile = selectedTile.GetPosition() / 50.f;
 
-            state = "Attacking"; 
+            state = State::attacking; 
             ResetAnimations();
         }
-        else if (state == "Attacking")
+        else if (state == State::attacking)
         {
             attackSpawnTimer--;
 

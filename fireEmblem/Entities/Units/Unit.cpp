@@ -20,6 +20,7 @@ namespace Units
             throw ("File not found ");
         }
 
+
     }
     
     sf::Vector2f Unit::GetPosition() 
@@ -84,8 +85,6 @@ namespace Units
 
     void Unit::Draw(sf::RenderWindow& window) 
     {
-
-
         framesUntilDraw++;
             
         if (framesUntilDraw >= defaultDrawSpeed)
@@ -143,7 +142,7 @@ namespace Units
         {
             if (dyingTextureX >= dyingSpriteSizeX)
             {
-                dyingTextureY += 50;
+                dyingTextureY += 16;
                 dyingTextureX = 0;
 
                 if (dyingTextureY > dyingSpriteSizeY)
@@ -152,9 +151,10 @@ namespace Units
                 }
             } 
 
-            deathSprite->setTextureRect(sf::IntRect({dyingTextureX, dyingTextureY}, {50, 50}));
+            deathSprite->setTextureRect(sf::IntRect({dyingTextureX, dyingTextureY}, {16, 16}));
+            deathSprite->setScale({3.f, 3.f});
 
-            dyingTextureX += 50;
+            dyingTextureX += 16;
             framesUntilDeathDraw = 0;
         }
 
@@ -281,7 +281,7 @@ namespace Units
 
                     if (currentHealth <= 0)
                     {
-                        state = "Dying";
+                        state = State::dying;
                     }
 
                     // Kan føre til bugs senere med angrep som kan treffe flere fiender.

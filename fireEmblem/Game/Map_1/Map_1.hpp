@@ -15,6 +15,9 @@ namespace Maps1
     class Map1
     {
     private:
+
+        using S = Units::Unit::State;         // Snarevei for å bruke states til units
+
         StartMaps::StartMap map;
         GridGenerators::GridGenerator& grid;
         GridHandlers::GridHandler gridHandler;
