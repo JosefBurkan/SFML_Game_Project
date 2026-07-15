@@ -991,6 +991,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.c
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attack/RangedAttack/RangedAttack.hpp \
@@ -1023,4 +1024,5 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.c
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/../../../config.hpp \
-  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.hpp

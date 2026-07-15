@@ -990,5 +990,6 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Enemy.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attack/Attack.hpp

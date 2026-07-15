@@ -297,6 +297,30 @@ fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s
 .PHONY : fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp.s
 
+fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.o: fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.o
+
+# target to build an object file
+fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.o
+
+fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.i: fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.i
+
+fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.s: fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.s
+
 fireEmblem/Entities/Sprites/Sprite.o: fireEmblem/Entities/Sprites/Sprite.cpp.o
 .PHONY : fireEmblem/Entities/Sprites/Sprite.o
 
@@ -320,6 +344,30 @@ fireEmblem/Entities/Sprites/Sprite.s: fireEmblem/Entities/Sprites/Sprite.cpp.s
 fireEmblem/Entities/Sprites/Sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/Sprite.cpp.s
 .PHONY : fireEmblem/Entities/Sprites/Sprite.cpp.s
+
+fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.o: fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.o
+
+# target to build an object file
+fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.o
+.PHONY : fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.o
+
+fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.i: fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.i
+
+# target to preprocess a source file
+fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.i
+.PHONY : fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.i
+
+fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.s: fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.s
+
+# target to generate assembly for a file
+fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fireEmblem.dir/build.make CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.s
+.PHONY : fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.s
 
 fireEmblem/Entities/Units/Enemies/Enemy.o: fireEmblem/Entities/Units/Enemies/Enemy.cpp.o
 .PHONY : fireEmblem/Entities/Units/Enemies/Enemy.o
@@ -1023,9 +1071,15 @@ help:
 	@echo "... fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.o"
 	@echo "... fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.i"
 	@echo "... fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.s"
+	@echo "... fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.o"
+	@echo "... fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.i"
+	@echo "... fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.s"
 	@echo "... fireEmblem/Entities/Sprites/Sprite.o"
 	@echo "... fireEmblem/Entities/Sprites/Sprite.i"
 	@echo "... fireEmblem/Entities/Sprites/Sprite.s"
+	@echo "... fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.o"
+	@echo "... fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.i"
+	@echo "... fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.s"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.o"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.i"
 	@echo "... fireEmblem/Entities/Units/Enemies/Enemy.s"

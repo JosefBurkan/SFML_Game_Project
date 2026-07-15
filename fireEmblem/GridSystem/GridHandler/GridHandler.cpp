@@ -50,7 +50,6 @@ namespace GridHandlers
         {
             movementDelay--;
         }
-
         if (firstMove)
         {
             movementDelay = 10;
@@ -61,12 +60,11 @@ namespace GridHandlers
         movementCooldown++;
     }
 
-
-        // Visker vekk den valgte ruten, slik at det kun er en om gangen
-        if (prevX != selectedTileX || prevY != selectedTileY) {
-            tiles[prevY][prevX].ChangeColor(false);
-            tiles[selectedTileY][selectedTileX].ChangeColor(true);
-        }
+    // Visker vekk den valgte ruten, slik at det kun er en om gangen
+    if (prevX != selectedTileX || prevY != selectedTileY) {
+        tiles[prevY][prevX].ChangeColor(false);
+        tiles[selectedTileY][selectedTileX].ChangeColor(true);
+    }
 
     }
 
@@ -75,7 +73,6 @@ namespace GridHandlers
         auto& tiles = grid.RetrieveAllTiles();
         int prevX = selectedTileX;
         int prevY = selectedTileY;
-
 
         rangeX = 0;
         rangeY = 0;

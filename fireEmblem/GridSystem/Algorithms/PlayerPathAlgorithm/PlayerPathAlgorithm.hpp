@@ -18,9 +18,6 @@ namespace PlayerPathAlgorithms
             float isActive = true;
             bool playerDetected = false;
 
-            // Vectoren er veien til spilleren
-            // Tilen er den ruta spilleren på
-            // Måtte skille den siste ruta fra resten av veien
             std::vector<Tiles::Tile> CheckAvailableTiles(sf::Vector2f start, std::vector<std::vector<Tiles::Tile>>& tiles);
             std::vector<Tiles::Tile> TracePath(Tiles::Tile* goal);
     };

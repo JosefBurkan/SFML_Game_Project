@@ -8,22 +8,6 @@ namespace Players
                     AttackManagers::AttackManager& attacks)
         : Unit(gridHandler, attacks)
     {
-        if (!defaultTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Prinsesse-50x50.png")) {
-            throw std::runtime_error("Failed to load texture!");
-        }
-
-        if (!attackTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Princess_Shoot.png")) {
-            throw std::runtime_error("Failed to load texture!");
-        }
-
-        if (!deathTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_death.png")) {
-            throw std::runtime_error("Failed to load texture!");
-        }
-
-        if (!movingTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/Princess_Running.png")) {
-            throw std::runtime_error("Failed to load texture!");
-        }
-
         if (!iconTextureLarge.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_ansikt.png")) {
             throw std::runtime_error("Failed to load texture!");
         }
@@ -31,8 +15,6 @@ namespace Players
         name = "Player";
         currentHealth = 4;
         maxHealth = currentHealth;
-        defaultTexture.setSmooth(false);
-        attackTexture.setSmooth(false);
 
         type = "Player";
         speed = 3;
@@ -40,21 +22,9 @@ namespace Players
         tileLocation.y = 2;
         tileLocation.x = 0;
 
-        sprite.emplace(defaultTexture);
-        attackSprite.emplace(attackTexture);
-        deathSprite.emplace(deathTexture);
-        movingSprite.emplace(movingTexture);
-        
-        sprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
-        sprite->setPosition(tileLocation * 50.f);
 
-        movingSprite->setPosition(tileLocation * 50.f);
+        previousPosition = tileLocation;
 
-        attackSprite->setTextureRect(sf::IntRect({0, 0}, {16, 16}));
-
-        previousPosition = sprite->getPosition();
-
-        attackingDrawSpeed = 7;
         attackTimer = 42;   
         maxAttackTimer = attackTimer;
 
@@ -64,11 +34,6 @@ namespace Players
         experienceToLevelUp *= level;
 
         movementSpeed = 10;
-    }
-
-    std::pair<int, int> Player::TransformPositionToIndex(float spriteY, float spriteX)
-    {
-        return {spriteY/50, spriteX/50};
     }
 
     void Player::DrawUI(sf::RenderWindow& window)
@@ -105,8 +70,6 @@ namespace Players
         tile.UnSelect();
         algorithm.CleanGrid(tiles);     // Fjern de markerte rutene 
 
-        sprite->setPosition({previousPosition});
-        movingSprite->setPosition({previousPosition});
         RevertOccupation();
 
         tileLocation.y = previousPosition.y / 50;
@@ -123,7 +86,9 @@ namespace Players
 
         SetPathToSelectedTile();
 
-        previousPosition = sprite->getPosition();
+        previousPosition = tileLocation;
+
+        tileLocation = selectedTile.GetPosition() / 50.f;
 
         // Alt relatert til rutenettet
         isSelected = false;
@@ -164,6 +129,7 @@ namespace Players
                 }
                 else
                 {
+                    animations->resetAnimations();
                     finishedMoving = true;
                 }
 
@@ -182,7 +148,7 @@ namespace Players
             if (pathAlgorithm.playerDetected == true)
             {
                 ReverseSprite(calculatedPathY, calculatedPathX);
-                movingSprite->move({calculatedPathY, calculatedPathX});
+                animations->moveSprite({calculatedPathY, calculatedPathX});
             }
         }
     }
@@ -191,7 +157,7 @@ namespace Players
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        path = pathAlgorithm.CheckAvailableTiles(sprite->getPosition(), tiles);
+        path = pathAlgorithm.CheckAvailableTiles(tileLocation, tiles);
 
         moving = 0;
         numOfMoves = path.size() - 1;
@@ -208,11 +174,13 @@ namespace Players
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
 
-        tiles[tileLocation.y][tileLocation.x].RemoveUnit();
+        std::cout << " " << previousPosition.y << previousPosition.x;
+
+        tiles[previousPosition.y][previousPosition.x].RemoveUnit();
+        tiles[previousPosition.y][previousPosition.x].isSelected = false;
 
         tiles[gridCurrentTile.y][gridCurrentTile.x].SetUnit(this);
-
-        tiles[gridCurrentTile.y][gridCurrentTile.x].isSelected = false;
+        tiles[gridCurrentTile.y][gridCurrentTile.x].isSelected = true;
 
     }
 
@@ -259,9 +227,6 @@ namespace Players
             // Flytter musen til samme rute som spilleren
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
-                tileLocation.y = sprite->getPosition().y / 50;
-                tileLocation.x = sprite->getPosition().x / 50;
-
                 int roundedY = static_cast<int>(std::round(tileLocation.y));
                 int roundedX = static_cast<int>(std::round(tileLocation.x));
 
@@ -270,7 +235,7 @@ namespace Players
                 {
                     isSelected = true;
                     preventSelect = false;
-                    algorithm.CreateRoute(sprite->getPosition() / 50.f, movement, tiles);
+                    algorithm.CreateRoute(tileLocation, movement, tiles);
                     state = State::selected;
                 }
             }
@@ -319,19 +284,14 @@ namespace Players
             {
                 menu.show = false;
 
-                deathSprite->setPosition(tileLocation * 50.f);
-                attackSprite->setPosition(tileLocation * 50.f);
-                 
                 switch(menu.index)
                 {
                     case 0:
                         state = State::attack;
-                        sprite->setPosition({gridCurrentTile * 50.f});    // Unngå at spiller står på desimalverdi
-                        attackSprite->setPosition({gridCurrentTile * 50.f});   
-                        deathSprite->setPosition({gridCurrentTile * 50.f});    
-                        movingSprite->setPosition({gridCurrentTile * 50.f});    
-                        previousPosition = sprite->getPosition();
+                        animations->setPositions(gridCurrentTile);
                         SetTileToOccupied();
+                        previousPosition = tileLocation;
+                        tileLocation = gridCurrentTile;
 
                         finishedMoving = true;
                         break;
@@ -345,13 +305,12 @@ namespace Players
             }
         }
         // Lag en ny hitbox, så sett dens posisjon med "CreateHitbox"
-        if (state == State::attack && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && sprite->getPosition() != gridHandler.GetSelectedTile().GetPosition())
+        if (state == State::attack && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && tileLocation != gridHandler.GetSelectedTile().GetPosition() / 50.f)
         {
             selectedTile = gridHandler.GetSelectedTile();     
             gridCurrentTile = selectedTile.GetPosition() / 50.f;
 
             state = State::attacking; 
-            ResetAnimations();
         }
         else if (state == State::attacking)
         {

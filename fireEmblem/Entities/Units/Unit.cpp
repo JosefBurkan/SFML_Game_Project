@@ -8,8 +8,6 @@ namespace Units
     {
         int randomNum = rand() % 4;
 
-        framesUntilDraw = (randomNum * 3) - 1;
-        
         if (!iconTexture.loadFromFile(std::string(ASSETS_DIR) + "Units/Princess/prinsesse_Icon.png"))
         {
             throw ("File not found");
@@ -20,18 +18,21 @@ namespace Units
             throw ("File not found ");
         }
 
+        state = State::idle;
+
+        animations = nullptr;   // Gjør til null slik at de andre units kan sette spriten
 
     }
     
     sf::Vector2f Unit::GetPosition() 
     {
-        return sprite->getPosition();
+        return tileLocation;
     }
 
     // For tallet som kommer over uniten når de blir skadet
     void Unit::SetDamageNumber(std::string damageTaken)
     {
-        damageNumber.PrepareDraw(damageTaken, sprite->getPosition());
+        damageNumber.PrepareDraw(damageTaken, animations->getIdlePosition());
     }
 
     void Unit::DrawDamageNumber(sf::RenderWindow& window)
@@ -39,168 +40,19 @@ namespace Units
         damageNumber.Draw(window);
     }
 
-    void Unit::ResetAnimations()
-    {
-        resetAnimationsLock = false;
-
-        if (!resetAnimationsLock)
-        {
-            defaultTextureX = 0;
-            defaultTextureY = 0;
-            attackSpawnTimer = maxAttackSpawnTimer;
-
-            resetAnimationsLock = true;
-        }
-
-    }
-
-    void Unit::ResetAttackAnimation()
-    {
-        resetAnimationsLock = false;
-
-        if (!resetAnimationsLock)
-        {
-            framesUntilAttackDraw = 20;
-            attackingTextureX = 0;
-            attackingTextureY = 0;
-            attackSpawnTimer = maxAttackSpawnTimer;
-
-            resetAnimationsLock = true;
-        }
-    }
-
-    void Unit::ResetDeathAnimation()
-    {
-        resetAnimationsLock = false;
-
-        if (!resetAnimationsLock)
-        {
-            framesUntilDeathDraw = 15;
-            dyingTextureX = 0;
-            dyingTextureY = 0;
-
-            resetAnimationsLock = true;
-        }
-    }
-
     void Unit::Draw(sf::RenderWindow& window) 
     {
-        framesUntilDraw++;
-            
-        if (framesUntilDraw >= defaultDrawSpeed)
-        {
-            while (defaultTextureX >= spriteSizeX)
-            {
-                defaultTextureY += 50;
-                defaultTextureX = 0;
-
-                if (defaultTextureY > spriteSizeY)
-                {
-                    defaultTextureY = 0;
-                }
-            }
-            sprite->setTextureRect(sf::IntRect({defaultTextureX, defaultTextureY}, {50, 50}));
-
-            defaultTextureX += 50;
-            framesUntilDraw = 0;
-        }
-
-        window.draw(*sprite);
-    }
-
-    void Unit::DrawAttackAnimation(sf::RenderWindow& window)
-    {       
-        framesUntilAttackDraw++;
-
-        if (framesUntilAttackDraw >= attackingDrawSpeed)
-        {
-            while (attackingTextureX >= attackSpriteSizeX)
-            {
-                attackingTextureY += 50;
-                attackingTextureX = 0;
-
-                if (attackingTextureY > attackSpriteSizeY)
-                {
-                    attackingTextureY = 0;
-                }
-            }
-
-            attackSprite->setTextureRect(sf::IntRect({attackingTextureX, attackingTextureY}, {50, 50}));
-
-            attackingTextureX += 50;
-            framesUntilAttackDraw = 0;
-        }
-
-        window.draw(*attackSprite);
-    }
-
-    void Unit::DrawDeathAnimation(sf::RenderWindow& window)
-    {
-        framesUntilDeathDraw++;
-
-        if (framesUntilDeathDraw >= 10)
-        {
-            if (dyingTextureX >= dyingSpriteSizeX)
-            {
-                dyingTextureY += 16;
-                dyingTextureX = 0;
-
-                if (dyingTextureY > dyingSpriteSizeY)
-                {
-                    dyingTextureY = 0;
-                }
-            } 
-
-            deathSprite->setTextureRect(sf::IntRect({dyingTextureX, dyingTextureY}, {16, 16}));
-            deathSprite->setScale({3.f, 3.f});
-
-            dyingTextureX += 16;
-            framesUntilDeathDraw = 0;
-        }
-
-        window.draw(*deathSprite);
-    }
-
-    void Unit::DrawMovingAnimation(sf::RenderWindow& window)
-    {
-        framesUntilMovementDraw++;
-
-        if (framesUntilMovementDraw >= movingDrawSpeed)
-        {
-            if (movingTextureX >= movingSpriteSizeX)
-            {
-                movingTextureY += 50;
-                movingTextureX = 0;
-
-                if (movingTextureY > movingSpriteSizeY)
-                {
-                    movingTextureY = 0;
-                }
-            } 
-
-            movingSprite->setTextureRect(sf::IntRect({movingTextureX, movingTextureY}, {50, 50}));
-
-            movingTextureX += 50;
-            framesUntilMovementDraw = 0;
-        }
-
-        window.draw(*movingSprite);
+        animations->play(window, this);
     }
 
     void Unit::DrawLevelUpAnmiation (sf::RenderWindow& window)
     {
-        framesUntilLevelUpDraw++;
-
-        if (framesUntilLevelUpDraw >= 10)
-        {
-
-        }
 
     }
 
     void Unit::DrawHealthBar(sf::RenderWindow& window)
     {
-        healthBar.SetPosition(sprite->getPosition());
+        healthBar.SetPosition(animations->getIdlePosition());
         healthBar.Draw(window, currentHealth, maxHealth);
     }
 
@@ -218,7 +70,7 @@ namespace Units
     void Unit::Place(float posX, float posY)
     {
         tileLocation = {posX / 50, posY / 50};
-        sprite->setPosition({posX, posY});
+        animations->setPositions(tileLocation);
     }
 
     void Unit::Movement()
@@ -241,21 +93,21 @@ namespace Units
         
         if (movementX == 5)
         {
-            movingSprite->setOrigin({0.f, 0.f}); 
-            movingSprite->setScale({1, 1});
+            // movingSprite->setOrigin({0.f, 0.f}); 
+            // movingSprite->setScale({1, 1});
         }
         else if (movementX == -5 && !finishedMoving)
         {
-            movingSprite->setOrigin({50.f, 0.f}); 
-            movingSprite->setScale({-1, 1});
+            // movingSprite->setOrigin({50.f, 0.f}); 
+            // movingSprite->setScale({-1, 1});
         }
     }
 
     bool Unit::IsHit()
     {
         // Hent uniten sin posisjon for sammenligning
-        int x = sprite->getPosition().x;
-        int y = sprite->getPosition().y;
+        int x = animations->getIdlePosition().x;
+        int y = animations->getIdlePosition().y;
         
         // Sjekk eksisterende angrep
         for (auto& attack : attacks.activeAttacks)
@@ -307,7 +159,7 @@ namespace Units
     void Unit::SetTileToOccupied()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
-        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].IsOccupied = true;
+        tiles[tileLocation.y][tileLocation.x].IsOccupied = true;
     }
 
     void Unit::SetTileToUnOccupied()
@@ -319,7 +171,7 @@ namespace Units
     void Unit::setTileUnit()
     {
         auto& tiles = gridHandler.RetrieveAllTiles();
-        tiles[sprite->getPosition().y / 50][sprite->getPosition().x / 50].unit = this;
+        tiles[tileLocation.y][tileLocation.x].unit = this;
 
     }
 

@@ -33,7 +33,7 @@ namespace UnitsManagers
             std::pair<int, int> GetCameraPositions(std::pair<int, int> cameraPos);
             std::vector<std::shared_ptr<Units::Unit>> GetAllUnits();
             std::shared_ptr<Units::Unit> GetUnitByTurn(int turn);       // hent uniten som har en index som matcher turnen
-            void AddUnit(std::shared_ptr<Units::Unit> unit);
+            void AddUnit(std::shared_ptr<Units::Unit> unit, sf::Vector2f position);
             void RemoveUnit();
             void UpdateUnits(sf::RenderWindow& window);
             void LoadUnits();

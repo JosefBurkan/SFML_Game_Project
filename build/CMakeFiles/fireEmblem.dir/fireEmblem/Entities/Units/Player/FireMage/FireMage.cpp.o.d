@@ -991,6 +991,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Player/FireMage/FireMage.cpp
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/../../../Hitboxes/Attack/RangedAttack/RangedAttack.hpp \

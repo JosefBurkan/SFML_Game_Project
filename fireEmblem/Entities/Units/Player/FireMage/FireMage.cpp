@@ -6,9 +6,8 @@ namespace FireMages
                     AttackManagers::AttackManager& attacks)
         : Player(gridHandler, attacks)
     {
-        name = "FireMage";
 
-        
+        name = "FireMage";
 
         auto& tiles = gridHandler.RetrieveAllTiles();
 
@@ -16,7 +15,11 @@ namespace FireMages
 
         tiles[tileLocation.y][tileLocation.x].SetUnit(this);
 
-        sprite->setTextureRect(sf::IntRect({0, 0}, {50, 50}));
+        animations = &fireMageAnimations;
+
+        animations->setPositions({100.f, 100.f});
+
+
     }
 }
 

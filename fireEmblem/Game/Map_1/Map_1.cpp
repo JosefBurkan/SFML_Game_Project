@@ -20,15 +20,15 @@ namespace Maps1 {
         background1.LoadTileMapFromFile();
 
         // Units
-        fireMage = std::make_shared<FireMages::FireMage>(gridHandler, attacks);
-        slime1 = std::make_shared<Slimes::Slime>(gridHandler, attacks, 300, 150);
-        slime2 = std::make_shared<Slimes::Slime>(gridHandler, attacks, 400, 150);
+        fireMage  = std::make_shared<FireMages::FireMage>(gridHandler, attacks);
+        slime1    = std::make_shared<Slimes::Slime>(gridHandler, attacks, 300, 150);
+        slime2    = std::make_shared<Slimes::Slime>(gridHandler, attacks, 400, 150);
         swordsman = std::make_shared<Swordsmen::Swordsman>(gridHandler, attacks);
 
-        unitManager.AddUnit(slime1);
-        unitManager.AddUnit(slime2);
-        unitManager.AddUnit(fireMage);
-        unitManager.AddUnit(swordsman);
+        unitManager.AddUnit(slime1, {6.f, 3.f});
+        unitManager.AddUnit(slime2, {8.f, 3.f});
+        unitManager.AddUnit(fireMage, {0.f, 2.f});
+        unitManager.AddUnit(swordsman, {0.f, 3.f});
 
         unitManager.SortUnits();
 
@@ -37,8 +37,6 @@ namespace Maps1 {
         // Shader
         shader.setSize({1000.f, 800.f});
         shader.setFillColor(sf::Color(0, 0, 255, 20));
-
-        swordsman->Place(0, 150);
 
     }
 
@@ -72,8 +70,9 @@ namespace Maps1 {
 
         if (gameTurn == currentTurnUnit->turn)
             {
-                int positionX = currentTurnUnit->GetPosition().x / 50;
-                int positionY = currentTurnUnit->GetPosition().y / 50;
+
+                int positionX = currentTurnUnit->GetPosition().x;
+                int positionY = currentTurnUnit->GetPosition().y;
 
                 // Hvis typen til uniten er en spiller, utfør spilleroppførsel
                 if (currentTurnUnit->type == "Player" && cooldown <= 0) 

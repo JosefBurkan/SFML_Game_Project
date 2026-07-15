@@ -211,6 +211,18 @@
 },
 {
   "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
+  "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp",
+  "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp",
+  "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp.o"
+},
+{
+  "directory": "/Users/tastebutter/Desktop/mine_spill/build",
   "command": "/usr/bin/clang++ -DASSETS_DIR=\\\"/Users/tastebutter/Desktop/mine_spill/fireEmblem/Assets/\\\" -I/Users/tastebutter/Desktop/mine_spill/Dependencies/SFML/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Animations/Animation.cpp.o -c /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.cpp",
   "file": "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.cpp",
   "output": "CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Animations/Animation.cpp.o"

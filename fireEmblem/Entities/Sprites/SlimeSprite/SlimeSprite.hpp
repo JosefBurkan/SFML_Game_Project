@@ -1,15 +1,15 @@
 #pragma once
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp"
 
-namespace FireMageSprites
+namespace SlimeSprites
 {
-    class FireMageSprite : public Sprites::Sprite
+    class SlimeSprite : public Sprites::Sprite
     {
         private:
             sf::Texture defaultTexture;
 
         public:
-            FireMageSprite();
+            SlimeSprite();
 
     };
 }

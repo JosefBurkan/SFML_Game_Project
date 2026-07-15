@@ -13,6 +13,8 @@ namespace Enemies
         protected:
 
         public:
+            
+
             Enemy(GridHandlers::GridHandler& gridHandler, AttackManagers::AttackManager& attacks, float yPos, float xPos);
             void CheckForAttacks();
             void SetTileToOccupied() override;

@@ -15,7 +15,7 @@ namespace PlayerPathAlgorithms
             }
         }
 
-        std::pair<int, int> startPair = {start.y / 50, start.x / 50};
+        std::pair<int, int> startPair = {start.y, start.x};
 
         // startX, statY, avstandReist
         std::queue<std::tuple<std::pair<int, int>, int>> q;        // For å vite hvilken rute som skal utforskes neste tikk

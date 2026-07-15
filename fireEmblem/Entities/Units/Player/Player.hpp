@@ -6,6 +6,7 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/PlayerPathAlgorithm/PlayerPathAlgorithm.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp"
 
 
 namespace Players 
@@ -39,7 +40,6 @@ namespace Players
             void Movement() override;
             void SmoothMove() override;
             void SetPathToSelectedTile();
-            std::pair<int, int> TransformPositionToIndex(float spriteX, float spriteY);      // Oversett kordinater til rutenettet. feks. 50x = [5]
             void DrawUI(sf::RenderWindow& window) override;
             // void Draw(sf::RenderWindow& window) override;
             void SetTileToOccupied() override;

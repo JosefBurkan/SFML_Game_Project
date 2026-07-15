@@ -991,8 +991,10 @@ CMakeFiles/fireEmblem.dir/fireEmblem/Entities/Units/Enemies/Slime/Slime.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attack/Attack.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Tile/Tile.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \

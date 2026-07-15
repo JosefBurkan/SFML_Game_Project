@@ -55,6 +55,8 @@ add_executable(fireEmblem
     fireEmblem/Effects/DamageNumbers/DamageNumbers.cpp
     fireEmblem/Entities/Sprites/Sprite.cpp
     fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.cpp
+    fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.cpp
+    fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.cpp
     fireEmblem/Entities/Animations/Animation.cpp
 )
 

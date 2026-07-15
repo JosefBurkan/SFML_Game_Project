@@ -991,6 +991,7 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Animations/Animation.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Swordsman/Swordsman.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/Player.hpp \
@@ -1027,11 +1028,13 @@ CMakeFiles/fireEmblem.dir/fireEmblem/main.cpp.o: \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Menu.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/../../../config.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Player/Menu/Skills/Skills.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SwordsmanSprite/SwordsmanSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Player/FireMage/FireMage.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Enemy.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../Unit.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/../../../Hitboxes/Attack/Attack.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Units/Enemies/Slime/Slime.hpp \
+  /Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/SlimeSprite/SlimeSprite.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/GridSystem/Algorithms/EnemyPathAlgorithm/EnemyPathAlgorithm.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/Camera.hpp \
   /Users/tastebutter/Desktop/mine_spill/fireEmblem/Camera/../GridSystem/GridHandler/GridHandler.hpp \

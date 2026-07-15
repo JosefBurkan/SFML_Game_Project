@@ -4,6 +4,7 @@
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Effects/DamageNumbers/DamageNumbers.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/UI/Units/Health/HealthBar.hpp"
 #include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/Sprite.hpp"
+#include "/Users/tastebutter/Desktop/mine_spill/fireEmblem/Entities/Sprites/FireMageSprite/FireMageSprite.hpp"
 #include "../../config.hpp"
 
 namespace Units 
@@ -16,56 +17,14 @@ namespace Units
             AttackManagers::AttackManager& attacks;
             HealthBars::HealthBar healthBar;
             
-
-            sf::Texture defaultTexture;
-            sf::Texture attackTexture;      // Animasjon for når en karakter angriper
-            sf::Texture deathTexture;
-            sf::Texture movingTexture;       // Bevegelsesanimasjon
-            std::string spritePath;
             sf::Texture iconTexture;
+
             DamageNumbers::DamageNumber damageNumber;
 
             sf::Vector2f tileLocation = {0, 0}; // Kordinater i index
             
             int tileSize = 50;
             int movement = 20;
-
-            // For defaultsprite
-            int spriteSizeY = 50;           // Størrelse på spritesheet
-            int spriteSizeX = 100;
-            int defaultTextureY = 0;        // Lokasjonen til defaultsprite
-            int defaultTextureX = 0;
-            int defaultDrawSpeed = 20;
-
-            // For attacksprite
-            int attackSpriteSizeY = 100;           // Størrelse på spritesheet
-            int attackSpriteSizeX = 100;
-            int attackingTextureY = 0;      // Lokasjonen til attacksprite
-            int attackingTextureX = 0;
-            int attackingDrawSpeed = 5;
-
-            // For deathsprite
-            int dyingSpriteSizeX = 32; // Størrelse på spritesheet
-            int dyingSpriteSizeY = 48;
-            int dyingTextureY = 0;
-            int dyingTextureX = 0;
-
-            // For bevegelsessprite
-            int movingSpriteSizeY = 50;           // Størrelse på spritesheet
-            int movingSpriteSizeX = 100;
-            int movingTextureY = 0;      // Lokasjonen til attacksprite
-            int movingTextureX = 0;
-            int movingDrawSpeed = 5;
-            
-
-
-            bool resetAnimationsLock = false;
-            int framesUntilDraw = 20;       // Hvor fort en animasjon skal tegnes
-            int framesUntilAttackDraw = 20;
-            int framesUntilDeathDraw = 15;
-            int framesUntilMovementDraw = 15;
-            int framesUntilLevelUpDraw = 10;
-            
 
             std::string lastHitBy = "None";
 
@@ -87,10 +46,7 @@ namespace Units
 
             sf::Texture iconTextureLarge;
     
-            std::optional<sf::Sprite> sprite;
-            std::optional<sf::Sprite> attackSprite;
-            std::optional<sf::Sprite> deathSprite;  
-            std::optional<sf::Sprite> movingSprite;    
+            Sprites::Sprite* animations;
 
             int currentHealth = 2;
             int attackLevel = 1;
@@ -132,10 +88,7 @@ namespace Units
 
             virtual void Draw(sf::RenderWindow& window);    // Default animasjon
             virtual void DrawUI(sf::RenderWindow& window);
-            virtual void DrawAttackAnimation(sf::RenderWindow& window); // Når de angriper
-            virtual void DrawDeathAnimation(sf::RenderWindow& window); 
-            virtual void DrawMovingAnimation(sf::RenderWindow& window); // Når en enhet beveger seg
-            virtual void DrawLevelUpAnmiation(sf::RenderWindow& window);
+            void DrawLevelUpAnmiation (sf::RenderWindow& window);
             void DrawDamageNumber(sf::RenderWindow& window);
             void DrawHealthBar(sf::RenderWindow& window);
 
@@ -145,9 +98,6 @@ namespace Units
             virtual void Place(float posX, float posY);
             virtual void Movement();    // Bevegelse for spiller. Skal slå den sammen med 'PerformActions' etterhvert
             virtual void SmoothMove();
-            virtual void ResetAnimations(); // Set animasjoner tilbake til starten, slik at de ikke kan starte midt i
-            virtual void ResetAttackAnimation();
-            virtual void ResetDeathAnimation();
             virtual void SetPathToPlayer();             // Kjør algorithmen som scanner etter spiller og lager vei (For fiender)
             virtual void MenuActions();
             void ReverseSprite(int movementX, int movementY);               // Snu spriten rundt (Hovedsakelig hjelpsom for løping)

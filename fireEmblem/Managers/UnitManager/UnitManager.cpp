@@ -2,9 +2,10 @@
 
 namespace UnitsManagers
 {
-    void UnitsManager::AddUnit(std::shared_ptr<Units::Unit> unit)
+    void UnitsManager::AddUnit(std::shared_ptr<Units::Unit> unit, sf::Vector2f position)
     {
         units.push_back(unit);
+        unit->animations->setPositions(position);
     }
 
     std::vector<std::shared_ptr<Units::Unit>> UnitsManager::GetAllUnits()
@@ -25,24 +26,7 @@ namespace UnitsManagers
 
     void UnitsManager::DrawUnit(std::shared_ptr<Units::Unit> it, sf::RenderWindow& window)
     {
-
-        if (it->state == S::attacking)
-        {
-            it->DrawAttackAnimation(window);
-        }
-        else if (it->state == S::dying)
-        {
-            it->DrawDeathAnimation(window);
-        }
-        else if (it->state == S::moving)
-        {
-            it->DrawMovingAnimation(window);
-        }
-        else 
-        {
-            it->Draw(window);
-            it->ResetAttackAnimation();
-        }
+        it->Draw(window);
     }
 
     // Kjøres hver frame. Tegner animasjon, sjekker om uniten blir truffet, etc.
@@ -54,8 +38,8 @@ namespace UnitsManagers
 
         for (auto it = units.begin(); it != units.end(); ) 
         {
-            float posX = (*it)->sprite->getPosition().x;
-            float posY = (*it)->sprite->getPosition().y;
+            float posX = (*it)->animations->getIdlePosition().x;
+            float posY = (*it)->animations->getIdlePosition().y;
 
             // Sjekk om enheten blir truffet av et angrep
             if ((*it)->IsHit())
@@ -81,6 +65,8 @@ namespace UnitsManagers
 
             (*it)->CheckForLevelUp();
 
+            // Målet er å få denne linja under til å være nok for animasjonene
+            // it->animatedSprite.Draw(window)
             DrawUnit((*it), window);
             
 
